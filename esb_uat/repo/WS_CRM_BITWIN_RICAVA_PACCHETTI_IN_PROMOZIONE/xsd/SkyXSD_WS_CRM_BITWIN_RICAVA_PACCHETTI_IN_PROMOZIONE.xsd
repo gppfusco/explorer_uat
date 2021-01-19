@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:eb="http://www.reply.it/existbus" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.reply.it/existbus" elementFormDefault="qualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="DocumentDataIn"> 
+  <xsd:sequence> 
+   <xsd:element name="CodiceContratto" type="xsd:string" /> 
+   <xsd:element name="LoginId" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="SessioneId" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="SessioneIdMigrata" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Azione" type="xsd:string" minOccurs="0" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="DocumentDataOut"> 
+  <xsd:sequence> 
+   <xsd:element name="Esito" type="xsd:string" /> 
+   <xsd:element name="DescrizioneEsito" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="PromozioniCompatibili" minOccurs="0"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="PromozioneCompatibile" minOccurs="0" maxOccurs="unbounded"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="IdPromo" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="AmbienteServizioSKY" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="AntifrodeMV" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="AreaPromozione" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="BroadBandFlag" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="CanaleSKY" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="CAPSKY" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Categoria" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="ClassePackBundleSKY" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="ClassePromo" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="ClassePromoSKY" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="ClasseServizioPremium" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Codice" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="CodiceClienteFruitoreSKY" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="CodiceClientePagatoreSKY" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="CodicePromo" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="CodiceTecnologia" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="COPromoTuttoIncluso" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="DataAttivazioneSKY" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="DataEleggibilita" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="DataFine" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="DataInizio" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="DataSottoscrizioneSKY" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="DealerPositionIdSKY" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="DealerTipologiaVenditoreSKY" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Description" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="EFBFlagExitFee" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="FirmatoFlagSKY" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="FlagPromoAcc" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="FrasePromo" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="FrasePromozionale" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Id_Pack" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="IdGenere" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="IdPacchetto" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="IdPacchettoMV" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="InfoEleggibilita" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="IsCodiceComplexFlag" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="IsDataCessazioneFlag" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="IsDownpaymentFlg" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="IsMV" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="IsUpgrade" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Listino" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="MetriQuadriBARSKY" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="MYSKYHDASHDSKY" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Nome" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="NomeGenere" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="NomePackBundle" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="NomePromo" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="NomePromoBundle" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="NomePromoPackBundle" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="NoteSKY" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="NumeroStanzeHotelSKY" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="OnlySubPromo" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="OrderId" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="OrderNumberSKY" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="PacchettiCompatibili" minOccurs="0"> 
+          <xsd:complexType> 
+           <xsd:sequence> 
+            <xsd:element name="PacchettoCompatibile" minOccurs="0" maxOccurs="unbounded"> 
+             <xsd:complexType> 
+              <xsd:sequence> 
+               <xsd:element name="RateCode" type="xsd:string" minOccurs="0" /> 
+              </xsd:sequence> 
+             </xsd:complexType> 
+            </xsd:element> 
+           </xsd:sequence> 
+          </xsd:complexType> 
+         </xsd:element> 
+         <xsd:element name="PacchettoId" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="PartNumPacchetto" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="PaymentMethodSKY" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="PeriodicitadiFatturazioneSKY" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="PlanAccountPromotionName" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="PresenzaMV" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="PriceListId" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="PromoAdesioneMVId" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="PromoAssociate" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="PromoAssociateNome" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="PromoBundle" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="PromoConnessa" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="PromoCoupon" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="PromoPackId" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="RateCode" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="RecordId" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="SegmentoSKY" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="ServizioPremiumAdesioneSKY" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="ServizioPremiumSKY" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="SottocanaleSKY" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Sottocategoria" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="SottocategoriaSKY" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="StatoSKY" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Tipo" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="TipoBundle" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Tipologia" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="TipoPack" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="TipoPromo" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Type" type="xsd:string" minOccurs="0" /> 
+        </xsd:sequence> 
+       </xsd:complexType> 
+      </xsd:element> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:element name="DocumentData" type="eb:DocumentDataOut" /> 
+ <xsd:element name="COMPLEX_OUTPUT" type="eb:DocumentDataOut" /> 
+ <xsd:element name="COMPLEX_INPUT" type="eb:DocumentDataIn" /> 
+</xsd:schema>

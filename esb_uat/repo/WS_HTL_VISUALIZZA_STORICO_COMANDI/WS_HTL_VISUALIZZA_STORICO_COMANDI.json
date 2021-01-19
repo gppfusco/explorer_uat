@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_HTL_VISUALIZZA_STORICO_COMANDI",
+    "name" : "WS_HTL_VISUALIZZA_STORICO_COMANDI",
+    "remoteName" : "WS_HTL_VISUALIZZA_STORICO_COMANDI",
+    "localPath" : "esb_uat\\repo\\WS_HTL_VISUALIZZA_STORICO_COMANDI",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_HTL_VISUALIZZA_STORICO_COMANDI?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

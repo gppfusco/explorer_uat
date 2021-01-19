@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:eb="http://www.reply.it/existbus" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.reply.it/existbus" elementFormDefault="qualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="DocumentDataIn"> 
+  <xsd:sequence> 
+   <xsd:element name="TID"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:minLength value="2" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="Questionario" minOccurs="0" maxOccurs="100"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="Codice" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="Date" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="Campagna" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="Score" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="Canale" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="CellCode" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="TreatmentCode" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="CodiceCliente" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="CodiceContratto" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="AddInfo1" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="AddInfo2" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="CodiceCustvox" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="Domanda" minOccurs="0" maxOccurs="100"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="Codice" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Risposta" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Tag" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Macrocategoria" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Categoria" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Sottocategoria" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Sentiment" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Canale" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Date" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="CodiceCustvox" type="xsd:string" minOccurs="0" /> 
+        </xsd:sequence> 
+       </xsd:complexType> 
+      </xsd:element> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:element name="COMPLEX_INPUT" type="eb:DocumentDataIn" /> 
+</xsd:schema>

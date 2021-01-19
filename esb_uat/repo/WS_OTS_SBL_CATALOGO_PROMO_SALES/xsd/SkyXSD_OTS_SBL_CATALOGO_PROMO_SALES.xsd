@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:eb="http://www.reply.it/existbus" targetNamespace="http://www.reply.it/existbus" elementFormDefault="qualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="COMPLEX_INPUT"> 
+  <xsd:sequence> 
+   <xsd:element name="Id"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="15" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="Request"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="15" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="PromozioneType"> 
+  <xsd:sequence> 
+   <xsd:element name="IdSiebel"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="15" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="NomePromo"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="50" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="CodPromo"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="22" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="InizioValidita" type="xsd:date" minOccurs="0" /> 
+   <xsd:element name="FineValidita" type="xsd:date" minOccurs="0" /> 
+   <xsd:element name="ListOfVincolo"> 
+    <xsd:complexType> 
+     <xsd:sequence maxOccurs="unbounded"> 
+      <xsd:element name="Vincolo" type="eb:VincoloType" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="ListOfPacchetto"> 
+    <xsd:complexType> 
+     <xsd:sequence maxOccurs="unbounded"> 
+      <xsd:element name="Pacchetto" type="eb:PacchettoType" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="COMPLEX_OUTPUT"> 
+  <xsd:sequence> 
+   <xsd:element name="ListOfPromozione"> 
+    <xsd:complexType> 
+     <xsd:sequence minOccurs="0" maxOccurs="unbounded"> 
+      <xsd:element name="Promozione" type="eb:PromozioneType" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="Descrizione" minOccurs="0" type="xsd:string" /> 
+   <xsd:element name="Esito"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:length value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="VincoloType"> 
+  <xsd:sequence> 
+   <xsd:element name="Tipo" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="Valore" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="DataInizio" type="xsd:date" minOccurs="0" /> 
+   <xsd:element name="DataFine" type="xsd:date" minOccurs="0" /> 
+   <xsd:element name="Tecnologia" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="FruitorePagatore" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:length value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="Note" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="4095" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="CanaleDealer" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="50" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="ProfiloVenditore" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="50" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="Provincia" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="50" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="FlagOutbound" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="TipoMop" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="TipoMopTemp" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:length value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="VincoloPacchetto" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="Pacchetto" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="100" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="MultivisionFlag" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:length value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="AmbienteServizio" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="VincoloProvincia" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:length value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="InstallSales" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="70" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="OptionType"> 
+  <xsd:sequence> 
+   <xsd:element name="PartNumber" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="Descrizione" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="100" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="PacchettoType"> 
+  <xsd:sequence> 
+   <xsd:element name="PartNumber" type="xsd:string"></xsd:element> 
+   <xsd:element name="ListOfOption"> 
+    <xsd:complexType> 
+     <xsd:sequence maxOccurs="unbounded"> 
+      <xsd:element name="Option" type="eb:OptionType" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+</xsd:schema>

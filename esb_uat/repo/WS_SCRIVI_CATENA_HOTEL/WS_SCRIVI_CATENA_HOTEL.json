@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_SCRIVI_CATENA_HOTEL",
+    "name" : "WS_SCRIVI_CATENA_HOTEL",
+    "remoteName" : "WS_SCRIVI_CATENA_HOTEL",
+    "localPath" : "esb_uat\\repo\\WS_SCRIVI_CATENA_HOTEL",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_SCRIVI_CATENA_HOTEL?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

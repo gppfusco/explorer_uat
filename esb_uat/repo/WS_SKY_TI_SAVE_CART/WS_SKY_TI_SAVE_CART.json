@@ -1,0 +1,21 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_SKY_TI_SAVE_CART",
+    "name" : "WS_SKY_TI_SAVE_CART",
+    "remoteName" : "WS_SKY_TI_SAVE_CART",
+    "localPath" : "esb_uat\\repo\\WS_SKY_TI_SAVE_CART",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_SKY_TI_SAVE_CART?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "xsdTelecom/SkyXSD_AOL_TI_SaveCart.xsd",
+        "xsdNameSpace" : "http://telecomitalia.it/SOA/WS_SKY_TI_SAVE_CART/2014-09-04"
+      } ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

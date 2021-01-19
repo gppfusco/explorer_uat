@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:eb="http://www.reply.it/existbus" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.reply.it/existbus" elementFormDefault="qualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="DocumentDataIn"> 
+  <xsd:sequence> 
+   <xsd:element name="CodiceVoucher" type="xsd:string" /> 
+   <xsd:element name="PromozioniVoucher"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="PromozioneVoucher" maxOccurs="unbounded"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="IdPromozione" type="xsd:string" /> 
+         <xsd:element name="CodicePromozione" type="xsd:string" /> 
+        </xsd:sequence> 
+       </xsd:complexType> 
+      </xsd:element> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="DocumentDataOut"> 
+  <xsd:sequence> 
+   <xsd:element name="DescrizioneEsito" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Esito" type="xsd:string" /> 
+   <xsd:element name="GroupCode" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NomePromozione" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="serialNumber" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="TipoPromozione" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ValoreVoucher" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="PromozioniVoucher" minOccurs="0"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="PromozioneVoucher" minOccurs="0" maxOccurs="unbounded"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="CodicePromozione" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="IdPromozione" type="xsd:string" minOccurs="0" /> 
+        </xsd:sequence> 
+       </xsd:complexType> 
+      </xsd:element> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:element name="DocumentData" type="eb:DocumentDataOut" /> 
+ <xsd:element name="COMPLEX_INPUT" type="eb:DocumentDataIn" /> 
+</xsd:schema>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:eb="http://www.reply.it/existbus" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.reply.it/existbus" elementFormDefault="qualified" attributeFormDefault="unqualified"> 
+ <xs:complexType name="DocumentDataOut"> 
+  <xs:sequence> 
+   <xs:element name="descrizione" type="xs:string" minOccurs="0"></xs:element> 
+   <xs:element name="esito" type="xs:string"></xs:element> 
+  </xs:sequence> 
+ </xs:complexType> 
+ <xs:complexType name="DocumentDataIn"> 
+  <xs:sequence> 
+   <xs:element name="account" type="xs:string" minOccurs="0"></xs:element> 
+   <xs:element name="channel" type="xs:string"></xs:element> 
+   <xs:element name="counter" type="xs:int"></xs:element> 
+   <xs:element name="esito" type="xs:int"></xs:element> 
+   <xs:element name="transId" type="xs:string"></xs:element> 
+  </xs:sequence> 
+ </xs:complexType> 
+</xs:schema>

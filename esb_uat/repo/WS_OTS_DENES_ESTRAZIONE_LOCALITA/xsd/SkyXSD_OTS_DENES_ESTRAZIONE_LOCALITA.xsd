@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:eb="http://www.reply.it/existbus" targetNamespace="http://www.reply.it/existbus" elementFormDefault="qualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="COMPLEX_INPUT"> 
+  <xsd:sequence> 
+   <xsd:element name="Id" type="xsd:string" /> 
+   <xsd:element name="Request" type="xsd:string" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="COMPLEX_OUTPUT"> 
+  <xsd:sequence> 
+   <xsd:element name="ListOfLocalita"> 
+    <xsd:complexType> 
+     <xsd:sequence minOccurs="0" maxOccurs="unbounded"> 
+      <xsd:element name="Localita" type="eb:LocalitaType" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="Esito" type="xsd:string" /> 
+   <xsd:element name="Descrizione" type="xsd:string" minOccurs="0" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="LocalitaType"> 
+  <xsd:sequence> 
+   <xsd:element name="NomeLocalita" type="xsd:string" /> 
+   <xsd:element name="Provincia" type="xsd:string" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+</xsd:schema>

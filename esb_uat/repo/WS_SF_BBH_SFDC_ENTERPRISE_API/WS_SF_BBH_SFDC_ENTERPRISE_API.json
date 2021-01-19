@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_SF_BBH_SFDC_ENTERPRISE_API",
+    "name" : "WS_SF_BBH_SFDC_ENTERPRISE_API",
+    "remoteName" : "WS_SF_BBH_SFDC_ENTERPRISE_API",
+    "localPath" : "esb_uat\\repo\\WS_SF_BBH_SFDC_ENTERPRISE_API",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_SF_BBH_SFDC_ENTERPRISE_API?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

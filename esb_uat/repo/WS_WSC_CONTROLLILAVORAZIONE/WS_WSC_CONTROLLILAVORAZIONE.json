@@ -1,0 +1,21 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_WSC_CONTROLLILAVORAZIONE",
+    "name" : "WS_WSC_CONTROLLILAVORAZIONE",
+    "remoteName" : "WS_WSC_CONTROLLILAVORAZIONE",
+    "localPath" : "esb_uat\\repo\\WS_WSC_CONTROLLILAVORAZIONE",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_WSC_CONTROLLILAVORAZIONE?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "SkyXSD_WS_WSC_CONTROLLILAVORAZIONE.xsd",
+        "xsdNameSpace" : "http://www.reply.it/existbus"
+      } ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

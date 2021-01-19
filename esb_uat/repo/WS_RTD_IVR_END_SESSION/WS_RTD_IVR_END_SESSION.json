@@ -1,0 +1,21 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_RTD_IVR_END_SESSION",
+    "name" : "WS_RTD_IVR_END_SESSION",
+    "remoteName" : "WS_RTD_IVR_END_SESSION",
+    "localPath" : "esb_uat\\repo\\WS_RTD_IVR_END_SESSION",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_RTD_IVR_END_SESSION?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "xsdRTD/SkyXSD_RTD_END_SESSION.xsd",
+        "xsdNameSpace" : "http://www.reply.it/existbus"
+      } ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

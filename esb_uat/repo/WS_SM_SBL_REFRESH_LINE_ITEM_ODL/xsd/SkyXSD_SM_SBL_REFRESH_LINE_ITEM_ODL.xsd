@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:eb="http://www.reply.it/existbus" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.reply.it/existbus" elementFormDefault="qualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="RequestRefreshLineItemODLType"> 
+  <xsd:sequence> 
+   <xsd:element name="NumODL" type="xsd:string" /> 
+   <xsd:element name="OperatoreSM" type="xsd:string" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="ResponseRefreshLineItemODLType"> 
+  <xsd:sequence> 
+   <xsd:element name="Pacchetto" minOccurs="0" maxOccurs="unbounded"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="IdPacchetto" type="xsd:string" /> 
+      <xsd:element name="Item" minOccurs="1" maxOccurs="unbounded"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="ItemId" type="xsd:string" /> 
+         <xsd:element name="Attributo" minOccurs="1" maxOccurs="unbounded"> 
+          <xsd:complexType> 
+           <xsd:sequence> 
+            <xsd:element name="Nome" type="xsd:string" /> 
+            <xsd:element name="Valore" type="xsd:string" /> 
+           </xsd:sequence> 
+          </xsd:complexType> 
+         </xsd:element> 
+        </xsd:sequence> 
+       </xsd:complexType> 
+      </xsd:element> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="Esito" type="xsd:string" minOccurs="1" /> 
+   <xsd:element name="DescrizioneEsito" type="xsd:string" minOccurs="0" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:element name="ResponseRefreshLineItemODL" type="eb:ResponseRefreshLineItemODLType" /> 
+ <xsd:element name="RequestRefreshLineItemODL" type="eb:RequestRefreshLineItemODLType" /> 
+</xsd:schema>

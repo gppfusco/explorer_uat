@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_CRM_OPEN_SESSION_WEBAPP",
+    "name" : "WS_CRM_OPEN_SESSION_WEBAPP",
+    "remoteName" : "WS_CRM_OPEN_SESSION_WEBAPP",
+    "localPath" : "esb_uat\\repo\\WS_CRM_OPEN_SESSION_WEBAPP",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_CRM_OPEN_SESSION_WEBAPP?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

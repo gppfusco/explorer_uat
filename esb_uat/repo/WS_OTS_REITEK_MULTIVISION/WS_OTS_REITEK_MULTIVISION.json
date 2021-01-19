@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_OTS_REITEK_MULTIVISION",
+    "name" : "WS_OTS_REITEK_MULTIVISION",
+    "remoteName" : "WS_OTS_REITEK_MULTIVISION",
+    "localPath" : "esb_uat\\repo\\WS_OTS_REITEK_MULTIVISION",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_OTS_REITEK_MULTIVISION?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:eb="http://www.reply.it/existbus" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.reply.it/existbus" elementFormDefault="qualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="RequestPrechiusuraAlignmentType"> 
+  <xsd:sequence> 
+   <xsd:element name="NumODL" type="xsd:string" /> 
+   <xsd:element name="StatoODL" type="xsd:string" /> 
+   <xsd:element name="SottoStatoODL" type="xsd:string" /> 
+   <xsd:element name="TipoOperazione" type="xsd:string" /> 
+   <xsd:element name="Tid" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CodiceInstaller" type="xsd:string" /> 
+   <xsd:element name="CodiceSubInstaller" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="MancataAttivazionePVR" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="MancataConnessioneInternet" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DataScansioneMU" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DataEsecuzioneLavori" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Email" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ChiusuraVirtuale" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="EsitoCollaudoImpiantista" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ImpiantoRilevato" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ListaFunzionari" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CodiceImpiantista" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CausaleTetto" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="TipoTecnImpiantoEseguita" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="TipoTecnImpiantoEsistente" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Note" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DescrizioneEsitoFirma" type="xsd:string" /> 
+   <xsd:element name="CalcolaRCAutomatici" type="xsd:string" /> 
+   <xsd:element name="NomeFile" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="RifiutoPdfFirmatoCliente" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DichiarazioneConformitaFirmata" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Router" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="InternetServiceProvider" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Accessori" minOccurs="0"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="Accessorio" minOccurs="0" maxOccurs="unbounded"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="IdSTB" type="xsd:string" /> 
+         <xsd:element name="Tipo" type="xsd:string" /> 
+         <xsd:element name="OldAccessorio" type="xsd:string" /> 
+         <xsd:element name="NewAccessorio" type="xsd:string" /> 
+         <xsd:element name="NessunAccessorioRitirato" type="xsd:string" minOccurs="0" /> 
+        </xsd:sequence> 
+       </xsd:complexType> 
+      </xsd:element> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="Matricole" minOccurs="0"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="Matricola" minOccurs="0" maxOccurs="unbounded"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="OldMatricola" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="NewMatricola" type="xsd:string" /> 
+         <xsd:element name="Tipo" type="xsd:string" /> 
+         <xsd:element name="WifiRiconnesso" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="ApparatoRiconnesso" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="RilevazioneDiagnostica" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="ConsegnaCavo" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="FlagPacco" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="IdPacchetto" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="IntegrationId" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Motivo" type="xsd:string" minOccurs="0" maxOccurs="2" /> 
+         <xsd:element name="DataCallBack" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Sottotipologia" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="TipoConnBooster" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="SostituzioneCavo" type="xsd:string" minOccurs="0" /> 
+        </xsd:sequence> 
+       </xsd:complexType> 
+      </xsd:element> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="MatricoleSTB" minOccurs="0"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="MatricolaSTB" minOccurs="0" maxOccurs="unbounded"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="Matricola" type="xsd:string" /> 
+         <xsd:element name="GuastoRilevato" type="xsd:string" /> 
+        </xsd:sequence> 
+       </xsd:complexType> 
+      </xsd:element> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="Complex" minOccurs="0"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="ComplexDettaglio" minOccurs="0" maxOccurs="unbounded"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="NumeroFabbricati" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="NumeroScale" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="NumeroAppartamenti" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Mipresento" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Canalizzazione" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="CoperturaDTT" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="DataCostruzioneEdificio" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Scala" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="ModelloComponentiDistribuzione" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="MarcaComponentiDistribuzione" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="FabbricatoServitodalFiglio" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="TipoImpiantoSKY" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Tecnologia" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="StrutturaImpianto" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="ImpiantoDTT" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="ImpiantoDTTEdificio" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="DataEsecuzioneLavoriCablatura" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="FlgSkyReady" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="FlgAmidalaReady" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="MancataConnessione" type="xsd:string" minOccurs="0" /> 
+        </xsd:sequence> 
+       </xsd:complexType> 
+      </xsd:element> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="AlberaturaRCBase"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="TipoImpianto" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="TipoIntervento" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="DettaglioTecnologiaImpianto" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="DettaglioIntervento" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="CodificaAlberatura" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="CodificaIntervento" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="RC" type="xsd:string" minOccurs="0" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="RcAggiuntivi" minOccurs="0"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="RcAggiuntivo" minOccurs="0" maxOccurs="unbounded"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="CausaleTecnica" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="MarchioModello" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Modello" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Quantita" type="xsd:string" /> 
+         <xsd:element name="RC" type="xsd:string" /> 
+        </xsd:sequence> 
+       </xsd:complexType> 
+      </xsd:element> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="RcAutomatici" minOccurs="0"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="RcAutomatico" minOccurs="0" maxOccurs="unbounded"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="RC" type="xsd:string" /> 
+        </xsd:sequence> 
+       </xsd:complexType> 
+      </xsd:element> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="CertificazioniImpianti" minOccurs="0"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="CertificazioneImpianto" minOccurs="0" maxOccurs="unbounded"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="Altro" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="AltroVerifiche" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="BandaHH" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="BandaHHBER" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="BandaHL" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="BandaHLBER" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="BandaVH" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="BandaVHBER" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="BandaVL" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="BandaVLBER" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="CavoCoax" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="CoaxAltro" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="CodiceImpiantista" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="CognomeNome" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="ConformitaFlag" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="DimensionePalo" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="DimensionePaloH" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="DimensioneSupporto" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="DimensioneSupportoH" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="DimensioneSupportoL" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="EsitoCollaudoAddettoInst" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="EsitoCollaudoImpiantista" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="ImpiantoDecoderFlag" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="LNB" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="MisuraCoax" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="MisuraParabola" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="MixDemix" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="ModelloCoax" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="ModelloLNB" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="ModelloMultiswitch" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="ModelloParabola" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="ModelloZancheria" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="MotivazioneEsitoCollNegativo" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Multiswitch" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="MultiswitchUscite" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="NormadiLeggeFlag" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="NoteMotivazioneLavnonEseguiti" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="PaloAntennaTerrestre" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Parabola" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="ParabolaAltro" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Partitore" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="PartitoreUscite" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="PostoPalo" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="ProtezioneContatti" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="ProtezioneFulmini" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="QuantitaCoax" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="QuantitaLNB" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="QuantitaMultiswitch" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="QuantitaParabola" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="QuantitaPartitore" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="QuantitaSupporto" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="SchemaImpianto" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="SerialeMultiswitch" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="SrcSeriale" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Supporto" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="TipoLNB" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="TipoStaffa" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="UbicazioneParabola" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="ZancheriaSupporti" type="xsd:string" minOccurs="0" /> 
+        </xsd:sequence> 
+       </xsd:complexType> 
+      </xsd:element> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="OperatoreSM" type="xsd:string" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="ResponsePrechiusuraAlignmentType"> 
+  <xsd:sequence> 
+   <xsd:element name="Esito" type="xsd:string" minOccurs="1" /> 
+   <xsd:element name="DescrizioneEsito" type="xsd:string" minOccurs="0" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:element name="ResponsePrechiusuraAlignment" type="eb:ResponsePrechiusuraAlignmentType" /> 
+ <xsd:element name="RequestPrechiusuraAlignment" type="eb:RequestPrechiusuraAlignmentType" /> 
+</xsd:schema>

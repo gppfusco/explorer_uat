@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:eb="http://www.reply.it/existbus" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:java="http://www.reply.it/existbus" targetNamespace="http://www.reply.it/existbus" elementFormDefault="qualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="DocumentDataIn"> 
+  <xsd:sequence> 
+   <xsd:element name="IdPDA" type="eb:string_30" nillable="false" /> 
+   <xsd:element name="CodiceContrattoSky" type="eb:string_30" nillable="false" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="DocumentDataOut"> 
+  <xsd:sequence> 
+   <xsd:element name="IdPDA" type="eb:string_30" nillable="false" minOccurs="0" /> 
+   <xsd:element name="ConsistenzaSky" nillable="false" minOccurs="0"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="Item" nillable="false" minOccurs="0" maxOccurs="unbounded"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="CodiceProdotto" type="eb:string_30" nillable="false" minOccurs="0" /> 
+         <xsd:element name="TipoProdotto" type="eb:string_TipoProdotto" nillable="false" minOccurs="0" /> 
+         <xsd:element name="NomeProdotto" type="eb:string_100" nillable="false" minOccurs="0" /> 
+         <xsd:element name="DataAttivazione" type="eb:string_Date" nillable="false" minOccurs="0" /> 
+         <xsd:element name="DataCessazione" type="eb:string_Date" nillable="false" minOccurs="0" /> 
+         <xsd:element name="Tecnologia" type="eb:string_Tecnologia" nillable="false" minOccurs="0" /> 
+        </xsd:sequence> 
+       </xsd:complexType> 
+      </xsd:element> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="CodiceEsito" type="eb:string_CodiceEsito" nillable="false" /> 
+   <xsd:element name="DescrizioneEsito" type="eb:string_255" nillable="false" minOccurs="0" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:element name="DocumentData" type="eb:DocumentDataOut" /> 
+ <xsd:element name="COMPLEX_OUTPUT" type="eb:DocumentDataOut" /> 
+ <xsd:element name="COMPLEX_INPUT" type="eb:DocumentDataIn" /> 
+ <xsd:simpleType name="string_TipoProdotto"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:enumeration value="PACCHETTO" /> 
+   <xsd:enumeration value="STB" /> 
+   <xsd:enumeration value="SMC" /> 
+   <xsd:enumeration value="DK" /> 
+   <xsd:enumeration value="SERVIZIO" /> 
+   <xsd:enumeration value="SCONTO" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_Tecnologia"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:enumeration value="SD" /> 
+   <xsd:enumeration value="HD" /> 
+   <xsd:enumeration value="MYSKYHD" /> 
+   <xsd:enumeration value="MYSKY" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_30"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:minLength value="1" /> 
+   <xsd:maxLength value="30" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_100"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:minLength value="1" /> 
+   <xsd:maxLength value="100" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_CodiceEsito"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:enumeration value="0" /> 
+   <xsd:enumeration value="1" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_255"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:minLength value="1" /> 
+   <xsd:maxLength value="255" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_Date"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:pattern value="\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+</xsd:schema>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:eb="http://www.reply.it/existbus" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.reply.it/existbus" elementFormDefault="qualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="DocumentDataOut"> 
+  <xsd:sequence> 
+   <xsd:element name="DescrizioneEsito" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Esito" type="xsd:string" /> 
+   <xsd:element name="Sconti"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="Sconto" maxOccurs="unbounded"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="Abs" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Name" type="xsd:string" /> 
+         <xsd:element name="PartProd" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Perc" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="PriceType" type="xsd:string" /> 
+         <xsd:element name="ProdId" type="xsd:string" /> 
+         <xsd:element name="ProdType" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="RC" type="xsd:string" /> 
+         <xsd:element name="SubType" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Type" type="xsd:string" /> 
+         <xsd:element name="WSCDesc" type="xsd:string" minOccurs="0" /> 
+        </xsd:sequence> 
+       </xsd:complexType> 
+      </xsd:element> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="Servizi"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="Servizio" minOccurs="0" maxOccurs="unbounded"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="Name" type="xsd:string" /> 
+         <xsd:element name="PriceType" type="xsd:string" /> 
+         <xsd:element name="ProdId" type="xsd:string" /> 
+         <xsd:element name="ProdType" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="RC" type="xsd:string" /> 
+         <xsd:element name="SubType" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Type" type="xsd:string" /> 
+         <xsd:element name="WSCDesc" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="PLs"> 
+          <xsd:complexType> 
+           <xsd:sequence> 
+            <xsd:element name="PL" maxOccurs="unbounded"> 
+             <xsd:complexType> 
+              <xsd:sequence> 
+               <xsd:element name="Code" type="xsd:string" /> 
+               <xsd:element name="Pr" type="xsd:string" /> 
+              </xsd:sequence> 
+             </xsd:complexType> 
+            </xsd:element> 
+           </xsd:sequence> 
+          </xsd:complexType> 
+         </xsd:element> 
+        </xsd:sequence> 
+       </xsd:complexType> 
+      </xsd:element> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:element name="DocumentData" type="eb:DocumentDataOut" /> 
+</xsd:schema>

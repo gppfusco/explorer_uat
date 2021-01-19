@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:eb="http://www.reply.it/existbus" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.reply.it/existbus" elementFormDefault="qualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="DocumentDataIn"> 
+  <xsd:sequence> 
+   <xsd:element name="CodiceTransazione" type="xsd:string" /> 
+   <xsd:element name="CodiceFiscale" type="xsd:string" /> 
+   <xsd:element name="Tipologia" type="xsd:string" minOccurs="0" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="DocumentDataOut"> 
+  <xsd:sequence> 
+   <xsd:element name="CodiceAccount" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CodiceCliente" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="FlagSesso" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Nome" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Cognome" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NomePromozione" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DataRichiestaPromozione" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DataAttivazionePromozione" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DescrizionePromozione" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DescrizionePacchettoPartenza" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DescrizionePacchettoArrivo" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="PrezzoUpselling" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DescrizionePacchettoUpgradato" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DescrizionePacchettoDowngradato" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Oggettodellarichiesta" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CodiceFiscale" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NomePromozioneDedicata" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DescrizionePromozioneDedicata" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DataScadenzaContratto" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DataRichiestaCessazioneContratto" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="StatoContratto" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ExitFee" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DataAdesioneUpgradeDowngrade" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DataRichiestaAdesioneUpgradeDowngrade" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="StatoContrattoPartenza" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Esito" type="xsd:string" /> 
+   <xsd:element name="DescrizioneEsito" type="xsd:string" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:element name="DocumentData" type="eb:DocumentDataOut" /> 
+ <xsd:element name="COMPLEX_INPUT" type="eb:DocumentDataIn" /> 
+</xsd:schema>

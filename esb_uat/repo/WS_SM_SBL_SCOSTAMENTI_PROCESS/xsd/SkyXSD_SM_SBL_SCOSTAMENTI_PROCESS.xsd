@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:eb="http://www.reply.it/existbus" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.reply.it/existbus" elementFormDefault="qualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="DocumentDataIn"> 
+  <xsd:sequence> 
+   <xsd:element name="IdoneitaPosizionamentoUnitaEsternaIQI" type="xsd:string" /> 
+   <xsd:element name="CorrettoAssemblaggioAncoraggioSistemaSostegnoIQI" type="xsd:string" /> 
+   <xsd:element name="QualitaConnettorizzazioneRFIQI" type="xsd:string" /> 
+   <xsd:element name="CorrettaPosaCavoCoassialeIQI" type="xsd:string" /> 
+   <xsd:element name="QualitaSegnaleAVIQI" type="xsd:string" /> 
+   <xsd:element name="RispettoNormeSicurezzaIQI" type="xsd:string" /> 
+   <xsd:element name="ParabolaIQM" type="xsd:string" /> 
+   <xsd:element name="ConvertitoreIQM" type="xsd:string" /> 
+   <xsd:element name="SupportiAccessoriFixParabolaIQM" type="xsd:string" /> 
+   <xsd:element name="AltriComponentiMassiviIQM" type="xsd:string" /> 
+   <xsd:element name="CavoCoassialeIQM" type="xsd:string" /> 
+   <xsd:element name="MultiswitchIQM" type="xsd:string" /> 
+   <xsd:element name="NumODL" type="xsd:string" /> 
+   <xsd:element name="TipoOperazione" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Tid" type="xsd:string" /> 
+   <xsd:element name="NumeroScale" type="xsd:string" /> 
+   <xsd:element name="NAppartamentiPerScala" type="xsd:string" /> 
+   <xsd:element name="NumeroPiani" type="xsd:string" /> 
+   <xsd:element name="Parabola" type="xsd:string" /> 
+   <xsd:element name="DimensionediRiferimentoParabola" type="xsd:string" /> 
+   <xsd:element name="TipologiaSostegnoParabola" type="xsd:string" /> 
+   <xsd:element name="MarchioParabola" type="xsd:string" /> 
+   <xsd:element name="ModelloParabola" type="xsd:string" /> 
+   <xsd:element name="TipologiaLNB" type="xsd:string" /> 
+   <xsd:element name="ModelloLNB" type="xsd:string" /> 
+   <xsd:element name="LocalizzazioneParabola" type="xsd:string" /> 
+   <xsd:element name="TipologiaCavodaConnessione" type="xsd:string" /> 
+   <xsd:element name="MarchioCavoSKY" type="xsd:string" /> 
+   <xsd:element name="TipoModelloMultiswitch" type="xsd:string" /> 
+   <xsd:element name="FunzionamentoDK" type="xsd:string" /> 
+   <xsd:element name="RilascioDDC" type="xsd:string" /> 
+   <xsd:element name="RichiestadiInvioTecnico" type="xsd:string" /> 
+   <xsd:element name="CodiceAlberaturaOdlCQDS" type="xsd:string" /> 
+   <xsd:element name="TipoProdottoOdlCQDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="TipoImpiantoOdlCQDS" type="xsd:string" /> 
+   <xsd:element name="TipoInterventoOdlCQDS" type="xsd:string" /> 
+   <xsd:element name="DettaglioTecnologiaOdlCQDS" type="xsd:string" /> 
+   <xsd:element name="DettaglioInterventoOdlCQDS" type="xsd:string" /> 
+   <xsd:element name="ParcoClientiOdlCQDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="SpecificaServizioOdlCQDS" type="xsd:string" /> 
+   <xsd:element name="OperatoreSM" type="xsd:string" /> 
+   <xsd:element name="PuntualitaTecnicoICS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CortesiaTecnicoICS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ProfessionalitaTecnicoICS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NoteICS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NoteImpianto" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NoteSostegnoParabola" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="MarchioLNB" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NoteLNB" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NoteLocalizzazioneParabola" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="MatricolaSCR" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="MatricolaSCRRiscontrata" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="LunghezzaCavodaConnessione" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NumeroPianiinDiscesa" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="MarchioCavo" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ModelloCavo" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NoteCablaggio" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CodiceTestPrimafila" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NoteTestConnettivita" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ModalitaConnessioneDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="TipoMultiswitch" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="LocalizzazioneMultiswitch" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NoteLocalizzazioneMultiswitch" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NoteMultiswitch" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NoteCSMonitoraggioHD" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ServizioHDAttivoDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="InstallazioneDK" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Altro" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="RicezioneDDT" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NoteRicezioneDDT" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NoteIndiceIQM" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="IndiceIQM" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NoteIndiceIQI" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="IndiceIQI" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ConsiglioAdesione" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="PassDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NoteDDC" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CopiaConsegnataCliente" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CompilazioneODL" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NoteODLCLT" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="SincroniaTelecomando" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NOTESincroniaTelecomando" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Segnalazioni" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NoteSegnalazioni" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CheckImpianto" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ProblemaRiscontrato" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NoteRichiestaInvioTecnico" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="AzioneODLVersoCliente" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="AzioneODLVersoSSSI" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="RichiesteDiDenaro" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ImportoRichiestoPagatoDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NoteRichiestaDenaro" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="StornoaSSSI" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="InstallazioneeLavoriAggiuntividaStornare" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="InstallazioneeLavoriAggiuntividaIntegrare" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NoteStornoSSSI" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="StornoaClienteCliente" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="InstallLavoriAggiuntividaStornareCliente" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="InstallazionedaIntegrareCliente" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NoteStornoClienteCliente" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="PersonepresentiManut" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Tempisticaproblema" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Manutfinelavoroflag" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="RichiedenteIntervManut" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DescRichiedenteIntervManut" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Responsorisoluzioneproblema" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="IndividuatoCausaGuasto" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NoteIntervista" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="VerificaCheckUp" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="GaranziaFuorigaranzia" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NoteCheckImpianto" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="IndirizzoDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NoteIndirizzoDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="TipoVisitaDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CodiceAlberaturaOdlDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="TipoProdottoOdlDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="TipoImpiantoOdlDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="TipoInterventoOdlDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DettaglioTecnologiaOdlDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DettaglioInterventoOdlDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="RateCodeBaseOdlDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ParcoClientiOdlDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="SpecificaServizioOdlDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="RateCodeBaseOdlCQDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CodiceAlberaturaScostamentoDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="TipoProdottoScostamentoDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="TipoImpiantoScostamentoDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="TipoInterventoScostamentoDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DettaglioTecnologiaScostamentoDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DettaglioInterventoScostamentoDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="RateCodeBaseScostamentoDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ParcoClientiScostamentoDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="SpecificaServizioScostamentoDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NoteServizioAttivoHD" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="LavoriAggRiscontrati" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Booster" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="QuantitaBooster" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NoteBooster" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="MVConnesso" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="QuantitaDecoderConnessi" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NoteMVConnesso" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NoteAllegatiFotografici" type="xsd:string" minOccurs="0" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="DocumentDataOut"> 
+  <xsd:sequence> 
+   <xsd:element name="IndiceIQI" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="IndiceIQM" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="IndiceICS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="STBHDMYSKYHD" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="MatricolaSCR" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="GaranziaFuorigaranzia" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ScostamentoRiscontrato" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CodiceAlberaturaScostamentoDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="TipoProdottoScostamentoDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="TipoImpiantoScostamentoDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="TipoInterventoScostamentoDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DettaglioTecnologiaScostamentoDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DettaglioInterventoScostamentoDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="RateCodeBaseScostamentoDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ParcoClientiScostamentoDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="SpecificaServizioScostamentoDS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DescrizioneEsito" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Esito" type="xsd:string" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:element name="DocumentData" type="eb:DocumentDataOut" /> 
+ <xsd:element name="COMPLEX_INPUT" type="eb:DocumentDataIn" /> 
+</xsd:schema>

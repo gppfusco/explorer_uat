@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WSSfToIbmsGetCampaignBillingDetails",
+    "name" : "WSSfToIbmsGetCampaignBillingDetails",
+    "remoteName" : "WSSfToIbmsGetCampaignBillingDetails",
+    "localPath" : "esb_uat\\repo\\WSSfToIbmsGetCampaignBillingDetails",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WSSfToIbmsGetCampaignBillingDetails?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

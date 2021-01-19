@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WSIbmsSfCustomerNotification",
+    "name" : "WSIbmsSfCustomerNotification",
+    "remoteName" : "WSIbmsSfCustomerNotification",
+    "localPath" : "esb_uat\\repo\\WSIbmsSfCustomerNotification",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WSIbmsSfCustomerNotification?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

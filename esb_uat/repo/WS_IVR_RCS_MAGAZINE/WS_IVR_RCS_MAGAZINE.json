@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_IVR_RCS_MAGAZINE",
+    "name" : "WS_IVR_RCS_MAGAZINE",
+    "remoteName" : "WS_IVR_RCS_MAGAZINE",
+    "localPath" : "esb_uat\\repo\\WS_IVR_RCS_MAGAZINE",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_IVR_RCS_MAGAZINE?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

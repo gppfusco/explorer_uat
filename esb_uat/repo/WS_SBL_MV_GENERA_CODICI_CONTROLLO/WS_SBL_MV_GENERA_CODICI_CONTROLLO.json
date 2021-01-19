@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_SBL_MV_GENERA_CODICI_CONTROLLO",
+    "name" : "WS_SBL_MV_GENERA_CODICI_CONTROLLO",
+    "remoteName" : "WS_SBL_MV_GENERA_CODICI_CONTROLLO",
+    "localPath" : "esb_uat\\repo\\WS_SBL_MV_GENERA_CODICI_CONTROLLO",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_SBL_MV_GENERA_CODICI_CONTROLLO?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

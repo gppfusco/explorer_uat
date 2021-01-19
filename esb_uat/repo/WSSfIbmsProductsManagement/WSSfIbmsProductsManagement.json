@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WSSfIbmsProductsManagement",
+    "name" : "WSSfIbmsProductsManagement",
+    "remoteName" : "WSSfIbmsProductsManagement",
+    "localPath" : "esb_uat\\repo\\WSSfIbmsProductsManagement",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WSSfIbmsProductsManagement?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

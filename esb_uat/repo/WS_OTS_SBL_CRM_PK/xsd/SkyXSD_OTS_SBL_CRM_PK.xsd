@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- edited with XMLSpy v2007 sp2 (http://www.altova.com) by *__________* (*__________*) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:eb="http://www.reply.it/existbus" targetNamespace="http://www.reply.it/existbus" elementFormDefault="qualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="COMPLEX_INPUT"> 
+  <xsd:sequence> 
+   <xsd:element name="Id"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="15" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="Request"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="15" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="PacchettiPartenzaType"> 
+  <xsd:sequence> 
+   <xsd:element name="PartNum"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:minLength value="1" /> 
+      <xsd:maxLength value="15" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="Descrizione" type="xsd:string" /> 
+   <xsd:element name="ListOfPacchettiDestinazione"> 
+    <xsd:complexType> 
+     <xsd:sequence maxOccurs="unbounded"> 
+      <xsd:element name="PacchettiDestinazione" type="eb:PacchettiDestinazioneType" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="PacchettiDestinazioneType"> 
+  <xsd:sequence> 
+   <xsd:element name="PartNum"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:minLength value="1" /> 
+      <xsd:maxLength value="15" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="Descrizione" type="xsd:string" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="PromozionePadreType"> 
+  <xsd:sequence> 
+   <xsd:element name="IdSiebel"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="15" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="NomePromo"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="50" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="CodPromo"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="22" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="InizioValidita" type="xsd:date" minOccurs="0" /> 
+   <xsd:element name="FineValidita" type="xsd:date" minOccurs="0" /> 
+   <xsd:element name="ListOfPacchettiPartenza"> 
+    <xsd:complexType> 
+     <xsd:sequence maxOccurs="unbounded"> 
+      <xsd:element name="PacchettiPartenza" type="eb:PacchettiPartenzaType" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="COMPLEX_OUTPUT"> 
+  <xsd:sequence maxOccurs="unbounded"> 
+   <xsd:element name="ListOfPromoParcoPacc"> 
+    <xsd:complexType> 
+     <xsd:sequence minOccurs="0" maxOccurs="unbounded"> 
+      <xsd:element name="PromozionePadre" type="eb:PromozionePadreType" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="Esito"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:length value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="Descrizione" type="xsd:string" minOccurs="0" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+</xsd:schema>

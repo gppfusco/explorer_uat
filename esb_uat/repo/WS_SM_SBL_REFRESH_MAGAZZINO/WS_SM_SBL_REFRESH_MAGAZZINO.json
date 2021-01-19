@@ -1,0 +1,21 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_SM_SBL_REFRESH_MAGAZZINO",
+    "name" : "WS_SM_SBL_REFRESH_MAGAZZINO",
+    "remoteName" : "WS_SM_SBL_REFRESH_MAGAZZINO",
+    "localPath" : "esb_uat\\repo\\WS_SM_SBL_REFRESH_MAGAZZINO",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_SM_SBL_REFRESH_MAGAZZINO?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "xsdSiebel/xsdSM/SkyXSD_SM_SBL_REFRESH_MAGAZZINO.xsd",
+        "xsdNameSpace" : "http://www.reply.it/existbus"
+      } ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

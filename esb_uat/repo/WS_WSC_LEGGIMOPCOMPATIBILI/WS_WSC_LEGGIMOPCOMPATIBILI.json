@@ -1,0 +1,21 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_WSC_LEGGIMOPCOMPATIBILI",
+    "name" : "WS_WSC_LEGGIMOPCOMPATIBILI",
+    "remoteName" : "WS_WSC_LEGGIMOPCOMPATIBILI",
+    "localPath" : "esb_uat\\repo\\WS_WSC_LEGGIMOPCOMPATIBILI",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_WSC_LEGGIMOPCOMPATIBILI?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "SkyXSD_WS_WSC_LEGGIMOPCOMPATIBILI.xsd",
+        "xsdNameSpace" : "http://www.reply.it/existbus"
+      } ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

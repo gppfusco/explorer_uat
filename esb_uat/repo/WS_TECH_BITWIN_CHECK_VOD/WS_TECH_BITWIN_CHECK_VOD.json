@@ -1,0 +1,21 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_TECH_BITWIN_CHECK_VOD",
+    "name" : "WS_TECH_BITWIN_CHECK_VOD",
+    "remoteName" : "WS_TECH_BITWIN_CHECK_VOD",
+    "localPath" : "esb_uat\\repo\\WS_TECH_BITWIN_CHECK_VOD",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_TECH_BITWIN_CHECK_VOD?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "SkyXSD_TECH_CHECK_VOD.xsd",
+        "xsdNameSpace" : "http://www.reply.it/existbus"
+      } ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

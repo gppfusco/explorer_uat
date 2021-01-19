@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_MRM_CH_TYPE_VOU",
+    "name" : "WS_MRM_CH_TYPE_VOU",
+    "remoteName" : "WS_MRM_CH_TYPE_VOU",
+    "localPath" : "esb_uat\\repo\\WS_MRM_CH_TYPE_VOU",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_MRM_CH_TYPE_VOU?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

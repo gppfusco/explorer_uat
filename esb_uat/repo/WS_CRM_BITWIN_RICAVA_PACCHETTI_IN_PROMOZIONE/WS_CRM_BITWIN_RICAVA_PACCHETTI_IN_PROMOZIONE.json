@@ -1,0 +1,21 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_CRM_BITWIN_RICAVA_PACCHETTI_IN_PROMOZIONE",
+    "name" : "WS_CRM_BITWIN_RICAVA_PACCHETTI_IN_PROMOZIONE",
+    "remoteName" : "WS_CRM_BITWIN_RICAVA_PACCHETTI_IN_PROMOZIONE",
+    "localPath" : "esb_uat\\repo\\WS_CRM_BITWIN_RICAVA_PACCHETTI_IN_PROMOZIONE",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_CRM_BITWIN_RICAVA_PACCHETTI_IN_PROMOZIONE?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "SkyXSD_WS_CRM_BITWIN_RICAVA_PACCHETTI_IN_PROMOZIONE.xsd",
+        "xsdNameSpace" : "http://www.reply.it/existbus"
+      } ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

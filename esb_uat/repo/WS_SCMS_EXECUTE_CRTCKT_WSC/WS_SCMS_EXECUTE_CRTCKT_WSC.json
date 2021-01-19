@@ -1,0 +1,21 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_SCMS_EXECUTE_CRTCKT_WSC",
+    "name" : "WS_SCMS_EXECUTE_CRTCKT_WSC",
+    "remoteName" : "WS_SCMS_EXECUTE_CRTCKT_WSC",
+    "localPath" : "esb_uat\\repo\\WS_SCMS_EXECUTE_CRTCKT_WSC",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_SCMS_EXECUTE_CRTCKT_WSC?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "xsdSCMS/SkyXSD_WS_SCMS_EXECUTE_CRTCKT_WSC.xsd",
+        "xsdNameSpace" : "http://www.reply.it/existbus"
+      } ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

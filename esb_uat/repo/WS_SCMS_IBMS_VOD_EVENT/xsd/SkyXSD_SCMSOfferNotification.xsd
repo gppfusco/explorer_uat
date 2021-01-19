@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:eb="http://www.reply.it/existbus" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.reply.it/existbus"> 
+ <xsd:complexType name="Action"> 
+  <xsd:sequence> 
+   <xsd:element name="PurchaseId"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:integer"> 
+      <xsd:minInclusive value="0" /> 
+      <xsd:totalDigits value="19" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="TitleId"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:integer"> 
+      <xsd:minInclusive value="0" /> 
+      <xsd:totalDigits value="19" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="OriginalOfferId"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:integer"> 
+      <xsd:minInclusive value="0" /> 
+      <xsd:totalDigits value="9" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="OfferId"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:minLength value="1" /> 
+      <xsd:maxLength value="5" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="OfferName"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:minLength value="1" /> 
+      <xsd:maxLength value="100" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="EPGTitle"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:minLength value="1" /> 
+      <xsd:maxLength value="510" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="OfferStart" type="xsd:dateTime" /> 
+   <xsd:element name="OfferEnd" type="xsd:dateTime" /> 
+   <xsd:element name="OfferExpiry" type="xsd:dateTime" /> 
+   <xsd:element name="OfferType"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:enumeration value="SVOD" /> 
+      <xsd:enumeration value="TVOD" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="Genre"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:minLength value="1" /> 
+      <xsd:maxLength value="100" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="GenreCode"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:integer"> 
+      <xsd:totalDigits value="2" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="Subgenre"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="100" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="SubgenreCode"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:minLength value="0" /> 
+      <xsd:maxLength value="2" /> 
+      <xsd:pattern value="([0-9])*" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="ShortTitleDescription"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="4000" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="LongTitleDescription"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="4000" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="RentalPeriod" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:integer"> 
+      <xsd:minInclusive value="0" /> 
+      <xsd:totalDigits value="9" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="TargetAudience" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:length value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="ContentCode" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:minLength value="1" /> 
+      <xsd:maxLength value="2" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="BrandName"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:minLength value="1" /> 
+      <xsd:maxLength value="510" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="OperationDate" type="xsd:dateTime" /> 
+   <xsd:element name="IsActive"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:enumeration value="Y" /> 
+      <xsd:enumeration value="N" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="Nff"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="512" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="Hls"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="512" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="Distributor"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="4000" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="ServiceList" minOccurs="0"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="Service" type="xsd:string" minOccurs="0" maxOccurs="unbounded" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="ResolutionInfos" minOccurs="0" maxOccurs="unbounded"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="ResolutionInfo" minOccurs="0" maxOccurs="unbounded"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="Price" minOccurs="0"> 
+          <xsd:simpleType> 
+           <xsd:restriction base="xsd:decimal"> 
+            <xsd:minInclusive value="0" /> 
+            <xsd:fractionDigits value="2" /> 
+            <xsd:totalDigits value="11" /> 
+           </xsd:restriction> 
+          </xsd:simpleType> 
+         </xsd:element> 
+         <xsd:element name="AssetId" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Resolution"> 
+          <xsd:simpleType> 
+           <xsd:restriction base="xsd:string"> 
+            <xsd:enumeration value="HD" /> 
+            <xsd:enumeration value="SD" /> 
+            <xsd:enumeration value="3D" /> 
+            <xsd:enumeration value="4K" /> 
+           </xsd:restriction> 
+          </xsd:simpleType> 
+         </xsd:element> 
+        </xsd:sequence> 
+       </xsd:complexType> 
+      </xsd:element> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="licensedRights"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="licensedRight" minOccurs="0" maxOccurs="unbounded"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="constraints"> 
+          <xsd:complexType> 
+           <xsd:sequence> 
+            <xsd:element name="constraint" minOccurs="0" maxOccurs="unbounded"> 
+             <xsd:complexType> 
+              <xsd:sequence> 
+               <xsd:element name="constraintValue" type="xsd:string" minOccurs="0" maxOccurs="unbounded" /> 
+              </xsd:sequence> 
+              <xsd:attribute name="type" type="xsd:string" use="optional" /> 
+             </xsd:complexType> 
+            </xsd:element> 
+           </xsd:sequence> 
+          </xsd:complexType> 
+         </xsd:element> 
+         <xsd:element name="properties" minOccurs="0"> 
+          <xsd:complexType mixed="true"> 
+           <xsd:sequence> 
+            <xsd:element name="property" minOccurs="0" maxOccurs="unbounded"> 
+             <xsd:complexType> 
+              <xsd:simpleContent> 
+               <xsd:extension base="xsd:string"> 
+                <xsd:attribute name="name" type="xsd:string" use="optional" /> 
+                <xsd:attribute name="value" type="xsd:string" use="optional" /> 
+               </xsd:extension> 
+              </xsd:simpleContent> 
+             </xsd:complexType> 
+            </xsd:element> 
+           </xsd:sequence> 
+          </xsd:complexType> 
+         </xsd:element> 
+        </xsd:sequence> 
+        <xsd:attribute name="key" type="xsd:int" use="optional" /> 
+        <xsd:attribute name="type" type="xsd:string" use="optional" /> 
+       </xsd:complexType> 
+      </xsd:element> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:element name="Action" type="eb:Action" /> 
+</xsd:schema>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- edited with XMLSpy v2007 sp2 (http://www.altova.com) by *__________* (*__________*) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:eb="http://www.reply.it/existbus" targetNamespace="http://www.reply.it/existbus" elementFormDefault="qualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="COMPLEX_INPUT"> 
+  <xsd:sequence> 
+   <xsd:element name="Id"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="15" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="Request"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="15" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="COMPLEX_OUTPUT"> 
+  <xsd:sequence> 
+   <xsd:element name="ListOfPromozionePadre"> 
+    <xsd:complexType> 
+     <xsd:sequence minOccurs="0" maxOccurs="unbounded"> 
+      <xsd:element name="PromozionePadre" type="eb:PromozionePadreType" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="Esito"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:length value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="Descrizione" type="xsd:string" minOccurs="0" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="PromozioneFigliaType"> 
+  <xsd:sequence> 
+   <xsd:element name="IdSiebel2"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:minLength value="1" /> 
+      <xsd:maxLength value="15" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="CodPromo2"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:minLength value="1" /> 
+      <xsd:maxLength value="22" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="Tipo"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:minLength value="1" /> 
+      <xsd:maxLength value="30" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="ServPremium"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:minLength value="1" /> 
+      <xsd:maxLength value="30" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="PromoIncompatibileType"> 
+  <xsd:sequence> 
+   <xsd:element name="NomePromoIncompatibile"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:minLength value="1" /> 
+      <xsd:maxLength value="100" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="CodPromoIncompatibile"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:minLength value="1" /> 
+      <xsd:maxLength value="22" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="DataInizioVincolo" type="xsd:date" /> 
+   <xsd:element name="DataFineVincolo" type="xsd:date" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="PromozionePadreType"> 
+  <xsd:sequence> 
+   <xsd:element name="IdSiebel"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="15" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="NomePromo"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="50" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="CodPromo"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="22" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="PromoConnessa" type="xsd:string" /> 
+   <xsd:element name="InizioValidita" type="xsd:date" minOccurs="0" /> 
+   <xsd:element name="FineValidita" type="xsd:date" minOccurs="0" /> 
+   <xsd:element name="ParityFlag" type="xsd:string" /> 
+   <xsd:element name="ListOfPromozioneFiglia"> 
+    <xsd:complexType> 
+     <xsd:sequence maxOccurs="unbounded"> 
+      <xsd:element name="PromozioneFiglia" type="eb:PromozioneFigliaType" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="ListOfPromoIncompatibile"> 
+    <xsd:complexType> 
+     <xsd:sequence maxOccurs="unbounded"> 
+      <xsd:element name="PromoIncompatibile" type="eb:PromoIncompatibileType" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+</xsd:schema>

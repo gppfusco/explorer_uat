@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ti="http://telecomitalia.it/SOA/WS_SKY_TI_SAVE_CART/2014-09-04" xmlns="http://telecomitalia.it/SOA/WS_SKY_TI_SAVE_CART/2014-09-04" xmlns:ti1="http://telecomitalia.it/SOA/WS_SKY_TI_SAVE_CART/2014-09-04" targetNamespace="http://telecomitalia.it/SOA/WS_SKY_TI_SAVE_CART/2014-09-04" elementFormDefault="qualified" attributeFormDefault="qualified"> 
+ <xsd:complexType name="DocumentDataIn"> 
+  <xsd:sequence> 
+   <xsd:element name="confirmSavedCartRequest"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="IdPDA" nillable="false" type="ti:stringMinLenght" /> 
+      <xsd:element name="CodiceEsito" nillable="false" type="ti:stringMinLenght" /> 
+      <xsd:element name="DescrizioneEsito" nillable="false" type="ti:stringMinLenght" minOccurs="0" /> 
+      <xsd:element name="WMSospetta" nillable="false" type="ti:stringMinLenght" minOccurs="0" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="DocumentDataOut"> 
+  <xsd:sequence> 
+   <xsd:element name="Esito" nillable="false" type="ti:stringMinLenght" /> 
+   <xsd:element name="DescrizioneEsito" nillable="false" type="ti:stringMinLenght" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:element name="DocumentData" type="ti:DocumentDataOut" /> 
+ <xsd:element name="COMPLEX_OUTPUT" type="ti:DocumentDataOut" /> 
+ <xsd:element name="COMPLEX_INPUT" type="ti:DocumentDataIn" /> 
+ <xsd:simpleType name="stringMinLenght"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:minLength value="1" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+</xsd:schema>

@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_FPS_NEWCONTRACT_EVALUATION",
+    "name" : "WS_FPS_NEWCONTRACT_EVALUATION",
+    "remoteName" : "WS_FPS_NEWCONTRACT_EVALUATION",
+    "localPath" : "esb_uat\\repo\\WS_FPS_NEWCONTRACT_EVALUATION",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_FPS_NEWCONTRACT_EVALUATION?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

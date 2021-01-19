@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "ConfermaAcquistoSkyPass",
+    "name" : "ConfermaAcquistoSkyPass",
+    "remoteName" : "ConfermaAcquistoSkyPass",
+    "localPath" : "esb_uat\\repo\\ConfermaAcquistoSkyPass",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/ConfermaAcquistoSkyPass?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

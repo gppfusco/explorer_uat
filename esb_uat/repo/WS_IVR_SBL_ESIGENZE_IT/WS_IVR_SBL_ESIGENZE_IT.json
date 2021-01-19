@@ -1,0 +1,21 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_IVR_SBL_ESIGENZE_IT",
+    "name" : "WS_IVR_SBL_ESIGENZE_IT",
+    "remoteName" : "WS_IVR_SBL_ESIGENZE_IT",
+    "localPath" : "esb_uat\\repo\\WS_IVR_SBL_ESIGENZE_IT",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_IVR_SBL_ESIGENZE_IT?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "xsdTelecom/SkyXSD_IVR_SBL_ESIGENZE_IT.xsd",
+        "xsdNameSpace" : "http://www.reply.it/existbus"
+      } ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

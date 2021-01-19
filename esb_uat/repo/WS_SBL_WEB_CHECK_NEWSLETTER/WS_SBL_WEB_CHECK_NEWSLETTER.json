@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_SBL_WEB_CHECK_NEWSLETTER",
+    "name" : "WS_SBL_WEB_CHECK_NEWSLETTER",
+    "remoteName" : "WS_SBL_WEB_CHECK_NEWSLETTER",
+    "localPath" : "esb_uat\\repo\\WS_SBL_WEB_CHECK_NEWSLETTER",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_SBL_WEB_CHECK_NEWSLETTER?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:eb="http://www.reply.it/existbus" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.reply.it/existbus" elementFormDefault="unqualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="DocumentDataIn"> 
+  <xsd:sequence> 
+   <xsd:element name="input"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="IdPDA" type="eb:string_30" nillable="false" /> 
+      <xsd:element name="CanaleTI" type="eb:string_CanaleVenditaTI" minOccurs="0" nillable="false" /> 
+      <xsd:element name="CodiceRegVORetention" type="eb:string_30" minOccurs="0" nillable="false" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="DocumentDataOut"> 
+  <xsd:sequence> 
+   <xsd:element name="OutStartSessionRetentDTO" type="eb:OutStartSessionRetentDTOType" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="OutStartSessionRetentDTOType"> 
+  <xsd:sequence> 
+   <xsd:element name="CodiceEsito" type="eb:string_CodiceEsito" nillable="false" /> 
+   <xsd:element name="DescrizioneEsito" type="eb:string_255" nillable="false" minOccurs="0" /> 
+   <xsd:element name="UrlWebAppSkyRetention" type="eb:string_1000" nillable="false" minOccurs="0" /> 
+   <xsd:element name="IdPDA" type="eb:string_30" nillable="false" minOccurs="0" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="OutStartSessionRetentDTO"> 
+  <xsd:complexContent> 
+   <xsd:extension base="eb:DocumentDataOut" /> 
+  </xsd:complexContent> 
+ </xsd:complexType> 
+ <xsd:element name="OutStartSessionRetentDTO" type="eb:DocumentDataOut" /> 
+ <xsd:element name="DocumentData" type="eb:DocumentDataOut" /> 
+ <xsd:element name="COMPLEX_OUTPUT" type="eb:DocumentDataOut" /> 
+ <xsd:element name="COMPLEX_INPUT" type="eb:DocumentDataIn" /> 
+ <xsd:simpleType name="string_30"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:minLength value="1" /> 
+   <xsd:maxLength value="30" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_255"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:minLength value="1" /> 
+   <xsd:maxLength value="255" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_1000"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:minLength value="1" /> 
+   <xsd:maxLength value="1000" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_CanaleVenditaTI"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:enumeration value="64876" /> 
+   <xsd:enumeration value="64880" /> 
+   <xsd:enumeration value="64947" /> 
+   <xsd:enumeration value="66017" /> 
+   <xsd:enumeration value="64877" /> 
+   <xsd:enumeration value="64878" /> 
+   <xsd:enumeration value="64879" /> 
+   <xsd:enumeration value="65377" /> 
+   <xsd:enumeration value="82868" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_CodiceEsito"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:enumeration value="0" /> 
+   <xsd:enumeration value="1" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+</xsd:schema>

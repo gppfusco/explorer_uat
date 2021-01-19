@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:eb="http://www.reply.it/existbus" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.reply.it/existbus" elementFormDefault="qualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="DocumentDataIn"> 
+  <xsd:sequence> 
+   <xsd:element name="Toponomastica" type="xsd:string" /> 
+   <xsd:element name="Indirizzo" type="xsd:string" /> 
+   <xsd:element name="Civico" type="xsd:string" /> 
+   <xsd:element name="Complesso" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Scala" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Piano" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Interno" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Localita" type="xsd:string" /> 
+   <xsd:element name="Provincia" type="xsd:string" /> 
+   <xsd:element name="ToponomasticaFatt" type="xsd:string" /> 
+   <xsd:element name="IndirizzoFatt" type="xsd:string" /> 
+   <xsd:element name="CivicoFatt" type="xsd:string" /> 
+   <xsd:element name="ComplessoFatt" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ScalaFatt" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="PianoFatt" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="InternoFatt" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="LocalitaFatt" type="xsd:string" /> 
+   <xsd:element name="ProvinciaFatt" type="xsd:string" /> 
+   <xsd:element name="CodiceCliente" type="xsd:string" /> 
+   <xsd:element name="CodiceContratto" type="xsd:string" /> 
+   <xsd:element name="CAP" type="xsd:string" /> 
+   <xsd:element name="NormalizzatoFlag" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="MatchCodeDWI" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="MatchCodeSKY" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CAPFatt" type="xsd:string" /> 
+   <xsd:element name="NormalizzatoFlagFatt" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="MatchCodeDWIFatt" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="MatchCodeSKYFatt" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CodiceLavorazione" type="xsd:string" /> 
+   <xsd:element name="FlagCoBrowsing" type="xsd:string" /> 
+   <xsd:element name="CodiceContatto" type="xsd:string" minOccurs="0" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="DocumentDataOut"> 
+  <xsd:sequence> 
+   <xsd:element name="CodiceEsigenza" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DescrizioneEsito" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Esito" type="xsd:string" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:element name="DocumentData" type="eb:DocumentDataOut" /> 
+ <xsd:element name="COMPLEX_INPUT" type="eb:DocumentDataIn" /> 
+</xsd:schema>

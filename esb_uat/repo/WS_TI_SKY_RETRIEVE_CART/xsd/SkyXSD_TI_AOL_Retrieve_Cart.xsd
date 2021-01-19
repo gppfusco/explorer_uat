@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:eb="http://www.reply.it/existbus" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:java="http://www.reply.it/existbus" targetNamespace="http://www.reply.it/existbus" elementFormDefault="unqualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="DocumentDataIn"> 
+  <xsd:sequence> 
+   <xsd:element name="input"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="IdPDA" type="java:string_30" nillable="false" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="DocumentDataOut"> 
+  <xsd:sequence> 
+   <xsd:element name="IdPDA" type="java:string_30" nillable="false" minOccurs="0" /> 
+   <xsd:element name="CarrelloSky" type="java:CarrelloSky" minOccurs="0" nillable="false" /> 
+   <xsd:element name="DataFineValiditaCarrello" type="java:string_DateTime" nillable="false" minOccurs="0" /> 
+   <xsd:element name="DataUltimoSalvataggio" type="java:string_DateTime" nillable="false" minOccurs="0" /> 
+   <xsd:element name="SemaforoConnettivita" type="java:string_SemaforoConnettivita" nillable="false" minOccurs="0" /> 
+   <xsd:element name="WMSospetta" type="java:string_012" nillable="false" minOccurs="0" /> 
+   <xsd:element name="StatoCarrello" type="java:string_StatoCarrello" nillable="false" minOccurs="0" /> 
+   <xsd:element name="FormatoInvioFattura" type="java:string_FormatoInvioFattura" nillable="false" minOccurs="0" /> 
+   <xsd:element name="TipoInvioFattura" type="java:string_TipoInvioFattura" nillable="false" minOccurs="0" /> 
+   <xsd:element name="ConsensoAnalisiPreferenze" type="java:string_YN" nillable="false" minOccurs="0" /> 
+   <xsd:element name="ConsensoComunicazioneDati" type="java:string_YN" nillable="false" minOccurs="0" /> 
+   <xsd:element name="ConsensoElabStudi" type="java:string_YN" nillable="false" minOccurs="0" /> 
+   <xsd:element name="ConsensoPrivacy" type="java:string_YN" nillable="false" minOccurs="0" /> 
+   <xsd:element name="NazionalitaCliente" type="java:string_50" nillable="false" minOccurs="0" /> 
+   <xsd:element name="Mop" type="java:MOP" minOccurs="0" nillable="false" /> 
+   <xsd:element name="DeCaAnticipo" type="java:DeCaAnticipo" minOccurs="0" nillable="false" /> 
+   <xsd:element name="PromozioneSky" type="java:string_100" nillable="false" minOccurs="0" /> 
+   <xsd:element name="IndirizzoUbicazione" type="java:IndirizzoUbicazione" minOccurs="0" nillable="false" /> 
+   <xsd:element name="CodiceEsito" type="java:string_CodiceEsito" nillable="false" /> 
+   <xsd:element name="DescrizioneEsito" type="java:string_255" nillable="false" minOccurs="0" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="CarrelloSky"> 
+  <xsd:sequence> 
+   <xsd:element name="Item" type="java:Item" minOccurs="0" maxOccurs="unbounded" nillable="false" /> 
+   <xsd:element name="PrezzoSoluzioneUnica" type="java:string_30" nillable="false" minOccurs="0" /> 
+   <xsd:element name="PrezzoMensile" type="java:string_30" nillable="false" minOccurs="0" /> 
+   <xsd:element name="PrezzoMensileListino" type="java:string_30" nillable="false" minOccurs="0" /> 
+   <xsd:element name="DurataScontoTotale" type="java:string_200" nillable="false" minOccurs="0" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="Item"> 
+  <xsd:sequence> 
+   <xsd:element name="CodiceProdotto" type="java:string_30" nillable="false" minOccurs="0" /> 
+   <xsd:element name="TipoProdotto" type="java:string_30" nillable="false" minOccurs="0" /> 
+   <xsd:element name="NomeProdotto" type="java:string_100" nillable="false" minOccurs="0" /> 
+   <xsd:element name="TipoPrezzo" type="java:string_30" nillable="false" minOccurs="0" /> 
+   <xsd:element name="Prezzo" type="java:string_30" nillable="false" minOccurs="0" /> 
+   <xsd:element name="PrezzoScontato" type="java:string_30" nillable="false" minOccurs="0" /> 
+   <xsd:element name="DurataSconto" type="java:string_200" nillable="false" minOccurs="0" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="MOP"> 
+  <xsd:sequence> 
+   <xsd:element name="MetodoPagamento" type="java:stringMinLenght" nillable="false" minOccurs="0" /> 
+   <xsd:element name="Frequenza" type="java:stringMinLenght" nillable="false" minOccurs="0" /> 
+   <xsd:element name="DatiSEPA" type="java:DatiSEPA" minOccurs="0" nillable="false" /> 
+   <xsd:element name="DatiCC" type="java:DatiCC" minOccurs="0" nillable="false" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="DatiSEPA"> 
+  <xsd:sequence> 
+   <xsd:element name="IBAN" type="java:stringMinLenght" nillable="false" minOccurs="0" /> 
+   <xsd:element name="NomeBanca" type="java:stringMinLenght" nillable="false" minOccurs="0" /> 
+   <xsd:element name="CodIdentifCreditore" type="java:stringMinLenght" nillable="false" minOccurs="0" /> 
+   <xsd:element name="RiferimentoMandato" type="java:stringMinLenght" nillable="false" minOccurs="0" /> 
+   <xsd:element name="DatiAgenzia" type="java:DatiAgenzia" minOccurs="0" nillable="false" /> 
+   <xsd:element name="DatiIntestatario" type="java:DatiIntestatario" minOccurs="0" nillable="false" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="DatiAgenzia"> 
+  <xsd:sequence> 
+   <xsd:element name="Agenzia" type="java:stringMinLenght" nillable="false" minOccurs="0" /> 
+   <xsd:element name="Localita" type="java:stringMinLenght" nillable="false" minOccurs="0" /> 
+   <xsd:element name="Indirizzo" type="java:stringMinLenght" nillable="false" minOccurs="0" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="DatiIntestatario"> 
+  <xsd:sequence> 
+   <xsd:element name="CognomeTitolare" type="java:stringMinLenght" nillable="false" minOccurs="0" /> 
+   <xsd:element name="NomeTitolare" type="java:stringMinLenght" nillable="false" minOccurs="0" /> 
+   <xsd:element name="CodiceFiscaleTitolare" type="java:stringMinLenght" nillable="false" minOccurs="0" /> 
+   <xsd:element name="SessoTitolare" type="java:stringMinLenght" nillable="false" minOccurs="0" /> 
+   <xsd:element name="DataNascitaTitolare" type="java:stringMinLenght" nillable="false" minOccurs="0" /> 
+   <xsd:element name="ComuneNascitaTitolare" type="java:stringMinLenght" nillable="false" minOccurs="0" /> 
+   <xsd:element name="ParticellaToponomasticaTitolare" type="java:stringMinLenght" nillable="false" minOccurs="0" /> 
+   <xsd:element name="IndirizzoTitolare" type="java:stringMinLenght" nillable="false" minOccurs="0" /> 
+   <xsd:element name="SiglaProvinciaTitolare" type="java:stringMinLenght" nillable="false" minOccurs="0" /> 
+   <xsd:element name="ComuneTitolare" type="java:stringMinLenght" nillable="false" minOccurs="0" /> 
+   <xsd:element name="CAPTitolare" type="java:stringMinLenght" nillable="false" minOccurs="0" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="DatiCC"> 
+  <xsd:sequence> 
+   <xsd:element name="CircuitoCC" type="java:stringMinLenght" nillable="false" minOccurs="0" /> 
+   <xsd:element name="NumeroCC" type="java:stringMinLenght" nillable="false" minOccurs="0" /> 
+   <xsd:element name="AnnoScadenzaCC" type="java:stringMinLenght" nillable="false" minOccurs="0" /> 
+   <xsd:element name="MeseScadenzaCC" type="java:stringMinLenght" nillable="false" minOccurs="0" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="DeCaAnticipo"> 
+  <xsd:sequence> 
+   <xsd:element name="ImportoDeCa" type="java:stringMinLenght" nillable="false" minOccurs="0" /> 
+   <xsd:element name="ImportoAnticipo" type="java:stringMinLenght" nillable="false" minOccurs="0" /> 
+   <xsd:element name="ImportoAltro" type="java:stringMinLenght" nillable="false" minOccurs="0" /> 
+   <xsd:element name="ImportoTotale" type="java:stringMinLenght" nillable="false" minOccurs="0" /> 
+   <xsd:element name="MetodoPagamento" type="java:stringMinLenght" nillable="false" minOccurs="0" /> 
+   <xsd:element name="CircuitoCC" type="java:stringMinLenght" nillable="false" minOccurs="0" /> 
+   <xsd:element name="AnnoScadenzaCC" type="java:stringMinLenght" nillable="false" minOccurs="0" /> 
+   <xsd:element name="MeseScadenzaCC" type="java:stringMinLenght" nillable="false" minOccurs="0" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="IndirizzoUbicazione"> 
+  <xsd:sequence> 
+   <xsd:element name="ParticellaToponomastica" type="java:string_50" nillable="false" minOccurs="0" /> 
+   <xsd:element name="Indirizzo" type="java:string_200" nillable="false" minOccurs="0" /> 
+   <xsd:element name="Civico" type="java:string_30" nillable="false" minOccurs="0" /> 
+   <xsd:element name="Comune" type="java:string_100" nillable="false" minOccurs="0" /> 
+   <xsd:element name="Cap" type="java:string_5" nillable="false" minOccurs="0" /> 
+   <xsd:element name="Provincia" type="java:string_2" nillable="false" minOccurs="0" /> 
+   <xsd:element name="Citofono" type="java:string_50" nillable="false" minOccurs="0" /> 
+   <xsd:element name="Scala" type="java:string_50" nillable="false" minOccurs="0" /> 
+   <xsd:element name="Piano" type="java:string_50" nillable="false" minOccurs="0" /> 
+   <xsd:element name="Complesso" type="java:string_50" nillable="false" minOccurs="0" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:element name="DocumentData" type="eb:DocumentDataOut" /> 
+ <xsd:element name="COMPLEX_OUTPUT" type="eb:DocumentDataOut" /> 
+ <xsd:element name="COMPLEX_INPUT" type="eb:DocumentDataIn" /> 
+ <xsd:simpleType name="stringMinLenght"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:minLength value="1" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_2"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:minLength value="2" /> 
+   <xsd:maxLength value="2" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_5"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:minLength value="1" /> 
+   <xsd:maxLength value="5" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_10"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:minLength value="1" /> 
+   <xsd:maxLength value="10" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_15"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:minLength value="1" /> 
+   <xsd:maxLength value="15" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_30"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:minLength value="1" /> 
+   <xsd:maxLength value="30" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_40"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:minLength value="1" /> 
+   <xsd:maxLength value="40" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_50"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:minLength value="1" /> 
+   <xsd:maxLength value="50" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_100"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:minLength value="1" /> 
+   <xsd:maxLength value="100" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_200"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:minLength value="1" /> 
+   <xsd:maxLength value="200" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_250"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:minLength value="1" /> 
+   <xsd:maxLength value="250" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_255"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:minLength value="1" /> 
+   <xsd:maxLength value="255" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_CodiceEsito"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:enumeration value="0" /> 
+   <xsd:enumeration value="1" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_YN"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:enumeration value="Y" /> 
+   <xsd:enumeration value="N" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_MF"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:enumeration value="M" /> 
+   <xsd:enumeration value="F" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_Stato"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:enumeration value="Aperta" /> 
+   <xsd:enumeration value="Chiusa" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_Piattaforma"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:enumeration value="DTH" /> 
+   <xsd:enumeration value="OLD IPTV TI" /> 
+   <xsd:enumeration value="IPTV TI" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_012"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:enumeration value="0" /> 
+   <xsd:enumeration value="1" /> 
+   <xsd:enumeration value="2" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_SemaforoConnettivita"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:enumeration value="Alto" /> 
+   <xsd:enumeration value="Medio" /> 
+   <xsd:enumeration value="Basso" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_AttivoCessato"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:enumeration value="ATTIVO" /> 
+   <xsd:enumeration value="CESSATO" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_StatoCarrello"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:enumeration value="Attesa VO" /> 
+   <xsd:enumeration value="Scadenza Promozione Sky" /> 
+   <xsd:enumeration value="Scadenza SLA" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_FormatoInvioFattura"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:enumeration value="CARTACEO" /> 
+   <xsd:enumeration value="ELETTRONICO" /> 
+   <xsd:enumeration value="NESSUNO" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_TipoInvioFattura"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:enumeration value="SEMPRE" /> 
+   <xsd:enumeration value="SEMPRE - NO DETTAGLIO PPV" /> 
+   <xsd:enumeration value="SOLO PPV" /> 
+   <xsd:enumeration value="SOLO PPV" /> 
+   <xsd:enumeration value="SOLO PPV - NO DETTAGLIO PPV" /> 
+   <xsd:enumeration value="MAI" /> 
+   <xsd:enumeration value="MAI - NO DETTAGLIO PPV" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_Date"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:pattern value="\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_DateTime"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:pattern value="\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T(0[0-9]|1[0-9]|2[0-3]):(0[0-9]|[1-5][0-9]):(0[0-9]|[1-5][0-9])" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+</xsd:schema>

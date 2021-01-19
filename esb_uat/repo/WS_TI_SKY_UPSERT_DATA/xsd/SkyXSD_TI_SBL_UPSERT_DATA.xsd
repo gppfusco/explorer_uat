@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:eb="http://www.reply.it/existbus" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.reply.it/existbus" elementFormDefault="qualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="DocumentDataIn"> 
+  <xsd:sequence> 
+   <xsd:element name="IdPDA" type="eb:string_30" nillable="false" /> 
+   <xsd:element name="CodiceContrattoSky" type="eb:string_30" nillable="false" /> 
+   <xsd:element name="DatiAnagrafici" nillable="false" minOccurs="0"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="TipoDocumento" type="eb:string_TipoDocumento" nillable="false" minOccurs="0" /> 
+      <xsd:element name="NumeroDocumento" type="eb:string_15" nillable="false" minOccurs="0" /> 
+      <xsd:element name="DataScadenzaDocumento" type="eb:string_Date" nillable="false" minOccurs="0" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="DatiContatto" nillable="false" minOccurs="0"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="EmailPrimariaCertifTI" type="eb:string_50" nillable="false" minOccurs="0" /> 
+      <xsd:element name="SovrascriviEmailPrimariaSky" type="eb:string_YN" nillable="false" minOccurs="0" /> 
+      <xsd:element name="EmailSecondariaTI" type="eb:string_50" nillable="false" minOccurs="0" /> 
+      <xsd:element name="NumeroTelefonoImpianto" type="eb:string_50" nillable="false" minOccurs="0" /> 
+      <xsd:element name="NumeroFissoSecondario" type="eb:string_40" nillable="false" minOccurs="0" /> 
+      <xsd:element name="NumeroCellulare" type="eb:string_40" nillable="false" minOccurs="0" /> 
+      <xsd:element name="Fax" type="eb:string_40" nillable="false" minOccurs="0" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="DatiContrattuali" nillable="false" minOccurs="0"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="CodiceRegVO" type="eb:string_30" nillable="false" minOccurs="0" /> 
+      <xsd:element name="SemaforoConnettivita" type="eb:string_SemaforoConnettivita" nillable="false" minOccurs="0" /> 
+      <xsd:element name="CaratterizzazioneLavorazione" type="eb:string_CaratterizzazioneLavorazione" nillable="false" minOccurs="0" /> 
+      <xsd:element name="DataScadenzaIPTV" type="eb:string_Date" nillable="false" minOccurs="0" /> 
+      <xsd:element name="DataCessazioneCompTI" type="eb:string_Date" nillable="false" minOccurs="0" /> 
+      <xsd:element name="DataAnnullamentoTI" type="eb:string_Date" nillable="false" minOccurs="0" /> 
+      <xsd:element name="CausaleAnnullamentoTI" type="eb:string_50" nillable="false" minOccurs="0" /> 
+      <xsd:element name="DataRichiestaCessazTI" type="eb:string_Date" nillable="false" minOccurs="0" /> 
+      <xsd:element name="DataUltimaSospTI" type="eb:string_Date" nillable="false" minOccurs="0" /> 
+      <xsd:element name="DataUltimaRiattivPostSospTI" type="eb:string_Date" nillable="false" minOccurs="0" /> 
+      <xsd:element name="TipologiaOL" type="eb:string_50" nillable="false" minOccurs="0" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="IndirizzoUbicazione" nillable="false" minOccurs="0"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="Localita" type="eb:string_100" nillable="false" minOccurs="0" /> 
+      <xsd:element name="ParticellaToponomastica" type="eb:string_50" nillable="false" minOccurs="0" /> 
+      <xsd:element name="Indirizzo" type="eb:string_200" nillable="false" minOccurs="0" /> 
+      <xsd:element name="NumeroCivico" type="eb:string_30" nillable="false" minOccurs="0" /> 
+      <xsd:element name="CAP" type="eb:string_5" nillable="false" minOccurs="0" /> 
+      <xsd:element name="Provincia" type="eb:string_2" nillable="false" minOccurs="0" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="DocumentDataOut"> 
+  <xsd:sequence> 
+   <xsd:element name="CodiceEsito" type="eb:string_CodiceEsito" nillable="false" minOccurs="0" /> 
+   <xsd:element name="DescrizioneEsito" type="eb:string_255" nillable="false" minOccurs="0" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:element name="DocumentData" type="eb:DocumentDataOut" /> 
+ <xsd:element name="COMPLEX_OUTPUT" type="eb:DocumentDataOut" /> 
+ <xsd:element name="COMPLEX_INPUT" type="eb:DocumentDataIn" /> 
+ <xsd:simpleType name="string_10"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:minLength value="1" /> 
+   <xsd:maxLength value="10" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_2"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:minLength value="1" /> 
+   <xsd:maxLength value="2" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_5"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:minLength value="1" /> 
+   <xsd:maxLength value="5" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_15"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:minLength value="1" /> 
+   <xsd:maxLength value="15" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_30"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:minLength value="1" /> 
+   <xsd:maxLength value="30" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_40"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:minLength value="1" /> 
+   <xsd:maxLength value="40" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_50"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:minLength value="1" /> 
+   <xsd:maxLength value="50" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_100"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:minLength value="1" /> 
+   <xsd:maxLength value="100" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_200"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:minLength value="1" /> 
+   <xsd:maxLength value="200" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_250"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:minLength value="1" /> 
+   <xsd:maxLength value="250" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_255"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:minLength value="1" /> 
+   <xsd:maxLength value="255" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_CodiceEsito"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:enumeration value="0" /> 
+   <xsd:enumeration value="1" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_YN"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:enumeration value="Y" /> 
+   <xsd:enumeration value="N" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_SemaforoConnettivita"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:enumeration value="Alto" /> 
+   <xsd:enumeration value="Medio" /> 
+   <xsd:enumeration value="Basso" /> 
+   <xsd:enumeration value="Molto basso" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_CaratterizzazioneLavorazione"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:enumeration value="NIP" /> 
+   <xsd:enumeration value="Rientro - Delibera 274" /> 
+   <xsd:enumeration value="Rientro - Delibera 35" /> 
+   <xsd:enumeration value="CB" /> 
+   <xsd:enumeration value="Rientro" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_TipoDocumento"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:enumeration value="Carta Identità" /> 
+   <xsd:enumeration value="Patente di Guida" /> 
+   <xsd:enumeration value="Passaporto" /> 
+   <xsd:enumeration value="Altro" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_Date"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:pattern value="\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+</xsd:schema>

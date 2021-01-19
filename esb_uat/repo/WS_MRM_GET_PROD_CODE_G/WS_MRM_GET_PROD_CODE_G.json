@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_MRM_GET_PROD_CODE_G",
+    "name" : "WS_MRM_GET_PROD_CODE_G",
+    "remoteName" : "WS_MRM_GET_PROD_CODE_G",
+    "localPath" : "esb_uat\\repo\\WS_MRM_GET_PROD_CODE_G",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_MRM_GET_PROD_CODE_G?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

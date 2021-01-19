@@ -1,0 +1,21 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_SCMS_SBL_INVIO_EMAIL",
+    "name" : "WS_SCMS_SBL_INVIO_EMAIL",
+    "remoteName" : "WS_SCMS_SBL_INVIO_EMAIL",
+    "localPath" : "esb_uat\\repo\\WS_SCMS_SBL_INVIO_EMAIL",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_SCMS_SBL_INVIO_EMAIL?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "SkyXSD_WS_SCMS_SBL_INVIO_EMAIL.xsd",
+        "xsdNameSpace" : "http://www.reply.it/existbus"
+      } ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_AOL_FB_CALCOLA_MGM",
+    "name" : "WS_AOL_FB_CALCOLA_MGM",
+    "remoteName" : "WS_AOL_FB_CALCOLA_MGM",
+    "localPath" : "esb_uat\\repo\\WS_AOL_FB_CALCOLA_MGM",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_AOL_FB_CALCOLA_MGM?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

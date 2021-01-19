@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:eb="http://www.reply.it/existbus" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.reply.it/existbus" elementFormDefault="qualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="RequestGestioneAssetType"> 
+  <xsd:sequence> 
+   <xsd:element name="NumODL" type="xsd:string" /> 
+   <xsd:element name="CodiceInstaller" type="xsd:string" /> 
+   <xsd:element name="CodiceSubInstaller" minOccurs="0" type="xsd:string" /> 
+   <xsd:element name="Matricole" minOccurs="0"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="MatricolaInL2" minOccurs="1" maxOccurs="unbounded"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="AssetNum" type="xsd:string" /> 
+         <xsd:element name="Tipo" type="xsd:string" /> 
+         <xsd:element name="MatricolaSTB" minOccurs="0" type="xsd:string" /> 
+         <xsd:element name="TipoConnBooster" minOccurs="0" type="xsd:string" /> 
+         <xsd:element name="Automatic" minOccurs="0" type="xsd:string" /> 
+        </xsd:sequence> 
+       </xsd:complexType> 
+      </xsd:element> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="Pacchetti" minOccurs="0"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="Pacchetto" minOccurs="1" maxOccurs="unbounded"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="IdTracking" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="IntegrationIdPacchetto" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="IdPacchetto" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Matricola" minOccurs="1" maxOccurs="unbounded"> 
+          <xsd:complexType> 
+           <xsd:sequence> 
+            <xsd:element name="OldMatricola" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="TecnologiaSTB" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="NewMatricola" type="xsd:string" /> 
+            <xsd:element name="Tipo" type="xsd:string" /> 
+            <xsd:element name="DecoderFunzionante" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="CambioConfigurazione" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="FurtoSmarrimento" type="xsd:string" minOccurs="0" /> 
+           </xsd:sequence> 
+          </xsd:complexType> 
+         </xsd:element> 
+        </xsd:sequence> 
+       </xsd:complexType> 
+      </xsd:element> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="TipoOperazione" type="xsd:string" /> 
+   <xsd:element name="Tid" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="OperatoreSM" type="xsd:string" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="ResponseGestioneAssetType"> 
+  <xsd:sequence> 
+   <xsd:element name="Matricole" minOccurs="0"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="Matricola" minOccurs="0" maxOccurs="unbounded"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="AssetNum" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="EsitoCheck" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="DescrizioneCheck" type="xsd:string" minOccurs="0" /> 
+        </xsd:sequence> 
+       </xsd:complexType> 
+      </xsd:element> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="Esito" type="xsd:string" minOccurs="1" /> 
+   <xsd:element name="DescrizioneEsito" type="xsd:string" minOccurs="0" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:element name="ResponseGestioneAsset" type="eb:ResponseGestioneAssetType" /> 
+ <xsd:element name="RequestGestioneAsset" type="eb:RequestGestioneAssetType" /> 
+</xsd:schema>

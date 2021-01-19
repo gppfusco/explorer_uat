@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_WSC_EGON_CHECK_DATI_CF",
+    "name" : "WS_WSC_EGON_CHECK_DATI_CF",
+    "remoteName" : "WS_WSC_EGON_CHECK_DATI_CF",
+    "localPath" : "esb_uat\\repo\\WS_WSC_EGON_CHECK_DATI_CF",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_WSC_EGON_CHECK_DATI_CF?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

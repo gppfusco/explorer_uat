@@ -1,0 +1,1102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:eb="http://www.reply.it/existbus" targetNamespace="http://www.reply.it/existbus" elementFormDefault="qualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="COMPLEX_INPUT"> 
+  <xsd:sequence> 
+   <xsd:element name="IdAnagrafica"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XCubeOwner" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="50" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="IdLead"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XTreatmentCode"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="20" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XCellCode"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="20" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XAbi" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:int" /> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XAltroTelefono" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="50" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XAltroTelefonoFru" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="50" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XBbFlgOffertaBundle" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XCab" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="15" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XCampaignCode"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="20" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XCap"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XCapFru" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XCodiceDealer"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XCodiceFiscale"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="50" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XCodiceFiscaleFru" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="50" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XCodiceIban"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="34" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XCodicePromo"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XCodicePromozione" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="15" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XCodicePromozione2" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="15" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XCodiceVenditore" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XCodiceVenditore2" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XCognome"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="100" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XCognomeFru" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="100" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XComunicareDatiFlg"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="1" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XConsistenza"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="500" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XDataNascita"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:date" /> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XDataNascitaFru" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:date" /> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XDataOrderEntryCli"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:date" /> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XDataRicezione"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:dateTime" /> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XDealer"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="15" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XEmail"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="50" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XFlagSkyMagazine"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="1" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XFormatoInvioFattura"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="20" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XGenere"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XJSessionId"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="300" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XIndirizzo" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="200" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XIndirizzoFru"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="200" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XIndirizzoForzatoFlg" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XIndirizzoFruForzatoFlg" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XInterno" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="9" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XInternoFru" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="9" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XIntestatarioCc"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="50" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XLocalita"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="50" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XLocalitaFru" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="50" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XLoginOperatore"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XLuogoNascita"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="100" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XLuogoNascitaFru" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="100" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XMop"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XMopDp"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XMultivisionFlg" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XNome"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="50" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XNomeFru" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="50" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XNote" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="1000" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XNumeroAppFlg" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XNumeroCc"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="50" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XNumeroCcDp" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="50" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XNumeroCivico"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XNumeroCivicoFru" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XNumeroConto"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="50" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XNumeroContatti" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:int" /> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XNumeroDocumento"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="15" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XNumeroDocumentoFru" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="15" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XOnlySmartCardFlg" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XPacchetto"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="100" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XPacchettoAggiuntivo"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="50" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XParticellaToponomastica"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="50" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XParticellaToponomasticaFru" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="50" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XPeriodicitaFatturazione" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XPiano" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="3" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XPromoId"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="15" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XProvincia"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XProvinciaFru" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XProvinciaNascita"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XProvinciaNascitaFru" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XScadenzaCcAnno"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XScadenzaCcAnnoDp" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XScadenzaCcMese"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XScadenzaCcMeseDp" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XScala" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="5" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XSession" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="100" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XSesso"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="1" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XSessoFru" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XTecnologia"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XTelefono"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="40" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XTelefonoContatto" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="40" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XTelefonoFru" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="40" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XTipoAnagrafica" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XTipoAnagraficaFru" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XTipoCc"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XTipoCcDp" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XTipoDocumento"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XTipoDocumentoFru" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XTipoInstallazione"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XTipoInvioFattura"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XVisione"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XTipoCarta" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="15" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XOption" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="100" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XanalPreFlg"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="1" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XelabStudFlg"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="1" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XBes1XM" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="100" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XBes1YM" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="100" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XBes1XG" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="100" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XBes1YG" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="100" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XVLXBes" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="100" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XAttVLXAtt" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="100" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XIdCIV" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="100" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XFLXCTX" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="100" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XNAB" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="100" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XNABAll" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="100" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XOrderNumber"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="30" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XMatchCodeEgon" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="EsitoSpy" minOccurs="0"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:maxLength value="10" /> 
+      <xsd:minLength value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="XBBCOMUNEDOC" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBPROVINCIARILDOC" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBENTERILDOC" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBNAZIONDOC" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBTELCELLULARE" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBNAZIONENASCITA" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBIDPDA" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBDATANOTIF" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBDATARILDOC" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBTECNOLOGIACOPERTURADTH" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBCODICEDONOR" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBCDMDATI" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBCLUSTER" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBASSETFW" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBDATASCADPERMSOGG" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBOPERATOREDATINP" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBTIPOINDIRINTNP" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBSESSIONTOKENFW" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBTIPOOPVOCE" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBTIPOINVIORECAP" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBDESCOPDONOR" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBSESSIONTOKENCARRFW" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBCHKCLACTION" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBIDBUNDLE" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBCONCEPTCODE" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBCODETECNOLOGIA" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBIDANELLO" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBDESCRESITO" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBTIPOMOP" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBCOGNOMERAGSOCINTNP" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBCODICECOMSY" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBNOMEINTNP" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBLOCALITAINTNP" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBSTATORICHIESTA" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBRIDDATANASCITA" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBCHKCLCAUSALE" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBOFFERTABUNDLE" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBCLUSTERPSPM" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBRISCREDITCHECK" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBCDMVOCE" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBIDSGUFTTS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBTECNOLOGIAFTTS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBCAPINTNP" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBFLGCONSENSO1" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBCODICECDFFW" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBINDIRINTNP" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBISTANCEFW" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBFLGCONSENSOELENCHITEL" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBFLGCONSENSO2" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBTIPOLINEA" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBTIPOOPDATI" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBVOCALORDERING" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBBUNDLEAVAIL" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBESITOFRAUDCHECK" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBDESCESITO" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBDONOROLOVOCE" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBCCSCADENZAMM" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBRIDIBAN" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBNUMPERMSOGG" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBNUMCIVICOINTNP" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBPROVINCIAINTNP" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBIDRICHIESTA" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBCHECKNP" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBDONOROLODATI" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBCOMMISSIONINGSKY" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBFLAGMOBILE" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBTECNOLOGIA" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBFLGAZIENDAINTNP" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBFLGAUTDATI1" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBCODICECLIENTEFW" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBIDINDIRIZZOFW" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBIDCODICESGU" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBCAUSAELIGIBIL" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBRIDCAB" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBCCNUMERO" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBCOMMISSIONINGFW" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBFLGDEALERCOND" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBCNP" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBIDCABINETFTTS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBDATAATTIVAZIONEFTTS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBCFPIVAINTNP" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBFLGCLIENTEFW" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBLINEATELATTIVA" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBTIPODN" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBTIPOPROVISIONING" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBVENDCHECKEL" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBRIDCONTO" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBCCSCADENZAAAAA" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBRIDCOGNOME" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBRIDNOME" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBCLUSTERCOMMISSIONING" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBPKEY" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBPINTELECOM" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBFLGPREVENDITAFTTS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBHEADERFW" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBFLGNP" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBTELNUMBERNP" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBOPERATORETELNP" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBTELDNAPPOGGIO" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBDESCRSGU" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBAZIONEFW" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBRIDABI" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBRIDCOMUNENASCITA" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBRIDSESSO" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBRIDCODICEFISCALE" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBACCOUNTNUMBERFW" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CarrelloFW" type="eb:t_CarrelloFW" /> 
+   <xsd:element name="XMAILPAY" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XNUMEROAPPFABRICATO" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XMODEMFW" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XINSTALFW" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XFIBRA100" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XNOLIMTS" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XCodiceAutorDP" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XDataAddebitoDP" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XProgressivoBloccoDP" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XDownpayment" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XRagioneSociale" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XPartitaIva" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XRagioneSocialeFru" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XPartitaIvaFru" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XMailFru" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XComplesso" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XScalaFru" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XPianoFru" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XCitofonoFru" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XPagDivFruFlg" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Asset" type="eb:t_Asset" minOccurs="0" /> 
+   <xsd:element name="XTipoInvioRecap" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XPaese" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBanca" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XAgenzia" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Marketing" type="eb:t_Marketing" minOccurs="0" /> 
+   <xsd:element name="XElaborareStudiFlg" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XAnalizzarePreferenzeFlg" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBPrivacyFlg1" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBBPrivacyFlg2" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Lead" type="eb:t_Lead" minOccurs="0" /> 
+   <xsd:element name="XComplex" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XMatchCodeEgonFruitore" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBes1XMFru" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBes1YMFru" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBes1XGFru" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XBes1YGFru" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XVLXBesFru" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XAttVLXAttFru" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XIdCIVFru" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XFLXCTXFru" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XNABFru" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XNABAllFru" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XSerialePacco" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XLocalitaCons" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XComplessoCons" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XParticellaToponomasticaCons" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XScalaCons" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XIndirizzoCons" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XPianoCons" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XNumeroCivicoCons" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XInternoCons" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XProvinciaCons" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XCitofonoCons" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XCapCons" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XComplessoPag" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XCitofonoPag" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XNomeTitolare" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XCognomeTitolare" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XCFTitolare" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XDataNascitaTit" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XSessoTit" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XPaeseNascitaTit" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XLocalitaNascitaTit" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XProvNascitaTit" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XLocalitaTit" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XIndirizzoTit" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XProvinciaTit" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XCapTit" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XPaeseTit" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XGenereMV" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XCodicePromoMV" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XTecnologiaMV" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XPrimoVoucher" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XSecondoVoucher" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="xImportoDeca" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="xModPagDeca" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XCodFiscAzienda" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XInteresseSOD" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XTipoConnettivita" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XIdOpportunity" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XContrattoFirmato" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XFilePathContrattoFirmato" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="XDirettriceWeb" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="IGFStid" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="IGFSshopID" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="IGFSpaymentID" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="IGFSaccountName" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="IGFStidDP" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="IGFSshopIDDP" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="IGFSrefTranIDDP" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="IGFSaccountNameDP" type="xsd:string" minOccurs="0" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="t_CarrelloFW"> 
+  <xsd:sequence> 
+   <xsd:element name="Item" type="eb:t_Item" maxOccurs="unbounded" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="t_Item"> 
+  <xsd:sequence> 
+   <xsd:element name="CodiceIstanza" type="xsd:string" /> 
+   <xsd:element name="CodiceProdotto" type="xsd:string" /> 
+   <xsd:element name="TipoProdotto" type="xsd:string" /> 
+   <xsd:element name="NomeProdotto" type="xsd:string" /> 
+   <xsd:element name="TipoPrezzo" type="xsd:string" /> 
+   <xsd:element name="PrezzoProdotto" type="xsd:string" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="t_Asset"> 
+  <xsd:sequence> 
+   <xsd:element name="ItemAsset" type="eb:t_ItemAsset" maxOccurs="unbounded" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="t_ItemAsset"> 
+  <xsd:sequence> 
+   <xsd:element name="XTipoPacchetto" type="xsd:string" /> 
+   <xsd:element name="X_Matricola" type="xsd:string" /> 
+   <xsd:element name="XTipoProdotto" type="xsd:string" /> 
+   <xsd:element name="XRateCode" type="xsd:string" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="t_Marketing"> 
+  <xsd:sequence> 
+   <xsd:element name="ItemMarketing" type="eb:t_ItemMarketing" maxOccurs="unbounded" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="t_ItemMarketing"> 
+  <xsd:sequence> 
+   <xsd:element name="XValore" type="xsd:string" /> 
+   <xsd:element name="XTipoDato" type="xsd:string" /> 
+   <xsd:element name="XConfermaFlg" type="xsd:string" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="t_Lead"> 
+  <xsd:sequence> 
+   <xsd:element name="ItemLead" type="eb:t_ItemLead" maxOccurs="unbounded" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="t_ItemLead"> 
+  <xsd:sequence> 
+   <xsd:element name="XDealer" type="xsd:string" /> 
+   <xsd:element name="XProcacciatore" type="xsd:string" /> 
+   <xsd:element name="XsecondoVenditore" type="xsd:string" /> 
+   <xsd:element name="XDataContatto" type="xsd:string" /> 
+   <xsd:element name="Xpromozione" type="xsd:string" /> 
+   <xsd:element name="Xcanale" type="xsd:string" /> 
+   <xsd:element name="Xmail" type="xsd:string" /> 
+   <xsd:element name="XOrderNum" type="xsd:string" /> 
+   <xsd:element name="XIdLead" type="xsd:string" /> 
+   <xsd:element name="XTelefono" type="xsd:string" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="COMPLEX_OUTPUT"> 
+  <xsd:sequence> 
+   <xsd:element name="Esito"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:length value="1" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="Descrizione" type="xsd:string" minOccurs="0" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+</xsd:schema>

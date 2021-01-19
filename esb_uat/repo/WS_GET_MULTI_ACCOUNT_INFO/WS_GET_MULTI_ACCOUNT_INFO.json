@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_GET_MULTI_ACCOUNT_INFO",
+    "name" : "WS_GET_MULTI_ACCOUNT_INFO",
+    "remoteName" : "WS_GET_MULTI_ACCOUNT_INFO",
+    "localPath" : "esb_uat\\repo\\WS_GET_MULTI_ACCOUNT_INFO",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_GET_MULTI_ACCOUNT_INFO?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

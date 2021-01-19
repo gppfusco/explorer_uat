@@ -1,0 +1,21 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_SKYGO_SBL_ELIGIBILY_DATE",
+    "name" : "WS_SKYGO_SBL_ELIGIBILY_DATE",
+    "remoteName" : "WS_SKYGO_SBL_ELIGIBILY_DATE",
+    "localPath" : "esb_uat\\repo\\WS_SKYGO_SBL_ELIGIBILY_DATE",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_SKYGO_SBL_ELIGIBILY_DATE?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "xsdSiebel/xsdSKYGO/SkyXSD_WS_SKYGO_SBL_ELIGIBILY_DATE.xsd",
+        "xsdNameSpace" : "http://www.reply.it/existbus"
+      } ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

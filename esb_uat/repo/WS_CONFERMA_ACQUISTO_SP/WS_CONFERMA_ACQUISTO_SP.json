@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_CONFERMA_ACQUISTO_SP",
+    "name" : "WS_CONFERMA_ACQUISTO_SP",
+    "remoteName" : "WS_CONFERMA_ACQUISTO_SP",
+    "localPath" : "esb_uat\\repo\\WS_CONFERMA_ACQUISTO_SP",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_CONFERMA_ACQUISTO_SP?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

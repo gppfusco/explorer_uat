@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_TI_SKY_CHANGE_STATUS",
+    "name" : "WS_TI_SKY_CHANGE_STATUS",
+    "remoteName" : "WS_TI_SKY_CHANGE_STATUS",
+    "localPath" : "esb_uat\\repo\\WS_TI_SKY_CHANGE_STATUS",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_TI_SKY_CHANGE_STATUS?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

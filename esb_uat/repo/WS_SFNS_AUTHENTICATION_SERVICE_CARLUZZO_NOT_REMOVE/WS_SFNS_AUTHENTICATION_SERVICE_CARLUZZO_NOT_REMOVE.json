@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_SFNS_AUTHENTICATION_SERVICE_CARLUZZO_NOT_REMOVE",
+    "name" : "WS_SFNS_AUTHENTICATION_SERVICE_CARLUZZO_NOT_REMOVE",
+    "remoteName" : "WS_SFNS_AUTHENTICATION_SERVICE_CARLUZZO_NOT_REMOVE",
+    "localPath" : "esb_uat\\repo\\WS_SFNS_AUTHENTICATION_SERVICE_CARLUZZO_NOT_REMOVE",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_SFNS_AUTHENTICATION_SERVICE_CARLUZZO_NOT_REMOVE?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

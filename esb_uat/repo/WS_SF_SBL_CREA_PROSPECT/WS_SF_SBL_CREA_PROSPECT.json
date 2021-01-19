@@ -1,0 +1,21 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_SF_SBL_CREA_PROSPECT",
+    "name" : "WS_SF_SBL_CREA_PROSPECT",
+    "remoteName" : "WS_SF_SBL_CREA_PROSPECT",
+    "localPath" : "esb_uat\\repo\\WS_SF_SBL_CREA_PROSPECT",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_SF_SBL_CREA_PROSPECT?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "SkyXSD_SF_SBL_CREA_PROSPECT.xsd",
+        "xsdNameSpace" : "http://www.reply.it/existbus"
+      } ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

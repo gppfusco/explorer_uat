@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_MAGENTO_CHP_AUTHENTICATION_SERVICE",
+    "name" : "WS_MAGENTO_CHP_AUTHENTICATION_SERVICE",
+    "remoteName" : "WS_MAGENTO_CHP_AUTHENTICATION_SERVICE",
+    "localPath" : "esb_uat\\repo\\WS_MAGENTO_CHP_AUTHENTICATION_SERVICE",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_MAGENTO_CHP_AUTHENTICATION_SERVICE?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

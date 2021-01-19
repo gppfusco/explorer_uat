@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_HTL_CAMBIO_CANALE",
+    "name" : "WS_HTL_CAMBIO_CANALE",
+    "remoteName" : "WS_HTL_CAMBIO_CANALE",
+    "localPath" : "esb_uat\\repo\\WS_HTL_CAMBIO_CANALE",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_HTL_CAMBIO_CANALE?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

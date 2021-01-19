@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:eb="http://www.reply.it/existbus" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:java="http://www.reply.it/existbus" targetNamespace="http://www.reply.it/existbus" elementFormDefault="unqualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="DocumentDataInSBL"> 
+  <xsd:sequence> 
+   <xsd:element name="IdPDA" type="eb:stringMinLenght" nillable="false" /> 
+   <xsd:element name="MatricolaSTB" type="eb:stringMinLenght" nillable="false" /> 
+   <xsd:element name="MatricolaSMC" type="eb:stringMinLenght" nillable="false" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="DocumentDataOutSBL"> 
+  <xsd:sequence> 
+   <xsd:element name="CodiceEsito" type="eb:stringMinLenght" nillable="false" /> 
+   <xsd:element name="DescrizioneEsito" type="eb:stringMinLenght" nillable="false" minOccurs="0" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:element name="DocumentData" type="eb:DocumentDataOutSBL" /> 
+ <xsd:element name="COMPLEX_OUTPUT" type="eb:DocumentDataOutSBL" /> 
+ <xsd:element name="COMPLEX_INPUT" type="eb:DocumentDataInSBL" /> 
+ <xsd:simpleType name="stringMinLenght"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:minLength value="1" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+</xsd:schema>

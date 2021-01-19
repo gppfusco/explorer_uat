@@ -1,0 +1,21 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_WSC2_GETPROMOCOMPATIBILIALL",
+    "name" : "WS_WSC2_GETPROMOCOMPATIBILIALL",
+    "remoteName" : "WS_WSC2_GETPROMOCOMPATIBILIALL",
+    "localPath" : "esb_uat\\repo\\WS_WSC2_GETPROMOCOMPATIBILIALL",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_WSC2_GETPROMOCOMPATIBILIALL?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "SkyXSD_WS_WSC2_GETPROMOCOMPATIBILIALL.xsd",
+        "xsdNameSpace" : "http://www.reply.it/existbus"
+      } ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

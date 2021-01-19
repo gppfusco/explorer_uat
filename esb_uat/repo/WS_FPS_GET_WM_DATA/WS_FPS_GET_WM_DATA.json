@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_FPS_GET_WM_DATA",
+    "name" : "WS_FPS_GET_WM_DATA",
+    "remoteName" : "WS_FPS_GET_WM_DATA",
+    "localPath" : "esb_uat\\repo\\WS_FPS_GET_WM_DATA",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_FPS_GET_WM_DATA?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

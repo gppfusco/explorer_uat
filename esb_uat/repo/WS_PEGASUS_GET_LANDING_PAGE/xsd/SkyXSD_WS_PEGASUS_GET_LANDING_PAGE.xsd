@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:eb="http://www.reply.it/existbus" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.reply.it/existbus" elementFormDefault="qualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="COMPLEX_INPUT"> 
+  <xsd:sequence> 
+   <xsd:element name="LandingPage" maxOccurs="1"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="TIDPGS" type="xsd:string" /> 
+      <xsd:element name="CodiceLavorazione" type="xsd:string" /> 
+      <xsd:element name="LandingPageType" type="xsd:string" /> 
+      <xsd:element name="NomeCliente" type="xsd:string" /> 
+      <xsd:element name="CognomeCliente" type="xsd:string" /> 
+      <xsd:element name="CodiceCliente" type="xsd:string" /> 
+      <xsd:element name="CodiceFiscale" type="xsd:string" /> 
+      <xsd:element name="DataNascita" type="xsd:string" /> 
+      <xsd:element name="AnalisiPreferenze" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="Email" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="StatisticheFlag" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="FlgSesso" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="NomePromo " type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="CodicePromo" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="DescrizionePromo" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="CodiceLandingPage" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="CodServizioPremium" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="CodServizioPremiumAgg" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="CodicePromoAgg" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="ServizioDowngrade" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="ServizioPremium" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="DataAdesionePromo" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="DataRichAttivazione" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="DataRichCessazione" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="DataScadContratto" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="DescrizionePaccArr" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="DescrizionePaccPar" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="CodiceContratto" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="ExitFee" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="LoginOp" type="xsd:string" /> 
+      <xsd:element name="ConsensoDatiAnytimeFlag" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="RateCode" type="xsd:string" minOccurs="0" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="COMPLEX_OUTPUT"> 
+  <xsd:sequence> 
+   <xsd:element name="DescrizioneEsito" type="xsd:string" /> 
+   <xsd:element name="Esito" type="xsd:string" /> 
+   <xsd:element name="LinkLandingPage" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="TIDPGS" type="xsd:string" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+</xsd:schema>

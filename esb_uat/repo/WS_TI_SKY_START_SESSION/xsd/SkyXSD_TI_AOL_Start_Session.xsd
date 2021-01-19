@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:eb="http://www.reply.it/existbus" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.reply.it/existbus" elementFormDefault="unqualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="DocumentDataIn"> 
+  <xsd:sequence> 
+   <xsd:element name="input"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="IdPDA" nillable="false" type="eb:string_30" /> 
+      <xsd:element name="SemaforoConnettivita" nillable="false" type="eb:string_SemaforoConnettivita" /> 
+      <xsd:element name="CanaleVenditaTI" nillable="false" type="eb:string_CanaleVenditaTI" /> 
+      <xsd:element name="CaratterizzazioneLavorazione" nillable="false" type="eb:string_CaratterizzazioneLavorazione" /> 
+      <xsd:element name="UrlTI" nillable="false" type="eb:string_1000" minOccurs="0" /> 
+      <xsd:element name="Redirect" nillable="false" type="eb:string_YN" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="DocumentDataOut"> 
+  <xsd:sequence> 
+   <xsd:element name="CodiceEsito" nillable="false" type="eb:string_CodiceEsito" /> 
+   <xsd:element name="DescrizioneEsito" nillable="false" type="eb:string_255" minOccurs="0" /> 
+   <xsd:element name="UrlWebAppSky" nillable="false" type="eb:string_1000" minOccurs="0" /> 
+   <xsd:element name="IdPDA" nillable="false" type="eb:string_30" minOccurs="0" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="OutStartSessionDTO"> 
+  <xsd:complexContent> 
+   <xsd:extension base="eb:DocumentDataOut" /> 
+  </xsd:complexContent> 
+ </xsd:complexType> 
+ <xsd:element name="OutStartSessionDTO" type="eb:DocumentDataOut" /> 
+ <xsd:element name="DocumentData" type="eb:DocumentDataOut" /> 
+ <xsd:element name="COMPLEX_OUTPUT" type="eb:DocumentDataOut" /> 
+ <xsd:element name="COMPLEX_INPUT" type="eb:DocumentDataIn" /> 
+ <xsd:simpleType name="string_30"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:minLength value="1" /> 
+   <xsd:maxLength value="30" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_255"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:minLength value="1" /> 
+   <xsd:maxLength value="255" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_1000"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:minLength value="1" /> 
+   <xsd:maxLength value="1000" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_YN"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:enumeration value="Y" /> 
+   <xsd:enumeration value="N" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_SemaforoConnettivita"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:enumeration value="Alto" /> 
+   <xsd:enumeration value="Medio" /> 
+   <xsd:enumeration value="Basso" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_CanaleVenditaTI"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:enumeration value="64876" /> 
+   <xsd:enumeration value="64880" /> 
+   <xsd:enumeration value="64947" /> 
+   <xsd:enumeration value="66017" /> 
+   <xsd:enumeration value="64877" /> 
+   <xsd:enumeration value="64878" /> 
+   <xsd:enumeration value="64879" /> 
+   <xsd:enumeration value="65377" /> 
+   <xsd:enumeration value="82868" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_CaratterizzazioneLavorazione"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:enumeration value="NIP" /> 
+   <xsd:enumeration value="Rientro" /> 
+   <xsd:enumeration value="CB" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="string_CodiceEsito"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:enumeration value="0" /> 
+   <xsd:enumeration value="1" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+</xsd:schema>

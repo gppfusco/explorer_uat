@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_REITEK_TRIBOLD_CATALOGO",
+    "name" : "WS_REITEK_TRIBOLD_CATALOGO",
+    "remoteName" : "WS_REITEK_TRIBOLD_CATALOGO",
+    "localPath" : "esb_uat\\repo\\WS_REITEK_TRIBOLD_CATALOGO",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_REITEK_TRIBOLD_CATALOGO?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_SIEBEL_AFFINIUM_BRIDGE",
+    "name" : "WS_SIEBEL_AFFINIUM_BRIDGE",
+    "remoteName" : "WS_SIEBEL_AFFINIUM_BRIDGE",
+    "localPath" : "esb_uat\\repo\\WS_SIEBEL_AFFINIUM_BRIDGE",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_SIEBEL_AFFINIUM_BRIDGE?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

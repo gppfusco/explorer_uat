@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_AW_SSO_SERVICES",
+    "name" : "WS_AW_SSO_SERVICES",
+    "remoteName" : "WS_AW_SSO_SERVICES",
+    "localPath" : "esb_uat\\repo\\WS_AW_SSO_SERVICES",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_AW_SSO_SERVICES?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

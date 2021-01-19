@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:eb="http://www.reply.it/existbus" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.reply.it/existbus" elementFormDefault="qualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="COMPLEX_INPUT"> 
+  <xsd:sequence> 
+   <xsd:element name="NuovoContatto"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="DescrizioneElaborazione" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="ID_COM_SF" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="ID_COM_Pegasus" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="Attivita" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="IdActivitySaleseforce" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="IdInteractionSaleseforce" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="IdCaseSalesforce" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="CodiceLavorazione" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="CodiceCliente" type="xsd:string" /> 
+      <xsd:element name="CodiceContratto" type="xsd:string" /> 
+      <xsd:element name="SRProvenienza" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="Macrocategoria" type="xsd:string" /> 
+      <xsd:element name="DataContatto" type="xsd:string" /> 
+      <xsd:element name="TipoContatto" type="xsd:string" /> 
+      <xsd:element name="ComunicationId" type="xsd:string" /> 
+      <xsd:element name="TIDPGS" type="xsd:string" /> 
+      <xsd:element name="SRCanale" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="PDISCIniziale" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="PDISCFinale" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="Movimentazione" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="CausaleCessazione" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="SRNumero" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="SRAttivita" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="SRCategoria" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="SRSottocategoria" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="SREsito" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="SRProcedura" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="SRStato" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="SRMotivo" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="TipoOfferta" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="CodicePromozione" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="StatoContrattoIniziale" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="StatoContrattoFinale" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="Contatto" maxOccurs="unbounded"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="IdCanale" type="xsd:string" /> 
+         <xsd:element name="Canale" type="xsd:string" /> 
+         <xsd:element name="Template" type="xsd:string" /> 
+         <xsd:element name="MessageObject" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="MessageText" type="xsd:string" minOccurs="0" /> 
+        </xsd:sequence> 
+       </xsd:complexType> 
+      </xsd:element> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="COMPLEX_OUTPUT"> 
+  <xsd:sequence> 
+   <xsd:element name="Esito" type="xsd:string" /> 
+   <xsd:element name="DescrizioneEsito" type="xsd:string" /> 
+   <xsd:element name="TIDPGS" type="xsd:string" /> 
+   <xsd:element name="ServiceRequest"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="ComunicationId" type="xsd:string" /> 
+      <xsd:element name="SRNumero" type="xsd:string" /> 
+      <xsd:element name="Contatto" maxOccurs="unbounded"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="ContattoId" type="xsd:string" /> 
+         <xsd:element name="Canale" type="xsd:string" /> 
+         <xsd:element name="CommMsgId" type="xsd:string" /> 
+        </xsd:sequence> 
+       </xsd:complexType> 
+      </xsd:element> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+</xsd:schema>

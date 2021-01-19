@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_SCMS_EXECUTE_DELACQ_SP",
+    "name" : "WS_SCMS_EXECUTE_DELACQ_SP",
+    "remoteName" : "WS_SCMS_EXECUTE_DELACQ_SP",
+    "localPath" : "esb_uat\\repo\\WS_SCMS_EXECUTE_DELACQ_SP",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_SCMS_EXECUTE_DELACQ_SP?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

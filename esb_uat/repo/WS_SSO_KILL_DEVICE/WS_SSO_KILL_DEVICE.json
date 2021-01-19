@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_SSO_KILL_DEVICE",
+    "name" : "WS_SSO_KILL_DEVICE",
+    "remoteName" : "WS_SSO_KILL_DEVICE",
+    "localPath" : "esb_uat\\repo\\WS_SSO_KILL_DEVICE",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_SSO_KILL_DEVICE?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:eb="http://www.reply.it/existbus" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.reply.it/existbus" elementFormDefault="qualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="DocumentDataIn"> 
+  <xsd:sequence> 
+   <xsd:element name="CodiceContratto" type="xsd:string" /> 
+   <xsd:element name="PromoRetail" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="TipoVenditore" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Dealer" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="RateCodePkt" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CanaleCampagna" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="RateCodePktDest" type="xsd:string" minOccurs="0" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="DocumentDataOut"> 
+  <xsd:sequence> 
+   <xsd:element name="DescrizioneEsito" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Esito" type="xsd:string" /> 
+   <xsd:element name="Servizi" minOccurs="0"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="Servizio" minOccurs="0" maxOccurs="unbounded"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="CodiceCampagna" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="CodicePromozione" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="DataInizioValiditaCampagna" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="FrasePromozionale" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="IdServizio" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Nome" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="PeriodicitaAddebito" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Peso" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Prezzo" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="RateCode" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="SottotipoProdotto" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="TipoPrezzo" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="TipoProdotto" type="xsd:string" minOccurs="0" /> 
+        </xsd:sequence> 
+       </xsd:complexType> 
+      </xsd:element> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:element name="DocumentData" type="eb:DocumentDataOut" /> 
+ <xsd:element name="COMPLEX_INPUT" type="eb:DocumentDataIn" /> 
+</xsd:schema>

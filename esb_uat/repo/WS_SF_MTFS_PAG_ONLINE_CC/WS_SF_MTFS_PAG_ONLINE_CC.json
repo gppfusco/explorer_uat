@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_SF_MTFS_PAG_ONLINE_CC",
+    "name" : "WS_SF_MTFS_PAG_ONLINE_CC",
+    "remoteName" : "WS_SF_MTFS_PAG_ONLINE_CC",
+    "localPath" : "esb_uat\\repo\\WS_SF_MTFS_PAG_ONLINE_CC",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_SF_MTFS_PAG_ONLINE_CC?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

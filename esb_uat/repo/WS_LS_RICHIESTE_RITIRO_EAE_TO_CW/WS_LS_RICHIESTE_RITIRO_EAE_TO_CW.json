@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_LS_RICHIESTE_RITIRO_EAE_TO_CW",
+    "name" : "WS_LS_RICHIESTE_RITIRO_EAE_TO_CW",
+    "remoteName" : "WS_LS_RICHIESTE_RITIRO_EAE_TO_CW",
+    "localPath" : "esb_uat\\repo\\WS_LS_RICHIESTE_RITIRO_EAE_TO_CW",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_LS_RICHIESTE_RITIRO_EAE_TO_CW?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

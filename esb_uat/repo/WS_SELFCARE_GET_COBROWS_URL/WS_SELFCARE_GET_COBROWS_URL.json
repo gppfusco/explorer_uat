@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_SELFCARE_GET_COBROWS_URL",
+    "name" : "WS_SELFCARE_GET_COBROWS_URL",
+    "remoteName" : "WS_SELFCARE_GET_COBROWS_URL",
+    "localPath" : "esb_uat\\repo\\WS_SELFCARE_GET_COBROWS_URL",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_SELFCARE_GET_COBROWS_URL?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

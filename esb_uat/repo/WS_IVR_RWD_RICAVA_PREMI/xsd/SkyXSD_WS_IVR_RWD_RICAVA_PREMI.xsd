@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:eb="http://www.reply.it/existbus" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.reply.it/existbus" elementFormDefault="qualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="DocumentDataIn"> 
+  <xsd:sequence> 
+   <xsd:element name="CodiceCliente" type="xsd:string" /> 
+   <xsd:element name="Account" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ConnId" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="TransId" type="xsd:string" minOccurs="0" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="DocumentDataOut"> 
+  <xsd:sequence> 
+   <xsd:element name="Esito" type="xsd:string" /> 
+   <xsd:element name="DescrizioneEsito" type="xsd:string" /> 
+   <xsd:element name="ClienteEleggibile" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Contratti" minOccurs="0"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="Contratto" maxOccurs="unbounded" minOccurs="0"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="OrderNum" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="DataAttivazione" minOccurs="0" type="xsd:string" /> 
+         <xsd:element name="Eleggibile" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Controlli" minOccurs="0"> 
+          <xsd:complexType> 
+           <xsd:sequence> 
+            <xsd:element name="Controllo" maxOccurs="unbounded" minOccurs="0"> 
+             <xsd:complexType> 
+              <xsd:sequence> 
+               <xsd:element name="Tipo" type="xsd:string" minOccurs="0" /> 
+               <xsd:element name="Esito" type="xsd:string" minOccurs="0" /> 
+               <xsd:element name="DescrizioneEsito" minOccurs="0" type="xsd:string" /> 
+               <xsd:element name="Nome" type="xsd:string" minOccurs="0" /> 
+               <xsd:element name="Categoria" type="xsd:string" minOccurs="0" /> 
+               <xsd:element name="Sottocategoria" type="xsd:string" minOccurs="0" /> 
+              </xsd:sequence> 
+             </xsd:complexType> 
+            </xsd:element> 
+           </xsd:sequence> 
+          </xsd:complexType> 
+         </xsd:element> 
+         <xsd:element name="Premi" minOccurs="0"> 
+          <xsd:complexType> 
+           <xsd:sequence> 
+            <xsd:element name="Premio" minOccurs="0" maxOccurs="unbounded"> 
+             <xsd:complexType> 
+              <xsd:sequence> 
+               <xsd:element name="CodicePremio" type="xsd:string" minOccurs="0" /> 
+               <xsd:element name="DescrizionePremio" type="xsd:string" minOccurs="0" /> 
+               <xsd:element name="TipoPremio" type="xsd:string" minOccurs="0" /> 
+               <xsd:element name="SottotipoPremio" type="xsd:string" minOccurs="0" /> 
+               <xsd:element name="NomePremio" type="xsd:string" minOccurs="0" /> 
+               <xsd:element name="CodicePromozione" type="xsd:string" minOccurs="0" /> 
+               <xsd:element name="NomePromozione" type="xsd:string" minOccurs="0" /> 
+               <xsd:element name="ImportoRicarica" type="xsd:string" minOccurs="0" /> 
+               <xsd:element name="DataScadenzaFruizione" type="xsd:string" minOccurs="0" /> 
+               <xsd:element name="DataFinePremio" type="xsd:string" minOccurs="0" /> 
+               <xsd:element name="Pacchetti" minOccurs="0"> 
+                <xsd:complexType> 
+                 <xsd:sequence> 
+                  <xsd:element name="Pacchetto" maxOccurs="unbounded"> 
+                   <xsd:complexType> 
+                    <xsd:sequence> 
+                     <xsd:element name="NumeroSMC" type="xsd:string" minOccurs="0" /> 
+                     <xsd:element name="PartNumPacc" type="xsd:string" minOccurs="0" /> 
+                     <xsd:element name="TipoPacc" type="xsd:string" minOccurs="0" /> 
+                     <xsd:element name="IdPacchetto" type="xsd:string" minOccurs="0" /> 
+                     <xsd:element name="NomePacchetto" type="xsd:string" minOccurs="0" /> 
+                    </xsd:sequence> 
+                   </xsd:complexType> 
+                  </xsd:element> 
+                 </xsd:sequence> 
+                </xsd:complexType> 
+               </xsd:element> 
+              </xsd:sequence> 
+             </xsd:complexType> 
+            </xsd:element> 
+           </xsd:sequence> 
+          </xsd:complexType> 
+         </xsd:element> 
+        </xsd:sequence> 
+       </xsd:complexType> 
+      </xsd:element> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:element name="DocumentData" type="eb:DocumentDataOut" /> 
+ <xsd:element name="COMPLEX_OUTPUT" type="eb:DocumentDataOut" /> 
+ <xsd:element name="COMPLEX_INPUT" type="eb:DocumentDataIn" /> 
+</xsd:schema>

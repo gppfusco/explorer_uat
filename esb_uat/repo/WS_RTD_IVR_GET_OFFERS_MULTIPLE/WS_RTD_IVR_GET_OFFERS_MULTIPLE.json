@@ -1,0 +1,21 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_RTD_IVR_GET_OFFERS_MULTIPLE",
+    "name" : "WS_RTD_IVR_GET_OFFERS_MULTIPLE",
+    "remoteName" : "WS_RTD_IVR_GET_OFFERS_MULTIPLE",
+    "localPath" : "esb_uat\\repo\\WS_RTD_IVR_GET_OFFERS_MULTIPLE",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_RTD_IVR_GET_OFFERS_MULTIPLE?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "xsdRTD/SkyXSD_RTD_GET_OFFERS_MULTIPLE.xsd",
+        "xsdNameSpace" : "http://www.reply.it/existbus"
+      } ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

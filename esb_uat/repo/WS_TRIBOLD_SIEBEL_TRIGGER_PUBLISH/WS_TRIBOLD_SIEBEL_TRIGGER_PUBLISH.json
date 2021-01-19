@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_TRIBOLD_SIEBEL_TRIGGER_PUBLISH",
+    "name" : "WS_TRIBOLD_SIEBEL_TRIGGER_PUBLISH",
+    "remoteName" : "WS_TRIBOLD_SIEBEL_TRIGGER_PUBLISH",
+    "localPath" : "esb_uat\\repo\\WS_TRIBOLD_SIEBEL_TRIGGER_PUBLISH",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_TRIBOLD_SIEBEL_TRIGGER_PUBLISH?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

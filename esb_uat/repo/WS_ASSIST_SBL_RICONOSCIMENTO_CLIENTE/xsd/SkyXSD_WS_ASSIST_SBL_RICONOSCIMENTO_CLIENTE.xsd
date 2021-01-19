@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:eb="http://www.reply.it/existbus" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.reply.it/existbus" elementFormDefault="qualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="DocumentDataIn"> 
+  <xsd:sequence> 
+   <xsd:element name="CodiceCliente" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CodiceContratto" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NumeroTelefono" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="SmartCard" type="xsd:string" minOccurs="0" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="DocumentDataOut"> 
+  <xsd:sequence> 
+   <xsd:element name="DescrizioneEsito" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Esito" type="xsd:string" /> 
+   <xsd:element name="Clienti" minOccurs="0"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="Cliente" minOccurs="0" maxOccurs="unbounded"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="CodiceCliente" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="NomeCognomeCliente" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Segmento" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Stato" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Contratti" minOccurs="0"> 
+          <xsd:complexType> 
+           <xsd:sequence> 
+            <xsd:element name="Contratto" minOccurs="0" maxOccurs="unbounded"> 
+             <xsd:complexType> 
+              <xsd:sequence> 
+               <xsd:element name="Classe" type="xsd:string" minOccurs="0" /> 
+               <xsd:element name="CodiceContratto" type="xsd:string" minOccurs="0" /> 
+               <xsd:element name="CodiceListino" type="xsd:string" minOccurs="0" /> 
+               <xsd:element name="FlagFruitore" type="xsd:string" minOccurs="0" /> 
+               <xsd:element name="FlagPagatore" type="xsd:string" minOccurs="0" /> 
+               <xsd:element name="NomeListino" type="xsd:string" minOccurs="0" /> 
+               <xsd:element name="Stato" type="xsd:string" minOccurs="0" /> 
+              </xsd:sequence> 
+             </xsd:complexType> 
+            </xsd:element> 
+           </xsd:sequence> 
+          </xsd:complexType> 
+         </xsd:element> 
+        </xsd:sequence> 
+       </xsd:complexType> 
+      </xsd:element> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:element name="DocumentData" type="eb:DocumentDataOut" /> 
+ <xsd:element name="COMPLEX_INPUT" type="eb:DocumentDataIn" /> 
+</xsd:schema>

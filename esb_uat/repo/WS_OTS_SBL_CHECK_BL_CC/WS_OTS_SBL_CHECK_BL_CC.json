@@ -1,0 +1,21 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_OTS_SBL_CHECK_BL_CC",
+    "name" : "WS_OTS_SBL_CHECK_BL_CC",
+    "remoteName" : "WS_OTS_SBL_CHECK_BL_CC",
+    "localPath" : "esb_uat\\repo\\WS_OTS_SBL_CHECK_BL_CC",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_OTS_SBL_CHECK_BL_CC?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "xsdReitek/SkyXSD_OTS_SBL_CHECK_BL_CC.xsd",
+        "xsdNameSpace" : "http://www.reply.it/existbus"
+      } ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

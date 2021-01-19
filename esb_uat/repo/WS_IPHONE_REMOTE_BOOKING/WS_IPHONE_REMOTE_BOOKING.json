@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_IPHONE_REMOTE_BOOKING",
+    "name" : "WS_IPHONE_REMOTE_BOOKING",
+    "remoteName" : "WS_IPHONE_REMOTE_BOOKING",
+    "localPath" : "esb_uat\\repo\\WS_IPHONE_REMOTE_BOOKING",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_IPHONE_REMOTE_BOOKING?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

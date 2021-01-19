@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:eb="http://www.reply.it/existbus" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.reply.it/existbus" elementFormDefault="qualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="RequestAlignmentType"> 
+  <xsd:sequence> 
+   <xsd:element name="Data" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NumODL" type="xsd:string" minOccurs="1" /> 
+   <xsd:element name="TipoOperazione" type="xsd:string" minOccurs="1" /> 
+   <xsd:element name="CodiceInstaller" type="xsd:string" minOccurs="1" /> 
+   <xsd:element name="CodiceSubInstaller" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Tid" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="OperatoreSM" type="xsd:string" minOccurs="1" /> 
+   <xsd:element name="StatoODL" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="SottoStatoODL" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DataOldAppuntamento" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Note" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NotaPresospensione" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="MotivoModifica" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ModalitaOdl" type="xsd:string" minOccurs="0" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="ResponseAlignmentType"> 
+  <xsd:sequence> 
+   <xsd:element name="DescrizioneEsito" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Esito" type="xsd:string" minOccurs="1" /> 
+   <xsd:element name="StatoODL" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="SottoStatoODL" type="xsd:string" minOccurs="0" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:element name="responseAlignment" type="eb:ResponseAlignmentType" /> 
+ <xsd:element name="requestAlignment" type="eb:RequestAlignmentType" /> 
+</xsd:schema>

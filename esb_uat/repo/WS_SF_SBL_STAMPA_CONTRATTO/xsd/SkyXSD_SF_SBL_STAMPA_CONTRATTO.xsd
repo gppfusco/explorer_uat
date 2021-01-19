@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- edited with XMLSpy v2007 sp2 (http://www.altova.com) by *__________* (*__________*) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:eb="http://www.reply.it/existbus" targetNamespace="http://www.reply.it/existbus" elementFormDefault="qualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="COMPLEX_INPUT"> 
+  <xsd:sequence> 
+   <xsd:element name="xmlContratto" type="xsd:string" /> 
+   <xsd:element name="fileName" type="xsd:string" /> 
+   <xsd:element name="absolutePathTmpl" type="xsd:string" minOccurs="1" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+</xsd:schema>

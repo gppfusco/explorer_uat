@@ -1,0 +1,21 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_WSC_PERDITA_PRIVILEGI",
+    "name" : "WS_WSC_PERDITA_PRIVILEGI",
+    "remoteName" : "WS_WSC_PERDITA_PRIVILEGI",
+    "localPath" : "esb_uat\\repo\\WS_WSC_PERDITA_PRIVILEGI",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_WSC_PERDITA_PRIVILEGI?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "SkyXSD_WS_WSC_PERDITA_PRIVILEGI.xsd",
+        "xsdNameSpace" : "http://www.reply.it/existbus"
+      } ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

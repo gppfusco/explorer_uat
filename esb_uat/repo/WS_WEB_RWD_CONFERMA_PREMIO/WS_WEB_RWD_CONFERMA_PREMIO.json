@@ -1,0 +1,21 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_WEB_RWD_CONFERMA_PREMIO",
+    "name" : "WS_WEB_RWD_CONFERMA_PREMIO",
+    "remoteName" : "WS_WEB_RWD_CONFERMA_PREMIO",
+    "localPath" : "esb_uat\\repo\\WS_WEB_RWD_CONFERMA_PREMIO",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_WEB_RWD_CONFERMA_PREMIO?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "Web/SkyXSD_WS_WEB_RWD_CONFERMA_PREMIO.xsd",
+        "xsdNameSpace" : "http://www.reply.it/existbus"
+      } ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

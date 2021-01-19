@@ -1,0 +1,21 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_AOL_SBL_USED_CODE_PROMO",
+    "name" : "WS_AOL_SBL_USED_CODE_PROMO",
+    "remoteName" : "WS_AOL_SBL_USED_CODE_PROMO",
+    "localPath" : "esb_uat\\repo\\WS_AOL_SBL_USED_CODE_PROMO",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_AOL_SBL_USED_CODE_PROMO?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "xsdTelecom/SkyXSD_WS_AOL_SBL_USED_CODE_PROMO.xsd",
+        "xsdNameSpace" : "http://www.reply.it/existbus"
+      } ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

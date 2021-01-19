@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:eb="http://www.reply.it/existbus" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.reply.it/existbus" elementFormDefault="qualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="DocumentDataIn"> 
+  <xsd:sequence> 
+   <xsd:element name="TipoInvio" type="xsd:string" /> 
+   <xsd:element name="Canale" type="xsd:string" /> 
+   <xsd:element name="OrderNumber" type="xsd:string" /> 
+   <xsd:element name="CodiceMGM" type="xsd:string" /> 
+   <xsd:element name="NumeroCellulare" type="xsd:string" /> 
+   <xsd:element name="SessionId" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CodiceContatto" type="xsd:string" minOccurs="0" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="DocumentDataOut"> 
+  <xsd:sequence> 
+   <xsd:element name="DescEsito" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Email" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Esito" type="xsd:string" /> 
+   <xsd:element name="SRID" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Type" type="xsd:string" minOccurs="0" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:element name="DocumentData" type="eb:DocumentDataOut" /> 
+ <xsd:element name="COMPLEX_INPUT" type="eb:DocumentDataIn" /> 
+</xsd:schema>

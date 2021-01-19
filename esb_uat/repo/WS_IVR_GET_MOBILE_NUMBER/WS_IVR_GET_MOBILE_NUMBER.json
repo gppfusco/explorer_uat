@@ -1,0 +1,21 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_IVR_GET_MOBILE_NUMBER",
+    "name" : "WS_IVR_GET_MOBILE_NUMBER",
+    "remoteName" : "WS_IVR_GET_MOBILE_NUMBER",
+    "localPath" : "esb_uat\\repo\\WS_IVR_GET_MOBILE_NUMBER",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_IVR_GET_MOBILE_NUMBER?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "IVRGetMobileNumber.xsd",
+        "xsdNameSpace" : "http://www.reply.it/existbus"
+      } ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:eb="http://www.reply.it/existbus" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.reply.it/existbus" elementFormDefault="qualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="DocumentDataIn"> 
+  <xsd:sequence> 
+   <xsd:element name="FlagBB" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CodiceEsigenza" type="xsd:string" /> 
+   <xsd:element name="FlagMail" type="xsd:string" /> 
+   <xsd:element name="PromozioneProposta" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="IdPDA" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CodiceContratto" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CodiceCliente" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CodiceLavorazione" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ValoreRicarica" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CodiceRicarica" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CodiceSeriale" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Smartcard" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CreditoResiduo" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="UpdMopFW" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="TipoOfferta" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="SessionId" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DatiFastweb" minOccurs="0"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="IdBundle" type="xsd:string" /> 
+      <xsd:element name="CodicePromoBundle" type="xsd:string" /> 
+      <xsd:element name="ClaimPromo" type="xsd:string" /> 
+      <xsd:element name="Cliente"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="NazioneNascita" type="xsd:string" /> 
+         <xsd:element name="NumeroDocumento" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="NazionalitaDocumento" type="xsd:string" /> 
+         <xsd:element name="EnteRilascioDocumento" type="xsd:string" /> 
+         <xsd:element name="DataRilascioDocumento" type="xsd:string" /> 
+         <xsd:element name="NumeroPermessoSoggiorno" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="ScadenzaPermessoSoggiorno" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="SiglaProvinciaDocumento" type="xsd:string" /> 
+         <xsd:element name="ComuneDocumento" type="xsd:string" /> 
+         <xsd:element name="CoerenzaNomeCognomeCF" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="IndirizzoCliente"> 
+          <xsd:complexType> 
+           <xsd:sequence> 
+            <xsd:element name="Indirizzo" type="xsd:string" /> 
+            <xsd:element name="CAP" type="xsd:string" /> 
+            <xsd:element name="Comune" type="xsd:string" /> 
+            <xsd:element name="Provincia" type="xsd:string" /> 
+            <xsd:element name="Nazione" type="xsd:string" /> 
+           </xsd:sequence> 
+          </xsd:complexType> 
+         </xsd:element> 
+         <xsd:element name="SedeCDF"> 
+          <xsd:complexType> 
+           <xsd:sequence> 
+            <xsd:element name="ModemFastwebRichiesto" type="xsd:string" /> 
+            <xsd:element name="TipoModemFastwebRichiesto" type="xsd:string" /> 
+            <xsd:element name="InstallFastwebRichiesta" type="xsd:string" /> 
+            <xsd:element name="OpzioneFibra100" type="xsd:string" /> 
+            <xsd:element name="OpzioneNolimits" type="xsd:string" /> 
+            <xsd:element name="UltraFibra" type="xsd:string" /> 
+            <xsd:element name="CreditCheckStatoRichiesta" type="xsd:string" /> 
+            <xsd:element name="International" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="Mobile" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="CodiceTecnologia" type="xsd:string" /> 
+            <xsd:element name="Tecnologia" type="xsd:string" /> 
+            <xsd:element name="CodiceSGU" type="xsd:string" /> 
+            <xsd:element name="FlagLineaPresente" type="xsd:string" /> 
+            <xsd:element name="CreditCheckIDRichiesta" type="xsd:string" /> 
+            <xsd:element name="CreditCheckScore" type="xsd:string" /> 
+            <xsd:element name="Cellulare" type="xsd:string" /> 
+            <xsd:element name="RisorseComboPots" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="FlagVPlus" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="CodiceTecnologiaCopertura" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="Provider" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="IdBuilding" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="StatoBuilding" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="IdGPON" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="IdPOP" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="ConsensoScambioDatiBundle" type="xsd:string" /> 
+            <xsd:element name="ConsensoGestioneContrattoFW" type="xsd:string" /> 
+            <xsd:element name="ConsensoTutelaRischioCredito" type="xsd:string" /> 
+            <xsd:element name="ConsensoInvioDatiPersonali" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="ConsensoAnalisiFW" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="ConsensoPubblicazioneElenchi" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="ConsensoAnalisiPreferenzeSKY" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="ConsensoComunicazioneDatiSKY" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="ConsensoElabStudiSKY" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="IdIndirizzoFW" type="xsd:string" /> 
+            <xsd:element name="DNAppoggio" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="TelefonoFisso" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="Email" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="IndirizzoSede" minOccurs="0"> 
+             <xsd:complexType> 
+              <xsd:sequence> 
+               <xsd:element name="IdIndirizzoFW" type="xsd:string" /> 
+               <xsd:element name="SiglaProvincia" type="xsd:string" /> 
+               <xsd:element name="Stato" type="xsd:string" /> 
+               <xsd:element name="Comune" type="xsd:string" /> 
+               <xsd:element name="Localita" type="xsd:string" minOccurs="0" /> 
+               <xsd:element name="CAP" type="xsd:string" /> 
+               <xsd:element name="Civico" type="xsd:string" /> 
+               <xsd:element name="Toponomastica" type="xsd:string" /> 
+               <xsd:element name="Indirizzo" type="xsd:string" /> 
+               <xsd:element name="Scala" type="xsd:string" minOccurs="0" /> 
+               <xsd:element name="Interno" type="xsd:string" minOccurs="0" /> 
+               <xsd:element name="Piano" type="xsd:string" minOccurs="0" /> 
+              </xsd:sequence> 
+             </xsd:complexType> 
+            </xsd:element> 
+            <xsd:element name="Prevendita" minOccurs="0"> 
+             <xsd:complexType> 
+              <xsd:sequence> 
+               <xsd:element name="FlagPrevendita" type="xsd:string" /> 
+               <xsd:element name="IDcabinet" type="xsd:string" minOccurs="0" /> 
+               <xsd:element name="IDSGU" type="xsd:string" minOccurs="0" /> 
+               <xsd:element name="DataAttivazione" type="xsd:string" minOccurs="0" /> 
+               <xsd:element name="Tecnologia" type="xsd:string" minOccurs="0" /> 
+              </xsd:sequence> 
+             </xsd:complexType> 
+            </xsd:element> 
+           </xsd:sequence> 
+          </xsd:complexType> 
+         </xsd:element> 
+        </xsd:sequence> 
+       </xsd:complexType> 
+      </xsd:element> 
+      <xsd:element name="DatiNP" minOccurs="0"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="FlagNP" type="xsd:string" /> 
+         <xsd:element name="NumeroDaPortare" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="DonorOLOvoce" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="DonorOLOdati" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="CNP" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="CDMvoce" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="CDMdati" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="PINtelecom" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="DatiNumero"> 
+          <xsd:complexType> 
+           <xsd:sequence> 
+            <xsd:element name="TipoLinea" type="xsd:string" /> 
+            <xsd:element name="TipoDN" type="xsd:string" /> 
+           </xsd:sequence> 
+          </xsd:complexType> 
+         </xsd:element> 
+         <xsd:element name="IntestatarioTI"> 
+          <xsd:complexType> 
+           <xsd:sequence> 
+            <xsd:element name="FlagAzienda" type="xsd:string" /> 
+            <xsd:element name="Nome" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="Cognome" type="xsd:string" /> 
+            <xsd:element name="CodiceFiscale" type="xsd:string" /> 
+            <xsd:element name="Provincia" type="xsd:string" /> 
+            <xsd:element name="Stato" type="xsd:string" /> 
+            <xsd:element name="Toponomastica" type="xsd:string" /> 
+            <xsd:element name="Via" type="xsd:string" /> 
+            <xsd:element name="Civico" type="xsd:string" /> 
+            <xsd:element name="Localita" type="xsd:string" /> 
+            <xsd:element name="CAP" type="xsd:string" /> 
+            <xsd:element name="Scala" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="Interno" type="xsd:string" minOccurs="0" /> 
+           </xsd:sequence> 
+          </xsd:complexType> 
+         </xsd:element> 
+        </xsd:sequence> 
+       </xsd:complexType> 
+      </xsd:element> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="DocumentDataOut"> 
+  <xsd:sequence> 
+   <xsd:element name="CodiceEsigenzaSR" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DescrizioneEsito" type="xsd:string" /> 
+   <xsd:element name="Esito" type="xsd:string" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:element name="DocumentData" type="eb:DocumentDataOut" /> 
+ <xsd:element name="COMPLEX_INPUT" type="eb:DocumentDataIn" /> 
+</xsd:schema>

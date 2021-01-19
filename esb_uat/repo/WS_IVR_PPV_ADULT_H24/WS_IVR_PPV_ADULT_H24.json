@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_IVR_PPV_ADULT_H24",
+    "name" : "WS_IVR_PPV_ADULT_H24",
+    "remoteName" : "WS_IVR_PPV_ADULT_H24",
+    "localPath" : "esb_uat\\repo\\WS_IVR_PPV_ADULT_H24",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_IVR_PPV_ADULT_H24?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

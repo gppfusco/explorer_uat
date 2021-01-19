@@ -1,0 +1,21 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_OTS_SBL_ESTRAZIONE_ABICAB",
+    "name" : "WS_OTS_SBL_ESTRAZIONE_ABICAB",
+    "remoteName" : "WS_OTS_SBL_ESTRAZIONE_ABICAB",
+    "localPath" : "esb_uat\\repo\\WS_OTS_SBL_ESTRAZIONE_ABICAB",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_OTS_SBL_ESTRAZIONE_ABICAB?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "xsdReitek/SkyXSD_OTS_SBL_ESTRAZIONE_ABICAB.xsd",
+        "xsdNameSpace" : "http://www.reply.it/existbus"
+      } ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

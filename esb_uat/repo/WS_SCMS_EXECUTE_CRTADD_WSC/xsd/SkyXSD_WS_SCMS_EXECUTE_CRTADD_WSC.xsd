@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:eb="http://www.reply.it/existbus" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.reply.it/existbus" elementFormDefault="qualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="requestACQ"> 
+  <xsd:sequence> 
+   <xsd:element name="flagsync" type="xsd:string" /> 
+   <xsd:element name="format" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="clientid" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="box" type="xsd:string" /> 
+   <xsd:element name="corp" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="refid" type="xsd:string" /> 
+   <xsd:element name="operator" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="execdate" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="priority" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="idcaller" type="xsd:string" /> 
+   <xsd:element name="purchasedate" type="xsd:string" /> 
+   <xsd:element name="eventtrasmdate" type="xsd:string" /> 
+   <xsd:element name="typesrvreq" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ppv_pin" type="xsd:string" /> 
+   <xsd:element name="cart_id" type="xsd:string" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="responseACQ"> 
+  <xsd:sequence> 
+   <xsd:element name="result" type="xsd:string" /> 
+   <xsd:element minOccurs="0" name="ndserr" type="xsd:string" nillable="true" /> 
+   <xsd:element name="transid" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="descriptionerr" type="xsd:string" /> 
+   <xsd:element name="typesmc" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="flaglive" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="flagreqpin" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="eventtrasmdate" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="title" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="typeevent" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="eventcost" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="servicecost" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="targetaudience" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="originalcost" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="paytype" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ppv_pin_status" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="promos" type="eb:t_promos" minOccurs="0" /> 
+   <xsd:element name="cart" type="eb:t_cart" minOccurs="0" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="t_promos"> 
+  <xsd:sequence> 
+   <xsd:element name="promo" type="eb:t_promo" minOccurs="0" maxOccurs="unbounded" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="t_promo"> 
+  <xsd:sequence> 
+   <xsd:element name="catalogid" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="kind" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="details" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="id" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="prclass" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="subclass" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="description" type="xsd:string" minOccurs="0" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="t_cart"> 
+  <xsd:sequence> 
+   <xsd:element name="id" type="xsd:string" /> 
+   <xsd:element name="status"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:pattern value="PENDING" /> 
+      <xsd:pattern value="CHECKEDOUT" /> 
+      <xsd:pattern value="INVALID" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="items" type="eb:t_cartItems" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="t_cartItems"> 
+  <xsd:sequence> 
+   <xsd:element name="item" type="eb:t_cartItem" minOccurs="0" maxOccurs="unbounded" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="t_cartItem"> 
+  <xsd:sequence> 
+   <xsd:element name="id" type="xsd:string" /> 
+   <xsd:element name="status"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:pattern value="PENDING" /> 
+      <xsd:pattern value="CHECKEDOUT" /> 
+      <xsd:pattern value="EXPIRED" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:element name="requestAcquisto" type="eb:requestACQ" /> 
+ <xsd:element name="responseAcquisto" type="eb:responseACQ" /> 
+</xsd:schema>

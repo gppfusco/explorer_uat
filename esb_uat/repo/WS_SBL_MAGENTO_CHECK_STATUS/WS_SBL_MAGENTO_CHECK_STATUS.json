@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_SBL_MAGENTO_CHECK_STATUS",
+    "name" : "WS_SBL_MAGENTO_CHECK_STATUS",
+    "remoteName" : "WS_SBL_MAGENTO_CHECK_STATUS",
+    "localPath" : "esb_uat\\repo\\WS_SBL_MAGENTO_CHECK_STATUS",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_SBL_MAGENTO_CHECK_STATUS?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

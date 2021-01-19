@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:eb="http://www.reply.it/existbus" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.reply.it/existbus" elementFormDefault="qualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="request"> 
+  <xsd:sequence> 
+   <xsd:element name="flagsync" type="xsd:string" /> 
+   <xsd:element minOccurs="0" name="clientid" type="xsd:string" /> 
+   <xsd:element name="box" type="xsd:string" /> 
+   <xsd:element minOccurs="0" name="operator" type="xsd:string" /> 
+   <xsd:element minOccurs="0" name="execdate" type="xsd:string" /> 
+   <xsd:element name="idcaller" type="xsd:string" /> 
+   <xsd:element name="typesrvreq" type="xsd:string" /> 
+   <xsd:element name="cart_id" type="xsd:string" /> 
+   <xsd:element name="cart_item_id" type="xsd:string" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="response"> 
+  <xsd:sequence> 
+   <xsd:element name="result" type="xsd:string" /> 
+   <xsd:element minOccurs="0" name="ndserr" type="xsd:string" nillable="true" /> 
+   <xsd:element name="transid" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="descriptionerr" type="xsd:string" /> 
+   <xsd:element minOccurs="0" name="cart" type="eb:t_cart" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="t_cart"> 
+  <xsd:sequence> 
+   <xsd:element name="id" type="xsd:string" /> 
+   <xsd:element name="status"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:pattern value="PENDING" /> 
+      <xsd:pattern value="CHECKEDOUT" /> 
+      <xsd:pattern value="INVALID" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+   <xsd:element name="items" type="eb:t_cartItems" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="t_cartItems"> 
+  <xsd:sequence> 
+   <xsd:element maxOccurs="unbounded" minOccurs="0" name="item" type="eb:t_cartItem" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="t_cartItem"> 
+  <xsd:sequence> 
+   <xsd:element name="id" type="xsd:string" /> 
+   <xsd:element name="status"> 
+    <xsd:simpleType> 
+     <xsd:restriction base="xsd:string"> 
+      <xsd:pattern value="PENDING" /> 
+      <xsd:pattern value="CHECKEDOUT" /> 
+      <xsd:pattern value="EXPIRED" /> 
+     </xsd:restriction> 
+    </xsd:simpleType> 
+   </xsd:element> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:element name="requestCRTDLI" type="eb:request" /> 
+ <xsd:element name="responseCRTDLI" type="eb:response" /> 
+</xsd:schema>

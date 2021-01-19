@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:eb="http://www.reply.it/existbus" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.reply.it/existbus" elementFormDefault="qualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="DataInput"> 
+  <xsd:sequence> 
+   <xsd:element name="CodiceFiscale" type="eb:String100" /> 
+   <xsd:element name="CodiceCliente" type="eb:String100" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="DataOutput"> 
+  <xsd:sequence> 
+   <xsd:element name="Esito" type="eb:String1" /> 
+   <xsd:element name="CodiceCliente" type="xsd:string" /> 
+   <xsd:element name="Descrizione" type="xsd:string" /> 
+   <xsd:element name="CodiceCPI" type="xsd:string" /> 
+   <xsd:element name="Row_Id_Cliente" type="xsd:string" /> 
+   <xsd:element name="CONTRATTI" type="eb:Contratti" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="Contratti"> 
+  <xsd:sequence minOccurs="0" maxOccurs="unbounded"> 
+   <xsd:element name="CONTRATTO" type="eb:Contratto" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="Contratto"> 
+  <xsd:sequence> 
+   <xsd:element name="AccountNumber" type="xsd:string" /> 
+   <xsd:element name="Stato" type="xsd:string" /> 
+   <xsd:element name="PACCHETTI" type="eb:Pacchetti" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="Pacchetti"> 
+  <xsd:sequence minOccurs="0" maxOccurs="unbounded"> 
+   <xsd:element name="PACCHETTO" type="eb:Pacchetto" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="Pacchetto"> 
+  <xsd:sequence> 
+   <xsd:element name="RowIdPacchetto" type="xsd:string" /> 
+   <xsd:element name="TipoPacchetto" type="xsd:string" /> 
+   <xsd:element name="SMC" type="xsd:string" /> 
+   <xsd:element name="STB" type="xsd:string" /> 
+   <xsd:element name="DK" type="xsd:string" /> 
+   <xsd:element name="Tecnologia" type="xsd:string" /> 
+   <xsd:element name="WJ1" type="eb:String1" /> 
+   <xsd:element name="ZJ0" type="eb:String1" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:simpleType name="String100"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:maxLength value="100" /> 
+   <xsd:minLength value="1" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+ <xsd:simpleType name="String1"> 
+  <xsd:restriction base="xsd:string"> 
+   <xsd:maxLength value="1" /> 
+   <xsd:minLength value="1" /> 
+  </xsd:restriction> 
+ </xsd:simpleType> 
+</xsd:schema>

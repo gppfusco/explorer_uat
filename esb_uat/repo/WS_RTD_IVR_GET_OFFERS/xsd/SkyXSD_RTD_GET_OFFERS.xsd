@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:eb="http://www.reply.it/existbus" targetNamespace="http://www.reply.it/existbus" elementFormDefault="unqualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="COMPLEX_INPUT"> 
+  <xsd:sequence> 
+   <xsd:element name="contractId" type="xsd:string" /> 
+   <xsd:element name="customerCode" type="xsd:string" /> 
+   <xsd:element name="sessionId" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="interactiveChannel" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="audienceLevel" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="parameters" minOccurs="0" type="eb:nameValuePairsType" /> 
+   <xsd:element name="iPoint" type="xsd:string" /> 
+   <xsd:element name="numberRequested" type="xsd:int" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="COMPLEX_OUTPUT"> 
+  <xsd:sequence> 
+   <xsd:element name="sessionId" type="xsd:string" /> 
+   <xsd:element name="statusCode" type="xsd:int" /> 
+   <xsd:element name="advisoryMessages" minOccurs="0"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="advisoryMessage" type="eb:advisoryMessageType" minOccurs="0" maxOccurs="unbounded" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="offerList" minOccurs="0"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="interactionPointName" type="xsd:string" /> 
+      <xsd:element name="defaultString" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="reccomendedOffers"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="offer" minOccurs="0" maxOccurs="unbounded" type="eb:offerType" /> 
+        </xsd:sequence> 
+       </xsd:complexType> 
+      </xsd:element> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="advisoryMessageType"> 
+  <xsd:sequence> 
+   <xsd:element name="messageCode" type="xsd:int" minOccurs="0" /> 
+   <xsd:element name="statusLevel" type="xsd:int" minOccurs="0" /> 
+   <xsd:element name="detailMessage" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="message" type="xsd:string" minOccurs="0" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="nameValuePairsType"> 
+  <xsd:sequence> 
+   <xsd:element name="nameValuePair" minOccurs="0" maxOccurs="unbounded" type="eb:nameValuePairType" /> 
+   <xsd:element name="nameValuePairNumeric" minOccurs="0" maxOccurs="unbounded" type="eb:nameValuePairNumericType" /> 
+   <xsd:element name="nameValuePairDatetime" minOccurs="0" maxOccurs="unbounded" type="eb:nameValuePairDatetimeType" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="nameValuePairType"> 
+  <xsd:sequence> 
+   <xsd:element name="name" type="xsd:string" /> 
+   <xsd:element name="value" type="xsd:string" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="nameValuePairNumericType"> 
+  <xsd:sequence> 
+   <xsd:element name="name" type="xsd:string" /> 
+   <xsd:element name="value" type="xsd:double" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="nameValuePairDatetimeType"> 
+  <xsd:sequence> 
+   <xsd:element name="name" type="xsd:string" /> 
+   <xsd:element name="value" type="xsd:dateTime" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="offerType"> 
+  <xsd:sequence> 
+   <xsd:element name="description" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="offerCode" type="xsd:string" /> 
+   <xsd:element name="offerName" type="xsd:string" /> 
+   <xsd:element name="treatmentCode" type="xsd:string" /> 
+   <xsd:element name="score" type="xsd:string" /> 
+   <xsd:element name="additionalAttributes" minOccurs="0" type="eb:nameValuePairsType" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:element name="request" type="eb:COMPLEX_INPUT" /> 
+ <xsd:element name="response" type="eb:COMPLEX_OUTPUT" /> 
+</xsd:schema>

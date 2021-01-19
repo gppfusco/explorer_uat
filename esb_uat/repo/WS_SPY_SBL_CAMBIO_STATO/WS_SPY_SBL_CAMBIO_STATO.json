@@ -1,0 +1,21 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_SPY_SBL_CAMBIO_STATO",
+    "name" : "WS_SPY_SBL_CAMBIO_STATO",
+    "remoteName" : "WS_SPY_SBL_CAMBIO_STATO",
+    "localPath" : "esb_uat\\repo\\WS_SPY_SBL_CAMBIO_STATO",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_SPY_SBL_CAMBIO_STATO?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "xsdSiebel/xsdSPY/SkyXSD_SBL_SPY_CAMBIO_STATO.xsd",
+        "xsdNameSpace" : "http://www.reply.it/existbus"
+      } ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

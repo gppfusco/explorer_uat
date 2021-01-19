@@ -1,0 +1,21 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_WSC_CONFERMA_LAVORAZIONE",
+    "name" : "WS_WSC_CONFERMA_LAVORAZIONE",
+    "remoteName" : "WS_WSC_CONFERMA_LAVORAZIONE",
+    "localPath" : "esb_uat\\repo\\WS_WSC_CONFERMA_LAVORAZIONE",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_WSC_CONFERMA_LAVORAZIONE?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "SkyXSD_WS_WSC_CONFERMA_LAVORAZIONE.xsd",
+        "xsdNameSpace" : "http://www.reply.it/existbus"
+      } ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

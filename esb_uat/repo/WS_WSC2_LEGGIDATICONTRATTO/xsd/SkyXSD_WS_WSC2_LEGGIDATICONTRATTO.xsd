@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:eb="http://www.reply.it/existbus" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.reply.it/existbus" elementFormDefault="qualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="DocumentDataIn"> 
+  <xsd:sequence> 
+   <xsd:element name="CodiceContratto" type="xsd:string" /> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="DocumentDataOut"> 
+  <xsd:sequence> 
+   <xsd:element name="Esito" type="xsd:string" /> 
+   <xsd:element name="DescrizioneEsito" type="xsd:string" /> 
+   <xsd:element name="OrderNumber" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NominativoSottoscrittore" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Banca" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Localita" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DataAttivazione" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DataAgeinLoyalty" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DataEleLoyalty" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="SkyGoPrenotatoFlag" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="SkyExtraFlag" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DataAttPromoPrenotazione" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ComplessoFatt" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Indirizzo" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="MatchCodeDWIFatt" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ToponomasticaFatt" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DataPrimaAttivazioneCalc" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ShipTo-State" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Piano" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ShipTo-Zip" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="AdesioneMYSKYHDFlag" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Promozione" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CodiceListino" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NumeroConto" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="AccountId" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="BillingAccount" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="TipoInvioRivista" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ModalitaInvioFattura" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ListinoId" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ContrattoMV" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="FormatoFattura" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DataStipula" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="MatchCodeDWI" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="PeriodoFatturazione" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="TipoMOP" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Listino" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CAPFatt" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="OrderId" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CodiceParteBase" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="PayToAccount" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="FlagAnywhere" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DataScadenza" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ModalitaInvioRivista" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="MatchCodeSKYFatt" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="InvioRivista" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Complesso" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CIN" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="IndirizzoFatt" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ScalaFatt" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="LocalitaFatt" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="BundleFastweb" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="StatoContratto" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Toponomastica" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Provincia" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="StatoDPParco" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="PianoFatt" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="AmbienteServizio" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="StatoLineaTI" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="EmailTI" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="TelefonoTI" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="InternoFatt" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="PayToAccountId" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CivicoFatt" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="MHDasSTD" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="MHDasSD" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CFSottoscrittore" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="MatchCodeSKY" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Scala" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ABI" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Civico" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="IBAN" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Agenzia" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="AdesioneHDFlag" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Interno" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ProvinciaFatt" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="IndirizzoAgenzia" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="AntifrodeMV" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CAP" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CausaleSospensione" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ContrattoId" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CAB" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ScadenzaCartaMese" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="IntestatarioCarta" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="NumeroCarta" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ScadenzaCartaAnno" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="TipoCarta" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DataAttivazioneBundle" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DataCessazioneBundle" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="StatoContrattoFastWeb" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="EmailBroadBand" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="TelefonoFissoImpianto" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="StatoContrattoBundle" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CodiceClienteFruitore" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="CodiceClientePagatore" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ConsensoDatiAnytime" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Flag3D" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="FlagHD" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DDLAumentoTariffa" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DDLInizioAumento" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DDLFineAumento" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="TipoCampagnaSwapP2P3" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ModalitaFatturazione" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DataMigrazione28gg" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="VisioneGratuita" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="ConsensoSkyQ" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="StatoTBY" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="AgeingTBY" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="FlagSkyQBlack" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Pacchetti" minOccurs="0"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="Pacchetto" minOccurs="0" maxOccurs="unbounded"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="RateCode" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="DescrizioneSelfCare" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="PktIntId" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Stato" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="PesoTotale" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="IdPacchetto" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="CreditLimit" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="ProdId" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Peso" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="DataRitiroApparato" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="BitmapGenere" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="BitmapPremium" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Prezzo" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="PeriodicitaAddebito" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="TipoPkt" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="DataAttivazione" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="TipoPrezzo" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="FlagU2" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="ProductTypeCode" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="MarcaModelloApparato" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Nome" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="NumGeneri" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="NumPremium" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="TipologiaVisione" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="ClassePacchetto" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="DescrizioneCombinazione" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="CodiceCombinazione" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="NomeGenere" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="NomePacchetto" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="RateCodeGenere" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="ServiziOpzionali" minOccurs="0" maxOccurs="unbounded"> 
+          <xsd:complexType> 
+           <xsd:sequence> 
+            <xsd:element name="CodiceParte" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="Tipo" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="ParentOrderItemId" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="PeriodicitaAddebito" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="Matricola" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="RateCode" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="Stato" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="DisabilitaVisioneFlg" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="TipoPrezzo" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="Nome" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="ParentTipologiaPacchettoSKY" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="Prezzo" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="ProdId" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="DescrizioneSelfCare" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="KenanId" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="ScontoPercentuale" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="ScontoAssoluto" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="SottotipoProdotto" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="LegamePS-Sconto" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="DataScadenzaAutomatica" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="NRCNegativoFlag" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="DataAttivazione" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="Tipologia" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="TecnologiaApparato" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="ParticolaritaProdotto" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="Peso" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="CategoriaProdotto" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="SottotipoTecnologia" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="DataRichiestaCessazione" type="xsd:string" minOccurs="0" /> 
+           </xsd:sequence> 
+          </xsd:complexType> 
+         </xsd:element> 
+         <xsd:element name="TipoDecoder" minOccurs="0"> 
+          <xsd:complexType> 
+           <xsd:sequence> 
+            <xsd:element name="MYSKY" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="ONLYSMC" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="OBSOLETO" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="MYSKYHD" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="SECA" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="STANDARD" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="HD" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="MySKY-HD" type="xsd:string" minOccurs="0" /> 
+            <xsd:element name="FALCON" type="xsd:string" minOccurs="0" /> 
+           </xsd:sequence> 
+          </xsd:complexType> 
+         </xsd:element> 
+        </xsd:sequence> 
+       </xsd:complexType> 
+      </xsd:element> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="TipoContratto" minOccurs="0"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="MYSKY" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="MYSKYHD" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="STANDARD" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="HD" type="xsd:string" minOccurs="0" /> 
+      <xsd:element name="MULTIVISION" type="xsd:string" minOccurs="0" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="AllMop" minOccurs="0"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="Mop" minOccurs="0" maxOccurs="unbounded"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="PeriodicitaFattSKY" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="PaymentMethod" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="PaymentStatus" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="DataEffettiva" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="IntestatarioCarta" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="TipoCarta" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="NumeroCarta" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="NominativoSottoscrittore" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="NumeroConto" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="IBAN" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="ABI" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="CAB" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="CIN" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="DataFineValidita" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="StatoDomiciliazione" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="ScadenzaCartaAnno" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="ScadenzaCartaMese" type="xsd:string" minOccurs="0" /> 
+        </xsd:sequence> 
+       </xsd:complexType> 
+      </xsd:element> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="AllTrackingPromo" minOccurs="0"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="TrackingPromo" minOccurs="0" maxOccurs="unbounded"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="Status" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="EndDate" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="IdPromo" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="VincoloBoxSet" type="xsd:string" minOccurs="0" /> 
+        </xsd:sequence> 
+       </xsd:complexType> 
+      </xsd:element> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="Apparati" minOccurs="0"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="Apparato" minOccurs="0" maxOccurs="unbounded"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="ParRowId" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="IntegrationIdPkt" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="TipoPktCalc" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Sottotipologia" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Stato" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Motivo" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="DettaglioMotivo" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Matricola" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="TipoDelivery" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="DataConsegna" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="DataCessazione" type="xsd:string" minOccurs="0" /> 
+        </xsd:sequence> 
+       </xsd:complexType> 
+      </xsd:element> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:element name="COMPLEX_OUTPUT" type="eb:DocumentDataOut" /> 
+ <xsd:element name="COMPLEX_INPUT" type="eb:DocumentDataIn" /> 
+</xsd:schema>

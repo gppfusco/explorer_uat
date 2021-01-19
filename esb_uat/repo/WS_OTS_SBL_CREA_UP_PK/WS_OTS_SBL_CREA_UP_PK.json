@@ -1,0 +1,21 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_OTS_SBL_CREA_UP_PK",
+    "name" : "WS_OTS_SBL_CREA_UP_PK",
+    "remoteName" : "WS_OTS_SBL_CREA_UP_PK",
+    "localPath" : "esb_uat\\repo\\WS_OTS_SBL_CREA_UP_PK",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_OTS_SBL_CREA_UP_PK?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "xsdReitek/SkyXSD_OTS_SBL_CREA_UP_PK.xsd",
+        "xsdNameSpace" : "http://www.reply.it/existbus"
+      } ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

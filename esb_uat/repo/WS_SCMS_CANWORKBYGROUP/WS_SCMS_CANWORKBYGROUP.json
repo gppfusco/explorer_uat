@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_SCMS_CANWORKBYGROUP",
+    "name" : "WS_SCMS_CANWORKBYGROUP",
+    "remoteName" : "WS_SCMS_CANWORKBYGROUP",
+    "localPath" : "esb_uat\\repo\\WS_SCMS_CANWORKBYGROUP",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_SCMS_CANWORKBYGROUP?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

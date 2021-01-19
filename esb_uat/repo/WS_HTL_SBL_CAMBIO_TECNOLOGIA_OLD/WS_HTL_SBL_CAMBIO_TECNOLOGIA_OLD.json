@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_HTL_SBL_CAMBIO_TECNOLOGIA_OLD",
+    "name" : "WS_HTL_SBL_CAMBIO_TECNOLOGIA_OLD",
+    "remoteName" : "WS_HTL_SBL_CAMBIO_TECNOLOGIA_OLD",
+    "localPath" : "esb_uat\\repo\\WS_HTL_SBL_CAMBIO_TECNOLOGIA_OLD",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_HTL_SBL_CAMBIO_TECNOLOGIA_OLD?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

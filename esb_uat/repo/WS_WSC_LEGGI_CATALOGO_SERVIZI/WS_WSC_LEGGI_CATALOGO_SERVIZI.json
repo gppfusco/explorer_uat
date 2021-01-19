@@ -1,0 +1,21 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_WSC_LEGGI_CATALOGO_SERVIZI",
+    "name" : "WS_WSC_LEGGI_CATALOGO_SERVIZI",
+    "remoteName" : "WS_WSC_LEGGI_CATALOGO_SERVIZI",
+    "localPath" : "esb_uat\\repo\\WS_WSC_LEGGI_CATALOGO_SERVIZI",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_WSC_LEGGI_CATALOGO_SERVIZI?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "SkyXSD_WS_WSC_LEGGI_CATALOGO_SERVIZI.xsd",
+        "xsdNameSpace" : "http://www.reply.it/existbus"
+      } ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

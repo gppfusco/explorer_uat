@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_SBL_KBP_GET_BALANCE_TESTNS",
+    "name" : "WS_SBL_KBP_GET_BALANCE_TESTNS",
+    "remoteName" : "WS_SBL_KBP_GET_BALANCE_TESTNS",
+    "localPath" : "esb_uat\\repo\\WS_SBL_KBP_GET_BALANCE_TESTNS",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_SBL_KBP_GET_BALANCE_TESTNS?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

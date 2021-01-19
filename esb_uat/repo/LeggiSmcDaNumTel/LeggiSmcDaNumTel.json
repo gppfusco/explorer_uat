@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "LeggiSmcDaNumTel",
+    "name" : "LeggiSmcDaNumTel",
+    "remoteName" : "LeggiSmcDaNumTel",
+    "localPath" : "esb_uat\\repo\\LeggiSmcDaNumTel",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/LeggiSmcDaNumTel?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

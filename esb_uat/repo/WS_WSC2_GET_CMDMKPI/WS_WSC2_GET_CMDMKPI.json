@@ -1,0 +1,21 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_WSC2_GET_CMDMKPI",
+    "name" : "WS_WSC2_GET_CMDMKPI",
+    "remoteName" : "WS_WSC2_GET_CMDMKPI",
+    "localPath" : "esb_uat\\repo\\WS_WSC2_GET_CMDMKPI",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_WSC2_GET_CMDMKPI?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "SkyXSD_WS_GET_CMDMKPI.xsd",
+        "xsdNameSpace" : "http://www.reply.it/existbus"
+      } ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

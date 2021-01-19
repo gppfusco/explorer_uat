@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- edited with XMLSpy v2007 sp2 (http://www.altova.com) by *__________* (*__________*) -->
+<xsd:schema xmlns:eb="http://www.reply.it/existbus" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.reply.it/existbus" elementFormDefault="qualified" attributeFormDefault="unqualified"> 
+ <xsd:complexType name="DocumentDataIn"> 
+  <xsd:sequence> 
+   <xsd:element name="FlagCoBrowsing" type="xsd:string" /> 
+   <xsd:element name="CodiceContatto" type="xsd:string" /> 
+   <xsd:element name="CodiceContratto" type="xsd:string" /> 
+   <xsd:element name="CodiceCliente" type="xsd:string" /> 
+   <xsd:element name="CodiceLavorazione" type="xsd:string" /> 
+   <xsd:element name="PromozioneProposta" type="xsd:string" /> 
+   <xsd:element name="StatoAdesione" type="xsd:string" /> 
+   <xsd:element name="Tipologia" type="xsd:string" /> 
+   <xsd:element name="Promozioni"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element name="PromoMV" minOccurs="0"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="TipoPromo" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="CodicePromozione" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="PacchettiMV" minOccurs="0" maxOccurs="unbounded"> 
+          <xsd:complexType> 
+           <xsd:sequence> 
+            <xsd:element name="PacchettoMV" minOccurs="0"> 
+             <xsd:complexType> 
+              <xsd:sequence> 
+               <xsd:element name="BitmapGeneri" type="xsd:string" minOccurs="0" /> 
+               <xsd:element name="BitmapPremium" type="xsd:string" minOccurs="0" /> 
+               <xsd:element name="Tecnologia" type="xsd:string" minOccurs="0" /> 
+               <xsd:element name="SceltaDK" type="xsd:string" minOccurs="0" /> 
+               <xsd:element name="PromozioneMV" type="xsd:string" minOccurs="0" /> 
+              </xsd:sequence> 
+             </xsd:complexType> 
+            </xsd:element> 
+           </xsd:sequence> 
+          </xsd:complexType> 
+         </xsd:element> 
+        </xsd:sequence> 
+       </xsd:complexType> 
+      </xsd:element> 
+      <xsd:element name="PromoUpg" minOccurs="0" maxOccurs="unbounded"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="TipoPromo" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="CodicePromozione" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="SceltaDK" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Tecnologia" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="SceltaDecoder" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="SceltaInstallazione" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="SmartCard" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="AdesioneMVE" type="xsd:string" minOccurs="0" /> 
+        </xsd:sequence> 
+       </xsd:complexType> 
+      </xsd:element> 
+      <xsd:element name="PromoBB" minOccurs="0"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="TipoPromo" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="CodicePromo" type="xsd:string" minOccurs="0" /> 
+        </xsd:sequence> 
+       </xsd:complexType> 
+      </xsd:element> 
+      <xsd:element name="PromoPKT" minOccurs="0" maxOccurs="unbounded"> 
+       <xsd:complexType> 
+        <xsd:sequence> 
+         <xsd:element name="TipoPromo" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="CodicePromo" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="SmartCard" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="RateCodeGeneri" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="RateCodePacchetto" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="CodiceLavorazione" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="TipoCambioPacchetto" type="xsd:string" minOccurs="0" /> 
+         <xsd:element name="Servizi" minOccurs="0"> 
+          <xsd:complexType> 
+           <xsd:sequence> 
+            <xsd:element name="Servizio" minOccurs="0" maxOccurs="unbounded"> 
+             <xsd:complexType> 
+              <xsd:sequence> 
+               <xsd:element name="CodicePromozione" type="xsd:string" minOccurs="0" /> 
+               <xsd:element name="RateCode" type="xsd:string" minOccurs="0" /> 
+              </xsd:sequence> 
+             </xsd:complexType> 
+            </xsd:element> 
+           </xsd:sequence> 
+          </xsd:complexType> 
+         </xsd:element> 
+        </xsd:sequence> 
+       </xsd:complexType> 
+      </xsd:element> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:sequence> 
+ </xsd:complexType> 
+ <xsd:complexType name="DocumentDataOut"> 
+  <xsd:sequence> 
+   <xsd:element name="ClaimPromo" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="DescrizioneEsito" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="EsigenzaId" type="xsd:string" minOccurs="0" /> 
+   <xsd:element name="Esito" type="xsd:string" /> 
+   <xsd:element name="FrasePromozionale" type="xsd:string" minOccurs="0" /> 
+  </xsd:sequence>
+ </xsd:complexType>
+</xsd:schema>

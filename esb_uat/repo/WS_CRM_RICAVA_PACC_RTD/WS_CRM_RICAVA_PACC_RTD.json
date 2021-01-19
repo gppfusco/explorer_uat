@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_CRM_RICAVA_PACC_RTD",
+    "name" : "WS_CRM_RICAVA_PACC_RTD",
+    "remoteName" : "WS_CRM_RICAVA_PACC_RTD",
+    "localPath" : "esb_uat\\repo\\WS_CRM_RICAVA_PACC_RTD",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_CRM_RICAVA_PACC_RTD?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

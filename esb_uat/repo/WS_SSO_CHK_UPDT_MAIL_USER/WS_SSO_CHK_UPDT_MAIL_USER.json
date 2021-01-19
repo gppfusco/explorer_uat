@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_SSO_CHK_UPDT_MAIL_USER",
+    "name" : "WS_SSO_CHK_UPDT_MAIL_USER",
+    "remoteName" : "WS_SSO_CHK_UPDT_MAIL_USER",
+    "localPath" : "esb_uat\\repo\\WS_SSO_CHK_UPDT_MAIL_USER",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_SSO_CHK_UPDT_MAIL_USER?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

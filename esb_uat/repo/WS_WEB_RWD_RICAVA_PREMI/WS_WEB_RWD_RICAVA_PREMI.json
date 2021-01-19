@@ -1,0 +1,21 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_WEB_RWD_RICAVA_PREMI",
+    "name" : "WS_WEB_RWD_RICAVA_PREMI",
+    "remoteName" : "WS_WEB_RWD_RICAVA_PREMI",
+    "localPath" : "esb_uat\\repo\\WS_WEB_RWD_RICAVA_PREMI",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_WEB_RWD_RICAVA_PREMI?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "Web/SkyXSD_WS_WEB_RWD_RICAVA_PREMI.xsd",
+        "xsdNameSpace" : "http://www.reply.it/existbus"
+      } ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

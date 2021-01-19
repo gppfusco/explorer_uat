@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_SCMS_EXECUTE_QRYAWP",
+    "name" : "WS_SCMS_EXECUTE_QRYAWP",
+    "remoteName" : "WS_SCMS_EXECUTE_QRYAWP",
+    "localPath" : "esb_uat\\repo\\WS_SCMS_EXECUTE_QRYAWP",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_SCMS_EXECUTE_QRYAWP?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wssvil.sky.it/wsexistbus/ws/",
+    "path" : "WS_PRENDI_TUTTI_CAMPI_HTL",
+    "name" : "WS_PRENDI_TUTTI_CAMPI_HTL",
+    "remoteName" : "WS_PRENDI_TUTTI_CAMPI_HTL",
+    "localPath" : "esb_uat\\repo\\WS_PRENDI_TUTTI_CAMPI_HTL",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wssvil.sky.it/wsexistbus/ws/WS_PRENDI_TUTTI_CAMPI_HTL?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}
