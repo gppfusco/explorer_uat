@@ -1,0 +1,114 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/CTIProject/Submitter/proxy/PS_WS_CRM_CTI_SUBMITTER_BATCH",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/CTIProject/CtiSubmitterBatch/wsdl/WS_CRM_CTI_SUBMITTER_BATCH" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/CTIProject/CtiSubmitterBatch/wsdl/WS_CRM_CTI_SUBMITTER_BATCH",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/CTIProject/CtiSubmitterBatch/xsd/XSD_CRM_CTI_SUBMITTER_BATCH" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/CTIProject/CtiSubmitterBatch/xsd/XSD_CRM_CTI_SUBMITTER_BATCH",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/CTIProject/Submitter/pipeline/PL_WS_ITERATE_CTI_SUBMITTER_BATCH" : {
+        "label" : "Pipeline/CTIProject/Submitter/pipeline/PL_WS_ITERATE_CTI_SUBMITTER_BATCH",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/MDW_CDM/EnterpriseServices/CTIProject/CtiSubmitterBatch/wsdl/WS_CRM_CTI_SUBMITTER_BATCH" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/CTIProject/CtiSubmitterBatch/wsdl/WS_CRM_CTI_SUBMITTER_BATCH",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/CTIProject/CtiSubmitterBatch/xsd/XSD_CRM_CTI_SUBMITTER_BATCH" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/CTIProject/CtiSubmitterBatch/xsd/XSD_CRM_CTI_SUBMITTER_BATCH",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Pipeline/CTIProject/Submitter/pipeline/PL_INTERNAL_CTI_SUBMITTER_ENQUEUE" : {
+            "label" : "Pipeline/CTIProject/Submitter/pipeline/PL_INTERNAL_CTI_SUBMITTER_ENQUEUE",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/EnterpriseServices/CTIProject/Outbound/CtiSubmitter/WS_CRM_CTI_SUBMITTER" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/CTIProject/Outbound/CtiSubmitter/WS_CRM_CTI_SUBMITTER",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "BusinessService/CTIProject/Submitter/businessService/BS_JMS_CTI_ENQUEUE" : {
+                "label" : "BusinessService/CTIProject/Submitter/businessService/BS_JMS_CTI_ENQUEUE",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/CTIProject/Submitter/transformations/createResponseJobRequest" : {
+            "label" : "Xquery/CTIProject/Submitter/transformations/createResponseJobRequest",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/CTIProject/Submitter/transformations/createRequestNotification" : {
+            "label" : "Xquery/CTIProject/Submitter/transformations/createRequestNotification",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_ITERATE_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_ITERATE_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "RestApi" : {
+    "type" : "REST",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/mdw/billing/balances",
+    "name" : "KENANProject_WS_MDW_GET_BALANCE_FULL_proxy_PS_REST_MDW_GET_BALANCE_FULL_ENH",
+    "remoteName" : "ProxyService/KENANProject/WS_MDW_GET_BALANCE_FULL/proxy/PS_REST_MDW_GET_BALANCE_FULL_ENH",
+    "localPath" : "osb_uat\\repo\\KENANProject\\WS\\MDW\\GET\\BALANCE\\FULL\\PS_REST_MDW_GET_BALANCE_FULL_ENH",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/mdw/billing/balances?WADL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "MDW_CDM/EnterpriseServices/KenanProject/GetBalanceFull/xsd/XSD_MDW_GET_BALANCE_FULL_ENH",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ],
+      "soapApiSpec" : {
+        "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e",
+        "xsdSchemas" : [ {
+          "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        }, {
+          "xsdPath" : "/MDW_CDM/EnterpriseServices/KenanProject/GetBalanceFull/xsd/XSD_MDW_GET_BALANCE_FULL_ENH",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        } ]
+      }
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

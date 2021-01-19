@@ -1,0 +1,358 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SCMSproject/Riccdc/proxy/WS_CRM_GESTIONE_PPV_RICCDC",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/SCMSproject/Riccdc/pipeline/PL_SCMS_IGFS_RICCDC" : {
+        "label" : "Pipeline/SCMSproject/Riccdc/pipeline/PL_SCMS_IGFS_RICCDC",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Xquery/SCMSproject/Riccdc/transformations/createRequestUpdPagCdc_TUX" : {
+            "label" : "Xquery/SCMSproject/Riccdc/transformations/createRequestUpdPagCdc_TUX",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "ProxyService/MTFSProject/WS_CRM_MTFS_PAG_ONLINE_CIRCUITO/proxy/PS_LOCAL_PAG_ONLINE_CIRCUITO" : {
+            "label" : "ProxyService/MTFSProject/WS_CRM_MTFS_PAG_ONLINE_CIRCUITO/proxy/PS_LOCAL_PAG_ONLINE_CIRCUITO",
+            "properties" : {
+              "transport-type" : "local",
+              "nodeType" : "Proxy",
+              "service-type" : "SOAP"
+            },
+            "successors" : {
+              "Pipeline/MTFSProject/WS_CRM_MTFS_PAG_ONLINE_CIRCUITO/pipeline/PL_WS_CRM_PAG_ONLINE_CIRCUITO_FOR_RICCDC" : {
+                "label" : "Pipeline/MTFSProject/WS_CRM_MTFS_PAG_ONLINE_CIRCUITO/pipeline/PL_WS_CRM_PAG_ONLINE_CIRCUITO_FOR_RICCDC",
+                "properties" : {
+                  "nodeType" : "Pipeline"
+                },
+                "successors" : {
+                  "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                    "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                    "properties" : {
+                      "nodeType" : "PipelineTemplate"
+                    },
+                    "successors" : { }
+                  },
+                  "Xquery/MTFSProject/WS_CRM_MTFS_PAG_ONLINE_CIRCUITO/trasformation/CreateResponse_WS_CRM_MTFS_PAG_ONLINE_CIRCUITO_FOR_RICCDC" : {
+                    "label" : "Xquery/MTFSProject/WS_CRM_MTFS_PAG_ONLINE_CIRCUITO/trasformation/CreateResponse_WS_CRM_MTFS_PAG_ONLINE_CIRCUITO_FOR_RICCDC",
+                    "properties" : {
+                      "nodeType" : "Xquery"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/MDW_CDM/EnterpriseServices/MTFSProject/PagOnlineCircuitoForRiccdc/wsdl/WS_CRM_MTFS_PAG_ONLINE_CIRCUITO_FOR_RICCDC" : {
+                    "label" : "WSDL/MDW_CDM/EnterpriseServices/MTFSProject/PagOnlineCircuitoForRiccdc/wsdl/WS_CRM_MTFS_PAG_ONLINE_CIRCUITO_FOR_RICCDC",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "BusinessService/MTFSProject/WS_CRM_MTFS_PAG_ONLINE_CIRCUITO/businessService/BS_TUX_PAG_ONLINE_CIRCUITO" : {
+                    "label" : "BusinessService/MTFSProject/WS_CRM_MTFS_PAG_ONLINE_CIRCUITO/businessService/BS_TUX_PAG_ONLINE_CIRCUITO",
+                    "properties" : {
+                      "nodeType" : "BusinessService"
+                    },
+                    "successors" : {
+                      "XMLSchema/MDW_CDM/ApplicationObjects/MTFS/PagOnlineCircuito/XSD_TUX_MTFS_PAG_ONLINE_CIRCUITO" : {
+                        "label" : "XMLSchema/MDW_CDM/ApplicationObjects/MTFS/PagOnlineCircuito/XSD_TUX_MTFS_PAG_ONLINE_CIRCUITO",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      },
+                      "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0" : {
+                        "label" : "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0",
+                        "properties" : {
+                          "nodeType" : "Archive"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "Xquery/MTFSProject/WS_CRM_MTFS_PAG_ONLINE_CIRCUITO/trasformation/CreateRequest_BS_TUX_PAG_ONLINE_CIRCUITO_FOR_RICCDC" : {
+                    "label" : "Xquery/MTFSProject/WS_CRM_MTFS_PAG_ONLINE_CIRCUITO/trasformation/CreateRequest_BS_TUX_PAG_ONLINE_CIRCUITO_FOR_RICCDC",
+                    "properties" : {
+                      "nodeType" : "Xquery"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/MTFSProject/PagOnlineCircuitoForRiccdc/wsdl/WS_CRM_MTFS_PAG_ONLINE_CIRCUITO_FOR_RICCDC" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/MTFSProject/PagOnlineCircuitoForRiccdc/wsdl/WS_CRM_MTFS_PAG_ONLINE_CIRCUITO_FOR_RICCDC",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/SCMSproject/Riccdc/transformations/createRequestDBCallRecoveryPag" : {
+            "label" : "Xquery/SCMSproject/Riccdc/transformations/createRequestDBCallRecoveryPag",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/SCMSproject/Riccdc/transformations/createRequestMTFS_Storno_ok" : {
+            "label" : "Xquery/SCMSproject/Riccdc/transformations/createRequestMTFS_Storno_ok",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/SCMSproject/Riccdc/transformations/createRequestVERSMC" : {
+            "label" : "Xquery/SCMSproject/Riccdc/transformations/createRequestVERSMC",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/GestionePPV/wsdl/WS_CRM_GESTIONE_PPV" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/GestionePPV/wsdl/WS_CRM_GESTIONE_PPV",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestionePPV/xsd/XSD_CRM_GESTIONE_PPV" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestionePPV/xsd/XSD_CRM_GESTIONE_PPV",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "ProxyService/MTFSProject/SVC_INTERNAL_UPD_PAG_CDC/proxy/PS_LOCAL_ENQUEUE_MTFS_UPD_PAG_CDC" : {
+            "label" : "ProxyService/MTFSProject/SVC_INTERNAL_UPD_PAG_CDC/proxy/PS_LOCAL_ENQUEUE_MTFS_UPD_PAG_CDC",
+            "properties" : {
+              "transport-type" : "local",
+              "nodeType" : "Proxy",
+              "service-type" : "SOAP"
+            },
+            "successors" : {
+              "Pipeline/MTFSProject/SVC_INTERNAL_UPD_PAG_CDC/pipeline/PL_ENQUEUE_MTFS_UPD_PAG_CDC" : {
+                "label" : "Pipeline/MTFSProject/SVC_INTERNAL_UPD_PAG_CDC/pipeline/PL_ENQUEUE_MTFS_UPD_PAG_CDC",
+                "properties" : {
+                  "nodeType" : "Pipeline"
+                },
+                "successors" : {
+                  "PipelineTemplate/MDW_CO/templates/pipeline/PL_ENQUEUE_INTERNAL_TEMPLATE" : {
+                    "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_ENQUEUE_INTERNAL_TEMPLATE",
+                    "properties" : {
+                      "nodeType" : "PipelineTemplate"
+                    },
+                    "successors" : { }
+                  },
+                  "BusinessService/MTFSProject/SVC_INTERNAL_UPD_PAG_CDC/businessService/BS_JMS_MTFS_UPD_PAG_CDC" : {
+                    "label" : "BusinessService/MTFSProject/SVC_INTERNAL_UPD_PAG_CDC/businessService/BS_JMS_MTFS_UPD_PAG_CDC",
+                    "properties" : {
+                      "nodeType" : "BusinessService"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/MDW_CDM/EnterpriseServices/MTFSProject/PagOnlineCircuitoForRiccdc/wsdl/WS_CRM_MTFS_PAG_ONLINE_CIRCUITO_FOR_RICCDC" : {
+                    "label" : "WSDL/MDW_CDM/EnterpriseServices/MTFSProject/PagOnlineCircuitoForRiccdc/wsdl/WS_CRM_MTFS_PAG_ONLINE_CIRCUITO_FOR_RICCDC",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/MTFSProject/PagOnlineCircuitoForRiccdc/wsdl/WS_CRM_MTFS_PAG_ONLINE_CIRCUITO_FOR_RICCDC" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/MTFSProject/PagOnlineCircuitoForRiccdc/wsdl/WS_CRM_MTFS_PAG_ONLINE_CIRCUITO_FOR_RICCDC",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Pipeline/SCMSproject/Riccdc/pipeline/PL_INTERNAL_DBCALL_INSERT_CDC_STORE" : {
+            "label" : "Pipeline/SCMSproject/Riccdc/pipeline/PL_INTERNAL_DBCALL_INSERT_CDC_STORE",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "BusinessService/SCMSproject/Riccdc/businessServices/BS_DB_INSERT_CDC_STORE" : {
+                "label" : "BusinessService/SCMSproject/Riccdc/businessServices/BS_DB_INSERT_CDC_STORE",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/SCMSproject/Resources/BS_DB_INSERT_CDC_STORE/concrete" : {
+                    "label" : "WSDL/SCMSproject/Resources/BS_DB_INSERT_CDC_STORE/concrete",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "JCA/SCMSproject/Resources/BS_DB_INSERT_CDC_STORE_db" : {
+                    "label" : "JCA/SCMSproject/Resources/BS_DB_INSERT_CDC_STORE_db",
+                    "properties" : {
+                      "nodeType" : "JCA"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "WSDL/SCMSproject/Resources/BS_DB_INSERT_CDC_STORE/concrete" : {
+                "label" : "WSDL/SCMSproject/Resources/BS_DB_INSERT_CDC_STORE/concrete",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Pipeline/SCMSproject/pipeline/PL_WS_CRM_INVOKE_CAIF" : {
+            "label" : "Pipeline/SCMSproject/pipeline/PL_WS_CRM_INVOKE_CAIF",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "Xquery/SCMSproject/transformation/createResponseOVAVPR" : {
+                "label" : "Xquery/SCMSproject/transformation/createResponseOVAVPR",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/SCMSproject/transformation/createResponseHIMGSC" : {
+                "label" : "Xquery/SCMSproject/transformation/createResponseHIMGSC",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/SCMSproject/transformation/scms_request_enrichment/create_request_ejb_scms_GENERIC" : {
+                "label" : "Xquery/SCMSproject/transformation/scms_request_enrichment/create_request_ejb_scms_GENERIC",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_CAIF" : {
+                "label" : "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_CAIF",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB" : {
+                    "label" : "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB",
+                    "properties" : {
+                      "nodeType" : "ForeignJNDIProvider"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/MDW_CDM/ApplicationObjects/SCMS/ejb_mdw/wsdl_with_xsd/BS_EJB_CAIF" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SCMS/ejb_mdw/wsdl_with_xsd/BS_EJB_CAIF",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSmartCard/wsdl/WS_CRM_GESTIONE_SMARTCARD" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSmartCard/wsdl/WS_CRM_GESTIONE_SMARTCARD",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSmartCard/xsd/XSD_CRM_GESTIONE_SMARTCARD" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSmartCard/xsd/XSD_CRM_GESTIONE_SMARTCARD",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "Xquery/SCMSproject/transformation/create_response_service_scms" : {
+            "label" : "Xquery/SCMSproject/transformation/create_response_service_scms",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/SCMSproject/Riccdc/transformations/createRequestMTFS_PagOnLine" : {
+            "label" : "Xquery/SCMSproject/Riccdc/transformations/createRequestMTFS_PagOnLine",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/GestionePPV_RICCDC/wsdl/WS_CRM_GESTIONE_PPV_RICCDC" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/GestionePPV_RICCDC/wsdl/WS_CRM_GESTIONE_PPV_RICCDC",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestionePPV_RICCDC/xsd/XSD_CRM_GESTIONE_PPV_RICCDC" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestionePPV_RICCDC/xsd/XSD_CRM_GESTIONE_PPV_RICCDC",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

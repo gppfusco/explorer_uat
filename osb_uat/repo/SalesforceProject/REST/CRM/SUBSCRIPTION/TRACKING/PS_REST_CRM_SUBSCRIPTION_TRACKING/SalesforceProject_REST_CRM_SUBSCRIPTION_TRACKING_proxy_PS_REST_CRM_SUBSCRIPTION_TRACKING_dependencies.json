@@ -1,0 +1,129 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SalesforceProject/REST_CRM_SUBSCRIPTION_TRACKING/proxy/PS_REST_CRM_SUBSCRIPTION_TRACKING",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "WADL/SalesforceProject/Resources/PS_REST_CRM_SUBSCRIPTION_TRACKING" : {
+        "label" : "WADL/SalesforceProject/Resources/PS_REST_CRM_SUBSCRIPTION_TRACKING",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      },
+      "Pipeline/SalesforceProject/REST_CRM_SUBSCRIPTION_TRACKING/pipeline/PL_REST_CRM_SUBSCRIPTION_TRACKING" : {
+        "label" : "Pipeline/SalesforceProject/REST_CRM_SUBSCRIPTION_TRACKING/pipeline/PL_REST_CRM_SUBSCRIPTION_TRACKING",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Xquery/SalesforceProject/REST_CRM_SUBSCRIPTION_TRACKING/trasformation/createResponseGetTracking" : {
+            "label" : "Xquery/SalesforceProject/REST_CRM_SUBSCRIPTION_TRACKING/trasformation/createResponseGetTracking",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Pipeline/SalesforceProject/pipeline/PL_SF_EJB_REST_INTERNAL" : {
+            "label" : "Pipeline/SalesforceProject/pipeline/PL_SF_EJB_REST_INTERNAL",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "BusinessService/MDW_CO/businessServices/BS_WS_EJB_FORCE" : {
+                "label" : "BusinessService/MDW_CO/businessServices/BS_WS_EJB_FORCE",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "WSDL/SalesforceProject/Resources/PS_REST_CRM_SUBSCRIPTION_TRACKING" : {
+            "label" : "WSDL/SalesforceProject/Resources/PS_REST_CRM_SUBSCRIPTION_TRACKING",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_SubscriptionTracking/xsd/XSD_CRM_SUBSCRIPTION_TRACKING" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_SubscriptionTracking/xsd/XSD_CRM_SUBSCRIPTION_TRACKING",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/SalesforceProject/REST_CRM_SUBSCRIPTION_TRACKING/trasformation/createRequestGetTracking" : {
+            "label" : "Xquery/SalesforceProject/REST_CRM_SUBSCRIPTION_TRACKING/trasformation/createRequestGetTracking",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WSDL/SalesforceProject/Resources/PS_REST_CRM_SUBSCRIPTION_TRACKING" : {
+        "label" : "WSDL/SalesforceProject/Resources/PS_REST_CRM_SUBSCRIPTION_TRACKING",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_SubscriptionTracking/xsd/XSD_CRM_SUBSCRIPTION_TRACKING" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_SubscriptionTracking/xsd/XSD_CRM_SUBSCRIPTION_TRACKING",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,231 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SiebelProject/RetrieveMatricole/proxy/PS_WS_SBL_LOGISTIC_RETRIEVE_MATRICOLE",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/SiebelProject/RetrieveMatricole/pipeline/PL_SBL_LOGISTIC_RETRIEVE_MATRICOLE_ROUTING" : {
+        "label" : "Pipeline/SiebelProject/RetrieveMatricole/pipeline/PL_SBL_LOGISTIC_RETRIEVE_MATRICOLE_ROUTING",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Xquery/SiebelProject/RetrieveMatricole/transformations/createRequest_RetrieveMatricole" : {
+            "label" : "Xquery/SiebelProject/RetrieveMatricole/transformations/createRequest_RetrieveMatricole",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/SiebelProject/RetrieveMatricole/pipeline/PL_SBL_LOGISTIC_RETRIEVE_MATRICOLE_DA_LISTA" : {
+            "label" : "Pipeline/SiebelProject/RetrieveMatricole/pipeline/PL_SBL_LOGISTIC_RETRIEVE_MATRICOLE_DA_LISTA",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "BusinessService/SiebelProject/RetrieveMatricole/businessService/BS_SQL_SELECT_RETRIEVE_MATRICOLE_DA_LISTA" : {
+                "label" : "BusinessService/SiebelProject/RetrieveMatricole/businessService/BS_SQL_SELECT_RETRIEVE_MATRICOLE_DA_LISTA",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/SiebelProject/Resources/BS_SQL_SELECT_RETRIEVE_MATRICOLE_DA_LISTA/concrete" : {
+                    "label" : "WSDL/SiebelProject/Resources/BS_SQL_SELECT_RETRIEVE_MATRICOLE_DA_LISTA/concrete",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "JCA/SiebelProject/Resources/BS_SQL_SELECT_RETRIEVE_MATRICOLE_DA_LISTA_db" : {
+                    "label" : "JCA/SiebelProject/Resources/BS_SQL_SELECT_RETRIEVE_MATRICOLE_DA_LISTA_db",
+                    "properties" : {
+                      "nodeType" : "JCA"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/SiebelProject/RetrieveMatricole/transformations/createResponse_RetrieveMatricoleFromList" : {
+                "label" : "Xquery/SiebelProject/RetrieveMatricole/transformations/createResponse_RetrieveMatricoleFromList",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveMatricole/wsdl/WS_SBL_LOGISTIC_RETRIEVE_MATRICOLE" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveMatricole/wsdl/WS_SBL_LOGISTIC_RETRIEVE_MATRICOLE",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveMatricole/xsd/XSD_SBL_LOGISTIC_RETRIEVE_MATRICOLE" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveMatricole/xsd/XSD_SBL_LOGISTIC_RETRIEVE_MATRICOLE",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/SiebelProject/RetrieveMatricole/transformations/createRequest_RetrieveMatricoleFromList" : {
+                "label" : "Xquery/SiebelProject/RetrieveMatricole/transformations/createRequest_RetrieveMatricoleFromList",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Pipeline/SiebelProject/RetrieveMatricole/pipeline/PL_SBL_LOGISTIC_RETRIEVE_MATRICOLE" : {
+            "label" : "Pipeline/SiebelProject/RetrieveMatricole/pipeline/PL_SBL_LOGISTIC_RETRIEVE_MATRICOLE",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/SiebelProject/RetrieveMatricole/transformations/createRequest_RetrieveMatricole" : {
+                "label" : "Xquery/SiebelProject/RetrieveMatricole/transformations/createRequest_RetrieveMatricole",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "BusinessService/SiebelProject/RetrieveMatricole/businessService/BS_SQL_SELECT_RETRIEVE_MATRICOLE" : {
+                "label" : "BusinessService/SiebelProject/RetrieveMatricole/businessService/BS_SQL_SELECT_RETRIEVE_MATRICOLE",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/SiebelProject/Resources/BS_SQL_SELECT_RETRIEVE_MATRICOLE/concrete" : {
+                    "label" : "WSDL/SiebelProject/Resources/BS_SQL_SELECT_RETRIEVE_MATRICOLE/concrete",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "JCA/SiebelProject/Resources/BS_SQL_SELECT_RETRIEVE_MATRICOLE_db" : {
+                    "label" : "JCA/SiebelProject/Resources/BS_SQL_SELECT_RETRIEVE_MATRICOLE_db",
+                    "properties" : {
+                      "nodeType" : "JCA"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveMatricole/wsdl/WS_SBL_LOGISTIC_RETRIEVE_MATRICOLE" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveMatricole/wsdl/WS_SBL_LOGISTIC_RETRIEVE_MATRICOLE",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveMatricole/xsd/XSD_SBL_LOGISTIC_RETRIEVE_MATRICOLE" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveMatricole/xsd/XSD_SBL_LOGISTIC_RETRIEVE_MATRICOLE",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/SiebelProject/RetrieveMatricole/transformations/createResponse_RetrieveMatricole" : {
+                "label" : "Xquery/SiebelProject/RetrieveMatricole/transformations/createResponse_RetrieveMatricole",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveMatricole/wsdl/WS_SBL_LOGISTIC_RETRIEVE_MATRICOLE" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveMatricole/wsdl/WS_SBL_LOGISTIC_RETRIEVE_MATRICOLE",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveMatricole/xsd/XSD_SBL_LOGISTIC_RETRIEVE_MATRICOLE" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveMatricole/xsd/XSD_SBL_LOGISTIC_RETRIEVE_MATRICOLE",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/SiebelProject/RetrieveMatricole/transformations/createRequest_RetrieveMatricoleFromList" : {
+            "label" : "Xquery/SiebelProject/RetrieveMatricole/transformations/createRequest_RetrieveMatricoleFromList",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveMatricole/wsdl/WS_SBL_LOGISTIC_RETRIEVE_MATRICOLE" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveMatricole/wsdl/WS_SBL_LOGISTIC_RETRIEVE_MATRICOLE",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveMatricole/xsd/XSD_SBL_LOGISTIC_RETRIEVE_MATRICOLE" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveMatricole/xsd/XSD_SBL_LOGISTIC_RETRIEVE_MATRICOLE",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

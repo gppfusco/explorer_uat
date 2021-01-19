@@ -1,0 +1,131 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/IGFSProject/TokenizerGatewayForTest/proxy/PS_IGFS_TOKENIZER_GATEWAY",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/IGFSProject/TokenizerGateway/wsdl/WS_IGFS_TOKENIZER_GATEWAY" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/IGFSProject/TokenizerGateway/wsdl/WS_IGFS_TOKENIZER_GATEWAY",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/IGFSProject/TokenizerGateway/xsd/XSD_IGFS_TOKENIZER_GATEWAY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/IGFSProject/TokenizerGateway/xsd/XSD_IGFS_TOKENIZER_GATEWAY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "ServiceProvider/MDW_CDM/ServiceKeyProviders/key_provider_pci" : {
+        "label" : "ServiceProvider/MDW_CDM/ServiceKeyProviders/key_provider_pci",
+        "properties" : {
+          "nodeType" : "ServiceProvider"
+        },
+        "successors" : { }
+      },
+      "Pipeline/IGFSProject/TokenizerGatewayWSCallMutual/pipeline/PL_IGFS_TOKENIZER_GATEWAY_WSCALL_MUTUAL" : {
+        "label" : "Pipeline/IGFSProject/TokenizerGatewayWSCallMutual/pipeline/PL_IGFS_TOKENIZER_GATEWAY_WSCALL_MUTUAL",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/MDW_CDM/EnterpriseServices/IGFSProject/TokenizerGateway/wsdl/WS_IGFS_TOKENIZER_GATEWAY" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/IGFSProject/TokenizerGateway/wsdl/WS_IGFS_TOKENIZER_GATEWAY",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/IGFSProject/TokenizerGateway/xsd/XSD_IGFS_TOKENIZER_GATEWAY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/IGFSProject/TokenizerGateway/xsd/XSD_IGFS_TOKENIZER_GATEWAY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/IGFSProject/TokenizerGatewayWSCallMutual/transformations/createRequest_CheckWSCallMutual" : {
+            "label" : "Xquery/IGFSProject/TokenizerGatewayWSCallMutual/transformations/createRequest_CheckWSCallMutual",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "ProxyService/MDW_CO/proxy_sb/PS_SB_EJB_WSCALL_OSB" : {
+            "label" : "ProxyService/MDW_CO/proxy_sb/PS_SB_EJB_WSCALL_OSB",
+            "properties" : {
+              "transport-type" : "sb",
+              "nodeType" : "Proxy",
+              "service-type" : "SOAP"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/ApplicationObjects/MDW/WS_BS_EJB_WSCALL_OSB" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/MDW/WS_BS_EJB_WSCALL_OSB",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "BusinessService/MDW_CO/businessServices/reserved/BS_EJB_WSCALL_OSB" : {
+                "label" : "BusinessService/MDW_CO/businessServices/reserved/BS_EJB_WSCALL_OSB",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "Archive/MDW_CO/ejbs/ejb/wscall/osb/1/0" : {
+                    "label" : "Archive/MDW_CO/ejbs/ejb/wscall/osb/1/0",
+                    "properties" : {
+                      "nodeType" : "Archive"
+                    },
+                    "successors" : { }
+                  },
+                  "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB" : {
+                    "label" : "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB",
+                    "properties" : {
+                      "nodeType" : "ForeignJNDIProvider"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/IGFSProject/TokenizerGatewayWSCallMutual/transformations/createResponse_CheckWSCallMutual" : {
+            "label" : "Xquery/IGFSProject/TokenizerGatewayWSCallMutual/transformations/createResponse_CheckWSCallMutual",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

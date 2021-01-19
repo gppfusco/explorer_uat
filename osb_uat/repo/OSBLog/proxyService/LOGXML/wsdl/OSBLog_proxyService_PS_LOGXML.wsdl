@@ -1,0 +1,31 @@
+<wsdl:definitions name="PS_LOGXML" targetNamespace="http://PS_LOGXML" xmlns:tns="http://PS_LOGXML" xmlns:inp1="http://www.skytv.it/mdw/data" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:types>
+        <xsd:schema>
+            <xsd:import namespace="http://www.skytv.it/mdw/data" schemaLocation="payload_messaggio_test.xsd"/>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="requestMessage">
+        <wsdl:part name="part1" element="inp1:requestINCSSO"/>
+    </wsdl:message>
+    <wsdl:message name="replyMessage">
+        <wsdl:part name="part1" element="inp1:responseSCMS"/>
+    </wsdl:message>
+    <wsdl:portType name="logxml_ptt">
+        <wsdl:operation name="oPlogxml">
+            <wsdl:input message="tns:requestMessage"/>
+            <wsdl:output message="tns:replyMessage"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="logxml_bind" type="tns:logxml_ptt">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="oPlogxml">
+            <soap:operation style="document" soapAction="oPlogxml"/>
+            <wsdl:input>
+                <soap:body use="literal" namespace="http://PS_LOGXML"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" namespace="http://PS_LOGXML"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>

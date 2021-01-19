@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/mdw/om/WS_OM_TYO",
+    "name" : "BlueBirdProject_OM_tyo_proxy_PS_WS_OM_TYO",
+    "remoteName" : "ProxyService/BlueBirdProject/OM/tyo/proxy/PS_WS_OM_TYO",
+    "localPath" : "osb_uat\\repo\\BlueBirdProject\\OM\\tyo\\PS_WS_OM_TYO",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/mdw/om/WS_OM_TYO?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/BlueBirdProject/OM/tyo/xsd/XSD_OM_TYO",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

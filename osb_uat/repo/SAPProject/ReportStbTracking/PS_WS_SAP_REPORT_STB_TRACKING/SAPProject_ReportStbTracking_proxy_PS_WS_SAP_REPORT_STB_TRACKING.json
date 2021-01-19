@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/sap/WS_SAP_REPORT_STB_TRACKING",
+    "name" : "SAPProject_ReportStbTracking_proxy_PS_WS_SAP_REPORT_STB_TRACKING",
+    "remoteName" : "ProxyService/SAPProject/ReportStbTracking/proxy/PS_WS_SAP_REPORT_STB_TRACKING",
+    "localPath" : "osb_uat\\repo\\SAPProject\\ReportStbTracking\\PS_WS_SAP_REPORT_STB_TRACKING",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/sap/WS_SAP_REPORT_STB_TRACKING?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SAPProject/ReportStbTracking/xsd/ReportStbTracking",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

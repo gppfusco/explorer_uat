@@ -1,0 +1,85 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/EgonProject/NormalizzaIndirizzo/proxy/PS_EGON_NORMALIZZA_INDIRIZZO",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/EgonProject/NormalizzaIndirizzo/wsdl/WS_CRM_EGON_NORMALIZZA_INDIRIZZO" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/EgonProject/NormalizzaIndirizzo/wsdl/WS_CRM_EGON_NORMALIZZA_INDIRIZZO",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/EgonProject/NormalizzaIndirizzo/xsd/XSD_CRM_EGON_NORMALIZZA_INDIRIZZO" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/EgonProject/NormalizzaIndirizzo/xsd/XSD_CRM_EGON_NORMALIZZA_INDIRIZZO",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/EgonProject/NormalizzaIndirizzo/pipeline/PL_EGON_NORMALIZZA_INDIRIZZO" : {
+        "label" : "Pipeline/EgonProject/NormalizzaIndirizzo/pipeline/PL_EGON_NORMALIZZA_INDIRIZZO",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "BusinessService/EgonProject/businessServices/BS_HTTP_EGON_NORMALIZZA_INDIRIZZO" : {
+            "label" : "BusinessService/EgonProject/businessServices/BS_HTTP_EGON_NORMALIZZA_INDIRIZZO",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/EgonProject/NormalizzaIndirizzo/wsdl/WS_CRM_EGON_NORMALIZZA_INDIRIZZO" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/EgonProject/NormalizzaIndirizzo/wsdl/WS_CRM_EGON_NORMALIZZA_INDIRIZZO",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/EgonProject/NormalizzaIndirizzo/xsd/XSD_CRM_EGON_NORMALIZZA_INDIRIZZO" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/EgonProject/NormalizzaIndirizzo/xsd/XSD_CRM_EGON_NORMALIZZA_INDIRIZZO",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/EgonProject/NormalizzaIndirizzo/transformations/createResponseNormalizzaIndirizzo" : {
+            "label" : "Xquery/EgonProject/NormalizzaIndirizzo/transformations/createResponseNormalizzaIndirizzo",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

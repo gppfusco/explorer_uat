@@ -1,0 +1,158 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SCMSproject/netflix/SCMS_GET_PAI_BY_CONTRACT/proxy/PS_REST_SCMS_NETFLIX_GET_PAI_BY_CONTRACT",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "WSDL/SCMSproject/Resources/PS_REST_SCMS_NETFLIX_GET_PAI_BY_CONTRACT" : {
+        "label" : "WSDL/SCMSproject/Resources/PS_REST_SCMS_NETFLIX_GET_PAI_BY_CONTRACT",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/netflix/Rest_GetPaiByContract/xsd/XSD_SCMS_NETFLIX_GET_PAI_BY_CONTRACT" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/netflix/Rest_GetPaiByContract/xsd/XSD_SCMS_NETFLIX_GET_PAI_BY_CONTRACT",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WADL/SCMSproject/Resources/PS_REST_SCMS_NETFLIX_GET_PAI_BY_CONTRACT" : {
+        "label" : "WADL/SCMSproject/Resources/PS_REST_SCMS_NETFLIX_GET_PAI_BY_CONTRACT",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      },
+      "Pipeline/SCMSproject/netflix/SCMS_GET_PAI_BY_CONTRACT/pipeline/PL_REST_SCMS_NETFLIX_GET_PAI_BY_CONTRACT" : {
+        "label" : "Pipeline/SCMSproject/netflix/SCMS_GET_PAI_BY_CONTRACT/pipeline/PL_REST_SCMS_NETFLIX_GET_PAI_BY_CONTRACT",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Xquery/SCMSproject/netflix/SCMS_GET_PAI_BY_CONTRACT/trasformations/createResponseGetPaiByContract" : {
+            "label" : "Xquery/SCMSproject/netflix/SCMS_GET_PAI_BY_CONTRACT/trasformations/createResponseGetPaiByContract",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/SCMSproject/Resources/PS_REST_SCMS_NETFLIX_GET_PAI_BY_CONTRACT" : {
+            "label" : "WSDL/SCMSproject/Resources/PS_REST_SCMS_NETFLIX_GET_PAI_BY_CONTRACT",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/netflix/Rest_GetPaiByContract/xsd/XSD_SCMS_NETFLIX_GET_PAI_BY_CONTRACT" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/netflix/Rest_GetPaiByContract/xsd/XSD_SCMS_NETFLIX_GET_PAI_BY_CONTRACT",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/SCMSproject/netflix/SCMS_GET_PAI_BY_CONTRACT/trasformations/createRequestGetPaiByContract" : {
+            "label" : "Xquery/SCMSproject/netflix/SCMS_GET_PAI_BY_CONTRACT/trasformations/createRequestGetPaiByContract",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/SCMSproject/pipeline/PL_INTERNAL_INVOKE_CAIF" : {
+            "label" : "Pipeline/SCMSproject/pipeline/PL_INTERNAL_INVOKE_CAIF",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/SCMSproject/transformation/scms_request_enrichment/create_request_ejb_scms_GENERIC" : {
+                "label" : "Xquery/SCMSproject/transformation/scms_request_enrichment/create_request_ejb_scms_GENERIC",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_CAIF" : {
+                "label" : "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_CAIF",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB" : {
+                    "label" : "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB",
+                    "properties" : {
+                      "nodeType" : "ForeignJNDIProvider"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/MDW_CDM/ApplicationObjects/SCMS/ejb_mdw/wsdl_with_xsd/BS_EJB_CAIF" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SCMS/ejb_mdw/wsdl_with_xsd/BS_EJB_CAIF",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSmartCard/wsdl/WS_CRM_GESTIONE_SMARTCARD" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSmartCard/wsdl/WS_CRM_GESTIONE_SMARTCARD",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSmartCard/xsd/XSD_CRM_GESTIONE_SMARTCARD" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSmartCard/xsd/XSD_CRM_GESTIONE_SMARTCARD",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/MDWProject/AlignSfByBpel/proxy/PS_WS_MDW_ALIGN_CONSIST_TRANSITORIO",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/MDWProject/AlignFromSF/wsdl/WS_MDW_ALIGN_CONSIST_TRANSITORIO" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/MDWProject/AlignFromSF/wsdl/WS_MDW_ALIGN_CONSIST_TRANSITORIO",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/AlignFromSF/xsd/XSD_MDW_ALIGN_CONSISTENZA_TRANSITORIO" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/AlignFromSF/xsd/XSD_MDW_ALIGN_CONSISTENZA_TRANSITORIO",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/MDWProject/AlignSfByBpel/pipelines/PL_WS_MDW_ALIGN_CONSISTENZA_TRANSITORIO" : {
+        "label" : "Pipeline/MDWProject/AlignSfByBpel/pipelines/PL_WS_MDW_ALIGN_CONSISTENZA_TRANSITORIO",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/MDW_CDM/EnterpriseServices/MDWProject/AlignFromSF/wsdl/WS_MDW_ALIGN_CONSIST_TRANSITORIO" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/MDWProject/AlignFromSF/wsdl/WS_MDW_ALIGN_CONSIST_TRANSITORIO",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/AlignFromSF/xsd/XSD_MDW_ALIGN_CONSISTENZA_TRANSITORIO" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/AlignFromSF/xsd/XSD_MDW_ALIGN_CONSISTENZA_TRANSITORIO",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/AlignFromSF/xsd/XSD_MDW_ALIGN_CONSISTENZA_TRANSITORIO" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/AlignFromSF/xsd/XSD_MDW_ALIGN_CONSISTENZA_TRANSITORIO",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "Xquery/MDWProject/AlignSfByBpel/transformations/createRequest_AlignConsistenzaTransitorio" : {
+            "label" : "Xquery/MDWProject/AlignSfByBpel/transformations/createRequest_AlignConsistenzaTransitorio",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/MDWProject/AlignSfByBpel/transformations/createResponse_AlignConsistenzaTransitorio" : {
+            "label" : "Xquery/MDWProject/AlignSfByBpel/transformations/createResponse_AlignConsistenzaTransitorio",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "BusinessService/MDWProject/AlignSfByBpel/businessServices/BS_JMS_SOA_ALIGN_BY_BPEL_ENQUEUE" : {
+            "label" : "BusinessService/MDWProject/AlignSfByBpel/businessServices/BS_JMS_SOA_ALIGN_BY_BPEL_ENQUEUE",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

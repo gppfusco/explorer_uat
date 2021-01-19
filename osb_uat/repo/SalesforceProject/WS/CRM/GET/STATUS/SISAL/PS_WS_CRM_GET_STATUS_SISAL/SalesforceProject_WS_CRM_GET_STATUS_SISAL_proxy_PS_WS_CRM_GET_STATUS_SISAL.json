@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/salesforce/WS_CRM_GET_STATUS_SISAL",
+    "name" : "SalesforceProject_WS_CRM_GET_STATUS_SISAL_proxy_PS_WS_CRM_GET_STATUS_SISAL",
+    "remoteName" : "ProxyService/SalesforceProject/WS_CRM_GET_STATUS_SISAL/proxy/PS_WS_CRM_GET_STATUS_SISAL",
+    "localPath" : "osb_uat\\repo\\SalesforceProject\\WS\\CRM\\GET\\STATUS\\SISAL\\PS_WS_CRM_GET_STATUS_SISAL",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/salesforce/WS_CRM_GET_STATUS_SISAL?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SalesforceProject/GetStatusSisal/xsd/XSD_CRM_GET_STATUS_SISAL",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

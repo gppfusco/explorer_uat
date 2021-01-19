@@ -1,0 +1,143 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/MDWProject/GestioneTokenEntity/proxy/PS_WS_GESTIONE_TOKEN_ENTITY",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/MDWProject/GestioneTokenEntity/pipeline/PL_WS_MDW_GESTIONE_TOKEN_ENTITY" : {
+        "label" : "Pipeline/MDWProject/GestioneTokenEntity/pipeline/PL_WS_MDW_GESTIONE_TOKEN_ENTITY",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Xquery/MDWProject/GestioneTokenEntity/transformation/createRequest_TokenizeEntity" : {
+            "label" : "Xquery/MDWProject/GestioneTokenEntity/transformation/createRequest_TokenizeEntity",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Pipeline/MDWProject/GestioneTokenEntity/pipeline/PL_MDW_SET_ENTITY_TOKEN_ENQUEUE" : {
+            "label" : "Pipeline/MDWProject/GestioneTokenEntity/pipeline/PL_MDW_SET_ENTITY_TOKEN_ENQUEUE",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "BusinessService/MDWProject/GestioneTokenEntity/businessService/BS_JMS_PORTALE_BOOKING_HOTEL_ENQUEUE" : {
+                "label" : "BusinessService/MDWProject/GestioneTokenEntity/businessService/BS_JMS_PORTALE_BOOKING_HOTEL_ENQUEUE",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/MDWProject/GestioneTokenEntity/wsdl/WS_MDW_GESTIONE_TOKEN_INTERNAL" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/MDWProject/GestioneTokenEntity/wsdl/WS_MDW_GESTIONE_TOKEN_INTERNAL",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_ASYNC_ENQUEUE_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_ASYNC_ENQUEUE_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "BusinessService/MDWProject/GestioneTokenEntity/businessService/BS_SQL_GESTIONE_TOKEN_ENTITY_GETKEY" : {
+            "label" : "BusinessService/MDWProject/GestioneTokenEntity/businessService/BS_SQL_GESTIONE_TOKEN_ENTITY_GETKEY",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "WSDL/MDWProject/Resources/BS_SQL_GESTIONE_TOKEN_ENTITY_GETKEY/concrete" : {
+                "label" : "WSDL/MDWProject/Resources/BS_SQL_GESTIONE_TOKEN_ENTITY_GETKEY/concrete",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "JCA/MDWProject/Resources/BS_SQL_GESTIONE_TOKEN_ENTITY_GETKEY_db" : {
+                "label" : "JCA/MDWProject/Resources/BS_SQL_GESTIONE_TOKEN_ENTITY_GETKEY_db",
+                "properties" : {
+                  "nodeType" : "JCA"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/MDWProject/GestioneTokenEntity/transformation/createRequest_SqlGetKey" : {
+            "label" : "Xquery/MDWProject/GestioneTokenEntity/transformation/createRequest_SqlGetKey",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/MDWProject/GestioneTokenEntity/wsdl/WS_MDW_GESTIONE_TOKEN_ENTITY" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/MDWProject/GestioneTokenEntity/wsdl/WS_MDW_GESTIONE_TOKEN_ENTITY",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/GestioneTokenEntity/xsd/XSD_MDW_GESTIONE_TOKEN_ENTITY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/GestioneTokenEntity/xsd/XSD_MDW_GESTIONE_TOKEN_ENTITY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/MDWProject/GestioneTokenEntity/transformation/createResponse_TokenizeEntity" : {
+            "label" : "Xquery/MDWProject/GestioneTokenEntity/transformation/createResponse_TokenizeEntity",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/MDWProject/GestioneTokenEntity/wsdl/WS_MDW_GESTIONE_TOKEN_ENTITY" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/MDWProject/GestioneTokenEntity/wsdl/WS_MDW_GESTIONE_TOKEN_ENTITY",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/GestioneTokenEntity/xsd/XSD_MDW_GESTIONE_TOKEN_ENTITY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/GestioneTokenEntity/xsd/XSD_MDW_GESTIONE_TOKEN_ENTITY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

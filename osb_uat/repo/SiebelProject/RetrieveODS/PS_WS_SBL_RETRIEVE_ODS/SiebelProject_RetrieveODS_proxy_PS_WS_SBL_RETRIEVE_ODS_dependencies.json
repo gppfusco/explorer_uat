@@ -1,0 +1,415 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SiebelProject/RetrieveODS/proxy/PS_WS_SBL_RETRIEVE_ODS",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveODS/wsdl/WS_SBL_RETRIEVE_ODS" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveODS/wsdl/WS_SBL_RETRIEVE_ODS",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveODS/xsd/XSD_SBL_RETRIEVE_ODS" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveODS/xsd/XSD_SBL_RETRIEVE_ODS",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/SiebelProject/RetrieveODS/pipeline/PL_WS_ROUTING_RETRIEVE_ODS" : {
+        "label" : "Pipeline/SiebelProject/RetrieveODS/pipeline/PL_WS_ROUTING_RETRIEVE_ODS",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/SiebelProject/RetrieveODS/pipeline/PL_SQL_SBL_RETRIEVE_ODS_TIBCO_SIEBEL" : {
+            "label" : "Pipeline/SiebelProject/RetrieveODS/pipeline/PL_SQL_SBL_RETRIEVE_ODS_TIBCO_SIEBEL",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/SiebelProject/RetrieveODS/transformation/createRequest_SelectDetailODS" : {
+                "label" : "Xquery/SiebelProject/RetrieveODS/transformation/createRequest_SelectDetailODS",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Pipeline/SiebelProject/RetrieveODS/pipeline/PL_INTERNAL_SBL_SELECT_DETAIL_ODS" : {
+                "label" : "Pipeline/SiebelProject/RetrieveODS/pipeline/PL_INTERNAL_SBL_SELECT_DETAIL_ODS",
+                "properties" : {
+                  "nodeType" : "Pipeline"
+                },
+                "successors" : {
+                  "BusinessService/SiebelProject/RetrieveODS/businessServices/BS_SBL_SQL_SELECT_GET_DETAIL_ODS" : {
+                    "label" : "BusinessService/SiebelProject/RetrieveODS/businessServices/BS_SBL_SQL_SELECT_GET_DETAIL_ODS",
+                    "properties" : {
+                      "nodeType" : "BusinessService"
+                    },
+                    "successors" : {
+                      "JCA/SiebelProject/Resources/BS_SBL_SQL_SELECT_GET_DETAIL_ODS_db" : {
+                        "label" : "JCA/SiebelProject/Resources/BS_SBL_SQL_SELECT_GET_DETAIL_ODS_db",
+                        "properties" : {
+                          "nodeType" : "JCA"
+                        },
+                        "successors" : { }
+                      },
+                      "WSDL/SiebelProject/Resources/BS_SBL_SQL_SELECT_GET_DETAIL_ODS/concrete" : {
+                        "label" : "WSDL/SiebelProject/Resources/BS_SBL_SQL_SELECT_GET_DETAIL_ODS/concrete",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveODS/wsdl/WS_SBL_RETRIEVE_ODS" : {
+                    "label" : "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveODS/wsdl/WS_SBL_RETRIEVE_ODS",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : {
+                      "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      },
+                      "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveODS/xsd/XSD_SBL_RETRIEVE_ODS" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveODS/xsd/XSD_SBL_RETRIEVE_ODS",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                    "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                    "properties" : {
+                      "nodeType" : "PipelineTemplate"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "Xquery/SiebelProject/RetrieveODS/transformation/createRequest_RetrieveODSfromTIBCO" : {
+                "label" : "Xquery/SiebelProject/RetrieveODS/transformation/createRequest_RetrieveODSfromTIBCO",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/SiebelProject/RetrieveODS/transformation/createResponse_RetrieveODSTibcoSiebel" : {
+                "label" : "Xquery/SiebelProject/RetrieveODS/transformation/createResponse_RetrieveODSTibcoSiebel",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/SiebelProject/RetrieveODS/transformation/createRequest_SelectODSListTibcoSiebel" : {
+                "label" : "Xquery/SiebelProject/RetrieveODS/transformation/createRequest_SelectODSListTibcoSiebel",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveODS/wsdl/WS_SBL_RETRIEVE_ODS" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveODS/wsdl/WS_SBL_RETRIEVE_ODS",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveODS/xsd/XSD_SBL_RETRIEVE_ODS" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveODS/xsd/XSD_SBL_RETRIEVE_ODS",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "BusinessService/SiebelProject/RetrieveODS/businessServices/BS_SQL_SBL_GET_ODS_TIBCO_SIEBEL" : {
+                "label" : "BusinessService/SiebelProject/RetrieveODS/businessServices/BS_SQL_SBL_GET_ODS_TIBCO_SIEBEL",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/SiebelProject/Resources/BS_SQL_SBL_GET_ODS_TIBCO_SIEBEL/concrete" : {
+                    "label" : "WSDL/SiebelProject/Resources/BS_SQL_SBL_GET_ODS_TIBCO_SIEBEL/concrete",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "JCA/SiebelProject/Resources/BS_SQL_SBL_GET_ODS_TIBCO_SIEBEL_db" : {
+                    "label" : "JCA/SiebelProject/Resources/BS_SQL_SBL_GET_ODS_TIBCO_SIEBEL_db",
+                    "properties" : {
+                      "nodeType" : "JCA"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "ProxyService/OMProject/RetrieveODS/proxy/PS_LOCAL_TIBCO_RETRIEVE_ODS" : {
+                "label" : "ProxyService/OMProject/RetrieveODS/proxy/PS_LOCAL_TIBCO_RETRIEVE_ODS",
+                "properties" : {
+                  "nodeType" : "ProxyService"
+                },
+                "successors" : {
+                  "WSDL/OMProject/Resources/BS_SQL_TIBCO_RETRIEVE_ODS/concrete" : {
+                    "label" : "WSDL/OMProject/Resources/BS_SQL_TIBCO_RETRIEVE_ODS/concrete",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "Pipeline/OMProject/RetrieveODS/pipeline/PL_TIBCO_RETRIEVE_ODS" : {
+                    "label" : "Pipeline/OMProject/RetrieveODS/pipeline/PL_TIBCO_RETRIEVE_ODS",
+                    "properties" : {
+                      "nodeType" : "Pipeline"
+                    },
+                    "successors" : {
+                      "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                        "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                        "properties" : {
+                          "nodeType" : "PipelineTemplate"
+                        },
+                        "successors" : { }
+                      },
+                      "BusinessService/OMProject/RetrieveODS/businessServices/BS_SQL_TIBCO_RETRIEVE_ODS" : {
+                        "label" : "BusinessService/OMProject/RetrieveODS/businessServices/BS_SQL_TIBCO_RETRIEVE_ODS",
+                        "properties" : {
+                          "nodeType" : "BusinessService"
+                        },
+                        "successors" : {
+                          "JCA/OMProject/Resources/BS_SQL_TIBCO_RETRIEVE_ODS_db" : {
+                            "label" : "JCA/OMProject/Resources/BS_SQL_TIBCO_RETRIEVE_ODS_db",
+                            "properties" : {
+                              "nodeType" : "JCA"
+                            },
+                            "successors" : { }
+                          },
+                          "WSDL/OMProject/Resources/BS_SQL_TIBCO_RETRIEVE_ODS/concrete" : {
+                            "label" : "WSDL/OMProject/Resources/BS_SQL_TIBCO_RETRIEVE_ODS/concrete",
+                            "properties" : {
+                              "nodeType" : "WSDL"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      },
+                      "WSDL/OMProject/Resources/BS_SQL_TIBCO_RETRIEVE_ODS/concrete" : {
+                        "label" : "WSDL/OMProject/Resources/BS_SQL_TIBCO_RETRIEVE_ODS/concrete",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "Pipeline/SiebelProject/RetrieveODS/pipeline/PL_SQL_SBL_RETRIEVE_ODS" : {
+            "label" : "Pipeline/SiebelProject/RetrieveODS/pipeline/PL_SQL_SBL_RETRIEVE_ODS",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/SiebelProject/RetrieveODS/transformation/createRequest_SelectDetailODS" : {
+                "label" : "Xquery/SiebelProject/RetrieveODS/transformation/createRequest_SelectDetailODS",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Pipeline/SiebelProject/RetrieveODS/pipeline/PL_INTERNAL_SBL_SELECT_DETAIL_ODS" : {
+                "label" : "Pipeline/SiebelProject/RetrieveODS/pipeline/PL_INTERNAL_SBL_SELECT_DETAIL_ODS",
+                "properties" : {
+                  "nodeType" : "Pipeline"
+                },
+                "successors" : {
+                  "BusinessService/SiebelProject/RetrieveODS/businessServices/BS_SBL_SQL_SELECT_GET_DETAIL_ODS" : {
+                    "label" : "BusinessService/SiebelProject/RetrieveODS/businessServices/BS_SBL_SQL_SELECT_GET_DETAIL_ODS",
+                    "properties" : {
+                      "nodeType" : "BusinessService"
+                    },
+                    "successors" : {
+                      "JCA/SiebelProject/Resources/BS_SBL_SQL_SELECT_GET_DETAIL_ODS_db" : {
+                        "label" : "JCA/SiebelProject/Resources/BS_SBL_SQL_SELECT_GET_DETAIL_ODS_db",
+                        "properties" : {
+                          "nodeType" : "JCA"
+                        },
+                        "successors" : { }
+                      },
+                      "WSDL/SiebelProject/Resources/BS_SBL_SQL_SELECT_GET_DETAIL_ODS/concrete" : {
+                        "label" : "WSDL/SiebelProject/Resources/BS_SBL_SQL_SELECT_GET_DETAIL_ODS/concrete",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveODS/wsdl/WS_SBL_RETRIEVE_ODS" : {
+                    "label" : "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveODS/wsdl/WS_SBL_RETRIEVE_ODS",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : {
+                      "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      },
+                      "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveODS/xsd/XSD_SBL_RETRIEVE_ODS" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveODS/xsd/XSD_SBL_RETRIEVE_ODS",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                    "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                    "properties" : {
+                      "nodeType" : "PipelineTemplate"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "BusinessService/SiebelProject/RetrieveODS/businessServices/BS_SQL_SELECT_ODS_LIST" : {
+                "label" : "BusinessService/SiebelProject/RetrieveODS/businessServices/BS_SQL_SELECT_ODS_LIST",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/SiebelProject/Resources/BS_SQL_SELECT_ODS_LIST/concrete" : {
+                    "label" : "WSDL/SiebelProject/Resources/BS_SQL_SELECT_ODS_LIST/concrete",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "JCA/SiebelProject/Resources/BS_SQL_SELECT_ODS_LIST_db" : {
+                    "label" : "JCA/SiebelProject/Resources/BS_SQL_SELECT_ODS_LIST_db",
+                    "properties" : {
+                      "nodeType" : "JCA"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/SiebelProject/RetrieveODS/transformation/createResponse_RetrieveODS" : {
+                "label" : "Xquery/SiebelProject/RetrieveODS/transformation/createResponse_RetrieveODS",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveODS/wsdl/WS_SBL_RETRIEVE_ODS" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveODS/wsdl/WS_SBL_RETRIEVE_ODS",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveODS/xsd/XSD_SBL_RETRIEVE_ODS" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/RetrieveODS/xsd/XSD_SBL_RETRIEVE_ODS",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/SiebelProject/RetrieveODS/transformation/createRequest_SelectODSList" : {
+                "label" : "Xquery/SiebelProject/RetrieveODS/transformation/createRequest_SelectODSList",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/KenanProject/LetturaFatture/wsdl/WS_KNN_LETTURA_FATTURE" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/KenanProject/LetturaFatture/wsdl/WS_KNN_LETTURA_FATTURE",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/LetturaFatture/xsd/XSD_KNN_LETTURA_FATTURE" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/LetturaFatture/xsd/XSD_KNN_LETTURA_FATTURE",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

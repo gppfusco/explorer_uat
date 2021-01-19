@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/BlueBirdProject/SALESFORCE/whsNotifyEvent/Proxy/PS_WS_SF_WHS_NOTIFY_EVENT",
+    "name" : "BlueBirdProject_SALESFORCE_whsNotifyEvent_Proxy_PS_WS_SF_WHS_NOTIFY_EVENT",
+    "remoteName" : "ProxyService/BlueBirdProject/SALESFORCE/whsNotifyEvent/Proxy/PS_WS_SF_WHS_NOTIFY_EVENT",
+    "localPath" : "osb_uat\\repo\\BlueBirdProject\\SALESFORCE\\whsNotifyEvent\\PS_WS_SF_WHS_NOTIFY_EVENT",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/BlueBirdProject/SALESFORCE/whsNotifyEvent/Proxy/PS_WS_SF_WHS_NOTIFY_EVENT?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/whsNotifyEvent/xsd/XSD_SF_WHS_NOTIFY_EVENT",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

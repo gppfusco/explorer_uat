@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/mdw/WS_SEDA_ELABORAZIONE_MOP",
+    "name" : "MDWProject_SalesforceToRidSEDA_ElaborazioneMOP_proxy_PS_WS_SEDA_ELABORAZIONE_MOP",
+    "remoteName" : "ProxyService/MDWProject/SalesforceToRidSEDA/ElaborazioneMOP/proxy/PS_WS_SEDA_ELABORAZIONE_MOP",
+    "localPath" : "osb_uat\\repo\\MDWProject\\SalesforceToRidSEDA\\ElaborazioneMOP\\PS_WS_SEDA_ELABORAZIONE_MOP",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/mdw/WS_SEDA_ELABORAZIONE_MOP?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/MDWProject/SalesforceToRidSEDA/ElaborazioneMOP/xsd/XSD_ELABORAZIONE_MOP",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/AspideProject/TimeSlot/proxy/PS_WS_TA_TIME_SLOT",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/AspideProject/TimeSlot/wsdl/WS_TA_TIME_SLOT" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/AspideProject/TimeSlot/wsdl/WS_TA_TIME_SLOT",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/AspideProject/TimeSlot/xsd/XSD_TA_TIME_SLOT" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/AspideProject/TimeSlot/xsd/XSD_TA_TIME_SLOT",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/AspideProject/TimeSlot/pipeline/PL_WS_TA_TIME_SLOT" : {
+        "label" : "Pipeline/AspideProject/TimeSlot/pipeline/PL_WS_TA_TIME_SLOT",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Xquery/AspideProject/TimeSlot/transformation/createResponseRetrieveSlot" : {
+            "label" : "Xquery/AspideProject/TimeSlot/transformation/createResponseRetrieveSlot",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/AspideProject/TimeSlot/wsdl/WS_TA_TIME_SLOT" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/AspideProject/TimeSlot/wsdl/WS_TA_TIME_SLOT",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/AspideProject/TimeSlot/xsd/XSD_TA_TIME_SLOT" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/AspideProject/TimeSlot/xsd/XSD_TA_TIME_SLOT",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/AspideProject/TimeSlot/transformation/createRequestRetrieveSlot" : {
+            "label" : "Xquery/AspideProject/TimeSlot/transformation/createRequestRetrieveSlot",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "BusinessService/AspideProject/AppointmentManagement/businessService/BS_REST_ASPIDE_APPOINTMENTS" : {
+            "label" : "BusinessService/AspideProject/AppointmentManagement/businessService/BS_REST_ASPIDE_APPOINTMENTS",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "WSDL/AspideProject/Resources/BS_REST_ASPIDE_APPOINTMENTS" : {
+                "label" : "WSDL/AspideProject/Resources/BS_REST_ASPIDE_APPOINTMENTS",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "WADL/AspideProject/Resources/BS_REST_ASPIDE_APPOINTMENTS" : {
+                "label" : "WADL/AspideProject/Resources/BS_REST_ASPIDE_APPOINTMENTS",
+                "properties" : {
+                  "nodeType" : "WADL"
+                },
+                "successors" : { }
+              },
+              "ServiceAccount/MDW_CDM/ServiceAccount/SA_Aspide" : {
+                "label" : "ServiceAccount/MDW_CDM/ServiceAccount/SA_Aspide",
+                "properties" : {
+                  "nodeType" : "ServiceAccount"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

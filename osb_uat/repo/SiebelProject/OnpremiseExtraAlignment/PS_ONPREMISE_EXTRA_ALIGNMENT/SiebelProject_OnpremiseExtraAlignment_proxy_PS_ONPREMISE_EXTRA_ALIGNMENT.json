@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/siebel/WS_ONPREMISE_EXTRA_ALIGN",
+    "name" : "SiebelProject_OnpremiseExtraAlignment_proxy_PS_ONPREMISE_EXTRA_ALIGNMENT",
+    "remoteName" : "ProxyService/SiebelProject/OnpremiseExtraAlignment/proxy/PS_ONPREMISE_EXTRA_ALIGNMENT",
+    "localPath" : "osb_uat\\repo\\SiebelProject\\OnpremiseExtraAlignment\\PS_ONPREMISE_EXTRA_ALIGNMENT",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/siebel/WS_ONPREMISE_EXTRA_ALIGN?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SiebelProject/OnpremiseExtraAlignment/xsd/XSD_ONPREMISE_EXTRA_ALIGNMENT",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

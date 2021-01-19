@@ -1,0 +1,78 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SCMSproject/DTT_SWAP_ASYNC/proxy/PS_WS_DTT_SWAP_ASYNC",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/DTT_SWAP/wsdl/WS_SCMS_DTT_SWAP_ASYNC" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/DTT_SWAP/wsdl/WS_SCMS_DTT_SWAP_ASYNC",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/DTT_SWAP/xsd/XSD_SCMS_DTT_SWAP_ASYNC" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/DTT_SWAP/xsd/XSD_SCMS_DTT_SWAP_ASYNC",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/SCMSproject/DTT_SWAP_ASYNC/pipeline/PL_WS_DTT_SWAP_ASYNC_ENQUEUE" : {
+        "label" : "Pipeline/SCMSproject/DTT_SWAP_ASYNC/pipeline/PL_WS_DTT_SWAP_ASYNC_ENQUEUE",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/DTT_SWAP/wsdl/WS_SCMS_DTT_SWAP_ASYNC" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/DTT_SWAP/wsdl/WS_SCMS_DTT_SWAP_ASYNC",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/DTT_SWAP/xsd/XSD_SCMS_DTT_SWAP_ASYNC" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/DTT_SWAP/xsd/XSD_SCMS_DTT_SWAP_ASYNC",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "BusinessService/SCMSproject/DTT_SMC_SUBSCRIPTION/businessService/BS_JMS_SCMS_DTT_SMC_SUBSCRIPTION" : {
+            "label" : "BusinessService/SCMSproject/DTT_SMC_SUBSCRIPTION/businessService/BS_JMS_SCMS_DTT_SMC_SUBSCRIPTION",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : { }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_ASYNC_ENQUEUE_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_ASYNC_ENQUEUE_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

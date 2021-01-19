@@ -1,0 +1,127 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/BlueBirdProject/Reitek/callbackOrderResult/proxy/PS_WS_REITEK_CALLBACK_ORDER_RESULT",
+    "properties" : {
+      "nodeType" : "ProxyService"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/Reitek/callbackOrderResult/wsdl/WS_REITEK_CALLBACK_ORDER_RESULT" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/Reitek/callbackOrderResult/wsdl/WS_REITEK_CALLBACK_ORDER_RESULT",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/Reitek/callbackOrderResult/xsd/XSD_REITEK_CALLBACK_ORDER_RESULT" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/Reitek/callbackOrderResult/xsd/XSD_REITEK_CALLBACK_ORDER_RESULT",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/BlueBirdProject/Reitek/callbackOrderResult/pipeline/PL_WS_REITEK_CALLBACK_ORDER_RESULT" : {
+        "label" : "Pipeline/BlueBirdProject/Reitek/callbackOrderResult/pipeline/PL_WS_REITEK_CALLBACK_ORDER_RESULT",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Xquery/BlueBirdProject/Reitek/callbackOrderResult/transformations/createResponse_CallbackOrderProcessingResult" : {
+            "label" : "Xquery/BlueBirdProject/Reitek/callbackOrderResult/transformations/createResponse_CallbackOrderProcessingResult",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/BlueBirdProject/Reitek/callbackOrderResult/transformations/createRequest_CallbackOrderProcessingResult" : {
+            "label" : "Xquery/BlueBirdProject/Reitek/callbackOrderResult/transformations/createRequest_CallbackOrderProcessingResult",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/Reitek/callbackOrderResult/wsdl/WS_REITEK_CALLBACK_ORDER_RESULT" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/Reitek/callbackOrderResult/wsdl/WS_REITEK_CALLBACK_ORDER_RESULT",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/Reitek/callbackOrderResult/xsd/XSD_REITEK_CALLBACK_ORDER_RESULT" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/Reitek/callbackOrderResult/xsd/XSD_REITEK_CALLBACK_ORDER_RESULT",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/BlueBirdProject/Reitek/callbackOrderResult/pipeline/PL_REST_REITEK_CALLBACK_ORDER_processingResult" : {
+            "label" : "Pipeline/BlueBirdProject/Reitek/callbackOrderResult/pipeline/PL_REST_REITEK_CALLBACK_ORDER_processingResult",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "WSDL/BlueBirdProject/Resources/BS_REST_REITEK_PROCESSING_RESULT" : {
+                "label" : "WSDL/BlueBirdProject/Resources/BS_REST_REITEK_PROCESSING_RESULT",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "BusinessService/BlueBirdProject/Reitek/callbackOrderResult/businessService/BS_REST_REITEK_PROCESSING_RESULT" : {
+                "label" : "BusinessService/BlueBirdProject/Reitek/callbackOrderResult/businessService/BS_REST_REITEK_PROCESSING_RESULT",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/BlueBirdProject/Resources/BS_REST_REITEK_PROCESSING_RESULT" : {
+                    "label" : "WSDL/BlueBirdProject/Resources/BS_REST_REITEK_PROCESSING_RESULT",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "WADL/BlueBirdProject/Resources/BS_REST_REITEK_PROCESSING_RESULT" : {
+                    "label" : "WADL/BlueBirdProject/Resources/BS_REST_REITEK_PROCESSING_RESULT",
+                    "properties" : {
+                      "nodeType" : "WADL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

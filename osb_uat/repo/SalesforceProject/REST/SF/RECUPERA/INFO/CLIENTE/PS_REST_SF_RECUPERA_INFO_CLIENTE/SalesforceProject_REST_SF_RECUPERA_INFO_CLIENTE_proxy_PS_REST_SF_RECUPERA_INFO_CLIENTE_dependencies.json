@@ -1,0 +1,114 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SalesforceProject/REST_SF_RECUPERA_INFO_CLIENTE/proxy/PS_REST_SF_RECUPERA_INFO_CLIENTE",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "WADL/SalesforceProject/Resources/PS_REST_SF_RECUPERA_INFO_CLIENTE" : {
+        "label" : "WADL/SalesforceProject/Resources/PS_REST_SF_RECUPERA_INFO_CLIENTE",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      },
+      "WSDL/SalesforceProject/Resources/PS_REST_SF_RECUPERA_INFO_CLIENTE" : {
+        "label" : "WSDL/SalesforceProject/Resources/PS_REST_SF_RECUPERA_INFO_CLIENTE",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/RecuperaInfoCliente/xsd/XSD_SF_RECUPERA_INFO_CLIENTE" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/RecuperaInfoCliente/xsd/XSD_SF_RECUPERA_INFO_CLIENTE",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/RecuperaInfoCliente/xsd/XSD_FAULTS" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/RecuperaInfoCliente/xsd/XSD_FAULTS",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/SalesforceProject/REST_SF_RECUPERA_INFO_CLIENTE/pipeline/PL_SF_RECUPERA_INFO_CLIENTE" : {
+        "label" : "Pipeline/SalesforceProject/REST_SF_RECUPERA_INFO_CLIENTE/pipeline/PL_SF_RECUPERA_INFO_CLIENTE",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Xquery/SalesforceProject/REST_SF_RECUPERA_INFO_CLIENTE/transformations/createResponse_SF_RecuperaInfoCliente" : {
+            "label" : "Xquery/SalesforceProject/REST_SF_RECUPERA_INFO_CLIENTE/transformations/createResponse_SF_RecuperaInfoCliente",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "WSDL/SalesforceProject/Resources/PS_REST_SF_RECUPERA_INFO_CLIENTE" : {
+            "label" : "WSDL/SalesforceProject/Resources/PS_REST_SF_RECUPERA_INFO_CLIENTE",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/RecuperaInfoCliente/xsd/XSD_SF_RECUPERA_INFO_CLIENTE" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/RecuperaInfoCliente/xsd/XSD_SF_RECUPERA_INFO_CLIENTE",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/RecuperaInfoCliente/xsd/XSD_FAULTS" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/RecuperaInfoCliente/xsd/XSD_FAULTS",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/SalesforceProject/REST_SF_RECUPERA_INFO_CLIENTE/transformations/createRequest_SF_RecuperaInfoCliente" : {
+            "label" : "Xquery/SalesforceProject/REST_SF_RECUPERA_INFO_CLIENTE/transformations/createRequest_SF_RecuperaInfoCliente",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF" : {
+            "label" : "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB" : {
+                "label" : "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB",
+                "properties" : {
+                  "nodeType" : "ForeignJNDIProvider"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

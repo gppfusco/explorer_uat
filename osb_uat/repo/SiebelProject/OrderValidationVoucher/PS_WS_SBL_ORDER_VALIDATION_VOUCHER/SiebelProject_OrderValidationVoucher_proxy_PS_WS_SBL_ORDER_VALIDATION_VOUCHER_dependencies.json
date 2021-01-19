@@ -1,0 +1,107 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SiebelProject/OrderValidationVoucher/proxy/PS_WS_SBL_ORDER_VALIDATION_VOUCHER",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/SiebelProject/OrderValidationVoucher/pipeline/PL_WS_SBL_ORDER_VALIDATION_VOUCHER" : {
+        "label" : "Pipeline/SiebelProject/OrderValidationVoucher/pipeline/PL_WS_SBL_ORDER_VALIDATION_VOUCHER",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "BusinessService/SiebelProject/OrderValidationVoucher/businessServices/BS_SQL_ORDER_VALIDATION_VOUCHER" : {
+            "label" : "BusinessService/SiebelProject/OrderValidationVoucher/businessServices/BS_SQL_ORDER_VALIDATION_VOUCHER",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "WSDL/SiebelProject/Resources/BS_SQL_ORDER_VALIDATION_VOUCHER/concrete" : {
+                "label" : "WSDL/SiebelProject/Resources/BS_SQL_ORDER_VALIDATION_VOUCHER/concrete",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "JCA/SiebelProject/Resources/BS_SQL_ORDER_VALIDATION_VOUCHER_db" : {
+                "label" : "JCA/SiebelProject/Resources/BS_SQL_ORDER_VALIDATION_VOUCHER_db",
+                "properties" : {
+                  "nodeType" : "JCA"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/SiebelProject/OrderValidationVoucher/transformations/createRequest_ValidateVaucher" : {
+            "label" : "Xquery/SiebelProject/OrderValidationVoucher/transformations/createRequest_ValidateVaucher",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/SiebelProject/OrderValidationVoucher/transformations/createResponse_ValidateVaucher" : {
+            "label" : "Xquery/SiebelProject/OrderValidationVoucher/transformations/createResponse_ValidateVaucher",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/OrderValidationVaucher/wsdl/WS_SBL_ORDER_VALIDATION_VOUCHER" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/OrderValidationVaucher/wsdl/WS_SBL_ORDER_VALIDATION_VOUCHER",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/OrderValidationVaucher/xsd/XSD_SBL_ORDER_VALIDATION_VOUCHER" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/OrderValidationVaucher/xsd/XSD_SBL_ORDER_VALIDATION_VOUCHER",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/OrderValidationVaucher/wsdl/WS_SBL_ORDER_VALIDATION_VOUCHER" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/OrderValidationVaucher/wsdl/WS_SBL_ORDER_VALIDATION_VOUCHER",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/OrderValidationVaucher/xsd/XSD_SBL_ORDER_VALIDATION_VOUCHER" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/OrderValidationVaucher/xsd/XSD_SBL_ORDER_VALIDATION_VOUCHER",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

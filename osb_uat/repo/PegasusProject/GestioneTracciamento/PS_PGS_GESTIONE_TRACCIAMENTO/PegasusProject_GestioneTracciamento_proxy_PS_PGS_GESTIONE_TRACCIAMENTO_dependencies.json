@@ -1,0 +1,964 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/PegasusProject/GestioneTracciamento/proxy/PS_PGS_GESTIONE_TRACCIAMENTO",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/PegasusProject/GestioneTracciamento/wsdl/WS_PGS_GESTIONE_TRACCIAMENTO" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/PegasusProject/GestioneTracciamento/wsdl/WS_PGS_GESTIONE_TRACCIAMENTO",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/PegasusProject/GestioneTracciamento/xsd/XSD_PGS_GESTIONE_TRACCIAMENTO" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/PegasusProject/GestioneTracciamento/xsd/XSD_PGS_GESTIONE_TRACCIAMENTO",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/PegasusProject/GestioneTracciamento/pipeline/PL_WS_PGS_GESTIONE_TRACCIAMENTO_ROUTING" : {
+        "label" : "Pipeline/PegasusProject/GestioneTracciamento/pipeline/PL_WS_PGS_GESTIONE_TRACCIAMENTO_ROUTING",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Pipeline/PegasusProject/GestioneTracciamento/pipeline/PL_PGS_WEB_MAIL_TRACKING_ITERATE" : {
+            "label" : "Pipeline/PegasusProject/GestioneTracciamento/pipeline/PL_PGS_WEB_MAIL_TRACKING_ITERATE",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/MDW_CO/transformation/createSimpleResponseWithoutTid" : {
+                "label" : "Xquery/MDW_CO/transformation/createSimpleResponseWithoutTid",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Pipeline/PegasusProject/WriteFile/pipeline/PL_WS_MDW_WRITE_FILE" : {
+                "label" : "Pipeline/PegasusProject/WriteFile/pipeline/PL_WS_MDW_WRITE_FILE",
+                "properties" : {
+                  "nodeType" : "Pipeline"
+                },
+                "successors" : {
+                  "Xquery/PegasusProject/WriteFile/transformations/createRequest_WriteFile" : {
+                    "label" : "Xquery/PegasusProject/WriteFile/transformations/createRequest_WriteFile",
+                    "properties" : {
+                      "nodeType" : "Xquery"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/MDW_CDM/EnterpriseServices/MDWProject/WriteFile/wsdl/WS_MDW_WRITE_FILE" : {
+                    "label" : "WSDL/MDW_CDM/EnterpriseServices/MDWProject/WriteFile/wsdl/WS_MDW_WRITE_FILE",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log" : {
+                    "label" : "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log",
+                    "properties" : {
+                      "nodeType" : "Xquery"
+                    },
+                    "successors" : { }
+                  },
+                  "Xquery/PegasusProject/WriteFile/transformations/createResponse_WriteFile" : {
+                    "label" : "Xquery/PegasusProject/WriteFile/transformations/createResponse_WriteFile",
+                    "properties" : {
+                      "nodeType" : "Xquery"
+                    },
+                    "successors" : { }
+                  },
+                  "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                    "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                    "properties" : {
+                      "nodeType" : "PipelineTemplate"
+                    },
+                    "successors" : { }
+                  },
+                  "BusinessService/PegasusProject/WriteFile/businessServices/BS_FA_WRITE_FILE" : {
+                    "label" : "BusinessService/PegasusProject/WriteFile/businessServices/BS_FA_WRITE_FILE",
+                    "properties" : {
+                      "nodeType" : "BusinessService"
+                    },
+                    "successors" : {
+                      "JCA/PegasusProject/Resources/BS_FA_WRITE_FILE_file" : {
+                        "label" : "JCA/PegasusProject/Resources/BS_FA_WRITE_FILE_file",
+                        "properties" : {
+                          "nodeType" : "JCA"
+                        },
+                        "successors" : { }
+                      },
+                      "WSDL/PegasusProject/Resources/BS_FA_WRITE_FILE/concrete" : {
+                        "label" : "WSDL/PegasusProject/Resources/BS_FA_WRITE_FILE/concrete",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  }
+                }
+              },
+              "Xquery/PegasusProject/GestioneTracciamento/transformations/createRequestWriteFileFromBase64" : {
+                "label" : "Xquery/PegasusProject/GestioneTracciamento/transformations/createRequestWriteFileFromBase64",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log" : {
+                "label" : "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/PegasusProject/GestioneTracciamento/transformations/creareRequestForPegasusSendPrint" : {
+                "label" : "Xquery/PegasusProject/GestioneTracciamento/transformations/creareRequestForPegasusSendPrint",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/PegasusProject/GestioneTracciamento/wsdl/WS_PGS_GESTIONE_TRACCIAMENTO" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/PegasusProject/GestioneTracciamento/wsdl/WS_PGS_GESTIONE_TRACCIAMENTO",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/PegasusProject/GestioneTracciamento/xsd/XSD_PGS_GESTIONE_TRACCIAMENTO" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/PegasusProject/GestioneTracciamento/xsd/XSD_PGS_GESTIONE_TRACCIAMENTO",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/PegasusProject/GestioneTracciamento/transformations/createRequestForCheckBB" : {
+                "label" : "Xquery/PegasusProject/GestioneTracciamento/transformations/createRequestForCheckBB",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Pipeline/PegasusProject/GestioneTracciamento/pipeline/PL_INTERNAL_PGS_WEB_MAIL_SEND_PRINT" : {
+                "label" : "Pipeline/PegasusProject/GestioneTracciamento/pipeline/PL_INTERNAL_PGS_WEB_MAIL_SEND_PRINT",
+                "properties" : {
+                  "nodeType" : "Pipeline"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/PEGASUS/WS_MDW_PEGASUS_SEND" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/PEGASUS/WS_MDW_PEGASUS_SEND",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "BusinessService/PegasusProject/OUTBOUND_MSG/WS_CRM_PGS_OUTBOUND_SEND_PRINT/businessService/BS_WS_MDW_PEGASUS_SEND" : {
+                    "label" : "BusinessService/PegasusProject/OUTBOUND_MSG/WS_CRM_PGS_OUTBOUND_SEND_PRINT/businessService/BS_WS_MDW_PEGASUS_SEND",
+                    "properties" : {
+                      "nodeType" : "BusinessService"
+                    },
+                    "successors" : {
+                      "WSDL/MDW_CDM/ApplicationObjects/PEGASUS/WS_MDW_PEGASUS_SEND" : {
+                        "label" : "WSDL/MDW_CDM/ApplicationObjects/PEGASUS/WS_MDW_PEGASUS_SEND",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : { }
+                      },
+                      "ServiceAccount/MDW_CDM/ServiceAccount/SA_Pegasus" : {
+                        "label" : "ServiceAccount/MDW_CDM/ServiceAccount/SA_Pegasus",
+                        "properties" : {
+                          "nodeType" : "ServiceAccount"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                    "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                    "properties" : {
+                      "nodeType" : "PipelineTemplate"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "ProxyService/SalesforceProject/proxy/PS_WS_CALL_EJB_SF" : {
+                "label" : "ProxyService/SalesforceProject/proxy/PS_WS_CALL_EJB_SF",
+                "properties" : {
+                  "nodeType" : "ProxyService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/WS_DIRECT_SF_EJB" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/WS_DIRECT_SF_EJB",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "Pipeline/SalesforceProject/pipeline/PL_HTTP_SF_EJB/PL_WS_EJB_LOGIN_N_USER" : {
+                    "label" : "Pipeline/SalesforceProject/pipeline/PL_HTTP_SF_EJB/PL_WS_EJB_LOGIN_N_USER",
+                    "properties" : {
+                      "nodeType" : "Pipeline"
+                    },
+                    "successors" : {
+                      "Pipeline/SalesforceProject/pipeline/PL_HTTP_SF_EJB/PL_CALL_EJB_SF_BBH" : {
+                        "label" : "Pipeline/SalesforceProject/pipeline/PL_HTTP_SF_EJB/PL_CALL_EJB_SF_BBH",
+                        "properties" : {
+                          "nodeType" : "Pipeline"
+                        },
+                        "successors" : {
+                          "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/WS_DIRECT_SF_EJB" : {
+                            "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/WS_DIRECT_SF_EJB",
+                            "properties" : {
+                              "nodeType" : "WSDL"
+                            },
+                            "successors" : { }
+                          },
+                          "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF_BBH" : {
+                            "label" : "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF_BBH",
+                            "properties" : {
+                              "nodeType" : "BusinessService"
+                            },
+                            "successors" : {
+                              "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB" : {
+                                "label" : "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB",
+                                "properties" : {
+                                  "nodeType" : "ForeignJNDIProvider"
+                                },
+                                "successors" : { }
+                              },
+                              "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/WS_DIRECT_SF_EJB" : {
+                                "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/WS_DIRECT_SF_EJB",
+                                "properties" : {
+                                  "nodeType" : "WSDL"
+                                },
+                                "successors" : { }
+                              }
+                            }
+                          },
+                          "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                            "properties" : {
+                              "nodeType" : "PipelineTemplate"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      },
+                      "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_N_OPERATIONS_TEMPLATE" : {
+                        "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_N_OPERATIONS_TEMPLATE",
+                        "properties" : {
+                          "nodeType" : "PipelineTemplate"
+                        },
+                        "successors" : { }
+                      },
+                      "Pipeline/SalesforceProject/pipeline/PL_HTTP_SF_EJB/PL_CALL_EJB_SF" : {
+                        "label" : "Pipeline/SalesforceProject/pipeline/PL_HTTP_SF_EJB/PL_CALL_EJB_SF",
+                        "properties" : {
+                          "nodeType" : "Pipeline"
+                        },
+                        "successors" : {
+                          "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/WS_DIRECT_SF_EJB" : {
+                            "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/WS_DIRECT_SF_EJB",
+                            "properties" : {
+                              "nodeType" : "WSDL"
+                            },
+                            "successors" : { }
+                          },
+                          "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF" : {
+                            "label" : "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF",
+                            "properties" : {
+                              "nodeType" : "BusinessService"
+                            },
+                            "successors" : {
+                              "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB" : {
+                                "label" : "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB",
+                                "properties" : {
+                                  "nodeType" : "ForeignJNDIProvider"
+                                },
+                                "successors" : { }
+                              },
+                              "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF" : {
+                                "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF",
+                                "properties" : {
+                                  "nodeType" : "WSDL"
+                                },
+                                "successors" : { }
+                              }
+                            }
+                          },
+                          "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                            "properties" : {
+                              "nodeType" : "PipelineTemplate"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      },
+                      "Pipeline/SalesforceProject/pipeline/PL_HTTP_SF_EJB/PL_CALL_EJB_SF_GDPR" : {
+                        "label" : "Pipeline/SalesforceProject/pipeline/PL_HTTP_SF_EJB/PL_CALL_EJB_SF_GDPR",
+                        "properties" : {
+                          "nodeType" : "Pipeline"
+                        },
+                        "successors" : {
+                          "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF_GDPR" : {
+                            "label" : "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF_GDPR",
+                            "properties" : {
+                              "nodeType" : "BusinessService"
+                            },
+                            "successors" : {
+                              "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB" : {
+                                "label" : "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB",
+                                "properties" : {
+                                  "nodeType" : "ForeignJNDIProvider"
+                                },
+                                "successors" : { }
+                              },
+                              "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF" : {
+                                "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF",
+                                "properties" : {
+                                  "nodeType" : "WSDL"
+                                },
+                                "successors" : { }
+                              }
+                            }
+                          },
+                          "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/WS_DIRECT_SF_EJB" : {
+                            "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/WS_DIRECT_SF_EJB",
+                            "properties" : {
+                              "nodeType" : "WSDL"
+                            },
+                            "successors" : { }
+                          },
+                          "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                            "properties" : {
+                              "nodeType" : "PipelineTemplate"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      },
+                      "Pipeline/SalesforceProject/pipeline/PL_HTTP_SF_EJB/PL_CALL_EJB_SF_INFORMATICA_NOOUTMSG" : {
+                        "label" : "Pipeline/SalesforceProject/pipeline/PL_HTTP_SF_EJB/PL_CALL_EJB_SF_INFORMATICA_NOOUTMSG",
+                        "properties" : {
+                          "nodeType" : "Pipeline"
+                        },
+                        "successors" : {
+                          "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF_NO_OUTBOUND" : {
+                            "label" : "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF_NO_OUTBOUND",
+                            "properties" : {
+                              "nodeType" : "BusinessService"
+                            },
+                            "successors" : {
+                              "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB" : {
+                                "label" : "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB",
+                                "properties" : {
+                                  "nodeType" : "ForeignJNDIProvider"
+                                },
+                                "successors" : { }
+                              },
+                              "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF" : {
+                                "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF",
+                                "properties" : {
+                                  "nodeType" : "WSDL"
+                                },
+                                "successors" : { }
+                              }
+                            }
+                          },
+                          "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/WS_DIRECT_SF_EJB" : {
+                            "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/WS_DIRECT_SF_EJB",
+                            "properties" : {
+                              "nodeType" : "WSDL"
+                            },
+                            "successors" : { }
+                          },
+                          "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                            "properties" : {
+                              "nodeType" : "PipelineTemplate"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      },
+                      "Pipeline/SalesforceProject/pipeline/PL_HTTP_SF_EJB/PL_CALL_EJB_SF_KBOX" : {
+                        "label" : "Pipeline/SalesforceProject/pipeline/PL_HTTP_SF_EJB/PL_CALL_EJB_SF_KBOX",
+                        "properties" : {
+                          "nodeType" : "Pipeline"
+                        },
+                        "successors" : {
+                          "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/WS_DIRECT_SF_EJB" : {
+                            "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/WS_DIRECT_SF_EJB",
+                            "properties" : {
+                              "nodeType" : "WSDL"
+                            },
+                            "successors" : { }
+                          },
+                          "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF_KBOX" : {
+                            "label" : "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF_KBOX",
+                            "properties" : {
+                              "nodeType" : "BusinessService"
+                            },
+                            "successors" : {
+                              "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB" : {
+                                "label" : "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB",
+                                "properties" : {
+                                  "nodeType" : "ForeignJNDIProvider"
+                                },
+                                "successors" : { }
+                              },
+                              "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF" : {
+                                "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF",
+                                "properties" : {
+                                  "nodeType" : "WSDL"
+                                },
+                                "successors" : { }
+                              }
+                            }
+                          },
+                          "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                            "properties" : {
+                              "nodeType" : "PipelineTemplate"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      },
+                      "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/WS_DIRECT_SF_EJB" : {
+                        "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/WS_DIRECT_SF_EJB",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  }
+                }
+              },
+              "ProxyService/AssistProject/SkyMail/proxy/PS_LOCAL_ASSIST_SKY_MAIL" : {
+                "label" : "ProxyService/AssistProject/SkyMail/proxy/PS_LOCAL_ASSIST_SKY_MAIL",
+                "properties" : {
+                  "nodeType" : "ProxyService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/EnterpriseServices/AssistProject/SkyMail/wsdl/WS_ASSIST_SKY_MAIL" : {
+                    "label" : "WSDL/MDW_CDM/EnterpriseServices/AssistProject/SkyMail/wsdl/WS_ASSIST_SKY_MAIL",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : {
+                      "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      },
+                      "XMLSchema/MDW_CDM/EnterpriseServices/AssistProject/SkyMail/xsd/XSD_ASSIST_SKY_MAIL" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseServices/AssistProject/SkyMail/xsd/XSD_ASSIST_SKY_MAIL",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "Pipeline/AssistProject/SkyMail/pipeline/PL_ASSIST_SKY_MAIL" : {
+                    "label" : "Pipeline/AssistProject/SkyMail/pipeline/PL_ASSIST_SKY_MAIL",
+                    "properties" : {
+                      "nodeType" : "Pipeline"
+                    },
+                    "successors" : {
+                      "Xquery/AssistProject/SkyMail/transformation/createResponse_WebmailCategorizer" : {
+                        "label" : "Xquery/AssistProject/SkyMail/transformation/createResponse_WebmailCategorizer",
+                        "properties" : {
+                          "nodeType" : "Xquery"
+                        },
+                        "successors" : { }
+                      },
+                      "BusinessService/AssistProject/SkyMail/businessServices/BS_WS_ASSIST_SKY_MAIL" : {
+                        "label" : "BusinessService/AssistProject/SkyMail/businessServices/BS_WS_ASSIST_SKY_MAIL",
+                        "properties" : {
+                          "nodeType" : "BusinessService"
+                        },
+                        "successors" : {
+                          "ServiceAccount/MDW_CDM/ServiceAccount/SA_Assist" : {
+                            "label" : "ServiceAccount/MDW_CDM/ServiceAccount/SA_Assist",
+                            "properties" : {
+                              "nodeType" : "ServiceAccount"
+                            },
+                            "successors" : { }
+                          },
+                          "WSDL/MDW_CDM/ApplicationObjects/ASSIST/SkyMail" : {
+                            "label" : "WSDL/MDW_CDM/ApplicationObjects/ASSIST/SkyMail",
+                            "properties" : {
+                              "nodeType" : "WSDL"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      },
+                      "WSDL/MDW_CDM/EnterpriseServices/AssistProject/SkyMail/wsdl/WS_ASSIST_SKY_MAIL" : {
+                        "label" : "WSDL/MDW_CDM/EnterpriseServices/AssistProject/SkyMail/wsdl/WS_ASSIST_SKY_MAIL",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : {
+                          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                            "properties" : {
+                              "nodeType" : "XMLSchema"
+                            },
+                            "successors" : { }
+                          },
+                          "XMLSchema/MDW_CDM/EnterpriseServices/AssistProject/SkyMail/xsd/XSD_ASSIST_SKY_MAIL" : {
+                            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/AssistProject/SkyMail/xsd/XSD_ASSIST_SKY_MAIL",
+                            "properties" : {
+                              "nodeType" : "XMLSchema"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      },
+                      "Xquery/AssistProject/SkyMail/transformation/createRequest_WebmailCategorizer" : {
+                        "label" : "Xquery/AssistProject/SkyMail/transformation/createRequest_WebmailCategorizer",
+                        "properties" : {
+                          "nodeType" : "Xquery"
+                        },
+                        "successors" : { }
+                      },
+                      "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                        "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                        "properties" : {
+                          "nodeType" : "PipelineTemplate"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_ITERATE_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_ITERATE_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "Xquery/PegasusProject/GestioneTracciamento/transformations/createRequestForAssistSkyMail" : {
+                "label" : "Xquery/PegasusProject/GestioneTracciamento/transformations/createRequestForAssistSkyMail",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/PegasusProject/GestioneTracciamento/transformations/createRequestForCheckServizioTecnico" : {
+                "label" : "Xquery/PegasusProject/GestioneTracciamento/transformations/createRequestForCheckServizioTecnico",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Pipeline/PegasusProject/GestioneTracciamento/pipeline/PL_PGS_SMS_TRACKING" : {
+            "label" : "Pipeline/PegasusProject/GestioneTracciamento/pipeline/PL_PGS_SMS_TRACKING",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/PegasusProject/GestioneTracciamento/wsdl/WS_PGS_GESTIONE_TRACCIAMENTO" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/PegasusProject/GestioneTracciamento/wsdl/WS_PGS_GESTIONE_TRACCIAMENTO",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/PegasusProject/GestioneTracciamento/xsd/XSD_PGS_GESTIONE_TRACCIAMENTO" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/PegasusProject/GestioneTracciamento/xsd/XSD_PGS_GESTIONE_TRACCIAMENTO",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/PegasusProject/GestioneTracciamento/transformations/createResponseSmsTracking" : {
+                "label" : "Xquery/PegasusProject/GestioneTracciamento/transformations/createResponseSmsTracking",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/PegasusProject/GestioneTracciamento/transformations/createRequestSmsTracking" : {
+                "label" : "Xquery/PegasusProject/GestioneTracciamento/transformations/createRequestSmsTracking",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/PegasusProject/GestioneTracciamento/businessServices/BS_WS_PGS_SMS_TRACKING" : {
+                "label" : "BusinessService/PegasusProject/GestioneTracciamento/businessServices/BS_WS_PGS_SMS_TRACKING",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "ServiceAccount/MDW_CDM/ServiceAccount/SA_Pegasus" : {
+                    "label" : "ServiceAccount/MDW_CDM/ServiceAccount/SA_Pegasus",
+                    "properties" : {
+                      "nodeType" : "ServiceAccount"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/MDW_CDM/ApplicationObjects/PEGASUS/WS_MDW_ESIGENZA_SMS" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/PEGASUS/WS_MDW_ESIGENZA_SMS",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/PegasusProject/GestioneTracciamento/wsdl/WS_PGS_GESTIONE_TRACCIAMENTO" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/PegasusProject/GestioneTracciamento/wsdl/WS_PGS_GESTIONE_TRACCIAMENTO",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/PegasusProject/GestioneTracciamento/xsd/XSD_PGS_GESTIONE_TRACCIAMENTO" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/PegasusProject/GestioneTracciamento/xsd/XSD_PGS_GESTIONE_TRACCIAMENTO",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Pipeline/PegasusProject/GestioneTracciamento/pipeline/PL_PGS_DMS_TRACKING" : {
+            "label" : "Pipeline/PegasusProject/GestioneTracciamento/pipeline/PL_PGS_DMS_TRACKING",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/PegasusProject/GestioneTracciamento/transformations/createRequestDmsTracking_BS_WS_PEGASUS_SEND" : {
+                "label" : "Xquery/PegasusProject/GestioneTracciamento/transformations/createRequestDmsTracking_BS_WS_PEGASUS_SEND",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_NO_ROUTING_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_NO_ROUTING_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "Xquery/PegasusProject/GestioneTracciamento/transformations/createResponseGetAccInfoXml" : {
+                "label" : "Xquery/PegasusProject/GestioneTracciamento/transformations/createResponseGetAccInfoXml",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Pipeline/PegasusProject/GestioneTracciamento/pipeline/PL_INTERNAL_PEGASUS_SEND_MESSAGE" : {
+                "label" : "Pipeline/PegasusProject/GestioneTracciamento/pipeline/PL_INTERNAL_PEGASUS_SEND_MESSAGE",
+                "properties" : {
+                  "nodeType" : "Pipeline"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/PEGASUS/WS_MDW_PEGASUS_SEND" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/PEGASUS/WS_MDW_PEGASUS_SEND",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "BusinessService/PegasusProject/OUTBOUND_MSG/WS_CRM_PGS_OUTBOUND_SEND_PRINT/businessService/BS_WS_MDW_PEGASUS_SEND" : {
+                    "label" : "BusinessService/PegasusProject/OUTBOUND_MSG/WS_CRM_PGS_OUTBOUND_SEND_PRINT/businessService/BS_WS_MDW_PEGASUS_SEND",
+                    "properties" : {
+                      "nodeType" : "BusinessService"
+                    },
+                    "successors" : {
+                      "WSDL/MDW_CDM/ApplicationObjects/PEGASUS/WS_MDW_PEGASUS_SEND" : {
+                        "label" : "WSDL/MDW_CDM/ApplicationObjects/PEGASUS/WS_MDW_PEGASUS_SEND",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : { }
+                      },
+                      "ServiceAccount/MDW_CDM/ServiceAccount/SA_Pegasus" : {
+                        "label" : "ServiceAccount/MDW_CDM/ServiceAccount/SA_Pegasus",
+                        "properties" : {
+                          "nodeType" : "ServiceAccount"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                    "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                    "properties" : {
+                      "nodeType" : "PipelineTemplate"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/PegasusProject/GestioneTracciamento/transformations/createRequestSendCommunicationPegasus" : {
+                "label" : "Xquery/PegasusProject/GestioneTracciamento/transformations/createRequestSendCommunicationPegasus",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/PegasusProject/GestioneTracciamento/wsdl/WS_PGS_GESTIONE_TRACCIAMENTO" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/PegasusProject/GestioneTracciamento/wsdl/WS_PGS_GESTIONE_TRACCIAMENTO",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/PegasusProject/GestioneTracciamento/xsd/XSD_PGS_GESTIONE_TRACCIAMENTO" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/PegasusProject/GestioneTracciamento/xsd/XSD_PGS_GESTIONE_TRACCIAMENTO",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Pipeline/PegasusProject/GestioneTracciamento/pipeline/PL_INTERNAL_GET_ACC_INFO_CLIENTE" : {
+                "label" : "Pipeline/PegasusProject/GestioneTracciamento/pipeline/PL_INTERNAL_GET_ACC_INFO_CLIENTE",
+                "properties" : {
+                  "nodeType" : "Pipeline"
+                },
+                "successors" : {
+                  "ProxyService/SiebelProject/proxy/PS_WS_GET_ACC_INFO_XML" : {
+                    "label" : "ProxyService/SiebelProject/proxy/PS_WS_GET_ACC_INFO_XML",
+                    "properties" : {
+                      "transport-type" : "http",
+                      "nodeType" : "Proxy",
+                      "service-type" : "SOAP"
+                    },
+                    "successors" : {
+                      "Pipeline/SiebelProject/pipeline/PL_WS_GET_ACC_INFO_XML" : {
+                        "label" : "Pipeline/SiebelProject/pipeline/PL_WS_GET_ACC_INFO_XML",
+                        "properties" : {
+                          "nodeType" : "Pipeline"
+                        },
+                        "successors" : {
+                          "Xquery/SiebelProject/transformations/createRequest_GetAccInfoXML" : {
+                            "label" : "Xquery/SiebelProject/transformations/createRequest_GetAccInfoXML",
+                            "properties" : {
+                              "nodeType" : "Xquery"
+                            },
+                            "successors" : { }
+                          },
+                          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                            "properties" : {
+                              "nodeType" : "PipelineTemplate"
+                            },
+                            "successors" : { }
+                          },
+                          "Xquery/SiebelProject/transformations/createResponse_GetAccInfoXML" : {
+                            "label" : "Xquery/SiebelProject/transformations/createResponse_GetAccInfoXML",
+                            "properties" : {
+                              "nodeType" : "Xquery"
+                            },
+                            "successors" : { }
+                          },
+                          "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/GetAccInfoXML/wsdl/WS_SIE_GET_ACC_INFO_XML" : {
+                            "label" : "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/GetAccInfoXML/wsdl/WS_SIE_GET_ACC_INFO_XML",
+                            "properties" : {
+                              "nodeType" : "WSDL"
+                            },
+                            "successors" : {
+                              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                                "properties" : {
+                                  "nodeType" : "XMLSchema"
+                                },
+                                "successors" : { }
+                              },
+                              "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/GetAccInfoXML/xsd/XSD_SIE_GET_ACC_INFO_XML" : {
+                                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/GetAccInfoXML/xsd/XSD_SIE_GET_ACC_INFO_XML",
+                                "properties" : {
+                                  "nodeType" : "XMLSchema"
+                                },
+                                "successors" : { }
+                              }
+                            }
+                          },
+                          "BusinessService/SiebelProject/businessService/BS_TUX_GET_ACC_INFO_XML" : {
+                            "label" : "BusinessService/SiebelProject/businessService/BS_TUX_GET_ACC_INFO_XML",
+                            "properties" : {
+                              "nodeType" : "BusinessService"
+                            },
+                            "successors" : {
+                              "XMLSchema/MDW_CDM/ApplicationObjects/TUXEDO/xsd/XSD_GETACCINFO_XML" : {
+                                "label" : "XMLSchema/MDW_CDM/ApplicationObjects/TUXEDO/xsd/XSD_GETACCINFO_XML",
+                                "properties" : {
+                                  "nodeType" : "XMLSchema"
+                                },
+                                "successors" : { }
+                              },
+                              "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0" : {
+                                "label" : "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0",
+                                "properties" : {
+                                  "nodeType" : "Archive"
+                                },
+                                "successors" : { }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/GetAccInfoXML/wsdl/WS_SIE_GET_ACC_INFO_XML" : {
+                        "label" : "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/GetAccInfoXML/wsdl/WS_SIE_GET_ACC_INFO_XML",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : {
+                          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                            "properties" : {
+                              "nodeType" : "XMLSchema"
+                            },
+                            "successors" : { }
+                          },
+                          "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/GetAccInfoXML/xsd/XSD_SIE_GET_ACC_INFO_XML" : {
+                            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/GetAccInfoXML/xsd/XSD_SIE_GET_ACC_INFO_XML",
+                            "properties" : {
+                              "nodeType" : "XMLSchema"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/GetAccInfoXML/wsdl/WS_SIE_GET_ACC_INFO_XML" : {
+                    "label" : "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/GetAccInfoXML/wsdl/WS_SIE_GET_ACC_INFO_XML",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : {
+                      "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      },
+                      "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/GetAccInfoXML/xsd/XSD_SIE_GET_ACC_INFO_XML" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/GetAccInfoXML/xsd/XSD_SIE_GET_ACC_INFO_XML",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                    "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                    "properties" : {
+                      "nodeType" : "PipelineTemplate"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/PegasusProject/GestioneTracciamento/transformations/createRequestGetAccInfoXml" : {
+                "label" : "Xquery/PegasusProject/GestioneTracciamento/transformations/createRequestGetAccInfoXml",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/PegasusProject/GestioneTracciamento/transformations/createResponseWS_TRACCIAMENTO_DMSTracking" : {
+                "label" : "Xquery/PegasusProject/GestioneTracciamento/transformations/createResponseWS_TRACCIAMENTO_DMSTracking",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/MDW_CO/transformation/create_soap_header" : {
+                "label" : "Xquery/MDW_CO/transformation/create_soap_header",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

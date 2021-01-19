@@ -1,0 +1,41 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/MDW_CO/proxy_sb/PS_HTTP_EJB_SF",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF" : {
+        "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : { }
+      },
+      "BusinessService/MDW_CO/businessServices/reserved/BS_EJB_SF" : {
+        "label" : "BusinessService/MDW_CO/businessServices/reserved/BS_EJB_SF",
+        "properties" : {
+          "nodeType" : "BusinessService"
+        },
+        "successors" : {
+          "Archive/MDW_CO/ejbs/ejb/force/osb/1/0" : {
+            "label" : "Archive/MDW_CO/ejbs/ejb/force/osb/1/0",
+            "properties" : {
+              "nodeType" : "Archive"
+            },
+            "successors" : { }
+          },
+          "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB" : {
+            "label" : "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB",
+            "properties" : {
+              "nodeType" : "ForeignJNDIProvider"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

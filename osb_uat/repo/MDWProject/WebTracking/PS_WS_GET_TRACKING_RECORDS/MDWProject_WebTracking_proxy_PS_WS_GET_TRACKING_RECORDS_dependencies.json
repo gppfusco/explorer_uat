@@ -1,0 +1,107 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/MDWProject/WebTracking/proxy/PS_WS_GET_TRACKING_RECORDS",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/MDWProject/WebTracking/pipeline/PL_WS_GET_TRACKING_RECORDS" : {
+        "label" : "Pipeline/MDWProject/WebTracking/pipeline/PL_WS_GET_TRACKING_RECORDS",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "BusinessService/MDWProject/WebTracking/businessService/BS_SQL_IVR_GET_TRACKING_RECORDS" : {
+            "label" : "BusinessService/MDWProject/WebTracking/businessService/BS_SQL_IVR_GET_TRACKING_RECORDS",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "WSDL/MDWProject/Resources/BS_SQL_IVR_GET_TRACKING_RECORDS/concrete" : {
+                "label" : "WSDL/MDWProject/Resources/BS_SQL_IVR_GET_TRACKING_RECORDS/concrete",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "JCA/MDWProject/Resources/BS_SQL_IVR_GET_TRACKING_RECORDS_db" : {
+                "label" : "JCA/MDWProject/Resources/BS_SQL_IVR_GET_TRACKING_RECORDS_db",
+                "properties" : {
+                  "nodeType" : "JCA"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/MDWProject/WebTracking/transformations/IVRGetTrackingRecords/createResponse_IVRGetTrackingRecords" : {
+            "label" : "Xquery/MDWProject/WebTracking/transformations/IVRGetTrackingRecords/createResponse_IVRGetTrackingRecords",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/MDWProject/WebTracking/WS_GET_TRACKING_RECORDS/wsdl/WS_GET_TRACKING_RECORDS" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/MDWProject/WebTracking/WS_GET_TRACKING_RECORDS/wsdl/WS_GET_TRACKING_RECORDS",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/WebTracking/WS_GET_TRACKING_RECORDS/xsd/XSD_GET_TRACKING_RECORDS" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/WebTracking/WS_GET_TRACKING_RECORDS/xsd/XSD_GET_TRACKING_RECORDS",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/MDWProject/WebTracking/transformations/IVRGetTrackingRecords/createRequest_IVRGetTrackingRecords" : {
+            "label" : "Xquery/MDWProject/WebTracking/transformations/IVRGetTrackingRecords/createRequest_IVRGetTrackingRecords",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/MDWProject/WebTracking/WS_GET_TRACKING_RECORDS/wsdl/WS_GET_TRACKING_RECORDS" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/MDWProject/WebTracking/WS_GET_TRACKING_RECORDS/wsdl/WS_GET_TRACKING_RECORDS",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/WebTracking/WS_GET_TRACKING_RECORDS/xsd/XSD_GET_TRACKING_RECORDS" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/WebTracking/WS_GET_TRACKING_RECORDS/xsd/XSD_GET_TRACKING_RECORDS",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

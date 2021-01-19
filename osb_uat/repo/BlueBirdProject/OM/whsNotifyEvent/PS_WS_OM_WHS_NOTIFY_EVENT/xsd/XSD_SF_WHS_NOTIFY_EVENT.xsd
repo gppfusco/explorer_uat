@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.skytv.it/mdw/data" targetNamespace="http://www.skytv.it/mdw/data" elementFormDefault="qualified">
+    <xsd:element name="requestNotifyEventWHS" type="requestNotifyEventWHSType"/>
+    <xsd:element name="responseNotifyEventWHS" type="responseNotifyEventWHSType"/>
+    
+    <xsd:complexType name="requestNotifyEventWHSType">
+            <xsd:sequence>
+              <xsd:element name="CODICE_OPERATORE_REC" type="xsd:string"/>
+              <xsd:element name="CODICE_ORDINE_REC" type="xsd:string"/>
+              <xsd:element name="CODICE_OPERATORE_WHS" type="xsd:string"/>
+              <xsd:element name="CODICE_ORDINE_WHS" type="xsd:string"/>
+              <xsd:element name="DATA_NOTIFICA" type="xsd:dateTime"/>
+              <xsd:element name="ID_NOTIFICA" type="xsd:string"/>
+              <xsd:element name="TIPOLOGIA_EVENTO" type="xsd:string"/>
+              <xsd:element name="DATA_AVVIO_POLICY_CONTATTO" type="xsd:dateTime"/>
+              <xsd:element name="NOTE" type="xsd:string" minOccurs="0"/>
+            </xsd:sequence>
+    </xsd:complexType>
+    
+     <xsd:complexType name="responseNotifyEventWHSType">
+            <xsd:sequence>
+              <xsd:element name="resultCode" type="xsd:string"/>
+              <xsd:element name="resultDescription" type="xsd:string"/>
+              <xsd:element name="status" type="statusType" minOccurs="0"/>
+            </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="statusType">
+            <xsd:sequence>
+              <xsd:element name="code" type="xsd:string"/>
+              <xsd:element name="type" type="xsd:string"/>
+              <xsd:element name="message" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="providerErrors" type="providerErrorsType" minOccurs="0"/>
+            </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="providerErrorsType">
+            <xsd:sequence>
+              <xsd:element name="code" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="message" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="system" type="xsd:string" minOccurs="0"/>
+            </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

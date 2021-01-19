@@ -1,0 +1,46 @@
+{
+  "RestApi" : {
+    "type" : "REST",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/scms/REST_SCMS_ETHAN_OTT",
+    "name" : "SCMSproject_proxy_PS_REST_SCMS_ETHAN_OTT",
+    "remoteName" : "ProxyService/SCMSproject/proxy/PS_REST_SCMS_ETHAN_OTT",
+    "localPath" : "osb_uat\\repo\\SCMSproject\\PS_REST_SCMS_ETHAN_OTT",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/scms/REST_SCMS_ETHAN_OTT?WADL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "MDW_CDM/EnterpriseServices/SCMSproject/RemoteBooking/xsd/XSD_SCMS_REMOTE_BOOKING",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "MDW_CDM/EnterpriseServices/SCMSproject/GestioneDevice/xsd/XSD_CRM_GESTIONE_DEVICE",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "MDW_CDM/EnterpriseServices/SCMSproject/RemoteBooking/xsd/XSD_SCMS_REMOTE_BOOKING_JSON_ERRORS",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/json/errors"
+      }, {
+        "xsdPath" : "MDW_CDM/EnterpriseServices/SCMSproject/GestioneDevice/xsd/XSD_CRM_GESTIONE_DEVICE_JSON_ERRORS",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/json/errors"
+      } ],
+      "soapApiSpec" : {
+        "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e",
+        "xsdSchemas" : [ {
+          "xsdPath" : "/MDW_CDM/EnterpriseServices/SCMSproject/RemoteBooking/xsd/XSD_SCMS_REMOTE_BOOKING",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        }, {
+          "xsdPath" : "/MDW_CDM/EnterpriseServices/SCMSproject/GestioneDevice/xsd/XSD_CRM_GESTIONE_DEVICE_JSON_ERRORS",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/json/errors"
+        }, {
+          "xsdPath" : "/MDW_CDM/EnterpriseServices/SCMSproject/GestioneDevice/xsd/XSD_CRM_GESTIONE_DEVICE",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        }, {
+          "xsdPath" : "/MDW_CDM/EnterpriseServices/SCMSproject/RemoteBooking/xsd/XSD_SCMS_REMOTE_BOOKING_JSON_ERRORS",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/json/errors"
+        } ]
+      }
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

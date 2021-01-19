@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/siebel/WS_CRM_SIE_MGM_SCONTI",
+    "name" : "SiebelProject_proxy_PS_WS_CRM_SIE_MGM_SCONTI",
+    "remoteName" : "ProxyService/SiebelProject/proxy/PS_WS_CRM_SIE_MGM_SCONTI",
+    "localPath" : "osb_uat\\repo\\SiebelProject\\PS_WS_CRM_SIE_MGM_SCONTI",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/siebel/WS_CRM_SIE_MGM_SCONTI?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SiebelProject/MGMSconti/xsd/XSD_CRM_MGM_SCONTI",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

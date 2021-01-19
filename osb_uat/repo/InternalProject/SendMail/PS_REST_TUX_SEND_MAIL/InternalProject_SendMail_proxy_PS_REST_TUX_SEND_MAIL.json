@@ -1,0 +1,34 @@
+{
+  "RestApi" : {
+    "type" : "REST",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/InternalProject/PS_REST_TUX_SEND_MAIL",
+    "name" : "InternalProject_SendMail_proxy_PS_REST_TUX_SEND_MAIL",
+    "remoteName" : "ProxyService/InternalProject/SendMail/proxy/PS_REST_TUX_SEND_MAIL",
+    "localPath" : "osb_uat\\repo\\InternalProject\\SendMail\\PS_REST_TUX_SEND_MAIL",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/InternalProject/PS_REST_TUX_SEND_MAIL?WADL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "MDW_CDM/EnterpriseServices/InternalProject/SendMail/xsd/XSD_SEND_MAIL",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ],
+      "soapApiSpec" : {
+        "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e",
+        "xsdSchemas" : [ {
+          "xsdPath" : "/MDW_CDM/EnterpriseServices/InternalProject/SendMail/xsd/XSD_SEND_MAIL",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        }, {
+          "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        } ]
+      }
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

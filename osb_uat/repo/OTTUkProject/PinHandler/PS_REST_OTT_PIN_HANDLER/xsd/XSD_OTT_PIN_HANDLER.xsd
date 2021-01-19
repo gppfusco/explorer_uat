@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.skytv.it/mdw/data"
+            targetNamespace="http://www.skytv.it/mdw/data" elementFormDefault="qualified">
+  <xsd:simpleType name="stringMinLen">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="requestModifyPin" type="requestModifyPinType"/>
+  <xsd:element name="responseModifyPin" type="responseModifyPinType"/>
+  <xsd:complexType name="requestModifyPinType">
+    <xsd:sequence>
+      <xsd:element name="accountNumber" type="stringMinLen" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="oldPin" type="stringMinLen" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="newPin" type="stringMinLen" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="operator" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="responseModifyPinType">
+    <xsd:sequence>
+      <xsd:element name="resultCode" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="resultDescription" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="tid" type="xsd:string" minOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="requestFirstAccessPin" type="requestFirstAccessPinType"/>
+  <xsd:element name="responseFirstAccessPin" type="genericResponseType"/>
+  <xsd:complexType name="requestFirstAccessPinType">
+    <xsd:sequence>
+      <xsd:element name="parentalPin" type="stringMinLen" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="origin" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="smcNumber" type="stringMinLen" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="customerCode" type="stringMinLen" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="orderNumber" type="stringMinLen" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="accountInfo" type="accountInfoType" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="requestResetPin" type="requestResetPinType"/>
+  <xsd:element name="responseResetPin" type="responseResetPinType"/>
+  <xsd:complexType name="requestResetPinType">
+    <xsd:sequence>
+      <xsd:element name="smcNumber" type="xsd:string"/>
+      <xsd:element name="sendingMode" type="sendingModeType"/>
+      <xsd:element name="contrId" type="xsd:string"/>
+      <xsd:element name="custId" type="xsd:string"/>
+      <xsd:element name="nameConsumer" type="xsd:string"/>
+      <xsd:element name="surnameConsumer" type="xsd:string"/>
+      <xsd:element name="emailConsumer" type="xsd:string"/>
+      <xsd:element name="phoneConsumer" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="operationOrigin" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="sendingModeType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="MAIL"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <xsd:complexType name="responseResetPinType">
+    <xsd:sequence>
+      <xsd:element name="resultCode" type="xsd:int"/>
+      <xsd:element name="resultDescription" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="accountInfoType">
+    <xsd:sequence>
+      <xsd:element name="consumer" type="consumerType" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="consumerType">
+    <xsd:sequence>
+      <xsd:element name="name" type="stringMinLen" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="surname" type="stringMinLen" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="email" type="stringMinLen" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="phone" type="stringMinLen" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="genericResponseType">
+    <xsd:sequence>
+      <xsd:element name="resultCode" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="resultDescription" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="tid" type="xsd:string" minOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,137 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/EUPProject/EUPManagement/proxy/PS_REST_EUP_MANAGEMENT",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "ServiceProvider/MDW_CDM/ServiceKeyProviders/key_provider_eup" : {
+        "label" : "ServiceProvider/MDW_CDM/ServiceKeyProviders/key_provider_eup",
+        "properties" : {
+          "nodeType" : "ServiceProvider"
+        },
+        "successors" : { }
+      },
+      "WSDL/EUPProject/Resources/PS_REST_EUP_MANAGEMENT" : {
+        "label" : "WSDL/EUPProject/Resources/PS_REST_EUP_MANAGEMENT",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/EUPProject/EUPManagement/xsd/XSD_EUP_MANAGEMENT" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/EUPProject/EUPManagement/xsd/XSD_EUP_MANAGEMENT",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WADL/EUPProject/Resources/PS_REST_EUP_MANAGEMENT" : {
+        "label" : "WADL/EUPProject/Resources/PS_REST_EUP_MANAGEMENT",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      },
+      "Pipeline/EUPProject/EUPManagement/pipeline/PL_EUP_MANAGEMENT_ROUTING" : {
+        "label" : "Pipeline/EUPProject/EUPManagement/pipeline/PL_EUP_MANAGEMENT_ROUTING",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/EUPProject/Resources/PS_REST_EUP_MANAGEMENT" : {
+            "label" : "WSDL/EUPProject/Resources/PS_REST_EUP_MANAGEMENT",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/EUPProject/EUPManagement/xsd/XSD_EUP_MANAGEMENT" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/EUPProject/EUPManagement/xsd/XSD_EUP_MANAGEMENT",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Pipeline/EUPProject/EUPManagement/pipeline/PL_INTERNAL_EUP_UPSERT_CUSTOMER" : {
+            "label" : "Pipeline/EUPProject/EUPManagement/pipeline/PL_INTERNAL_EUP_UPSERT_CUSTOMER",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/EUPProject/EUPManagement/transformation/createRequest_EUP_UpsertCustomer" : {
+                "label" : "Xquery/EUPProject/EUPManagement/transformation/createRequest_EUP_UpsertCustomer",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/EUPProject/EUPManagement/businessService/BS_REST_EUP" : {
+                "label" : "BusinessService/EUPProject/EUPManagement/businessService/BS_REST_EUP",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WADL/EUPProject/Resources/BS_REST_EUP" : {
+                    "label" : "WADL/EUPProject/Resources/BS_REST_EUP",
+                    "properties" : {
+                      "nodeType" : "WADL"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/EUPProject/Resources/BS_REST_EUP" : {
+                    "label" : "WSDL/EUPProject/Resources/BS_REST_EUP",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "WSDL/EUPProject/Resources/PS_REST_EUP_MANAGEMENT" : {
+                "label" : "WSDL/EUPProject/Resources/PS_REST_EUP_MANAGEMENT",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/EUPProject/EUPManagement/xsd/XSD_EUP_MANAGEMENT" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/EUPProject/EUPManagement/xsd/XSD_EUP_MANAGEMENT",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "Xquery/EUPProject/EUPManagement/transformation/createResponse_EUP_UpsertCustomer" : {
+                "label" : "Xquery/EUPProject/EUPManagement/transformation/createResponse_EUP_UpsertCustomer",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

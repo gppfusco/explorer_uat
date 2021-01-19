@@ -1,0 +1,136 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SalesforceProject/REST_CRM_AMS_UPDATE_FLAGS_BY_SMC/proxy/PS_REST_CRM_AMS_UPDATE_FLAGS_BY_SMC",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "WADL/SalesforceProject/Resources/PS_REST_CRM_AMS_UPDATE_FLAGS_BY_SMC" : {
+        "label" : "WADL/SalesforceProject/Resources/PS_REST_CRM_AMS_UPDATE_FLAGS_BY_SMC",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      },
+      "Pipeline/SalesforceProject/REST_CRM_AMS_UPDATE_FLAGS_BY_SMC/pipeline/PL_REST_CRM_AMS_UPDATE_FLAGS_BY_SMC" : {
+        "label" : "Pipeline/SalesforceProject/REST_CRM_AMS_UPDATE_FLAGS_BY_SMC/pipeline/PL_REST_CRM_AMS_UPDATE_FLAGS_BY_SMC",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Xquery/SalesforceProject/REST_CRM_AMS_UPDATE_FLAGS_BY_SMC/trasformation/createRequestAMSSelectContract" : {
+            "label" : "Xquery/SalesforceProject/REST_CRM_AMS_UPDATE_FLAGS_BY_SMC/trasformation/createRequestAMSSelectContract",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Pipeline/SalesforceProject/pipeline/PL_SF_STD_API_INTERNAL" : {
+            "label" : "Pipeline/SalesforceProject/pipeline/PL_SF_STD_API_INTERNAL",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF" : {
+                "label" : "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB" : {
+                    "label" : "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB",
+                    "properties" : {
+                      "nodeType" : "ForeignJNDIProvider"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/SalesforceProject/REST_CRM_AMS_UPDATE_FLAGS_BY_SMC/trasformation/createRequestAMSUpdateFlagsBySMC" : {
+            "label" : "Xquery/SalesforceProject/REST_CRM_AMS_UPDATE_FLAGS_BY_SMC/trasformation/createRequestAMSUpdateFlagsBySMC",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "WSDL/SalesforceProject/Resources/PS_REST_CRM_AMS_UPDATE_FLAGS_BY_SMC" : {
+            "label" : "WSDL/SalesforceProject/Resources/PS_REST_CRM_AMS_UPDATE_FLAGS_BY_SMC",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_AMSUpdateFlagsBySMC/xsd/XSD_CRM_AMS_UPDATE_FLAGS_BY_SMC" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_AMSUpdateFlagsBySMC/xsd/XSD_CRM_AMS_UPDATE_FLAGS_BY_SMC",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/SalesforceProject/Resources/PS_REST_CRM_AMS_UPDATE_FLAGS_BY_SMC" : {
+        "label" : "WSDL/SalesforceProject/Resources/PS_REST_CRM_AMS_UPDATE_FLAGS_BY_SMC",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_AMSUpdateFlagsBySMC/xsd/XSD_CRM_AMS_UPDATE_FLAGS_BY_SMC" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_AMSUpdateFlagsBySMC/xsd/XSD_CRM_AMS_UPDATE_FLAGS_BY_SMC",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

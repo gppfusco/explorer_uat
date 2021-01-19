@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/ta/WS_TA_MANAGE_APPOINTMENT",
+    "name" : "AspideProject_ManageAppointment_proxy_PS_WS_TA_MANAGE_APPOINTMENT",
+    "remoteName" : "ProxyService/AspideProject/ManageAppointment/proxy/PS_WS_TA_MANAGE_APPOINTMENT",
+    "localPath" : "osb_uat\\repo\\AspideProject\\ManageAppointment\\PS_WS_TA_MANAGE_APPOINTMENT",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/ta/WS_TA_MANAGE_APPOINTMENT?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/AspideProject/ManageAppointment/xsd/XSD_TA_MANAGE_APPOINTMENT",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

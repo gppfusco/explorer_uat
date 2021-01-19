@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/sapfi/WS_SAPFI_VERIFICHE",
+    "name" : "SAPProject_WS_SAPFI_VERIFICHE_proxy_PS_WS_SAPFI_VERIFICHE",
+    "remoteName" : "ProxyService/SAPProject/WS_SAPFI_VERIFICHE/proxy/PS_WS_SAPFI_VERIFICHE",
+    "localPath" : "osb_uat\\repo\\SAPProject\\WS\\SAPFI\\VERIFICHE\\PS_WS_SAPFI_VERIFICHE",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/sapfi/WS_SAPFI_VERIFICHE?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SAPProject/SAPFI/WS_SAPFI_VERIFICHE/xsd/XSD_WS_SAPFI_VERIFICHE",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

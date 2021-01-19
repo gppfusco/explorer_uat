@@ -1,0 +1,346 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/CPQProject/sellingConfirmation_v2/proxy/PS_REST_CPQ_SELLING_CONFIRMATION_V2",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "Pipeline/CPQProject/sellingConfirmation_v2/pipeline/PL_REST_SELLING_CONFIRMATION" : {
+        "label" : "Pipeline/CPQProject/sellingConfirmation_v2/pipeline/PL_REST_SELLING_CONFIRMATION",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "BusinessService/MDWProject/LOG_MDW_SERVICES/businessService/BS_JMS_ENQUEUE_LOG_MDW_SERVICE" : {
+            "label" : "BusinessService/MDWProject/LOG_MDW_SERVICES/businessService/BS_JMS_ENQUEUE_LOG_MDW_SERVICE",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : { }
+          },
+          "Pipeline/CPQProject/sellingConfirmation_v2/pipeline/PL_INTERNAL_SELLING_CONFIRMATION_ENQUEUE" : {
+            "label" : "Pipeline/CPQProject/sellingConfirmation_v2/pipeline/PL_INTERNAL_SELLING_CONFIRMATION_ENQUEUE",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "BusinessService/MDWProject/LOG_MDW_SERVICES/businessService/BS_JMS_ENQUEUE_LOG_MDW_SERVICE" : {
+                "label" : "BusinessService/MDWProject/LOG_MDW_SERVICES/businessService/BS_JMS_ENQUEUE_LOG_MDW_SERVICE",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : { }
+              },
+              "Xquery/CPQProject/sellingConfirmation_v2/transformation/createRequestCreaEsigenzeChiuseEnh" : {
+                "label" : "Xquery/CPQProject/sellingConfirmation_v2/transformation/createRequestCreaEsigenzeChiuseEnh",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Pipeline/CPQProject/sellingConfirmation_v2/pipeline/PL_INTERNAL_CHECK_ORDER_VALIDATION" : {
+                "label" : "Pipeline/CPQProject/sellingConfirmation_v2/pipeline/PL_INTERNAL_CHECK_ORDER_VALIDATION",
+                "properties" : {
+                  "nodeType" : "Pipeline"
+                },
+                "successors" : {
+                  "BusinessService/MDWProject/LOG_MDW_SERVICES/businessService/BS_JMS_ENQUEUE_LOG_MDW_SERVICE" : {
+                    "label" : "BusinessService/MDWProject/LOG_MDW_SERVICES/businessService/BS_JMS_ENQUEUE_LOG_MDW_SERVICE",
+                    "properties" : {
+                      "nodeType" : "BusinessService"
+                    },
+                    "successors" : { }
+                  },
+                  "Xquery/CPQProject/sellingConfirmation_v2/transformation/createResponse_SQL_TIBCO_CHECK_ORDER_VALIDATION" : {
+                    "label" : "Xquery/CPQProject/sellingConfirmation_v2/transformation/createResponse_SQL_TIBCO_CHECK_ORDER_VALIDATION",
+                    "properties" : {
+                      "nodeType" : "Xquery"
+                    },
+                    "successors" : { }
+                  },
+                  "Xquery/CPQProject/sellingConfirmation_v2/transformation/createRequest_SQL_TIBCO_CHECK_ORDER_VALIDATION" : {
+                    "label" : "Xquery/CPQProject/sellingConfirmation_v2/transformation/createRequest_SQL_TIBCO_CHECK_ORDER_VALIDATION",
+                    "properties" : {
+                      "nodeType" : "Xquery"
+                    },
+                    "successors" : { }
+                  },
+                  "BusinessService/CPQProject/sellingConfirmation_v2/businessService/BS_SQL_TIBCO_CHECK_ORDER_VALIDATION" : {
+                    "label" : "BusinessService/CPQProject/sellingConfirmation_v2/businessService/BS_SQL_TIBCO_CHECK_ORDER_VALIDATION",
+                    "properties" : {
+                      "nodeType" : "BusinessService"
+                    },
+                    "successors" : {
+                      "WSDL/CPQProject/Resources/BS_SQL_TIBCO_CHECK_ORDER_VALIDATION/concrete" : {
+                        "label" : "WSDL/CPQProject/Resources/BS_SQL_TIBCO_CHECK_ORDER_VALIDATION/concrete",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : { }
+                      },
+                      "JCA/CPQProject/Resources/BS_SQL_TIBCO_CHECK_ORDER_VALIDATION_db" : {
+                        "label" : "JCA/CPQProject/Resources/BS_SQL_TIBCO_CHECK_ORDER_VALIDATION_db",
+                        "properties" : {
+                          "nodeType" : "JCA"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "WSDL/CPQProject/Resources/PS_REST_CPQ_SELLING_CONFIRMATION_V2" : {
+                    "label" : "WSDL/CPQProject/Resources/PS_REST_CPQ_SELLING_CONFIRMATION_V2",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : {
+                      "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      },
+                      "XMLSchema/MDW_CDM/EnterpriseServices/CPQProject/SellingConfirmation_v2/xsd/XSD_CPQ_SELLING_CONFIRMATION" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseServices/CPQProject/SellingConfirmation_v2/xsd/XSD_CPQ_SELLING_CONFIRMATION",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                    "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                    "properties" : {
+                      "nodeType" : "PipelineTemplate"
+                    },
+                    "successors" : { }
+                  },
+                  "Xquery/CPQProject/sellingConfirmation_v2/transformation/createRequest_DB_LOG" : {
+                    "label" : "Xquery/CPQProject/sellingConfirmation_v2/transformation/createRequest_DB_LOG",
+                    "properties" : {
+                      "nodeType" : "Xquery"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/CPQProject/sellingConfirmation_v2/transformation/createResponse_AsyncSellingConfirmation" : {
+                "label" : "Xquery/CPQProject/sellingConfirmation_v2/transformation/createResponse_AsyncSellingConfirmation",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/CPQProject/sellingConfirmation_v2/businessService/BS_JMS_CPQ_SELLING_CONFIRMATION_ENQUEUE" : {
+                "label" : "BusinessService/CPQProject/sellingConfirmation_v2/businessService/BS_JMS_CPQ_SELLING_CONFIRMATION_ENQUEUE",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : { }
+              },
+              "ProxyService/SalesforceProject/proxy/Local/PS_LOCAL_PL_SF_MAIN_OSB_TO_BPEL" : {
+                "label" : "ProxyService/SalesforceProject/proxy/Local/PS_LOCAL_PL_SF_MAIN_OSB_TO_BPEL",
+                "properties" : {
+                  "nodeType" : "ProxyService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/GestioneClienteIn/WS_GESTIONE_CLIENTE_IN" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/GestioneClienteIn/WS_GESTIONE_CLIENTE_IN",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "Pipeline/SalesforceProject/pipeline/PL_SF_MAIN_OSB_TO_BPEL" : {
+                    "label" : "Pipeline/SalesforceProject/pipeline/PL_SF_MAIN_OSB_TO_BPEL",
+                    "properties" : {
+                      "nodeType" : "Pipeline"
+                    },
+                    "successors" : {
+                      "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                        "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                        "properties" : {
+                          "nodeType" : "PipelineTemplate"
+                        },
+                        "successors" : { }
+                      },
+                      "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      },
+                      "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log" : {
+                        "label" : "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log",
+                        "properties" : {
+                          "nodeType" : "Xquery"
+                        },
+                        "successors" : { }
+                      },
+                      "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/wsdl/WS_CRM_GESTIONE_CLIENTE_IN" : {
+                        "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/wsdl/WS_CRM_GESTIONE_CLIENTE_IN",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : {
+                          "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/xsd/XSD_CRM_GESTIONE_CLIENTE_IN" : {
+                            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/xsd/XSD_CRM_GESTIONE_CLIENTE_IN",
+                            "properties" : {
+                              "nodeType" : "XMLSchema"
+                            },
+                            "successors" : { }
+                          },
+                          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                            "properties" : {
+                              "nodeType" : "XMLSchema"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      },
+                      "BusinessService/MDW_CO/businessServices/BS_WS_BPEL_SF_INVOKER" : {
+                        "label" : "BusinessService/MDW_CO/businessServices/BS_WS_BPEL_SF_INVOKER",
+                        "properties" : {
+                          "nodeType" : "BusinessService"
+                        },
+                        "successors" : {
+                          "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/SOA_PartnerOperations" : {
+                            "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/SOA_PartnerOperations",
+                            "properties" : {
+                              "nodeType" : "WSDL"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      },
+                      "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA" : {
+                        "label" : "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA",
+                        "properties" : {
+                          "nodeType" : "Xquery"
+                        },
+                        "successors" : { }
+                      },
+                      "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA_WithUserToLoginSF" : {
+                        "label" : "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA_WithUserToLoginSF",
+                        "properties" : {
+                          "nodeType" : "Xquery"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  }
+                }
+              },
+              "WSDL/CPQProject/Resources/PS_REST_CPQ_SELLING_CONFIRMATION_V2" : {
+                "label" : "WSDL/CPQProject/Resources/PS_REST_CPQ_SELLING_CONFIRMATION_V2",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/CPQProject/SellingConfirmation_v2/xsd/XSD_CPQ_SELLING_CONFIRMATION" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/CPQProject/SellingConfirmation_v2/xsd/XSD_CPQ_SELLING_CONFIRMATION",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "Xquery/CPQProject/sellingConfirmation_v2/transformation/createRequest_DB_LOG" : {
+                "label" : "Xquery/CPQProject/sellingConfirmation_v2/transformation/createRequest_DB_LOG",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "WSDL/CPQProject/Resources/PS_REST_CPQ_SELLING_CONFIRMATION_V2" : {
+            "label" : "WSDL/CPQProject/Resources/PS_REST_CPQ_SELLING_CONFIRMATION_V2",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/CPQProject/SellingConfirmation_v2/xsd/XSD_CPQ_SELLING_CONFIRMATION" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/CPQProject/SellingConfirmation_v2/xsd/XSD_CPQ_SELLING_CONFIRMATION",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/CPQProject/sellingConfirmation_v2/transformation/createRequest_DB_LOG" : {
+            "label" : "Xquery/CPQProject/sellingConfirmation_v2/transformation/createRequest_DB_LOG",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WADL/CPQProject/Resources/PS_REST_CPQ_SELLING_CONFIRMATION_V2" : {
+        "label" : "WADL/CPQProject/Resources/PS_REST_CPQ_SELLING_CONFIRMATION_V2",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      },
+      "WSDL/CPQProject/Resources/PS_REST_CPQ_SELLING_CONFIRMATION_V2" : {
+        "label" : "WSDL/CPQProject/Resources/PS_REST_CPQ_SELLING_CONFIRMATION_V2",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/CPQProject/SellingConfirmation_v2/xsd/XSD_CPQ_SELLING_CONFIRMATION" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/CPQProject/SellingConfirmation_v2/xsd/XSD_CPQ_SELLING_CONFIRMATION",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

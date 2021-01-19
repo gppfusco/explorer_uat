@@ -1,0 +1,18 @@
+{
+  "MessagingApi" : {
+    "type" : "Messaging",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/clever/HttpServicesClever",
+    "name" : "CleverProject_AffidamentoClever_proxy_PS_TEXT_CLEVER_SERVICES",
+    "remoteName" : "ProxyService/CleverProject/AffidamentoClever/proxy/PS_TEXT_CLEVER_SERVICES",
+    "localPath" : "osb_uat\\repo\\CleverProject\\AffidamentoClever\\PS_TEXT_CLEVER_SERVICES",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

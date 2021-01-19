@@ -1,0 +1,144 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/BlueBirdProject/SALESFORCE/exitFee/proxy/PS_REST_SF_EXIT_FEE",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "WADL/BlueBirdProject/Resources/PS_REST_SF_EXIT_FEE" : {
+        "label" : "WADL/BlueBirdProject/Resources/PS_REST_SF_EXIT_FEE",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      },
+      "Pipeline/BlueBirdProject/SALESFORCE/exitFee/pipeline/PL_SF_EXIT_FEE" : {
+        "label" : "Pipeline/BlueBirdProject/SALESFORCE/exitFee/pipeline/PL_SF_EXIT_FEE",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "WSDL/BlueBirdProject/Resources/PS_REST_SF_EXIT_FEE" : {
+            "label" : "WSDL/BlueBirdProject/Resources/PS_REST_SF_EXIT_FEE",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/exitFee/xsd/XSD_SF_EXIT_FEE" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/exitFee/xsd/XSD_SF_EXIT_FEE",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Pipeline/BlueBirdProject/SALESFORCE/exitFee/pipeline/PL_SF_EXIT_FEE_RetrieveExitFee" : {
+            "label" : "Pipeline/BlueBirdProject/SALESFORCE/exitFee/pipeline/PL_SF_EXIT_FEE_RetrieveExitFee",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/BlueBirdProject/SALESFORCE/exitFee/transformations/createRequest_BS_retrieveExitFee" : {
+                "label" : "Xquery/BlueBirdProject/SALESFORCE/exitFee/transformations/createRequest_BS_retrieveExitFee",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/MDW_CO/businessServices/BS_WS_EJB_FORCE" : {
+                "label" : "BusinessService/MDW_CO/businessServices/BS_WS_EJB_FORCE",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "WSDL/BlueBirdProject/Resources/PS_REST_SF_EXIT_FEE" : {
+                "label" : "WSDL/BlueBirdProject/Resources/PS_REST_SF_EXIT_FEE",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/exitFee/xsd/XSD_SF_EXIT_FEE" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/exitFee/xsd/XSD_SF_EXIT_FEE",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/BlueBirdProject/SALESFORCE/exitFee/transformations/createResponse_WS_retrieveExitFee" : {
+                "label" : "Xquery/BlueBirdProject/SALESFORCE/exitFee/transformations/createResponse_WS_retrieveExitFee",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/BlueBirdProject/Resources/PS_REST_SF_EXIT_FEE" : {
+        "label" : "WSDL/BlueBirdProject/Resources/PS_REST_SF_EXIT_FEE",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/exitFee/xsd/XSD_SF_EXIT_FEE" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/exitFee/xsd/XSD_SF_EXIT_FEE",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

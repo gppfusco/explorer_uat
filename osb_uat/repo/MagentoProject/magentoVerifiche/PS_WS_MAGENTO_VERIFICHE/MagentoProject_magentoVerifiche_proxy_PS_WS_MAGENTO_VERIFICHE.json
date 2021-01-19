@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/magento/WS_MAGENTO_VERIFICHE",
+    "name" : "MagentoProject_magentoVerifiche_proxy_PS_WS_MAGENTO_VERIFICHE",
+    "remoteName" : "ProxyService/MagentoProject/magentoVerifiche/proxy/PS_WS_MAGENTO_VERIFICHE",
+    "localPath" : "osb_uat\\repo\\MagentoProject\\magentoVerifiche\\PS_WS_MAGENTO_VERIFICHE",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/magento/WS_MAGENTO_VERIFICHE?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/MagentoProject/magentoVerifiche/xsd/XSD_WS_MAGENTO_VERIFICHE",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

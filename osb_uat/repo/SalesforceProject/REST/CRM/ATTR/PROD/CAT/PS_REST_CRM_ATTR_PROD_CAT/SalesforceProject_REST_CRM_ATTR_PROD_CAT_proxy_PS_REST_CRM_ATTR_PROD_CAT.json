@@ -1,0 +1,34 @@
+{
+  "RestApi" : {
+    "type" : "REST",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/service/salesforce/prodottiCatalogo",
+    "name" : "SalesforceProject_REST_CRM_ATTR_PROD_CAT_proxy_PS_REST_CRM_ATTR_PROD_CAT",
+    "remoteName" : "ProxyService/SalesforceProject/REST_CRM_ATTR_PROD_CAT/proxy/PS_REST_CRM_ATTR_PROD_CAT",
+    "localPath" : "osb_uat\\repo\\SalesforceProject\\REST\\CRM\\ATTR\\PROD\\CAT\\PS_REST_CRM_ATTR_PROD_CAT",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/service/salesforce/prodottiCatalogo?WADL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "MDW_CDM/EnterpriseServices/SalesforceProject/Rest_Crm_Attr_Prod_Cat/xsd/XSD_REST_CRM_ATTR_PROD_CAT",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ],
+      "soapApiSpec" : {
+        "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e",
+        "xsdSchemas" : [ {
+          "xsdPath" : "/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_Crm_Attr_Prod_Cat/xsd/XSD_REST_CRM_ATTR_PROD_CAT",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        }, {
+          "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        } ]
+      }
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

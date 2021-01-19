@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/salesforce/WS_CRM_AGREEMENTS",
+    "name" : "SalesforceProject_WS_CRM_AGREEMENTS_proxy_PS_WS_CRM_AGREEMENTS",
+    "remoteName" : "ProxyService/SalesforceProject/WS_CRM_AGREEMENTS/proxy/PS_WS_CRM_AGREEMENTS",
+    "localPath" : "osb_uat\\repo\\SalesforceProject\\WS\\CRM\\AGREEMENTS\\PS_WS_CRM_AGREEMENTS",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/salesforce/WS_CRM_AGREEMENTS?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SalesforceProject/Agreements/xsd/XSD_CRM_AGREEMENTS",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

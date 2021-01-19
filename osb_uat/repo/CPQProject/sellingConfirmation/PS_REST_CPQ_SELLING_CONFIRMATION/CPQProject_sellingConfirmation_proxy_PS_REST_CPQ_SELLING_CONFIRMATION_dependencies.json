@@ -1,0 +1,202 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/CPQProject/sellingConfirmation/proxy/PS_REST_CPQ_SELLING_CONFIRMATION",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "WSDL/CPQProject/Resources/PS_REST_CPQ_SELLING_CONFIRMATION" : {
+        "label" : "WSDL/CPQProject/Resources/PS_REST_CPQ_SELLING_CONFIRMATION",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/CPQProject/SellingConfirmation/xsd/XSD_CPQ_SELLING_CONFIRMATION" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/CPQProject/SellingConfirmation/xsd/XSD_CPQ_SELLING_CONFIRMATION",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WADL/CPQProject/Resources/PS_REST_CPQ_SELLING_CONFIRMATION" : {
+        "label" : "WADL/CPQProject/Resources/PS_REST_CPQ_SELLING_CONFIRMATION",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      },
+      "Pipeline/CPQProject/sellingConfirmation/pipeline/PL_REST_SELLING_CONFIRMATION" : {
+        "label" : "Pipeline/CPQProject/sellingConfirmation/pipeline/PL_REST_SELLING_CONFIRMATION",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/CPQProject/Resources/PS_REST_CPQ_SELLING_CONFIRMATION" : {
+            "label" : "WSDL/CPQProject/Resources/PS_REST_CPQ_SELLING_CONFIRMATION",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/CPQProject/SellingConfirmation/xsd/XSD_CPQ_SELLING_CONFIRMATION" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/CPQProject/SellingConfirmation/xsd/XSD_CPQ_SELLING_CONFIRMATION",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/CPQProject/sellingConfirmation/pipeline/PL_INTERNAL_SELLING_CONFIRMATION_ENQUEUE" : {
+            "label" : "Pipeline/CPQProject/sellingConfirmation/pipeline/PL_INTERNAL_SELLING_CONFIRMATION_ENQUEUE",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "WSDL/CPQProject/Resources/PS_REST_CPQ_SELLING_CONFIRMATION" : {
+                "label" : "WSDL/CPQProject/Resources/PS_REST_CPQ_SELLING_CONFIRMATION",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/CPQProject/SellingConfirmation/xsd/XSD_CPQ_SELLING_CONFIRMATION" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/CPQProject/SellingConfirmation/xsd/XSD_CPQ_SELLING_CONFIRMATION",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "BusinessService/CPQProject/sellingConfirmation/businessService/BS_JMS_CPQ_SELLING_CONFIRMATION_ENQUEUE" : {
+                "label" : "BusinessService/CPQProject/sellingConfirmation/businessService/BS_JMS_CPQ_SELLING_CONFIRMATION_ENQUEUE",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : { }
+              },
+              "Xquery/CPQProject/sellingConfirmation/transformation/createResponse_AsyncSellingConfirmation" : {
+                "label" : "Xquery/CPQProject/sellingConfirmation/transformation/createResponse_AsyncSellingConfirmation",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "Pipeline/CPQProject/sellingConfirmation/pipeline/PL_INTERNAL_CHECK_ORDER_VALIDATION" : {
+                "label" : "Pipeline/CPQProject/sellingConfirmation/pipeline/PL_INTERNAL_CHECK_ORDER_VALIDATION",
+                "properties" : {
+                  "nodeType" : "Pipeline"
+                },
+                "successors" : {
+                  "WSDL/CPQProject/Resources/PS_REST_CPQ_SELLING_CONFIRMATION" : {
+                    "label" : "WSDL/CPQProject/Resources/PS_REST_CPQ_SELLING_CONFIRMATION",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : {
+                      "XMLSchema/MDW_CDM/EnterpriseServices/CPQProject/SellingConfirmation/xsd/XSD_CPQ_SELLING_CONFIRMATION" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseServices/CPQProject/SellingConfirmation/xsd/XSD_CPQ_SELLING_CONFIRMATION",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      },
+                      "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "Xquery/CPQProject/sellingConfirmation/transformation/createResponse_SQL_TIBCO_CHECK_ORDER_VALIDATION" : {
+                    "label" : "Xquery/CPQProject/sellingConfirmation/transformation/createResponse_SQL_TIBCO_CHECK_ORDER_VALIDATION",
+                    "properties" : {
+                      "nodeType" : "Xquery"
+                    },
+                    "successors" : { }
+                  },
+                  "Xquery/CPQProject/sellingConfirmation/transformation/createRequest_SQL_TIBCO_CHECK_ORDER_VALIDATION" : {
+                    "label" : "Xquery/CPQProject/sellingConfirmation/transformation/createRequest_SQL_TIBCO_CHECK_ORDER_VALIDATION",
+                    "properties" : {
+                      "nodeType" : "Xquery"
+                    },
+                    "successors" : { }
+                  },
+                  "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                    "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                    "properties" : {
+                      "nodeType" : "PipelineTemplate"
+                    },
+                    "successors" : { }
+                  },
+                  "BusinessService/CPQProject/sellingConfirmation/businessService/BS_SQL_TIBCO_CHECK_ORDER_VALIDATION" : {
+                    "label" : "BusinessService/CPQProject/sellingConfirmation/businessService/BS_SQL_TIBCO_CHECK_ORDER_VALIDATION",
+                    "properties" : {
+                      "nodeType" : "BusinessService"
+                    },
+                    "successors" : {
+                      "WSDL/CPQProject/Resources/BS_SQL_TIBCO_CHECK_ORDER_VALIDATION/concrete" : {
+                        "label" : "WSDL/CPQProject/Resources/BS_SQL_TIBCO_CHECK_ORDER_VALIDATION/concrete",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : { }
+                      },
+                      "JCA/CPQProject/Resources/BS_SQL_TIBCO_CHECK_ORDER_VALIDATION_db" : {
+                        "label" : "JCA/CPQProject/Resources/BS_SQL_TIBCO_CHECK_ORDER_VALIDATION_db",
+                        "properties" : {
+                          "nodeType" : "JCA"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/OMProject/GetAuthocode/proxy/PS_WS_OM_GET_AUTHOCODE",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/OMProject/GetAuthocode/pipeline/PL_WS_OM_GET_AUTHOCODE" : {
+        "label" : "Pipeline/OMProject/GetAuthocode/pipeline/PL_WS_OM_GET_AUTHOCODE",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "BusinessService/OMProject/GetAuthocode/businessService/BS_WS_OM_GET_AUTHOCODE" : {
+            "label" : "BusinessService/OMProject/GetAuthocode/businessService/BS_WS_OM_GET_AUTHOCODE",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "ServiceAccount/MDW_CDM/ServiceAccount/SA_Tibco" : {
+                "label" : "ServiceAccount/MDW_CDM/ServiceAccount/SA_Tibco",
+                "properties" : {
+                  "nodeType" : "ServiceAccount"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/ApplicationObjects/OM/GetAuthocode/wsdl/WS_TIBCO_GET_AUTH_Concrete" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/OM/GetAuthocode/wsdl/WS_TIBCO_GET_AUTH_Concrete",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/OMProject/transformation/createRequestSoapHeaderTibco" : {
+            "label" : "Xquery/OMProject/transformation/createRequestSoapHeaderTibco",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/OMProject/GetAuthocode/transformation/createResponse_GetAuthocode" : {
+            "label" : "Xquery/OMProject/GetAuthocode/transformation/createResponse_GetAuthocode",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/OMProject/GetAuthocode/transformation/createRequest_GetAuthocode" : {
+            "label" : "Xquery/OMProject/GetAuthocode/transformation/createRequest_GetAuthocode",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/OMProject/GetAuthocode/wsdl/WS_OM_GET_AUTHOCODE" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/OMProject/GetAuthocode/wsdl/WS_OM_GET_AUTHOCODE",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/GetAuthocode/xsd/XSD_OM_GET_AUTHOCODE" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/GetAuthocode/xsd/XSD_OM_GET_AUTHOCODE",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/OMProject/GetAuthocode/wsdl/WS_OM_GET_AUTHOCODE" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/OMProject/GetAuthocode/wsdl/WS_OM_GET_AUTHOCODE",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/GetAuthocode/xsd/XSD_OM_GET_AUTHOCODE" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/GetAuthocode/xsd/XSD_OM_GET_AUTHOCODE",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

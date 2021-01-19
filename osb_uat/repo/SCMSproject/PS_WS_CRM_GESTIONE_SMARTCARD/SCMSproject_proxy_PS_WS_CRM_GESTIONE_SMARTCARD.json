@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/scms/WS_CRM_GESTIONE_SMARTCARD",
+    "name" : "SCMSproject_proxy_PS_WS_CRM_GESTIONE_SMARTCARD",
+    "remoteName" : "ProxyService/SCMSproject/proxy/PS_WS_CRM_GESTIONE_SMARTCARD",
+    "localPath" : "osb_uat\\repo\\SCMSproject\\PS_WS_CRM_GESTIONE_SMARTCARD",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/scms/WS_CRM_GESTIONE_SMARTCARD?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSmartCard/xsd/XSD_CRM_GESTIONE_SMARTCARD",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

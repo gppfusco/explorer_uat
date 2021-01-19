@@ -1,0 +1,85 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/MDWProject/SalesforceToRidSEDA/CreateBankXML/proxy/PS_WS_SEDA_CREATE_BANK_XML",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/MDWProject/SalesforceToRidSEDA/CreateBankXML/pipeline/PL_WS_SEDA_CREATE_XML_BANK_ENQUEUE" : {
+        "label" : "Pipeline/MDWProject/SalesforceToRidSEDA/CreateBankXML/pipeline/PL_WS_SEDA_CREATE_XML_BANK_ENQUEUE",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "BusinessService/MDWProject/SalesforceToRidSEDA/businessService/BS_JMS_SEDA_ENQUEUE" : {
+            "label" : "BusinessService/MDWProject/SalesforceToRidSEDA/businessService/BS_JMS_SEDA_ENQUEUE",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/MDWProject/SalesforceToRidSEDA/CreateBankXML/wsdl/WS_SEDA_CREATE_BANK_XML" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/MDWProject/SalesforceToRidSEDA/CreateBankXML/wsdl/WS_SEDA_CREATE_BANK_XML",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/SalesforceToRidSEDA/CreateBankXML/xsd/XSD_CREATE_BANK_XML" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/SalesforceToRidSEDA/CreateBankXML/xsd/XSD_CREATE_BANK_XML",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_ENQUEUE_INTERNAL_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_ENQUEUE_INTERNAL_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/MDWProject/SalesforceToRidSEDA/CreateBankXML/transformation/createResponse_WS_SEDA_CREATE_BANK_XML" : {
+            "label" : "Xquery/MDWProject/SalesforceToRidSEDA/CreateBankXML/transformation/createResponse_WS_SEDA_CREATE_BANK_XML",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/MDWProject/SalesforceToRidSEDA/CreateBankXML/wsdl/WS_SEDA_CREATE_BANK_XML" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/MDWProject/SalesforceToRidSEDA/CreateBankXML/wsdl/WS_SEDA_CREATE_BANK_XML",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/SalesforceToRidSEDA/CreateBankXML/xsd/XSD_CREATE_BANK_XML" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/SalesforceToRidSEDA/CreateBankXML/xsd/XSD_CREATE_BANK_XML",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

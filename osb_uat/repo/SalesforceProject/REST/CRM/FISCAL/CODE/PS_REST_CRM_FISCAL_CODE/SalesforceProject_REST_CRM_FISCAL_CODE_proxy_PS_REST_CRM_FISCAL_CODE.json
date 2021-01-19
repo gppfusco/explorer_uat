@@ -1,0 +1,34 @@
+{
+  "RestApi" : {
+    "type" : "REST",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/salesforce/rest/fiscalCodes/",
+    "name" : "SalesforceProject_REST_CRM_FISCAL_CODE_proxy_PS_REST_CRM_FISCAL_CODE",
+    "remoteName" : "ProxyService/SalesforceProject/REST_CRM_FISCAL_CODE/proxy/PS_REST_CRM_FISCAL_CODE",
+    "localPath" : "osb_uat\\repo\\SalesforceProject\\REST\\CRM\\FISCAL\\CODE\\PS_REST_CRM_FISCAL_CODE",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/salesforce/rest/fiscalCodes/?WADL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "MDW_CDM/EnterpriseServices/SalesforceProject/Rest_FiscalCode/xsd/XSD_CRM_FISCAL_CODE",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ],
+      "soapApiSpec" : {
+        "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e",
+        "xsdSchemas" : [ {
+          "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        }, {
+          "xsdPath" : "/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_FiscalCode/xsd/XSD_CRM_FISCAL_CODE",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        } ]
+      }
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

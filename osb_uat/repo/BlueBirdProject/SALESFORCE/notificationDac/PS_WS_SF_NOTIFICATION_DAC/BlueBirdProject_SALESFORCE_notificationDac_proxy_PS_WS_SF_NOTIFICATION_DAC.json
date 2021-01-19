@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/mdw/sf/WS_SF_NOTIFICATION_DAC",
+    "name" : "BlueBirdProject_SALESFORCE_notificationDac_proxy_PS_WS_SF_NOTIFICATION_DAC",
+    "remoteName" : "ProxyService/BlueBirdProject/SALESFORCE/notificationDac/proxy/PS_WS_SF_NOTIFICATION_DAC",
+    "localPath" : "osb_uat\\repo\\BlueBirdProject\\SALESFORCE\\notificationDac\\PS_WS_SF_NOTIFICATION_DAC",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/mdw/sf/WS_SF_NOTIFICATION_DAC?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/notificationDac/xsd/XSD_SF_NOTIFICATION_DAC",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

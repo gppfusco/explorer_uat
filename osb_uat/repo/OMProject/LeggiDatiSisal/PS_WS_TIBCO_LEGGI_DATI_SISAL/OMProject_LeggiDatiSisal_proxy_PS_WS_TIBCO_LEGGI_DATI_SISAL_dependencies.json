@@ -1,0 +1,144 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/OMProject/LeggiDatiSisal/proxy/PS_WS_TIBCO_LEGGI_DATI_SISAL",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/OMProject/LeggiDatiSisal/pipeline/PL_TIBCO_LEGGI_DATI_SISAL" : {
+        "label" : "Pipeline/OMProject/LeggiDatiSisal/pipeline/PL_TIBCO_LEGGI_DATI_SISAL",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/OMProject/LeggiDatiSisal/wsdl/WS_TIBCO_LEGGI_DATI_SISAL" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/OMProject/LeggiDatiSisal/wsdl/WS_TIBCO_LEGGI_DATI_SISAL",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/LeggiDatiSisal/xsd/XSD_TIBCO_LEGGI_DATI_SISAL" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/LeggiDatiSisal/xsd/XSD_TIBCO_LEGGI_DATI_SISAL",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Pipeline/OMProject/LeggiDatiSisal/pipeline/PL_INTERNAL_TIBCO_LEGGI_DATI_SISAL" : {
+            "label" : "Pipeline/OMProject/LeggiDatiSisal/pipeline/PL_INTERNAL_TIBCO_LEGGI_DATI_SISAL",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/OMProject/LeggiDatiSisal/transformations/createRequestLeggiDatiSisal" : {
+                "label" : "Xquery/OMProject/LeggiDatiSisal/transformations/createRequestLeggiDatiSisal",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/OMProject/LeggiDatiSisal/transformations/createResponseLeggiDatiSisal" : {
+                "label" : "Xquery/OMProject/LeggiDatiSisal/transformations/createResponseLeggiDatiSisal",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/OMProject/LeggiDatiSisal/wsdl/WS_TIBCO_LEGGI_DATI_SISAL" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/OMProject/LeggiDatiSisal/wsdl/WS_TIBCO_LEGGI_DATI_SISAL",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/LeggiDatiSisal/xsd/XSD_TIBCO_LEGGI_DATI_SISAL" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/LeggiDatiSisal/xsd/XSD_TIBCO_LEGGI_DATI_SISAL",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "BusinessService/OMProject/LeggiDatiSisal/businessServices/BS_SQL_PROC_TIBCO_LEGGI_DATI_SISAL" : {
+                "label" : "BusinessService/OMProject/LeggiDatiSisal/businessServices/BS_SQL_PROC_TIBCO_LEGGI_DATI_SISAL",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/OMProject/Resources/BS_SQL_PROC_TIBCO_LEGGI_DATI_SISAL/concrete" : {
+                    "label" : "WSDL/OMProject/Resources/BS_SQL_PROC_TIBCO_LEGGI_DATI_SISAL/concrete",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "JCA/OMProject/Resources/BS_SQL_PROC_TIBCO_LEGGI_DATI_SISAL_db" : {
+                    "label" : "JCA/OMProject/Resources/BS_SQL_PROC_TIBCO_LEGGI_DATI_SISAL_db",
+                    "properties" : {
+                      "nodeType" : "JCA"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/OMProject/LeggiDatiSisal/wsdl/WS_TIBCO_LEGGI_DATI_SISAL" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/OMProject/LeggiDatiSisal/wsdl/WS_TIBCO_LEGGI_DATI_SISAL",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/LeggiDatiSisal/xsd/XSD_TIBCO_LEGGI_DATI_SISAL" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/LeggiDatiSisal/xsd/XSD_TIBCO_LEGGI_DATI_SISAL",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

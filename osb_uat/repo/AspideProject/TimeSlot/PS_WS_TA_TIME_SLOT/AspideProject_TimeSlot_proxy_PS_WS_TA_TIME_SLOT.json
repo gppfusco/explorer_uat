@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/ta/WS_TA_TIME_SLOT",
+    "name" : "AspideProject_TimeSlot_proxy_PS_WS_TA_TIME_SLOT",
+    "remoteName" : "ProxyService/AspideProject/TimeSlot/proxy/PS_WS_TA_TIME_SLOT",
+    "localPath" : "osb_uat\\repo\\AspideProject\\TimeSlot\\PS_WS_TA_TIME_SLOT",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/ta/WS_TA_TIME_SLOT?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/AspideProject/TimeSlot/xsd/XSD_TA_TIME_SLOT",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

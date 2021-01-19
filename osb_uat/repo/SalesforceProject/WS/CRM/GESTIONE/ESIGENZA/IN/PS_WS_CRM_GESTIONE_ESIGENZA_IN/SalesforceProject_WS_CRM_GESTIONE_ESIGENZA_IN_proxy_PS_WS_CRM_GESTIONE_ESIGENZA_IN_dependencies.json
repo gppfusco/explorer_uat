@@ -1,0 +1,224 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SalesforceProject/WS_CRM_GESTIONE_ESIGENZA_IN/proxy/PS_WS_CRM_GESTIONE_ESIGENZA_IN",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneEsigenzaIn/wsdl/WS_CRM_GESTIONE_ESIGENZA_IN" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneEsigenzaIn/wsdl/WS_CRM_GESTIONE_ESIGENZA_IN",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneEsigenzaIn/xsd/XSD_CRM_GESTIONE_ESIGENZA_IN" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneEsigenzaIn/xsd/XSD_CRM_GESTIONE_ESIGENZA_IN",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/SalesforceProject/WS_CRM_GESTIONE_ESIGENZA_IN/pipelines/PL_WS_GESTIONE_ESIGENZA_IN_ROUTING" : {
+        "label" : "Pipeline/SalesforceProject/WS_CRM_GESTIONE_ESIGENZA_IN/pipelines/PL_WS_GESTIONE_ESIGENZA_IN_ROUTING",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneEsigenzaIn/wsdl/WS_CRM_GESTIONE_ESIGENZA_IN" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneEsigenzaIn/wsdl/WS_CRM_GESTIONE_ESIGENZA_IN",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneEsigenzaIn/xsd/XSD_CRM_GESTIONE_ESIGENZA_IN" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneEsigenzaIn/xsd/XSD_CRM_GESTIONE_ESIGENZA_IN",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/SalesforceProject/WS_CRM_GESTIONE_ESIGENZA_IN/pipelines/PL_CASE_SR_UPDATE" : {
+            "label" : "Pipeline/SalesforceProject/WS_CRM_GESTIONE_ESIGENZA_IN/pipelines/PL_CASE_SR_UPDATE",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneEsigenzaIn/wsdl/WS_CRM_GESTIONE_ESIGENZA_IN" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneEsigenzaIn/wsdl/WS_CRM_GESTIONE_ESIGENZA_IN",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneEsigenzaIn/xsd/XSD_CRM_GESTIONE_ESIGENZA_IN" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneEsigenzaIn/xsd/XSD_CRM_GESTIONE_ESIGENZA_IN",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "Xquery/SalesforceProject/WS_CRM_GESTIONE_ESIGENZA_IN/transformations/createRequestUpdateCase" : {
+                "label" : "Xquery/SalesforceProject/WS_CRM_GESTIONE_ESIGENZA_IN/transformations/createRequestUpdateCase",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/SalesforceProject/WS_CRM_GESTIONE_ESIGENZA_IN/transformations/createResponseUpdateCase" : {
+                "label" : "Xquery/SalesforceProject/WS_CRM_GESTIONE_ESIGENZA_IN/transformations/createResponseUpdateCase",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF" : {
+                "label" : "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB" : {
+                    "label" : "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB",
+                    "properties" : {
+                      "nodeType" : "ForeignJNDIProvider"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "Pipeline/SalesforceProject/pipeline/PL_SF_MAIN_OSB_TO_BPEL" : {
+            "label" : "Pipeline/SalesforceProject/pipeline/PL_SF_MAIN_OSB_TO_BPEL",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log" : {
+                "label" : "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/wsdl/WS_CRM_GESTIONE_CLIENTE_IN" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/wsdl/WS_CRM_GESTIONE_CLIENTE_IN",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/xsd/XSD_CRM_GESTIONE_CLIENTE_IN" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/xsd/XSD_CRM_GESTIONE_CLIENTE_IN",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "BusinessService/MDW_CO/businessServices/BS_WS_BPEL_SF_INVOKER" : {
+                "label" : "BusinessService/MDW_CO/businessServices/BS_WS_BPEL_SF_INVOKER",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/SOA_PartnerOperations" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/SOA_PartnerOperations",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA" : {
+                "label" : "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA_WithUserToLoginSF" : {
+                "label" : "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA_WithUserToLoginSF",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

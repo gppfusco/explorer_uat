@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/internal/WS_TUX_SEND_MAIL",
+    "name" : "InternalProject_SendMail_proxy_PS_WS_TUX_SEND_MAIL",
+    "remoteName" : "ProxyService/InternalProject/SendMail/proxy/PS_WS_TUX_SEND_MAIL",
+    "localPath" : "osb_uat\\repo\\InternalProject\\SendMail\\PS_WS_TUX_SEND_MAIL",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/internal/WS_TUX_SEND_MAIL?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/InternalProject/SendMail/xsd/XSD_SEND_MAIL",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

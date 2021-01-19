@@ -1,0 +1,217 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/PegasusProject/GestioneComunicazione/proxy/PS_WS_CRM_PGS_GESTIONE_COMUNICAZIONE",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/PegasusProject/GestioneComunicazione/pipeline/PL_PGS_GESTIONE_COMUNICAZIONE_ROUTING" : {
+        "label" : "Pipeline/PegasusProject/GestioneComunicazione/pipeline/PL_PGS_GESTIONE_COMUNICAZIONE_ROUTING",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Pipeline/PegasusProject/GestioneComunicazione/pipeline/PL_CRM_PGS_GESTIONE_COMUNICAZIONE_SendSms" : {
+            "label" : "Pipeline/PegasusProject/GestioneComunicazione/pipeline/PL_CRM_PGS_GESTIONE_COMUNICAZIONE_SendSms",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "Xquery/PegasusProject/GestioneComunicazione/transformations/createRequestSendSms" : {
+                "label" : "Xquery/PegasusProject/GestioneComunicazione/transformations/createRequestSendSms",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/PegasusProject/GestioneComunicazione/wsdl/WS_CRM_PGS_GESTIONE_COMUNICAZIONE" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/PegasusProject/GestioneComunicazione/wsdl/WS_CRM_PGS_GESTIONE_COMUNICAZIONE",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/PegasusProject/GestioneComunicazione/xsd/XSD_CRM_GESTIONE_COMUNICAZIONE" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/PegasusProject/GestioneComunicazione/xsd/XSD_CRM_GESTIONE_COMUNICAZIONE",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/PegasusProject/GestioneComunicazione/transformations/createResponseSendSms" : {
+                "label" : "Xquery/PegasusProject/GestioneComunicazione/transformations/createResponseSendSms",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/PegasusProject/OUTBOUND_MSG/WS_CRM_PGS_OUTBOUND_SEND_PRINT/businessService/BS_WS_MDW_PEGASUS_SEND" : {
+                "label" : "BusinessService/PegasusProject/OUTBOUND_MSG/WS_CRM_PGS_OUTBOUND_SEND_PRINT/businessService/BS_WS_MDW_PEGASUS_SEND",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/PEGASUS/WS_MDW_PEGASUS_SEND" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/PEGASUS/WS_MDW_PEGASUS_SEND",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "ServiceAccount/MDW_CDM/ServiceAccount/SA_Pegasus" : {
+                    "label" : "ServiceAccount/MDW_CDM/ServiceAccount/SA_Pegasus",
+                    "properties" : {
+                      "nodeType" : "ServiceAccount"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/PegasusProject/GestioneComunicazione/pipeline/PL_CRM_PGS_GESTIONE_COMUNICAZIONE_GetComunication" : {
+            "label" : "Pipeline/PegasusProject/GestioneComunicazione/pipeline/PL_CRM_PGS_GESTIONE_COMUNICAZIONE_GetComunication",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "Xquery/PegasusProject/GestioneComunicazione/transformations/createRequestGetCommunication" : {
+                "label" : "Xquery/PegasusProject/GestioneComunicazione/transformations/createRequestGetCommunication",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/PegasusProject/GestioneComunicazione/wsdl/WS_CRM_PGS_GESTIONE_COMUNICAZIONE" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/PegasusProject/GestioneComunicazione/wsdl/WS_CRM_PGS_GESTIONE_COMUNICAZIONE",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/PegasusProject/GestioneComunicazione/xsd/XSD_CRM_GESTIONE_COMUNICAZIONE" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/PegasusProject/GestioneComunicazione/xsd/XSD_CRM_GESTIONE_COMUNICAZIONE",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/PegasusProject/GestioneComunicazione/transformations/createResponseGetCommunication" : {
+                "label" : "Xquery/PegasusProject/GestioneComunicazione/transformations/createResponseGetCommunication",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/PegasusProject/GestioneComunicazione/businessService/BS_WS_PGS_GET_COMMUNICATIONS" : {
+                "label" : "BusinessService/PegasusProject/GestioneComunicazione/businessService/BS_WS_PGS_GET_COMMUNICATIONS",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/PEGASUS/WS_MDW_PEGASUS_GET_COMMUNICATIONS" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/PEGASUS/WS_MDW_PEGASUS_GET_COMMUNICATIONS",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "ServiceAccount/MDW_CDM/ServiceAccount/SA_Pegasus" : {
+                    "label" : "ServiceAccount/MDW_CDM/ServiceAccount/SA_Pegasus",
+                    "properties" : {
+                      "nodeType" : "ServiceAccount"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/PegasusProject/GestioneComunicazione/wsdl/WS_CRM_PGS_GESTIONE_COMUNICAZIONE" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/PegasusProject/GestioneComunicazione/wsdl/WS_CRM_PGS_GESTIONE_COMUNICAZIONE",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/PegasusProject/GestioneComunicazione/xsd/XSD_CRM_GESTIONE_COMUNICAZIONE" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/PegasusProject/GestioneComunicazione/xsd/XSD_CRM_GESTIONE_COMUNICAZIONE",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/PegasusProject/GestioneComunicazione/wsdl/WS_CRM_PGS_GESTIONE_COMUNICAZIONE" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/PegasusProject/GestioneComunicazione/wsdl/WS_CRM_PGS_GESTIONE_COMUNICAZIONE",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/PegasusProject/GestioneComunicazione/xsd/XSD_CRM_GESTIONE_COMUNICAZIONE" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/PegasusProject/GestioneComunicazione/xsd/XSD_CRM_GESTIONE_COMUNICAZIONE",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

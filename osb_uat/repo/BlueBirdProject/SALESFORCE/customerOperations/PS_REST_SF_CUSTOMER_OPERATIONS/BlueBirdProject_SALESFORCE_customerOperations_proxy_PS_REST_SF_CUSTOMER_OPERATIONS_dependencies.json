@@ -1,0 +1,181 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/BlueBirdProject/SALESFORCE/customerOperations/proxy/PS_REST_SF_CUSTOMER_OPERATIONS",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "WADL/BlueBirdProject/Resources/PS_REST_SF_CUSTOMER_OPERATIONS" : {
+        "label" : "WADL/BlueBirdProject/Resources/PS_REST_SF_CUSTOMER_OPERATIONS",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      },
+      "WSDL/BlueBirdProject/Resources/PS_REST_SF_CUSTOMER_OPERATIONS" : {
+        "label" : "WSDL/BlueBirdProject/Resources/PS_REST_SF_CUSTOMER_OPERATIONS",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/customerOperations/xsd/XSD_SF_CUSTOMER_OPERATIONS" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/customerOperations/xsd/XSD_SF_CUSTOMER_OPERATIONS",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/BlueBirdProject/SALESFORCE/customerOperations/pipeline/PL_REST_SF_CUSTOMER_OPERATIONS" : {
+        "label" : "Pipeline/BlueBirdProject/SALESFORCE/customerOperations/pipeline/PL_REST_SF_CUSTOMER_OPERATIONS",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Pipeline/BlueBirdProject/SALESFORCE/customerOperations/pipeline/PL_INTERNAL_SET_PHONE_FOR_INSTALLATION" : {
+            "label" : "Pipeline/BlueBirdProject/SALESFORCE/customerOperations/pipeline/PL_INTERNAL_SET_PHONE_FOR_INSTALLATION",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "ProxyService/SalesforceProject/proxy/Local/PS_LOCAL_SF_EJB_REST_INTERNAL" : {
+                "label" : "ProxyService/SalesforceProject/proxy/Local/PS_LOCAL_SF_EJB_REST_INTERNAL",
+                "properties" : {
+                  "nodeType" : "ProxyService"
+                },
+                "successors" : {
+                  "Pipeline/SalesforceProject/pipeline/PL_SF_EJB_REST_INTERNAL" : {
+                    "label" : "Pipeline/SalesforceProject/pipeline/PL_SF_EJB_REST_INTERNAL",
+                    "properties" : {
+                      "nodeType" : "Pipeline"
+                    },
+                    "successors" : {
+                      "BusinessService/MDW_CO/businessServices/BS_WS_EJB_FORCE" : {
+                        "label" : "BusinessService/MDW_CO/businessServices/BS_WS_EJB_FORCE",
+                        "properties" : {
+                          "nodeType" : "BusinessService"
+                        },
+                        "successors" : {
+                          "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService" : {
+                            "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService",
+                            "properties" : {
+                              "nodeType" : "WSDL"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      },
+                      "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService" : {
+                        "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : { }
+                      },
+                      "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                        "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                        "properties" : {
+                          "nodeType" : "PipelineTemplate"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/BlueBirdProject/SALESFORCE/customerOperations/transformation/createResponse_SetPhoneForInstallation" : {
+                "label" : "Xquery/BlueBirdProject/SALESFORCE/customerOperations/transformation/createResponse_SetPhoneForInstallation",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/BlueBirdProject/SALESFORCE/customerOperations/transformation/createRequest_SetPhoneForInstallation" : {
+                "label" : "Xquery/BlueBirdProject/SALESFORCE/customerOperations/transformation/createRequest_SetPhoneForInstallation",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/BlueBirdProject/Resources/PS_REST_SF_CUSTOMER_OPERATIONS" : {
+                "label" : "WSDL/BlueBirdProject/Resources/PS_REST_SF_CUSTOMER_OPERATIONS",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/customerOperations/xsd/XSD_SF_CUSTOMER_OPERATIONS" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/customerOperations/xsd/XSD_SF_CUSTOMER_OPERATIONS",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "WSDL/BlueBirdProject/Resources/PS_REST_SF_CUSTOMER_OPERATIONS" : {
+            "label" : "WSDL/BlueBirdProject/Resources/PS_REST_SF_CUSTOMER_OPERATIONS",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/customerOperations/xsd/XSD_SF_CUSTOMER_OPERATIONS" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/customerOperations/xsd/XSD_SF_CUSTOMER_OPERATIONS",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

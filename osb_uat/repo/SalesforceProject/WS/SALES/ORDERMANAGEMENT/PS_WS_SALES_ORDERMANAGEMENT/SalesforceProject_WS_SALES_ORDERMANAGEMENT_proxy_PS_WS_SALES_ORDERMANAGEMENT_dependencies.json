@@ -1,0 +1,107 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SalesforceProject/WS_SALES_ORDERMANAGEMENT/proxy/PS_WS_SALES_ORDERMANAGEMENT",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/SalesOrdermanagement/wsdl/WS_SALES_ORDERMANAGEMENT" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/SalesOrdermanagement/wsdl/WS_SALES_ORDERMANAGEMENT",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/SalesOrdermanagement/xsd/XSD_SALES_ORDERMANAGEMENT" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/SalesOrdermanagement/xsd/XSD_SALES_ORDERMANAGEMENT",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/SalesforceProject/WS_SALES_ORDERMANAGEMENT/pipeline/PL_WS_SALSES_ORDERMANAGEMENT" : {
+        "label" : "Pipeline/SalesforceProject/WS_SALES_ORDERMANAGEMENT/pipeline/PL_WS_SALSES_ORDERMANAGEMENT",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/SalesOrdermanagement/wsdl/WS_SALES_ORDERMANAGEMENT" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/SalesOrdermanagement/wsdl/WS_SALES_ORDERMANAGEMENT",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/SalesOrdermanagement/xsd/XSD_SALES_ORDERMANAGEMENT" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/SalesOrdermanagement/xsd/XSD_SALES_ORDERMANAGEMENT",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/SalesforceProject/WS_SALES_ORDERMANAGEMENT/trasformation/createResponse_CallbackOrderManagement" : {
+            "label" : "Xquery/SalesforceProject/WS_SALES_ORDERMANAGEMENT/trasformation/createResponse_CallbackOrderManagement",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF" : {
+            "label" : "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB" : {
+                "label" : "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB",
+                "properties" : {
+                  "nodeType" : "ForeignJNDIProvider"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/SalesforceProject/WS_SALES_ORDERMANAGEMENT/trasformation/createRequest_CallbackOrderManagement" : {
+            "label" : "Xquery/SalesforceProject/WS_SALES_ORDERMANAGEMENT/trasformation/createRequest_CallbackOrderManagement",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

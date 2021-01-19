@@ -1,0 +1,107 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/OMProject/GetOrderPayment/proxy/PS_WS_OM_GET_ORDER_PAYMENT",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/OMProject/GetOrderPayment/wsdl/WS_OM_GET_ORDER_PAYMENT" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/OMProject/GetOrderPayment/wsdl/WS_OM_GET_ORDER_PAYMENT",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/GetOrderPayment/xsd/XSD_OM_GET_ORDER_PAYMENT" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/GetOrderPayment/xsd/XSD_OM_GET_ORDER_PAYMENT",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/OMProject/GetOrderPayment/pipeline/PL_WS_OM_GET_ORDER_PAYMENT" : {
+        "label" : "Pipeline/OMProject/GetOrderPayment/pipeline/PL_WS_OM_GET_ORDER_PAYMENT",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/OMProject/GetOrderPayment/wsdl/WS_OM_GET_ORDER_PAYMENT" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/OMProject/GetOrderPayment/wsdl/WS_OM_GET_ORDER_PAYMENT",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/GetOrderPayment/xsd/XSD_OM_GET_ORDER_PAYMENT" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/GetOrderPayment/xsd/XSD_OM_GET_ORDER_PAYMENT",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "BusinessService/OMProject/GetOrderPayment/businessServices/BS_SQL_TIBCO_GET_ORDER_PAYMENT" : {
+            "label" : "BusinessService/OMProject/GetOrderPayment/businessServices/BS_SQL_TIBCO_GET_ORDER_PAYMENT",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "WSDL/OMProject/Resources/BS_SQL_TIBCO_GET_ORDER_PAYMENT/concrete" : {
+                "label" : "WSDL/OMProject/Resources/BS_SQL_TIBCO_GET_ORDER_PAYMENT/concrete",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "JCA/OMProject/Resources/BS_SQL_TIBCO_GET_ORDER_PAYMENT_db" : {
+                "label" : "JCA/OMProject/Resources/BS_SQL_TIBCO_GET_ORDER_PAYMENT_db",
+                "properties" : {
+                  "nodeType" : "JCA"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/OMProject/GetOrderPayment/transformations/createResponse_getOrderPayment" : {
+            "label" : "Xquery/OMProject/GetOrderPayment/transformations/createResponse_getOrderPayment",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/OMProject/GetOrderPayment/transformations/createRequest_getOrderPayment" : {
+            "label" : "Xquery/OMProject/GetOrderPayment/transformations/createRequest_getOrderPayment",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

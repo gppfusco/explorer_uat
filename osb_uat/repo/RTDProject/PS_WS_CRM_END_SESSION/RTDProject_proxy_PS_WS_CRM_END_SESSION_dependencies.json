@@ -1,0 +1,166 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/RTDProject/proxy/PS_WS_CRM_END_SESSION",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/RTDProject/pipeline/PL_WS_OSB_BPEL_SOA_RTD" : {
+        "label" : "Pipeline/RTDProject/pipeline/PL_WS_OSB_BPEL_SOA_RTD",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/MDW_CO/transformation/renameRootNodeNameWithNS" : {
+            "label" : "Xquery/MDW_CO/transformation/renameRootNodeNameWithNS",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/RTDProject/transformations/createResponse" : {
+            "label" : "Xquery/RTDProject/transformations/createResponse",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log" : {
+            "label" : "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "BusinessService/MDW_CO/businessServices/BS_WS_BPEL_RTD_INVOKER" : {
+            "label" : "BusinessService/MDW_CO/businessServices/BS_WS_BPEL_RTD_INVOKER",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/ApplicationObjects/RTD/wsdl/SOA_RTD" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/RTD/wsdl/SOA_RTD",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/ApplicationObjects/RTD/xsd/SOA_RTD" : {
+                    "label" : "XMLSchema/MDW_CDM/ApplicationObjects/RTD/xsd/SOA_RTD",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "Pipeline/RTDProject/RtdServiceLog/pipeline/PL_JMS_ENQUEUE_RTD_SERVICE_LOG" : {
+            "label" : "Pipeline/RTDProject/RtdServiceLog/pipeline/PL_JMS_ENQUEUE_RTD_SERVICE_LOG",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "BusinessService/RTDProject/RtdServiceLog/businessService/BS_JMS_RTD_ENQUEUE" : {
+                "label" : "BusinessService/RTDProject/RtdServiceLog/businessService/BS_JMS_RTD_ENQUEUE",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/RTDProject/PostEvent/wsdl/WS_CRM_POST_EVENT" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/RTDProject/PostEvent/wsdl/WS_CRM_POST_EVENT",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/RTDProject/PostEvent/xsd/XSD_CRM_POST_EVENT" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/RTDProject/PostEvent/xsd/XSD_CRM_POST_EVENT",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_ENQUEUE_INTERNAL_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_ENQUEUE_INTERNAL_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/RTDProject/transformations/createRequestServiceLogTUX" : {
+            "label" : "Xquery/RTDProject/transformations/createRequestServiceLogTUX",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/RTDProject/EndSession/wsdl/WS_CRM_END_SESSION" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/RTDProject/EndSession/wsdl/WS_CRM_END_SESSION",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/RTDProject/EndSession/xsd/XSD_CRM_END_SESSION" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/RTDProject/EndSession/xsd/XSD_CRM_END_SESSION",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/RTDProject/EndSession/wsdl/WS_CRM_END_SESSION" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/RTDProject/EndSession/wsdl/WS_CRM_END_SESSION",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/RTDProject/EndSession/xsd/XSD_CRM_END_SESSION" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/RTDProject/EndSession/xsd/XSD_CRM_END_SESSION",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

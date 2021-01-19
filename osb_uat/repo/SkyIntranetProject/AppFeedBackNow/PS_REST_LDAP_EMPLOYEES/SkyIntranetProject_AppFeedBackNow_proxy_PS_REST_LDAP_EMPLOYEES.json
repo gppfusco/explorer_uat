@@ -1,0 +1,34 @@
+{
+  "RestApi" : {
+    "type" : "REST",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/ldap/employees",
+    "name" : "SkyIntranetProject_AppFeedBackNow_proxy_PS_REST_LDAP_EMPLOYEES",
+    "remoteName" : "ProxyService/SkyIntranetProject/AppFeedBackNow/proxy/PS_REST_LDAP_EMPLOYEES",
+    "localPath" : "osb_uat\\repo\\SkyIntranetProject\\AppFeedBackNow\\PS_REST_LDAP_EMPLOYEES",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/ldap/employees?WADL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "MDW_CDM/EnterpriseServices/SkyIntranetProject/AppFeedBackNow/xsd/XSD_LDAP_EMPLOYEES",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ],
+      "soapApiSpec" : {
+        "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e",
+        "xsdSchemas" : [ {
+          "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        }, {
+          "xsdPath" : "/MDW_CDM/EnterpriseServices/SkyIntranetProject/AppFeedBackNow/xsd/XSD_LDAP_EMPLOYEES",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        } ]
+      }
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

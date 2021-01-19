@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/salesforce/WS_SF_LEGGI_DATI_CLIENTE",
+    "name" : "SalesforceProject_WS_SF_LEGGI_DATI_CLIENTE_proxy_PS_WS_SF_LEGGI_DATI_CLIENTE",
+    "remoteName" : "ProxyService/SalesforceProject/WS_SF_LEGGI_DATI_CLIENTE/proxy/PS_WS_SF_LEGGI_DATI_CLIENTE",
+    "localPath" : "osb_uat\\repo\\SalesforceProject\\WS\\SF\\LEGGI\\DATI\\CLIENTE\\PS_WS_SF_LEGGI_DATI_CLIENTE",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/salesforce/WS_SF_LEGGI_DATI_CLIENTE?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SalesforceProject/LeggiDatiClienteSF/xsd/XSD_SF_LEGGI_DATI_CLIENTE",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

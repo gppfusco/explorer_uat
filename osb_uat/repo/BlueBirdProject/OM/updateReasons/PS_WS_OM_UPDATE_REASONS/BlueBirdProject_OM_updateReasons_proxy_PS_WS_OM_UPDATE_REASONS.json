@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/mdw/om/WS_OM_UPDATE_REASONS",
+    "name" : "BlueBirdProject_OM_updateReasons_proxy_PS_WS_OM_UPDATE_REASONS",
+    "remoteName" : "ProxyService/BlueBirdProject/OM/updateReasons/proxy/PS_WS_OM_UPDATE_REASONS",
+    "localPath" : "osb_uat\\repo\\BlueBirdProject\\OM\\updateReasons\\PS_WS_OM_UPDATE_REASONS",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/mdw/om/WS_OM_UPDATE_REASONS?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/BlueBirdProject/OM/updateReasons/xsd/XSD_OM_UPDATE_REASONS",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

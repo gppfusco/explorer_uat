@@ -1,0 +1,164 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SalesforceProject/REST_CRM_FISCAL_CODE/proxy/PS_REST_CRM_FISCAL_CODE",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "WADL/SalesforceProject/Resources/PS_REST_CRM_FISCAL_CODE" : {
+        "label" : "WADL/SalesforceProject/Resources/PS_REST_CRM_FISCAL_CODE",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      },
+      "Pipeline/SalesforceProject/REST_CRM_FISCAL_CODE/pipeline/PL_REST_CRM_FISCAL_CODE" : {
+        "label" : "Pipeline/SalesforceProject/REST_CRM_FISCAL_CODE/pipeline/PL_REST_CRM_FISCAL_CODE",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Pipeline/SalesforceProject/pipeline/PL_SF_EJB_REST_INTERNAL" : {
+            "label" : "Pipeline/SalesforceProject/pipeline/PL_SF_EJB_REST_INTERNAL",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "BusinessService/MDW_CO/businessServices/BS_WS_EJB_FORCE" : {
+                "label" : "BusinessService/MDW_CO/businessServices/BS_WS_EJB_FORCE",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/SalesforceProject/REST_CRM_FISCAL_CODE/transformations/createResponseModifyFiscalCode" : {
+            "label" : "Xquery/SalesforceProject/REST_CRM_FISCAL_CODE/transformations/createResponseModifyFiscalCode",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/SalesforceProject/REST_CRM_FISCAL_CODE/transformations/createRequestModifyFiscalCode" : {
+            "label" : "Xquery/SalesforceProject/REST_CRM_FISCAL_CODE/transformations/createRequestModifyFiscalCode",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/SalesforceProject/REST_CRM_FISCAL_CODE/transformations/createResponseFCDummies" : {
+            "label" : "Xquery/SalesforceProject/REST_CRM_FISCAL_CODE/transformations/createResponseFCDummies",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "BusinessService/SalesforceProject/REST_CRM_FISCAL_CODE/businessService/BS_HTTP_EGON_NORMALIZZA_CF" : {
+            "label" : "BusinessService/SalesforceProject/REST_CRM_FISCAL_CODE/businessService/BS_HTTP_EGON_NORMALIZZA_CF",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : { }
+          },
+          "Xquery/SalesforceProject/REST_CRM_FISCAL_CODE/transformations/createRequestCheckFiscalCode" : {
+            "label" : "Xquery/SalesforceProject/REST_CRM_FISCAL_CODE/transformations/createRequestCheckFiscalCode",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/SalesforceProject/REST_CRM_FISCAL_CODE/transformations/createResponseCheckFiscalCode" : {
+            "label" : "Xquery/SalesforceProject/REST_CRM_FISCAL_CODE/transformations/createResponseCheckFiscalCode",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/SalesforceProject/REST_CRM_FISCAL_CODE/transformations/createRequestFCDummies" : {
+            "label" : "Xquery/SalesforceProject/REST_CRM_FISCAL_CODE/transformations/createRequestFCDummies",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/SalesforceProject/Resources/PS_REST_CRM_FISCAL_CODE" : {
+            "label" : "WSDL/SalesforceProject/Resources/PS_REST_CRM_FISCAL_CODE",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_FiscalCode/xsd/XSD_CRM_FISCAL_CODE" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_FiscalCode/xsd/XSD_CRM_FISCAL_CODE",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/SalesforceProject/Resources/PS_REST_CRM_FISCAL_CODE" : {
+        "label" : "WSDL/SalesforceProject/Resources/PS_REST_CRM_FISCAL_CODE",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_FiscalCode/xsd/XSD_CRM_FISCAL_CODE" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_FiscalCode/xsd/XSD_CRM_FISCAL_CODE",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

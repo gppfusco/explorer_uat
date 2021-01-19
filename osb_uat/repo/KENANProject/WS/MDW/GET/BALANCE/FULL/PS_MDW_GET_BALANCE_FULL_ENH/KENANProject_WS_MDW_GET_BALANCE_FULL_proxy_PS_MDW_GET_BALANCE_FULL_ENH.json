@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/billing/WS_MDW_GET_BALANCE_FULL_ENH",
+    "name" : "KENANProject_WS_MDW_GET_BALANCE_FULL_proxy_PS_MDW_GET_BALANCE_FULL_ENH",
+    "remoteName" : "ProxyService/KENANProject/WS_MDW_GET_BALANCE_FULL/proxy/PS_MDW_GET_BALANCE_FULL_ENH",
+    "localPath" : "osb_uat\\repo\\KENANProject\\WS\\MDW\\GET\\BALANCE\\FULL\\PS_MDW_GET_BALANCE_FULL_ENH",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/billing/WS_MDW_GET_BALANCE_FULL_ENH?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/KenanProject/GetBalanceFull/xsd/XSD_MDW_GET_BALANCE_FULL_ENH",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

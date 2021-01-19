@@ -1,0 +1,217 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SkyIntranetProject/AppFeedBackNow/proxy/PS_REST_LDAP_EMPLOYEES",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "WADL/SkyIntranetProject/Resources/PS_REST_LDAP_EMPLOYEES" : {
+        "label" : "WADL/SkyIntranetProject/Resources/PS_REST_LDAP_EMPLOYEES",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      },
+      "Pipeline/SkyIntranetProject/AppFeedBackNow/pipeline/PL_REST_LDAP_EMPLOYEES" : {
+        "label" : "Pipeline/SkyIntranetProject/AppFeedBackNow/pipeline/PL_REST_LDAP_EMPLOYEES",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Pipeline/SkyIntranetProject/AppFeedBackNow/pipeline/PL_INTERNAL_WS_LDAP_GETEMPLOYEES" : {
+            "label" : "Pipeline/SkyIntranetProject/AppFeedBackNow/pipeline/PL_INTERNAL_WS_LDAP_GETEMPLOYEES",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/SkyIntranetProject/AppFeedBackNow/transformation/createRequest_getDepartmentInformation" : {
+                "label" : "Xquery/SkyIntranetProject/AppFeedBackNow/transformation/createRequest_getDepartmentInformation",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/SkyIntranetProject/AppFeedBackNow/transformation/createResponse_getEmployeeInformation" : {
+                "label" : "Xquery/SkyIntranetProject/AppFeedBackNow/transformation/createResponse_getEmployeeInformation",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/MDW_CO/businessServices/BS_WS_EJB_LDAP" : {
+                "label" : "BusinessService/MDW_CO/businessServices/BS_WS_EJB_LDAP",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/SKYINTRANET/AppFeedBackNow/wsdl/LdapService" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SKYINTRANET/AppFeedBackNow/wsdl/LdapService",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/SkyIntranetProject/AppFeedBackNow/transformation/createRequest_getEmployeeInformation" : {
+                "label" : "Xquery/SkyIntranetProject/AppFeedBackNow/transformation/createRequest_getEmployeeInformation",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "WSDL/SkyIntranetProject/Resources/PS_REST_LDAP_EMPLOYEES" : {
+                "label" : "WSDL/SkyIntranetProject/Resources/PS_REST_LDAP_EMPLOYEES",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SkyIntranetProject/AppFeedBackNow/xsd/XSD_LDAP_EMPLOYEES" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SkyIntranetProject/AppFeedBackNow/xsd/XSD_LDAP_EMPLOYEES",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/SkyIntranetProject/AppFeedBackNow/pipeline/PL_INTERNAL_WS_LDAP_GETEMPLOYEES_LOGIN" : {
+            "label" : "Pipeline/SkyIntranetProject/AppFeedBackNow/pipeline/PL_INTERNAL_WS_LDAP_GETEMPLOYEES_LOGIN",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/SkyIntranetProject/AppFeedBackNow/transformation/createRequest_getEmployeeLogin" : {
+                "label" : "Xquery/SkyIntranetProject/AppFeedBackNow/transformation/createRequest_getEmployeeLogin",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/MDW_CO/businessServices/BS_WS_EJB_LDAP" : {
+                "label" : "BusinessService/MDW_CO/businessServices/BS_WS_EJB_LDAP",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/SKYINTRANET/AppFeedBackNow/wsdl/LdapService" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SKYINTRANET/AppFeedBackNow/wsdl/LdapService",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/SkyIntranetProject/AppFeedBackNow/transformation/createResponse_getEmployeeLogin" : {
+                "label" : "Xquery/SkyIntranetProject/AppFeedBackNow/transformation/createResponse_getEmployeeLogin",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "WSDL/SkyIntranetProject/Resources/PS_REST_LDAP_EMPLOYEES" : {
+                "label" : "WSDL/SkyIntranetProject/Resources/PS_REST_LDAP_EMPLOYEES",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SkyIntranetProject/AppFeedBackNow/xsd/XSD_LDAP_EMPLOYEES" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SkyIntranetProject/AppFeedBackNow/xsd/XSD_LDAP_EMPLOYEES",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "WSDL/SkyIntranetProject/Resources/PS_REST_LDAP_EMPLOYEES" : {
+            "label" : "WSDL/SkyIntranetProject/Resources/PS_REST_LDAP_EMPLOYEES",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SkyIntranetProject/AppFeedBackNow/xsd/XSD_LDAP_EMPLOYEES" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SkyIntranetProject/AppFeedBackNow/xsd/XSD_LDAP_EMPLOYEES",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/SkyIntranetProject/Resources/PS_REST_LDAP_EMPLOYEES" : {
+        "label" : "WSDL/SkyIntranetProject/Resources/PS_REST_LDAP_EMPLOYEES",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SkyIntranetProject/AppFeedBackNow/xsd/XSD_LDAP_EMPLOYEES" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SkyIntranetProject/AppFeedBackNow/xsd/XSD_LDAP_EMPLOYEES",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

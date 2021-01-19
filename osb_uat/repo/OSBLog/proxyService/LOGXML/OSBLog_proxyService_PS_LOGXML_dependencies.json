@@ -1,0 +1,64 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/OSBLog/proxyService/PS_LOGXML",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/OSBLog/PS_LOGXML" : {
+        "label" : "WSDL/OSBLog/PS_LOGXML",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/OSBLog/payload_messaggio_test" : {
+            "label" : "XMLSchema/OSBLog/payload_messaggio_test",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/OSBLog/pipeline/PS_LOGXMLPipeline" : {
+        "label" : "Pipeline/OSBLog/pipeline/PS_LOGXMLPipeline",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log" : {
+            "label" : "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/OSBLog/PS_LOGXML" : {
+            "label" : "WSDL/OSBLog/PS_LOGXML",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/OSBLog/payload_messaggio_test" : {
+                "label" : "XMLSchema/OSBLog/payload_messaggio_test",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "BusinessService/MDW_CO/businessServices/BS_LOG_ENQUEUE" : {
+            "label" : "BusinessService/MDW_CO/businessServices/BS_LOG_ENQUEUE",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

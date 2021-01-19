@@ -1,0 +1,107 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SAPProject/ReportStbTracking/proxy/PS_WS_SAP_REPORT_STB_TRACKING",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/SAPProject/ReportStbTracking/pipeline/PL_WS_SAP_REPORT_STB_TRACKING" : {
+        "label" : "Pipeline/SAPProject/ReportStbTracking/pipeline/PL_WS_SAP_REPORT_STB_TRACKING",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Xquery/SAPProject/ReportStbTracking/transformations/createResponse_ReportStbTracking" : {
+            "label" : "Xquery/SAPProject/ReportStbTracking/transformations/createResponse_ReportStbTracking",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "BusinessService/SAPProject/ReportStbTracking/businessServices/BS_WS_SAP_REPORT_STB_TRACKING" : {
+            "label" : "BusinessService/SAPProject/ReportStbTracking/businessServices/BS_WS_SAP_REPORT_STB_TRACKING",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/ApplicationObjects/SAP/ReportStbTracking/Q01///WS/Indirette/v02" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/SAP/ReportStbTracking/Q01///WS/Indirette/v02",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "ServiceAccount/SAPProject/ReportStbTracking/ServiceAccount/SA_ReportStbTracking" : {
+                "label" : "ServiceAccount/SAPProject/ReportStbTracking/ServiceAccount/SA_ReportStbTracking",
+                "properties" : {
+                  "nodeType" : "ServiceAccount"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/SAPProject/ReportStbTracking/transformations/createRequest_ReportStbTracking" : {
+            "label" : "Xquery/SAPProject/ReportStbTracking/transformations/createRequest_ReportStbTracking",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/SAPProject/ReportStbTracking/wsdl/WS_SAP_REPORT_STB_TRACKING" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/SAPProject/ReportStbTracking/wsdl/WS_SAP_REPORT_STB_TRACKING",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SAPProject/ReportStbTracking/xsd/ReportStbTracking" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SAPProject/ReportStbTracking/xsd/ReportStbTracking",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/SAPProject/ReportStbTracking/wsdl/WS_SAP_REPORT_STB_TRACKING" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/SAPProject/ReportStbTracking/wsdl/WS_SAP_REPORT_STB_TRACKING",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SAPProject/ReportStbTracking/xsd/ReportStbTracking" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SAPProject/ReportStbTracking/xsd/ReportStbTracking",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

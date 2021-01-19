@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/SalesforceProject/WS_CRM_GET_LISTA_COUNTRY/proxy/PS_WS_CRM_GET_LISTA_COUNTRY",
+    "name" : "SalesforceProject_WS_CRM_GET_LISTA_COUNTRY_proxy_PS_WS_CRM_GET_LISTA_COUNTRY",
+    "remoteName" : "ProxyService/SalesforceProject/WS_CRM_GET_LISTA_COUNTRY/proxy/PS_WS_CRM_GET_LISTA_COUNTRY",
+    "localPath" : "osb_uat\\repo\\SalesforceProject\\WS\\CRM\\GET\\LISTA\\COUNTRY\\PS_WS_CRM_GET_LISTA_COUNTRY",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/SalesforceProject/WS_CRM_GET_LISTA_COUNTRY/proxy/PS_WS_CRM_GET_LISTA_COUNTRY?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SalesforceProject/GetListaCountry/xsd/XSD_CRM_GET_LISTA_COUNTRY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

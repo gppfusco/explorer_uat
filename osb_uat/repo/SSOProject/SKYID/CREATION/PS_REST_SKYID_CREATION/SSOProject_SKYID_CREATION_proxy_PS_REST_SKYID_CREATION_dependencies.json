@@ -1,0 +1,165 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SSOProject/SKYID_CREATION/proxy/PS_REST_SKYID_CREATION",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "WSDL/SSOProject/Resources/PS_REST_SKYID_CREATION" : {
+        "label" : "WSDL/SSOProject/Resources/PS_REST_SKYID_CREATION",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SSOProject/SKYID_CREATION/xsd/XSD_SSO_SKYID_CREATION" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SSOProject/SKYID_CREATION/xsd/XSD_SSO_SKYID_CREATION",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WADL/SSOProject/Resources/PS_REST_SKYID_CREATION" : {
+        "label" : "WADL/SSOProject/Resources/PS_REST_SKYID_CREATION",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      },
+      "Pipeline/SSOProject/SKYID_CREATION/pipeline/PL_REST_SKYID_CREATION" : {
+        "label" : "Pipeline/SSOProject/SKYID_CREATION/pipeline/PL_REST_SKYID_CREATION",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/SSOProject/Resources/PS_REST_SKYID_CREATION" : {
+            "label" : "WSDL/SSOProject/Resources/PS_REST_SKYID_CREATION",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SSOProject/SKYID_CREATION/xsd/XSD_SSO_SKYID_CREATION" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SSOProject/SKYID_CREATION/xsd/XSD_SSO_SKYID_CREATION",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/SSOProject/SKYID_CREATION/pipeline/PL_REST_INTERNAL_SKYID_CREATION" : {
+            "label" : "Pipeline/SSOProject/SKYID_CREATION/pipeline/PL_REST_INTERNAL_SKYID_CREATION",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/SSOProject/SKYID_CREATION/transformation/createRequest_SKYID_CREATION" : {
+                "label" : "Xquery/SSOProject/SKYID_CREATION/transformation/createRequest_SKYID_CREATION",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/SSOProject/Resources/PS_REST_SKYID_CREATION" : {
+                "label" : "WSDL/SSOProject/Resources/PS_REST_SKYID_CREATION",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SSOProject/SKYID_CREATION/xsd/XSD_SSO_SKYID_CREATION" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SSOProject/SKYID_CREATION/xsd/XSD_SSO_SKYID_CREATION",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log" : {
+                "label" : "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/SSOProject/businessService/BS_REST_SKYQ_FIBRA" : {
+                "label" : "BusinessService/SSOProject/businessService/BS_REST_SKYQ_FIBRA",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WADL/SSOProject/Resources/BS_REST_SKYQ_FIBRA" : {
+                    "label" : "WADL/SSOProject/Resources/BS_REST_SKYQ_FIBRA",
+                    "properties" : {
+                      "nodeType" : "WADL"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/SSOProject/Resources/BS_REST_SKYQ_FIBRA" : {
+                    "label" : "WSDL/SSOProject/Resources/BS_REST_SKYQ_FIBRA",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "ServiceAccount/MDW_CDM/ServiceAccount/SA_SSO_PreRegistration" : {
+                    "label" : "ServiceAccount/MDW_CDM/ServiceAccount/SA_SSO_PreRegistration",
+                    "properties" : {
+                      "nodeType" : "ServiceAccount"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/SSOProject/SKYID_CREATION/transformation/createResponse_SKYID_CREATION" : {
+                "label" : "Xquery/SSOProject/SKYID_CREATION/transformation/createResponse_SKYID_CREATION",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

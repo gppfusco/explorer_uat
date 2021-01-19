@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/service/spy/WS_SPY_ANTIFRAUDCHECK",
+    "name" : "SPYProject_WS_SPY_ANTIFRAUDCHECK_proxy_PS_WS_SPY_ANTIFRAUDCHECK",
+    "remoteName" : "ProxyService/SPYProject/WS_SPY_ANTIFRAUDCHECK/proxy/PS_WS_SPY_ANTIFRAUDCHECK",
+    "localPath" : "osb_uat\\repo\\SPYProject\\WS\\SPY\\ANTIFRAUDCHECK\\PS_WS_SPY_ANTIFRAUDCHECK",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/service/spy/WS_SPY_ANTIFRAUDCHECK?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SPYProject/WS_SPY_ANTIFRAUDCHECK/xsd/XSD_SPY_ANTIFRAUDCHECK",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/bitwin/WS_DECA_DOWN_PAYMENT",
+    "name" : "BitwinProject_DecaDownPayment_proxy_PS_WS_DECA_DOWN_PAYMENT",
+    "remoteName" : "ProxyService/BitwinProject/DecaDownPayment/proxy/PS_WS_DECA_DOWN_PAYMENT",
+    "localPath" : "osb_uat\\repo\\BitwinProject\\DecaDownPayment\\PS_WS_DECA_DOWN_PAYMENT",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/bitwin/WS_DECA_DOWN_PAYMENT?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/BitwinProject/DECADownPayment/xsd/XSD_DECA_DOWN_PAYMENT",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

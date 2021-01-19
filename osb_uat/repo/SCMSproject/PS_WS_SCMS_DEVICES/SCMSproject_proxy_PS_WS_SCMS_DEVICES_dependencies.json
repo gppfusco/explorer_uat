@@ -1,0 +1,100 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SCMSproject/proxy/PS_WS_SCMS_DEVICES",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/EthanITADevices/wsdl/WS_SCMS_DEVICES" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/EthanITADevices/wsdl/WS_SCMS_DEVICES",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/EthanITADevices/xsd/XSD_SCMS_DEVICES" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/EthanITADevices/xsd/XSD_SCMS_DEVICES",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/SCMSproject/pipeline/PL_WS_CRM_INVOKE_CAIF_DYN_XQUERY" : {
+        "label" : "Pipeline/SCMSproject/pipeline/PL_WS_CRM_INVOKE_CAIF_DYN_XQUERY",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/SCMSproject/transformation/scms_request_enrichment/create_request_ejb_scms_GENERIC" : {
+            "label" : "Xquery/SCMSproject/transformation/scms_request_enrichment/create_request_ejb_scms_GENERIC",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_CAIF" : {
+            "label" : "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_CAIF",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB" : {
+                "label" : "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB",
+                "properties" : {
+                  "nodeType" : "ForeignJNDIProvider"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/ApplicationObjects/SCMS/ejb_mdw/wsdl_with_xsd/BS_EJB_CAIF" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/SCMS/ejb_mdw/wsdl_with_xsd/BS_EJB_CAIF",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSmartCard/wsdl/WS_CRM_GESTIONE_SMARTCARD" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSmartCard/wsdl/WS_CRM_GESTIONE_SMARTCARD",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSmartCard/xsd/XSD_CRM_GESTIONE_SMARTCARD" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSmartCard/xsd/XSD_CRM_GESTIONE_SMARTCARD",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

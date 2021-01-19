@@ -1,0 +1,143 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SCMSproject/proxy/PS_WS_CRM_GESTIONE_CREDITO",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/SCMSproject/pipeline/PL_WS_CRM_GESTIONE_CREDITO" : {
+        "label" : "Pipeline/SCMSproject/pipeline/PL_WS_CRM_GESTIONE_CREDITO",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "BusinessService/SCMSproject/businessService/BS_SQL_GEST_CREDITO_INFOWLSTORICO" : {
+            "label" : "BusinessService/SCMSproject/businessService/BS_SQL_GEST_CREDITO_INFOWLSTORICO",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "JCA/SCMSproject/Resources/BS_SQL_GEST_CREDITO_INFOWLSTORICO_db" : {
+                "label" : "JCA/SCMSproject/Resources/BS_SQL_GEST_CREDITO_INFOWLSTORICO_db",
+                "properties" : {
+                  "nodeType" : "JCA"
+                },
+                "successors" : { }
+              },
+              "WSDL/SCMSproject/Resources/BS_SQL_GEST_CREDITO_INFOWLSTORICO/concrete" : {
+                "label" : "WSDL/SCMSproject/Resources/BS_SQL_GEST_CREDITO_INFOWLSTORICO/concrete",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_N_OPERATIONS_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_N_OPERATIONS_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/GestioneCredito/wsdl/WS_CRM_GESTIONE_CREDITO" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/GestioneCredito/wsdl/WS_CRM_GESTIONE_CREDITO",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneCredito/xsd/XSD_CRM_GESTIONE_CREDITO" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneCredito/xsd/XSD_CRM_GESTIONE_CREDITO",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/SCMSproject/transformation/createRequest_GestCredito_INFOWLSTORICO" : {
+            "label" : "Xquery/SCMSproject/transformation/createRequest_GestCredito_INFOWLSTORICO",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/SCMSproject/transformation/createRequest_GestCredito_INFOSOGLIE" : {
+            "label" : "Xquery/SCMSproject/transformation/createRequest_GestCredito_INFOSOGLIE",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/SCMSproject/transformation/create_response_GestCredito_INFOWLSTORICO" : {
+            "label" : "Xquery/SCMSproject/transformation/create_response_GestCredito_INFOWLSTORICO",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "BusinessService/SCMSproject/businessService/BS_SQL_GEST_CREDITO_INFOSOGLIE" : {
+            "label" : "BusinessService/SCMSproject/businessService/BS_SQL_GEST_CREDITO_INFOSOGLIE",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "JCA/SCMSproject/Resources/BS_SQL_GEST_CREDITO_INFOSOGLIE_db" : {
+                "label" : "JCA/SCMSproject/Resources/BS_SQL_GEST_CREDITO_INFOSOGLIE_db",
+                "properties" : {
+                  "nodeType" : "JCA"
+                },
+                "successors" : { }
+              },
+              "WSDL/SCMSproject/Resources/BS_SQL_GEST_CREDITO_INFOSOGLIE/concrete" : {
+                "label" : "WSDL/SCMSproject/Resources/BS_SQL_GEST_CREDITO_INFOSOGLIE/concrete",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/SCMSproject/transformation/createResponse_GestCredito_INFOSOGLIE" : {
+            "label" : "Xquery/SCMSproject/transformation/createResponse_GestCredito_INFOSOGLIE",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/GestioneCredito/wsdl/WS_CRM_GESTIONE_CREDITO" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/GestioneCredito/wsdl/WS_CRM_GESTIONE_CREDITO",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneCredito/xsd/XSD_CRM_GESTIONE_CREDITO" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneCredito/xsd/XSD_CRM_GESTIONE_CREDITO",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

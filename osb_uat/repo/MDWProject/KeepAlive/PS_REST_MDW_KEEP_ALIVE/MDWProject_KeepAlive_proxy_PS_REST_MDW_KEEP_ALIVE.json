@@ -1,0 +1,34 @@
+{
+  "RestApi" : {
+    "type" : "REST",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/mdw",
+    "name" : "MDWProject_KeepAlive_proxy_PS_REST_MDW_KEEP_ALIVE",
+    "remoteName" : "ProxyService/MDWProject/KeepAlive/proxy/PS_REST_MDW_KEEP_ALIVE",
+    "localPath" : "osb_uat\\repo\\MDWProject\\KeepAlive\\PS_REST_MDW_KEEP_ALIVE",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/mdw?WADL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "MDW_CDM/EnterpriseServices/MDWProject/KeepAlive/xsd/XSD_MDW_KEEPALIVE",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "MDW_CDM/EnterpriseServices/MDWProject/KeepAlive/xsd/XSD_JSON_ERRORS_MDW_KEEPALIVE",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/json/errors"
+      } ],
+      "soapApiSpec" : {
+        "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e",
+        "xsdSchemas" : [ {
+          "xsdPath" : "/MDW_CDM/EnterpriseServices/MDWProject/KeepAlive/xsd/XSD_JSON_ERRORS_MDW_KEEPALIVE",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/json/errors"
+        }, {
+          "xsdPath" : "/MDW_CDM/EnterpriseServices/MDWProject/KeepAlive/xsd/XSD_MDW_KEEPALIVE",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        } ]
+      }
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

@@ -1,0 +1,231 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/BlueBirdProject/KENAN/callLogs/proxy/PS_WS_KENAN_CALL_LOGS",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/KENAN/calllogs/wsdl/WS_KENAN_CALL_LOGS" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/KENAN/calllogs/wsdl/WS_KENAN_CALL_LOGS",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/KENAN/calllogs/xsd/XSD_KENAN_CALL_LOGS" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/KENAN/calllogs/xsd/XSD_KENAN_CALL_LOGS",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/BlueBirdProject/KENAN/callLogs/pipeline/PL_KENAN_CALL_LOGS" : {
+        "label" : "Pipeline/BlueBirdProject/KENAN/callLogs/pipeline/PL_KENAN_CALL_LOGS",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/BlueBirdProject/KENAN/callLogs/pipeline/PL_KENAN_CALL_LOGS_retrieveCallLogForInvoice" : {
+            "label" : "Pipeline/BlueBirdProject/KENAN/callLogs/pipeline/PL_KENAN_CALL_LOGS_retrieveCallLogForInvoice",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/KENANProject/transformation/createRequest_BS_SQL_KNN_GET_CATALOG_INFOS" : {
+                "label" : "Xquery/KENANProject/transformation/createRequest_BS_SQL_KNN_GET_CATALOG_INFOS",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/BlueBirdProject/KENAN/callLogs/transformation/createRequest_BS_RetrieveCallLogForInvoice" : {
+                "label" : "Xquery/BlueBirdProject/KENAN/callLogs/transformation/createRequest_BS_RetrieveCallLogForInvoice",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/BlueBirdProject/Resources/PS_REST_KENAN_CALL_LOGS" : {
+                "label" : "WSDL/BlueBirdProject/Resources/PS_REST_KENAN_CALL_LOGS",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/KENAN/calllogs/xsd/XSD_KENAN_CALL_LOGS" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/KENAN/calllogs/xsd/XSD_KENAN_CALL_LOGS",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/BlueBirdProject/KENAN/callLogs/transformation/createResponse_WS_RetrieveCallLogForInvoice" : {
+                "label" : "Xquery/BlueBirdProject/KENAN/callLogs/transformation/createResponse_WS_RetrieveCallLogForInvoice",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/kenan/PL_INTERNAL_KENAN_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/kenan/PL_INTERNAL_KENAN_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "BusinessService/BlueBirdProject/KENAN/callLogs/businessservice/BS_SQL_KENAN_RETRIEVE_CALLLOG_FOR_INVOICE" : {
+                "label" : "BusinessService/BlueBirdProject/KENAN/callLogs/businessservice/BS_SQL_KENAN_RETRIEVE_CALLLOG_FOR_INVOICE",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/BlueBirdProject/Resources/BS_SQL_KENAN_RETRIEVE_CALLLOG_FOR_INVOICE/concrete" : {
+                    "label" : "WSDL/BlueBirdProject/Resources/BS_SQL_KENAN_RETRIEVE_CALLLOG_FOR_INVOICE/concrete",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "JCA/BlueBirdProject/Resources/BS_SQL_KENAN_RETRIEVE_CALLLOG_FOR_INVOICE_db" : {
+                    "label" : "JCA/BlueBirdProject/Resources/BS_SQL_KENAN_RETRIEVE_CALLLOG_FOR_INVOICE_db",
+                    "properties" : {
+                      "nodeType" : "JCA"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "Pipeline/BlueBirdProject/KENAN/callLogs/pipeline/PL_KENAN_CALL_LOGS_RetrieveCallLogRatate" : {
+            "label" : "Pipeline/BlueBirdProject/KENAN/callLogs/pipeline/PL_KENAN_CALL_LOGS_RetrieveCallLogRatate",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/BlueBirdProject/KENAN/callLogs/transformation/createRequest_BS_RetrieveCallLogRatate" : {
+                "label" : "Xquery/BlueBirdProject/KENAN/callLogs/transformation/createRequest_BS_RetrieveCallLogRatate",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/BlueBirdProject/KENAN/callLogs/businessservice/BS_SQL_KENAN_RETRIEVE_CALLLOG_RATATE" : {
+                "label" : "BusinessService/BlueBirdProject/KENAN/callLogs/businessservice/BS_SQL_KENAN_RETRIEVE_CALLLOG_RATATE",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "JCA/BlueBirdProject/Resources/BS_SQL_KENAN_RETRIEVE_CALLLOG_RATATE_db" : {
+                    "label" : "JCA/BlueBirdProject/Resources/BS_SQL_KENAN_RETRIEVE_CALLLOG_RATATE_db",
+                    "properties" : {
+                      "nodeType" : "JCA"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/BlueBirdProject/Resources/BS_SQL_KENAN_RETRIEVE_CALLLOG_RATATE/concrete" : {
+                    "label" : "WSDL/BlueBirdProject/Resources/BS_SQL_KENAN_RETRIEVE_CALLLOG_RATATE/concrete",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/KENANProject/transformation/createRequest_BS_SQL_KNN_GET_CATALOG_INFOS" : {
+                "label" : "Xquery/KENANProject/transformation/createRequest_BS_SQL_KNN_GET_CATALOG_INFOS",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/BlueBirdProject/Resources/PS_REST_KENAN_CALL_LOGS" : {
+                "label" : "WSDL/BlueBirdProject/Resources/PS_REST_KENAN_CALL_LOGS",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/KENAN/calllogs/xsd/XSD_KENAN_CALL_LOGS" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/KENAN/calllogs/xsd/XSD_KENAN_CALL_LOGS",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/kenan/PL_INTERNAL_KENAN_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/kenan/PL_INTERNAL_KENAN_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "Xquery/BlueBirdProject/KENAN/callLogs/transformation/createResponse_WS_RetrieveCallLogRatate" : {
+                "label" : "Xquery/BlueBirdProject/KENAN/callLogs/transformation/createResponse_WS_RetrieveCallLogRatate",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "WSDL/BlueBirdProject/Resources/PS_REST_KENAN_CALL_LOGS" : {
+            "label" : "WSDL/BlueBirdProject/Resources/PS_REST_KENAN_CALL_LOGS",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/KENAN/calllogs/xsd/XSD_KENAN_CALL_LOGS" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/KENAN/calllogs/xsd/XSD_KENAN_CALL_LOGS",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

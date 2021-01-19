@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.skytv.it/mdw/data" targetNamespace="http://www.skytv.it/mdw/data" elementFormDefault="qualified">
+	<xsd:element name="requestNotifyAddressSharing" type="requestNotifyAddressSharingType"/>
+	<xsd:element name="responseNotifyAddressSharing" type="responseNotifyAddressSharingType"/>
+	<xsd:complexType name="responseNotifyAddressSharingType">
+		<xsd:sequence>
+			<xsd:element name="resultCode" type="xsd:string" minOccurs="1"/>
+			<xsd:element name="resultDescription" type="xsd:string" minOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="requestNotifyAddressSharingType">
+		<xsd:sequence>
+			<xsd:element name="assets" type="assetsType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="assetsType">
+		<xsd:sequence>
+			<xsd:element name="asset" type="assetType" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="assetType">
+		<xsd:sequence>
+			<xsd:element name="sourceSystem" type="xsd:string" minOccurs="1"/>
+			<xsd:element name="serviceID" type="xsd:string" minOccurs="1"/>
+			<xsd:element name="mapTConfiguration" type="xsd:string" minOccurs="1"/>
+			<xsd:element name="mapTReasonCode" type="xsd:string" minOccurs="1"/>
+			<xsd:element name="reasonDescription" type="xsd:string" minOccurs="1"/>
+			<xsd:element name="lastConfigurationUpdate" type="xsd:dateTime" minOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

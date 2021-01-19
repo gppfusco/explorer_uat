@@ -1,0 +1,115 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/BulkScheduler/proxy/PS_BULK_SCHEDULER",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/BulkScheduler/pipeline/PL_BULK_SCHEDULER" : {
+        "label" : "Pipeline/BulkScheduler/pipeline/PL_BULK_SCHEDULER",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log" : {
+            "label" : "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/BulkScheduler/transformation/createSOABulkExecutorRequest" : {
+            "label" : "Xquery/BulkScheduler/transformation/createSOABulkExecutorRequest",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/BulkScheduler/transformation/createBulkSchedulerResponse" : {
+            "label" : "Xquery/BulkScheduler/transformation/createBulkSchedulerResponse",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/KENANProject/Resources/BS_SQL_KNN_GET_CATALOG_INFOS" : {
+            "label" : "XMLSchema/KENANProject/Resources/BS_SQL_KNN_GET_CATALOG_INFOS",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "BusinessService/BulkScheduler/businessService/BS_DIRECT_SOA_BULK_EXECUTOR" : {
+            "label" : "BusinessService/BulkScheduler/businessService/BS_DIRECT_SOA_BULK_EXECUTOR",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/EnterpriseServices/BulkScheduler/wsdl/BulkScheduler" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/BulkScheduler/wsdl/BulkScheduler",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BulkScheduler/xsd/XSD_Scheduler" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BulkScheduler/xsd/XSD_Scheduler",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/BulkScheduler/wsdl/BulkScheduler" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/BulkScheduler/wsdl/BulkScheduler",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/BulkScheduler/xsd/XSD_Scheduler" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BulkScheduler/xsd/XSD_Scheduler",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "BusinessService/MDW_CO/businessServices/BS_LOG_ENQUEUE" : {
+            "label" : "BusinessService/MDW_CO/businessServices/BS_LOG_ENQUEUE",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/BulkScheduler/wsdl/BulkScheduler" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/BulkScheduler/wsdl/BulkScheduler",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/BulkScheduler/xsd/XSD_Scheduler" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BulkScheduler/xsd/XSD_Scheduler",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

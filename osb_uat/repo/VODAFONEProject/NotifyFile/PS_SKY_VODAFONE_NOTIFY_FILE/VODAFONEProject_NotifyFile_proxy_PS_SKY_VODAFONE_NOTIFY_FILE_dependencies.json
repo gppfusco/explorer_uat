@@ -1,0 +1,107 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/VODAFONEProject/NotifyFile/proxy/PS_SKY_VODAFONE_NOTIFY_FILE",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/VODAFONEProject/NotifyFile/pipeline/PL_SKY_VODAFONE_NOTIFY_FILE" : {
+        "label" : "Pipeline/VODAFONEProject/NotifyFile/pipeline/PL_SKY_VODAFONE_NOTIFY_FILE",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/VODAFONEProject/NotifyFile/transformations/createRequestNotifyFile" : {
+            "label" : "Xquery/VODAFONEProject/NotifyFile/transformations/createRequestNotifyFile",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "BusinessService/VODAFONEProject/NotifyFile/businessService/BS_WS_VODAFONE_NOTIFY_FILE" : {
+            "label" : "BusinessService/VODAFONEProject/NotifyFile/businessService/BS_WS_VODAFONE_NOTIFY_FILE",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/ApplicationObjects/VODAFONE/NotifyFile/WSFileTransportResult" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/VODAFONE/NotifyFile/WSFileTransportResult",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "ServiceAccount/MDW_CDM/ServiceAccount/SA_Vodafone" : {
+                "label" : "ServiceAccount/MDW_CDM/ServiceAccount/SA_Vodafone",
+                "properties" : {
+                  "nodeType" : "ServiceAccount"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/VodafoneProject/NotifyFile/wsdl/WS_SKY_VODAFONE_NOTIFY_FILE" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/VodafoneProject/NotifyFile/wsdl/WS_SKY_VODAFONE_NOTIFY_FILE",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/VodafoneProject/NotifyFile/xsd/XSD_SKY_VODAFONE_NOTIFY_FILE" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/VodafoneProject/NotifyFile/xsd/XSD_SKY_VODAFONE_NOTIFY_FILE",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/VODAFONEProject/NotifyFile/transformations/createResponseNotifyFile" : {
+            "label" : "Xquery/VODAFONEProject/NotifyFile/transformations/createResponseNotifyFile",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/VodafoneProject/NotifyFile/wsdl/WS_SKY_VODAFONE_NOTIFY_FILE" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/VodafoneProject/NotifyFile/wsdl/WS_SKY_VODAFONE_NOTIFY_FILE",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/VodafoneProject/NotifyFile/xsd/XSD_SKY_VODAFONE_NOTIFY_FILE" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/VodafoneProject/NotifyFile/xsd/XSD_SKY_VODAFONE_NOTIFY_FILE",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

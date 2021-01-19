@@ -1,0 +1,180 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SalesforceProject/REST_CRM_CALL_ME_NOW_HANDLER/proxy/PS_REST_CRM_CALL_ME_NOW_HANDLER",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "WADL/SalesforceProject/Resources/PS_REST_CRM_CALL_ME_NOW_HANDLER" : {
+        "label" : "WADL/SalesforceProject/Resources/PS_REST_CRM_CALL_ME_NOW_HANDLER",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      },
+      "WSDL/SalesforceProject/Resources/PS_REST_CRM_CALL_ME_NOW_HANDLER" : {
+        "label" : "WSDL/SalesforceProject/Resources/PS_REST_CRM_CALL_ME_NOW_HANDLER",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_CallMeNowHandler/XSD_CRM_CALL_ME_NOW_HANDLER" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_CallMeNowHandler/XSD_CRM_CALL_ME_NOW_HANDLER",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/SalesforceProject/REST_CRM_CALL_ME_NOW_HANDLER/pipeline/PL_REST_CRM_CALL_ME_NOW_HANDLER" : {
+        "label" : "Pipeline/SalesforceProject/REST_CRM_CALL_ME_NOW_HANDLER/pipeline/PL_REST_CRM_CALL_ME_NOW_HANDLER",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Xquery/SalesforceProject/REST_CRM_CALL_ME_NOW_HANDLER/transformations/createRequestCallMeNowTux" : {
+            "label" : "Xquery/SalesforceProject/REST_CRM_CALL_ME_NOW_HANDLER/transformations/createRequestCallMeNowTux",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Pipeline/SalesforceProject/pipeline/PL_SF_EJB_REST_INTERNAL" : {
+            "label" : "Pipeline/SalesforceProject/pipeline/PL_SF_EJB_REST_INTERNAL",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "BusinessService/MDW_CO/businessServices/BS_WS_EJB_FORCE" : {
+                "label" : "BusinessService/MDW_CO/businessServices/BS_WS_EJB_FORCE",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Pipeline/SalesforceProject/REST_CRM_CALL_ME_NOW_HANDLER/pipeline/PL_INTERNAL_CALLME_NOW_ENQUEUE" : {
+            "label" : "Pipeline/SalesforceProject/REST_CRM_CALL_ME_NOW_HANDLER/pipeline/PL_INTERNAL_CALLME_NOW_ENQUEUE",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "BusinessService/SalesforceProject/WS_CRM_CALL_ME_NOW/Genesys/businessService/BS_JMS_ENQUEUE_CALL_ME_NOW_GENESYS" : {
+                "label" : "BusinessService/SalesforceProject/WS_CRM_CALL_ME_NOW/Genesys/businessService/BS_JMS_ENQUEUE_CALL_ME_NOW_GENESYS",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_ENQUEUE_INTERNAL_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_ENQUEUE_INTERNAL_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "WSDL/SalesforceProject/Resources/PS_REST_CRM_CALL_ME_NOW_HANDLER" : {
+                "label" : "WSDL/SalesforceProject/Resources/PS_REST_CRM_CALL_ME_NOW_HANDLER",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_CallMeNowHandler/XSD_CRM_CALL_ME_NOW_HANDLER" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_CallMeNowHandler/XSD_CRM_CALL_ME_NOW_HANDLER",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "Xquery/SalesforceProject/REST_CRM_CALL_ME_NOW_HANDLER/transformations/createRequestCallMeNowRequest" : {
+            "label" : "Xquery/SalesforceProject/REST_CRM_CALL_ME_NOW_HANDLER/transformations/createRequestCallMeNowRequest",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/SalesforceProject/Resources/PS_REST_CRM_CALL_ME_NOW_HANDLER" : {
+            "label" : "WSDL/SalesforceProject/Resources/PS_REST_CRM_CALL_ME_NOW_HANDLER",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_CallMeNowHandler/XSD_CRM_CALL_ME_NOW_HANDLER" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_CallMeNowHandler/XSD_CRM_CALL_ME_NOW_HANDLER",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/SalesforceProject/REST_CRM_CALL_ME_NOW_HANDLER/transformations/createResponseCallMeNowResponse" : {
+            "label" : "Xquery/SalesforceProject/REST_CRM_CALL_ME_NOW_HANDLER/transformations/createResponseCallMeNowResponse",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

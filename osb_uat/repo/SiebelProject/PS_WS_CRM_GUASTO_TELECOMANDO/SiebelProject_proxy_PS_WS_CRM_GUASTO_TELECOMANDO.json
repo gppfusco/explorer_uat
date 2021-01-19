@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/siebel/WS_CRM_GUASTO_TELECOMANDO",
+    "name" : "SiebelProject_proxy_PS_WS_CRM_GUASTO_TELECOMANDO",
+    "remoteName" : "ProxyService/SiebelProject/proxy/PS_WS_CRM_GUASTO_TELECOMANDO",
+    "localPath" : "osb_uat\\repo\\SiebelProject\\PS_WS_CRM_GUASTO_TELECOMANDO",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/siebel/WS_CRM_GUASTO_TELECOMANDO?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SiebelProject/GuastoTelecomando/xsd/XSD_CRM_GUASTO_TELECOMANDO",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

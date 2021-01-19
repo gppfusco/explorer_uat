@@ -1,0 +1,182 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/OTTUkProject/OPT_RecsApi/proxy/PS_WS_OTT_RECS_API_OPT",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/OTTUk/RecsOPTApi/wsdl/WS_OTT_RECS_API_OPT" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/OTTUk/RecsOPTApi/wsdl/WS_OTT_RECS_API_OPT",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/OTTUk/RecsOPTApi/xsd/XSD_OTT_RECS_API_OPT" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/OTTUk/RecsOPTApi/xsd/XSD_OTT_RECS_API_OPT",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/OTTUkProject/OPT_RecsApi/pipeline/PL_WS_OTT_RECS_API_ROUNTING" : {
+        "label" : "Pipeline/OTTUkProject/OPT_RecsApi/pipeline/PL_WS_OTT_RECS_API_ROUNTING",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Pipeline/OTTUkProject/OPT_RecsApi/pipeline/PL_INTERNAL_OTT_OPTIN" : {
+            "label" : "Pipeline/OTTUkProject/OPT_RecsApi/pipeline/PL_INTERNAL_OTT_OPTIN",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/EnterpriseServices/OTTUk/RecsOPTApi/wsdl/WS_OTT_RECS_API_OPT" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/OTTUk/RecsOPTApi/wsdl/WS_OTT_RECS_API_OPT",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/OTTUk/RecsOPTApi/xsd/XSD_OTT_RECS_API_OPT" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/OTTUk/RecsOPTApi/xsd/XSD_OTT_RECS_API_OPT",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "BusinessService/OTTUkProject/OPT_RecsApi/businessServices/BS_TEXT_OTTUK_RECS" : {
+                "label" : "BusinessService/OTTUkProject/OPT_RecsApi/businessServices/BS_TEXT_OTTUK_RECS",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "ServiceAccount/MDW_CDM/ServiceAccount/SA_OTTUk" : {
+                    "label" : "ServiceAccount/MDW_CDM/ServiceAccount/SA_OTTUk",
+                    "properties" : {
+                      "nodeType" : "ServiceAccount"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Pipeline/OTTUkProject/OPT_RecsApi/pipeline/PL_INTERNAL_OTT_RECYCLE" : {
+            "label" : "Pipeline/OTTUkProject/OPT_RecsApi/pipeline/PL_INTERNAL_OTT_RECYCLE",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/EnterpriseServices/OTTUk/RecsOPTApi/wsdl/WS_OTT_RECS_API_OPT" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/OTTUk/RecsOPTApi/wsdl/WS_OTT_RECS_API_OPT",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/OTTUk/RecsOPTApi/xsd/XSD_OTT_RECS_API_OPT" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/OTTUk/RecsOPTApi/xsd/XSD_OTT_RECS_API_OPT",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "BusinessService/OTTUkProject/OPT_RecsApi/businessServices/BS_TEXT_OTTUK_RECS" : {
+                "label" : "BusinessService/OTTUkProject/OPT_RecsApi/businessServices/BS_TEXT_OTTUK_RECS",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "ServiceAccount/MDW_CDM/ServiceAccount/SA_OTTUk" : {
+                    "label" : "ServiceAccount/MDW_CDM/ServiceAccount/SA_OTTUk",
+                    "properties" : {
+                      "nodeType" : "ServiceAccount"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/MDW_CO/transformation/createSimpleResponseEnglilsh" : {
+            "label" : "Xquery/MDW_CO/transformation/createSimpleResponseEnglilsh",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/OTTUk/RecsOPTApi/wsdl/WS_OTT_RECS_API_OPT" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/OTTUk/RecsOPTApi/wsdl/WS_OTT_RECS_API_OPT",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/OTTUk/RecsOPTApi/xsd/XSD_OTT_RECS_API_OPT" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/OTTUk/RecsOPTApi/xsd/XSD_OTT_RECS_API_OPT",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

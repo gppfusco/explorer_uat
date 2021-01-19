@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/mdw/WS_MDW_RESET_CACHE",
+    "name" : "MDWProject_WS_RESET_CACHE_proxy_PS_WS_MDW_RESET_CACHE",
+    "remoteName" : "ProxyService/MDWProject/WS_RESET_CACHE/proxy/PS_WS_MDW_RESET_CACHE",
+    "localPath" : "osb_uat\\repo\\MDWProject\\WS\\RESET\\CACHE\\PS_WS_MDW_RESET_CACHE",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/mdw/WS_MDW_RESET_CACHE?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/MDWProject/ResetCache/xsd/XSD_MDW_RESET_CACHE",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

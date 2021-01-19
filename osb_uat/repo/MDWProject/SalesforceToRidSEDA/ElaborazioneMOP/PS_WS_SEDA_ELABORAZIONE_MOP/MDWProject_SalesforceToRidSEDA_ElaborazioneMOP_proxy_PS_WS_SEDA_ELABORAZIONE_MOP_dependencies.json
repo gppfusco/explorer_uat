@@ -1,0 +1,85 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/MDWProject/SalesforceToRidSEDA/ElaborazioneMOP/proxy/PS_WS_SEDA_ELABORAZIONE_MOP",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/MDWProject/SalesforceToRidSEDA/ElaborazioneMOP/wsdl/WS_SEDA_ELABORAZIONE_MOP" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/MDWProject/SalesforceToRidSEDA/ElaborazioneMOP/wsdl/WS_SEDA_ELABORAZIONE_MOP",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/SalesforceToRidSEDA/ElaborazioneMOP/xsd/XSD_ELABORAZIONE_MOP" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/SalesforceToRidSEDA/ElaborazioneMOP/xsd/XSD_ELABORAZIONE_MOP",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/MDWProject/SalesforceToRidSEDA/ElaborazioneMOP/pipeline/PL_WS_SEDA_ELABORAZIONE_MOP_ENQUEUE" : {
+        "label" : "Pipeline/MDWProject/SalesforceToRidSEDA/ElaborazioneMOP/pipeline/PL_WS_SEDA_ELABORAZIONE_MOP_ENQUEUE",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "BusinessService/MDWProject/SalesforceToRidSEDA/businessService/BS_JMS_SEDA_ENQUEUE" : {
+            "label" : "BusinessService/MDWProject/SalesforceToRidSEDA/businessService/BS_JMS_SEDA_ENQUEUE",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : { }
+          },
+          "Xquery/MDWProject/SalesforceToRidSEDA/ElaborazioneMOP/transformation/createResponse_WS_SEDA_ELABORAZIONE_MOP" : {
+            "label" : "Xquery/MDWProject/SalesforceToRidSEDA/ElaborazioneMOP/transformation/createResponse_WS_SEDA_ELABORAZIONE_MOP",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_ENQUEUE_INTERNAL_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_ENQUEUE_INTERNAL_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/MDWProject/SalesforceToRidSEDA/ElaborazioneMOP/wsdl/WS_SEDA_ELABORAZIONE_MOP" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/MDWProject/SalesforceToRidSEDA/ElaborazioneMOP/wsdl/WS_SEDA_ELABORAZIONE_MOP",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/SalesforceToRidSEDA/ElaborazioneMOP/xsd/XSD_ELABORAZIONE_MOP" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/SalesforceToRidSEDA/ElaborazioneMOP/xsd/XSD_ELABORAZIONE_MOP",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

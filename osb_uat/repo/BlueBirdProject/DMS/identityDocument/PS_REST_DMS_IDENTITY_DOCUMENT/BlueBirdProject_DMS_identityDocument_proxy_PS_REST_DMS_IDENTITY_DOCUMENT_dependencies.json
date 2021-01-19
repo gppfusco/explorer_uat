@@ -1,0 +1,209 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/BlueBirdProject/DMS/identityDocument/proxy/PS_REST_DMS_IDENTITY_DOCUMENT",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "WADL/BlueBirdProject/Resources/PS_REST_DMS_IDENTITY_DOCUMENT" : {
+        "label" : "WADL/BlueBirdProject/Resources/PS_REST_DMS_IDENTITY_DOCUMENT",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      },
+      "WSDL/BlueBirdProject/Resources/PS_REST_DMS_IDENTITY_DOCUMENT" : {
+        "label" : "WSDL/BlueBirdProject/Resources/PS_REST_DMS_IDENTITY_DOCUMENT",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DMS/identityDocument/xsd/XSD_DMS_IDENTITY_DOCUMENT" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DMS/identityDocument/xsd/XSD_DMS_IDENTITY_DOCUMENT",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/BlueBirdProject/DMS/identityDocument/pipeline/PL_DMS_IDENTITY_DOCUMENT" : {
+        "label" : "Pipeline/BlueBirdProject/DMS/identityDocument/pipeline/PL_DMS_IDENTITY_DOCUMENT",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Pipeline/BlueBirdProject/DMS/identityDocument/pipeline/PL_DMS_IDENTITY_DOCUMENT_ITERATE_uploadIDFiles" : {
+            "label" : "Pipeline/BlueBirdProject/DMS/identityDocument/pipeline/PL_DMS_IDENTITY_DOCUMENT_ITERATE_uploadIDFiles",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/BlueBirdProject/DMS/identityDocument/transformation/createRequest_WriteFileGeneric" : {
+                "label" : "Xquery/BlueBirdProject/DMS/identityDocument/transformation/createRequest_WriteFileGeneric",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "ProxyService/MDW_CO/WriteFile/proxy/PS_LOCAL_MDW_WRITE_FILE" : {
+                "label" : "ProxyService/MDW_CO/WriteFile/proxy/PS_LOCAL_MDW_WRITE_FILE",
+                "properties" : {
+                  "nodeType" : "ProxyService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/EnterpriseObjects/WriteFile/wsdl/WS_MDW_WRITE_FILE" : {
+                    "label" : "WSDL/MDW_CDM/EnterpriseObjects/WriteFile/wsdl/WS_MDW_WRITE_FILE",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "Pipeline/MDW_CO/WriteFile/pipeline/PL_WS_MDW_WRITE_FILE" : {
+                    "label" : "Pipeline/MDW_CO/WriteFile/pipeline/PL_WS_MDW_WRITE_FILE",
+                    "properties" : {
+                      "nodeType" : "Pipeline"
+                    },
+                    "successors" : {
+                      "Xquery/MDW_CO/WriteFile/transformations/createResponse_WriteFile" : {
+                        "label" : "Xquery/MDW_CO/WriteFile/transformations/createResponse_WriteFile",
+                        "properties" : {
+                          "nodeType" : "Xquery"
+                        },
+                        "successors" : { }
+                      },
+                      "Xquery/MDW_CO/WriteFile/transformations/createRequest_WriteFile" : {
+                        "label" : "Xquery/MDW_CO/WriteFile/transformations/createRequest_WriteFile",
+                        "properties" : {
+                          "nodeType" : "Xquery"
+                        },
+                        "successors" : { }
+                      },
+                      "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log" : {
+                        "label" : "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log",
+                        "properties" : {
+                          "nodeType" : "Xquery"
+                        },
+                        "successors" : { }
+                      },
+                      "WSDL/MDW_CDM/EnterpriseObjects/WriteFile/wsdl/WS_MDW_WRITE_FILE" : {
+                        "label" : "WSDL/MDW_CDM/EnterpriseObjects/WriteFile/wsdl/WS_MDW_WRITE_FILE",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : { }
+                      },
+                      "BusinessService/MDW_CO/WriteFile/businessServices/BS_FA_WRITE_FILE" : {
+                        "label" : "BusinessService/MDW_CO/WriteFile/businessServices/BS_FA_WRITE_FILE",
+                        "properties" : {
+                          "nodeType" : "BusinessService"
+                        },
+                        "successors" : {
+                          "JCA/MDW_CO/Resources/BS_FA_WRITE_FILE_file" : {
+                            "label" : "JCA/MDW_CO/Resources/BS_FA_WRITE_FILE_file",
+                            "properties" : {
+                              "nodeType" : "JCA"
+                            },
+                            "successors" : { }
+                          },
+                          "WSDL/MDW_CO/Resources/BS_FA_WRITE_FILE/concrete" : {
+                            "label" : "WSDL/MDW_CO/Resources/BS_FA_WRITE_FILE/concrete",
+                            "properties" : {
+                              "nodeType" : "WSDL"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      },
+                      "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                        "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                        "properties" : {
+                          "nodeType" : "PipelineTemplate"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  }
+                }
+              },
+              "Xquery/BlueBirdProject/DMS/identityDocument/transformation/createRespone_WS_UploadIDFiles" : {
+                "label" : "Xquery/BlueBirdProject/DMS/identityDocument/transformation/createRespone_WS_UploadIDFiles",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/BlueBirdProject/Resources/PS_REST_DMS_IDENTITY_DOCUMENT" : {
+                "label" : "WSDL/BlueBirdProject/Resources/PS_REST_DMS_IDENTITY_DOCUMENT",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DMS/identityDocument/xsd/XSD_DMS_IDENTITY_DOCUMENT" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DMS/identityDocument/xsd/XSD_DMS_IDENTITY_DOCUMENT",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_ITERATE_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_ITERATE_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "WSDL/BlueBirdProject/Resources/PS_REST_DMS_IDENTITY_DOCUMENT" : {
+            "label" : "WSDL/BlueBirdProject/Resources/PS_REST_DMS_IDENTITY_DOCUMENT",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DMS/identityDocument/xsd/XSD_DMS_IDENTITY_DOCUMENT" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DMS/identityDocument/xsd/XSD_DMS_IDENTITY_DOCUMENT",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

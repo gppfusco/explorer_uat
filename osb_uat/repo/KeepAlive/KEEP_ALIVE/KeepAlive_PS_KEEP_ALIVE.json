@@ -1,0 +1,18 @@
+{
+  "MessagingApi" : {
+    "type" : "Messaging",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/isAlive",
+    "name" : "KeepAlive_PS_KEEP_ALIVE",
+    "remoteName" : "ProxyService/KeepAlive/PS_KEEP_ALIVE",
+    "localPath" : "osb_uat\\repo\\KeepAlive\\KEEP_ALIVE",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

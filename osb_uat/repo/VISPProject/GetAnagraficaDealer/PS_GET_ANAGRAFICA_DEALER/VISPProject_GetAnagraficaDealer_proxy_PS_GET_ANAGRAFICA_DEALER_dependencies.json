@@ -1,0 +1,107 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/VISPProject/GetAnagraficaDealer/proxy/PS_GET_ANAGRAFICA_DEALER",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/VispProject/GetAnagraficaDealer/wsdl/WS_GET_ANAGRAFICA_DEALER" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/VispProject/GetAnagraficaDealer/wsdl/WS_GET_ANAGRAFICA_DEALER",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/VispProject/GetAnagraficaDealer/xsd/XSD_GET_ANAGRAFICA_DEALER" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/VispProject/GetAnagraficaDealer/xsd/XSD_GET_ANAGRAFICA_DEALER",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/VISPProject/GetAnagraficaDealer/pipeline/PL_WS_GET_ANAGRAFICA_DEALER" : {
+        "label" : "Pipeline/VISPProject/GetAnagraficaDealer/pipeline/PL_WS_GET_ANAGRAFICA_DEALER",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Xquery/VISPProject/GetAnagraficaDealer/transformations/createResponseGetAnagraficaDealer" : {
+            "label" : "Xquery/VISPProject/GetAnagraficaDealer/transformations/createResponseGetAnagraficaDealer",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/VISPProject/GetAnagraficaDealer/transformations/createRequestGetAnagraficaDealer" : {
+            "label" : "Xquery/VISPProject/GetAnagraficaDealer/transformations/createRequestGetAnagraficaDealer",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/VispProject/GetAnagraficaDealer/wsdl/WS_GET_ANAGRAFICA_DEALER" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/VispProject/GetAnagraficaDealer/wsdl/WS_GET_ANAGRAFICA_DEALER",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/VispProject/GetAnagraficaDealer/xsd/XSD_GET_ANAGRAFICA_DEALER" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/VispProject/GetAnagraficaDealer/xsd/XSD_GET_ANAGRAFICA_DEALER",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "BusinessService/VISPProject/GetAnagraficaDealer/businessService/BS_JCA_VISP_ANAGRAFICA_DEALER" : {
+            "label" : "BusinessService/VISPProject/GetAnagraficaDealer/businessService/BS_JCA_VISP_ANAGRAFICA_DEALER",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "JCA/VISPProject/Resources/BS_JCA_VISP_ANAGRAFICA_DEALER_db" : {
+                "label" : "JCA/VISPProject/Resources/BS_JCA_VISP_ANAGRAFICA_DEALER_db",
+                "properties" : {
+                  "nodeType" : "JCA"
+                },
+                "successors" : { }
+              },
+              "WSDL/VISPProject/Resources/BS_JCA_VISP_ANAGRAFICA_DEALER/concrete" : {
+                "label" : "WSDL/VISPProject/Resources/BS_JCA_VISP_ANAGRAFICA_DEALER/concrete",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

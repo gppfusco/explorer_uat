@@ -1,0 +1,231 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/BitwinProject/EligibiltySTB/proxy/PS_WS_ELIGIBILTY_STB",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/BitwinProject/EligibilitySTB/wsdl/WS_ELIGIBILITY_STB" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/BitwinProject/EligibilitySTB/wsdl/WS_ELIGIBILITY_STB",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/BitwinProject/EligibilitySTB/xsd/XSD_ELIGIBILITY_STB" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BitwinProject/EligibilitySTB/xsd/XSD_ELIGIBILITY_STB",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/BitwinProject/EligibiltySTB/pipeline/PL_WS_ELIGIBILITY_STB" : {
+        "label" : "Pipeline/BitwinProject/EligibiltySTB/pipeline/PL_WS_ELIGIBILITY_STB",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/MDW_CDM/EnterpriseServices/BitwinProject/EligibilitySTB/wsdl/WS_ELIGIBILITY_STB" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/BitwinProject/EligibilitySTB/wsdl/WS_ELIGIBILITY_STB",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/BitwinProject/EligibilitySTB/xsd/XSD_ELIGIBILITY_STB" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BitwinProject/EligibilitySTB/xsd/XSD_ELIGIBILITY_STB",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "ProxyService/SiebelProject/proxy/PS_LOCAL_SBL_GENERIC_CALL_ASYNC" : {
+            "label" : "ProxyService/SiebelProject/proxy/PS_LOCAL_SBL_GENERIC_CALL_ASYNC",
+            "properties" : {
+              "nodeType" : "ProxyService"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/GenericBsInvoke/wsdl/WS_CRM_SIE_GENERIC_BS_INVOKE" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/GenericBsInvoke/wsdl/WS_CRM_SIE_GENERIC_BS_INVOKE",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/GenericBsInvoke/xsd/XSD_CRM_SIE_GENERIC_BS_INVOKE" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/GenericBsInvoke/xsd/XSD_CRM_SIE_GENERIC_BS_INVOKE",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Pipeline/SiebelProject/pipeline/PL_WS_CRM_SIE_CONTR_ASYNC_ENQUEUE" : {
+                "label" : "Pipeline/SiebelProject/pipeline/PL_WS_CRM_SIE_CONTR_ASYNC_ENQUEUE",
+                "properties" : {
+                  "nodeType" : "Pipeline"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/ContrAsync/wsdl/WS_CRM_SIE_CONTR_ASYNC" : {
+                    "label" : "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/ContrAsync/wsdl/WS_CRM_SIE_CONTR_ASYNC",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : {
+                      "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/ContrAsync/xsd/XSD_CRM_SIE_CONTR_ASYNC" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/ContrAsync/xsd/XSD_CRM_SIE_CONTR_ASYNC",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      },
+                      "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "BusinessService/SiebelProject/businessService/BS_JMS_SIEBEL" : {
+                    "label" : "BusinessService/SiebelProject/businessService/BS_JMS_SIEBEL",
+                    "properties" : {
+                      "nodeType" : "BusinessService"
+                    },
+                    "successors" : { }
+                  },
+                  "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_ASYNC_ENQUEUE_TEMPLATE" : {
+                    "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_ASYNC_ENQUEUE_TEMPLATE",
+                    "properties" : {
+                      "nodeType" : "PipelineTemplate"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "Xquery/BitwinProject/EligibiltySTB/trasformation/createResponse_ELIGIBILITY_STB" : {
+            "label" : "Xquery/BitwinProject/EligibiltySTB/trasformation/createResponse_ELIGIBILITY_STB",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/BitwinProject/EligibiltySTB/trasformation/createRequest_ELIGIBILITY_STB" : {
+            "label" : "Xquery/BitwinProject/EligibiltySTB/trasformation/createRequest_ELIGIBILITY_STB",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/BitwinProject/EligibiltySTB/trasformation/createRequest_CreaEsigenzaSMC" : {
+            "label" : "Xquery/BitwinProject/EligibiltySTB/trasformation/createRequest_CreaEsigenzaSMC",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Pipeline/BitwinProject/pipeline/PL_BITWIN_REQUEST_XML" : {
+            "label" : "Pipeline/BitwinProject/pipeline/PL_BITWIN_REQUEST_XML",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "XSLT/MDW_CO/transformation/XSLT_RemoveNs_RenameRoot_OUT_TI" : {
+                "label" : "XSLT/MDW_CO/transformation/XSLT_RemoveNs_RenameRoot_OUT_TI",
+                "properties" : {
+                  "nodeType" : "XSLT"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "BusinessService/MDW_CO/businessServices/BS_HttpCall_Bitwin" : {
+                "label" : "BusinessService/MDW_CO/businessServices/BS_HttpCall_Bitwin",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : { }
+              },
+              "Xquery/MDW_CO/transformation/renameRootNodeNameWithNS" : {
+                "label" : "Xquery/MDW_CO/transformation/renameRootNodeNameWithNS",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/MDW_CO/transformation/create_soap_header" : {
+                "label" : "Xquery/MDW_CO/transformation/create_soap_header",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/BitwinProject/ElegPromoCliente/wsdl/WS_CRM_ELEG_PROMO_CLIENTE" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/BitwinProject/ElegPromoCliente/wsdl/WS_CRM_ELEG_PROMO_CLIENTE",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BitwinProject/ElegPromoCliente/xsd/XSD_CRM_ELEG_PROMO_CLIENTE" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BitwinProject/ElegPromoCliente/xsd/XSD_CRM_ELEG_PROMO_CLIENTE",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

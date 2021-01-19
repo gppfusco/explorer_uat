@@ -1,0 +1,107 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/LDAPProject/proxy/PS_LDAP_READER",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/LDAPProject/pipelines/PL_LDAP_READER" : {
+        "label" : "Pipeline/LDAPProject/pipelines/PL_LDAP_READER",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/LDAPProject/transformations/responseGetUserInfo" : {
+            "label" : "Xquery/LDAPProject/transformations/responseGetUserInfo",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "BusinessService/LDAPProject/businessServices/LDAP_READER" : {
+            "label" : "BusinessService/LDAPProject/businessServices/LDAP_READER",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "JCA/LDAPProject/Resources/LDAP_READER_ldap" : {
+                "label" : "JCA/LDAPProject/Resources/LDAP_READER_ldap",
+                "properties" : {
+                  "nodeType" : "JCA"
+                },
+                "successors" : { }
+              },
+              "WSDL/LDAPProject/Resources/LDAP_READER/concrete" : {
+                "label" : "WSDL/LDAPProject/Resources/LDAP_READER/concrete",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/LDAPProject/wsdl/WS_LDAP_READER" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/LDAPProject/wsdl/WS_LDAP_READER",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/LDAPProject/xsd/XSD_LDAP_READER" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/LDAPProject/xsd/XSD_LDAP_READER",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/LDAPProject/transformations/requestGetUserInfo" : {
+            "label" : "Xquery/LDAPProject/transformations/requestGetUserInfo",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/LDAPProject/wsdl/WS_LDAP_READER" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/LDAPProject/wsdl/WS_LDAP_READER",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/LDAPProject/xsd/XSD_LDAP_READER" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/LDAPProject/xsd/XSD_LDAP_READER",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

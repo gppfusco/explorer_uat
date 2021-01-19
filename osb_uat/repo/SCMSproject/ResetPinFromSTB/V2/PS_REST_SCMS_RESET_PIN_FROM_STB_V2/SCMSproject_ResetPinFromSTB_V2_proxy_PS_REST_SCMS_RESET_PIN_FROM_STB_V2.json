@@ -1,0 +1,34 @@
+{
+  "RestApi" : {
+    "type" : "REST",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/scms/resetPinFromSTB_V2",
+    "name" : "SCMSproject_ResetPinFromSTB_V2_proxy_PS_REST_SCMS_RESET_PIN_FROM_STB_V2",
+    "remoteName" : "ProxyService/SCMSproject/ResetPinFromSTB_V2/proxy/PS_REST_SCMS_RESET_PIN_FROM_STB_V2",
+    "localPath" : "osb_uat\\repo\\SCMSproject\\ResetPinFromSTB\\V2\\PS_REST_SCMS_RESET_PIN_FROM_STB_V2",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/scms/resetPinFromSTB_V2?WADL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "MDW_CDM/EnterpriseServices/SCMSproject/ResetPinFromSTB_V2/xsd/XSD_SCMS_RESET_PIN_FROM_STB_V2",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ],
+      "soapApiSpec" : {
+        "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e",
+        "xsdSchemas" : [ {
+          "xsdPath" : "/MDW_CDM/EnterpriseServices/SCMSproject/ResetPinFromSTB_V2/xsd/XSD_SCMS_RESET_PIN_FROM_STB_V2",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        }, {
+          "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        } ]
+      }
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

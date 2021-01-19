@@ -1,0 +1,34 @@
+{
+  "RestApi" : {
+    "type" : "REST",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/BlueBirdProject/PS_REST_GNP_ELIGIBILITY",
+    "name" : "BlueBirdProject_OSS_gnpEligibility_proxy_PS_REST_GNP_ELIGIBILITY",
+    "remoteName" : "ProxyService/BlueBirdProject/OSS/gnpEligibility/proxy/PS_REST_GNP_ELIGIBILITY",
+    "localPath" : "osb_uat\\repo\\BlueBirdProject\\OSS\\gnpEligibility\\PS_REST_GNP_ELIGIBILITY",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/BlueBirdProject/PS_REST_GNP_ELIGIBILITY?WADL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/gnpEligibility/xsd/XSD_OSS_GNP_ELIGIBILITY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ],
+      "soapApiSpec" : {
+        "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e",
+        "xsdSchemas" : [ {
+          "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        }, {
+          "xsdPath" : "/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/gnpEligibility/xsd/XSD_OSS_GNP_ELIGIBILITY",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        } ]
+      }
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

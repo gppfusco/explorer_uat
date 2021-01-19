@@ -1,0 +1,107 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SiebelProject/OnpremiseExtraAlignment/proxy/PS_ONPREMISE_EXTRA_ALIGNMENT",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/OnpremiseExtraAlignment/wsdl/WS_ONPREMISE_EXTRA_ALIGNMENT" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/OnpremiseExtraAlignment/wsdl/WS_ONPREMISE_EXTRA_ALIGNMENT",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/OnpremiseExtraAlignment/xsd/XSD_ONPREMISE_EXTRA_ALIGNMENT" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/OnpremiseExtraAlignment/xsd/XSD_ONPREMISE_EXTRA_ALIGNMENT",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/SiebelProject/OnpremiseExtraAlignment/pipeline/PL_WS_ONPREMISE_EXTRA_ALIGNMENT" : {
+        "label" : "Pipeline/SiebelProject/OnpremiseExtraAlignment/pipeline/PL_WS_ONPREMISE_EXTRA_ALIGNMENT",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/OnpremiseExtraAlignment/wsdl/WS_ONPREMISE_EXTRA_ALIGNMENT" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/OnpremiseExtraAlignment/wsdl/WS_ONPREMISE_EXTRA_ALIGNMENT",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/OnpremiseExtraAlignment/xsd/XSD_ONPREMISE_EXTRA_ALIGNMENT" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/OnpremiseExtraAlignment/xsd/XSD_ONPREMISE_EXTRA_ALIGNMENT",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "BusinessService/SiebelProject/businessService/BS_SQL_FUNCTION_SCRIVI_EXTRA" : {
+            "label" : "BusinessService/SiebelProject/businessService/BS_SQL_FUNCTION_SCRIVI_EXTRA",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "WSDL/SiebelProject/Resources/BS_SQL_FUNCTION_SCRIVI_EXTRA/concrete" : {
+                "label" : "WSDL/SiebelProject/Resources/BS_SQL_FUNCTION_SCRIVI_EXTRA/concrete",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "JCA/SiebelProject/Resources/BS_SQL_FUNCTION_SCRIVI_EXTRA_db" : {
+                "label" : "JCA/SiebelProject/Resources/BS_SQL_FUNCTION_SCRIVI_EXTRA_db",
+                "properties" : {
+                  "nodeType" : "JCA"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/SiebelProject/OnpremiseExtraAlignment/trasformations/createRequestOnPremiseExtraAlignment" : {
+            "label" : "Xquery/SiebelProject/OnpremiseExtraAlignment/trasformations/createRequestOnPremiseExtraAlignment",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/SiebelProject/OnpremiseExtraAlignment/trasformations/createResponseOnpremiseExtraAlignment" : {
+            "label" : "Xquery/SiebelProject/OnpremiseExtraAlignment/trasformations/createResponseOnpremiseExtraAlignment",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

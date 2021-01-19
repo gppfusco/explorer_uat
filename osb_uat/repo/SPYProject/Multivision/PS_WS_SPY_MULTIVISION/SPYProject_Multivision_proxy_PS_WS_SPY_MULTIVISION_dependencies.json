@@ -1,0 +1,100 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SPYProject/Multivision/proxy/PS_WS_SPY_MULTIVISION",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/SPYProject/Multivision/pipeline/PL_SPY_MULTIVISION" : {
+        "label" : "Pipeline/SPYProject/Multivision/pipeline/PL_SPY_MULTIVISION",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "BusinessService/SPYProject/Multivision/businessServices/BS_SPY_MULTIVISION" : {
+            "label" : "BusinessService/SPYProject/Multivision/businessServices/BS_SPY_MULTIVISION",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/ApplicationObjects/SPY/Multivision/wsdl/SpyMultivision" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/SPY/Multivision/wsdl/SpyMultivision",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "XSLT/SPYProject/Multivision/transformations/createResponseMultivision" : {
+            "label" : "XSLT/SPYProject/Multivision/transformations/createResponseMultivision",
+            "properties" : {
+              "nodeType" : "XSLT"
+            },
+            "successors" : { }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "XSLT/SPYProject/Multivision/transformations/createRequestMultivision" : {
+            "label" : "XSLT/SPYProject/Multivision/transformations/createRequestMultivision",
+            "properties" : {
+              "nodeType" : "XSLT"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/SPYProject/Multivision/wsdl/WS_SPY_MULTIVISION" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/SPYProject/Multivision/wsdl/WS_SPY_MULTIVISION",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SPYProject/Multivision/xsd/XSD_SPY_MULTIVISION" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SPYProject/Multivision/xsd/XSD_SPY_MULTIVISION",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/SPYProject/Multivision/wsdl/WS_SPY_MULTIVISION" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/SPYProject/Multivision/wsdl/WS_SPY_MULTIVISION",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SPYProject/Multivision/xsd/XSD_SPY_MULTIVISION" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SPYProject/Multivision/xsd/XSD_SPY_MULTIVISION",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SalesforceProject/REST_CRM_CHURNS_REASON/proxy/PS_REST_CRM_CHURNS_REASON",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "WSDL/SalesforceProject/Resources/PS_REST_CRM_CHURNS_REASON" : {
+        "label" : "WSDL/SalesforceProject/Resources/PS_REST_CRM_CHURNS_REASON",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/ChurnsReason/xsd/XSD_CRM_CHURNS_REASON" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/ChurnsReason/xsd/XSD_CRM_CHURNS_REASON",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WADL/SalesforceProject/Resources/PS_REST_CRM_CHURNS_REASON" : {
+        "label" : "WADL/SalesforceProject/Resources/PS_REST_CRM_CHURNS_REASON",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      },
+      "Pipeline/SalesforceProject/REST_CRM_CHURNS_REASON/pipeline/PL_CRM_CHURNS_REASON" : {
+        "label" : "Pipeline/SalesforceProject/REST_CRM_CHURNS_REASON/pipeline/PL_CRM_CHURNS_REASON",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/SalesforceProject/REST_CRM_CHURNS_REASON/trasformation/createRequestSelectChurnsReason" : {
+            "label" : "Xquery/SalesforceProject/REST_CRM_CHURNS_REASON/trasformation/createRequestSelectChurnsReason",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF_CACHE_QUERY_BY_SELECT" : {
+            "label" : "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF_CACHE_QUERY_BY_SELECT",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB" : {
+                "label" : "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB",
+                "properties" : {
+                  "nodeType" : "ForeignJNDIProvider"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "WSDL/SalesforceProject/Resources/PS_REST_CRM_CHURNS_REASON" : {
+            "label" : "WSDL/SalesforceProject/Resources/PS_REST_CRM_CHURNS_REASON",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/ChurnsReason/xsd/XSD_CRM_CHURNS_REASON" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/ChurnsReason/xsd/XSD_CRM_CHURNS_REASON",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/SalesforceProject/REST_CRM_CHURNS_REASON/trasformation/createResponseSelectChurnsReason" : {
+            "label" : "Xquery/SalesforceProject/REST_CRM_CHURNS_REASON/trasformation/createResponseSelectChurnsReason",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

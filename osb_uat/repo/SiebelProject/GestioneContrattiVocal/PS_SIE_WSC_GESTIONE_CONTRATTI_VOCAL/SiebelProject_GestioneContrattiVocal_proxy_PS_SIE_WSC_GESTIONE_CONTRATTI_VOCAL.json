@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/siebel/WS_SIE_WSC_GESTIONE_CONTRATTI_VOCAL",
+    "name" : "SiebelProject_GestioneContrattiVocal_proxy_PS_SIE_WSC_GESTIONE_CONTRATTI_VOCAL",
+    "remoteName" : "ProxyService/SiebelProject/GestioneContrattiVocal/proxy/PS_SIE_WSC_GESTIONE_CONTRATTI_VOCAL",
+    "localPath" : "osb_uat\\repo\\SiebelProject\\GestioneContrattiVocal\\PS_SIE_WSC_GESTIONE_CONTRATTI_VOCAL",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/siebel/WS_SIE_WSC_GESTIONE_CONTRATTI_VOCAL?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SiebelProject/GestioneContrattiVocal/xsd/XSD_WSC_GESTIONE_CONTRATTI_VOCAL",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

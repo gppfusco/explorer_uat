@@ -1,0 +1,269 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/BlueBirdProject/SALESFORCE/agendaManagement/proxy/PS_WS_SF_AGENDA_MANAGEMENT",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/agendaManagement/wsdl/WS_SF_AGENDA_MANAGEMENT" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/agendaManagement/wsdl/WS_SF_AGENDA_MANAGEMENT",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/agendaManagement/xsd/XSD_SF_AGENDA_MANAGEMENT" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/agendaManagement/xsd/XSD_SF_AGENDA_MANAGEMENT",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/BlueBirdProject/SALESFORCE/agendaManagement/pipeline/PL_REST_SF_AGENDA_MANAGEMENT" : {
+        "label" : "Pipeline/BlueBirdProject/SALESFORCE/agendaManagement/pipeline/PL_REST_SF_AGENDA_MANAGEMENT",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Pipeline/BlueBirdProject/SALESFORCE/agendaManagement/pipeline/PL_INTERNAL_UPDATE_APPOINTMENT_STATUS" : {
+            "label" : "Pipeline/BlueBirdProject/SALESFORCE/agendaManagement/pipeline/PL_INTERNAL_UPDATE_APPOINTMENT_STATUS",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/agendaManagement/wsdl/WS_SF_AGENDA_MANAGEMENT" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/agendaManagement/wsdl/WS_SF_AGENDA_MANAGEMENT",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/agendaManagement/xsd/XSD_SF_AGENDA_MANAGEMENT" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/agendaManagement/xsd/XSD_SF_AGENDA_MANAGEMENT",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/MDW_CO/transformation/createSimpleResponseEnglilsh" : {
+                "label" : "Xquery/MDW_CO/transformation/createSimpleResponseEnglilsh",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/BlueBirdProject/SALESFORCE/agendaManagement/transformation/createRequest_EjbUpdateAppointmentStatus" : {
+                "label" : "Xquery/BlueBirdProject/SALESFORCE/agendaManagement/transformation/createRequest_EjbUpdateAppointmentStatus",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/MDW_CO/businessServices/BS_WS_EJB_FORCE" : {
+                "label" : "BusinessService/MDW_CO/businessServices/BS_WS_EJB_FORCE",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Pipeline/BlueBirdProject/SALESFORCE/agendaManagement/pipeline/PL_INTERNAL_GET_CHECK_RESCHEDULING" : {
+            "label" : "Pipeline/BlueBirdProject/SALESFORCE/agendaManagement/pipeline/PL_INTERNAL_GET_CHECK_RESCHEDULING",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/BlueBirdProject/SALESFORCE/agendaManagement/transformation/createResponse_EjbRestRetrieveReschedulingVerification" : {
+                "label" : "Xquery/BlueBirdProject/SALESFORCE/agendaManagement/transformation/createResponse_EjbRestRetrieveReschedulingVerification",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/MDW_CO/businessServices/BS_WS_EJB_FORCE" : {
+                "label" : "BusinessService/MDW_CO/businessServices/BS_WS_EJB_FORCE",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "WSDL/BlueBirdProject/Resources/PS_REST_SF_AGENDA_MANAGEMENT" : {
+                "label" : "WSDL/BlueBirdProject/Resources/PS_REST_SF_AGENDA_MANAGEMENT",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/agendaManagement/xsd/XSD_SF_AGENDA_MANAGEMENT" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/agendaManagement/xsd/XSD_SF_AGENDA_MANAGEMENT",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/BlueBirdProject/SALESFORCE/agendaManagement/transformation/createRequest_EjbRestRetrieveReschedulingVerification" : {
+                "label" : "Xquery/BlueBirdProject/SALESFORCE/agendaManagement/transformation/createRequest_EjbRestRetrieveReschedulingVerification",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Pipeline/BlueBirdProject/SALESFORCE/agendaManagement/pipeline/PL_INTERNAL_GET_APPOINTMENTS" : {
+            "label" : "Pipeline/BlueBirdProject/SALESFORCE/agendaManagement/pipeline/PL_INTERNAL_GET_APPOINTMENTS",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/BlueBirdProject/SALESFORCE/agendaManagement/transformation/createResponse_RetrieveAppointments" : {
+                "label" : "Xquery/BlueBirdProject/SALESFORCE/agendaManagement/transformation/createResponse_RetrieveAppointments",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/MDW_CO/businessServices/BS_WS_EJB_FORCE" : {
+                "label" : "BusinessService/MDW_CO/businessServices/BS_WS_EJB_FORCE",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/BlueBirdProject/SALESFORCE/agendaManagement/transformation/createRequest_EjbRestRetrieveAppointment" : {
+                "label" : "Xquery/BlueBirdProject/SALESFORCE/agendaManagement/transformation/createRequest_EjbRestRetrieveAppointment",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/BlueBirdProject/Resources/PS_REST_SF_AGENDA_MANAGEMENT" : {
+                "label" : "WSDL/BlueBirdProject/Resources/PS_REST_SF_AGENDA_MANAGEMENT",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/agendaManagement/xsd/XSD_SF_AGENDA_MANAGEMENT" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/agendaManagement/xsd/XSD_SF_AGENDA_MANAGEMENT",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "WSDL/BlueBirdProject/Resources/PS_REST_SF_AGENDA_MANAGEMENT" : {
+            "label" : "WSDL/BlueBirdProject/Resources/PS_REST_SF_AGENDA_MANAGEMENT",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/agendaManagement/xsd/XSD_SF_AGENDA_MANAGEMENT" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/agendaManagement/xsd/XSD_SF_AGENDA_MANAGEMENT",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/siebel/WS_SBL_ORDER_VALIDATION",
+    "name" : "SiebelProject_OrderValidation_proxy_PS_WS_SBL_ORDER_VALIDATION",
+    "remoteName" : "ProxyService/SiebelProject/OrderValidation/proxy/PS_WS_SBL_ORDER_VALIDATION",
+    "localPath" : "osb_uat\\repo\\SiebelProject\\OrderValidation\\PS_WS_SBL_ORDER_VALIDATION",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/siebel/WS_SBL_ORDER_VALIDATION?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SiebelProject/OrderValidation/xsd/XSD_OM_ORDER_VALIDATION",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

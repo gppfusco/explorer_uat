@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/siebel/WS_CRM_ALIGN_OUTBOUND_FORCED",
+    "name" : "SiebelProject_proxy_outbound_forzato_PS_WS_CRM_ALIGN_OUTBOUND_FORCED",
+    "remoteName" : "ProxyService/SiebelProject/proxy/outbound/forzato/PS_WS_CRM_ALIGN_OUTBOUND_FORCED",
+    "localPath" : "osb_uat\\repo\\SiebelProject\\outbound_forzato_PS_WS_CRM_ALIGN_OUTBOUND_FORCED",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/siebel/WS_CRM_ALIGN_OUTBOUND_FORCED?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SiebelProject/Outbound/AlignOutboundForced/xsd/XSD_CRM_ALIGN_OUTBOUND_FORCED",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

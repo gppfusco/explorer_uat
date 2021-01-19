@@ -1,0 +1,261 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/BlueBirdProject/OSS/orderManager/proxy/PS_WS_OSS_ORDERMANAGER",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/orderManager/wsdl/WS_OSS_ORDERMANAGER" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/orderManager/wsdl/WS_OSS_ORDERMANAGER",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/orderManager/xsd/XSD_OSS_ORDERMANAGER" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/orderManager/xsd/XSD_OSS_ORDERMANAGER",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/BlueBirdProject/OSS/orderManager/pipeline/PL_WS_OSS_ORDERMANAGER" : {
+        "label" : "Pipeline/BlueBirdProject/OSS/orderManager/pipeline/PL_WS_OSS_ORDERMANAGER",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/orderManager/wsdl/WS_OSS_ORDERMANAGER" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/orderManager/wsdl/WS_OSS_ORDERMANAGER",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/orderManager/xsd/XSD_OSS_ORDERMANAGER" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/orderManager/xsd/XSD_OSS_ORDERMANAGER",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Pipeline/BlueBirdProject/OSS/orderManager/pipeline/PL_WS_OSS_ORDERMANAGER_ManageOrder" : {
+            "label" : "Pipeline/BlueBirdProject/OSS/orderManager/pipeline/PL_WS_OSS_ORDERMANAGER_ManageOrder",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/BlueBirdProject/OSS/orderManager/transformation/createResponse_WS_ManageOrder" : {
+                "label" : "Xquery/BlueBirdProject/OSS/orderManager/transformation/createResponse_WS_ManageOrder",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/BlueBirdProject/OSS/orderManager/transformation/createRequest_DBCRM_RetrieveCowOrigine" : {
+                "label" : "Xquery/BlueBirdProject/OSS/orderManager/transformation/createRequest_DBCRM_RetrieveCowOrigine",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/orderManager/wsdl/WS_OSS_ORDERMANAGER" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/orderManager/wsdl/WS_OSS_ORDERMANAGER",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/orderManager/xsd/XSD_OSS_ORDERMANAGER" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/orderManager/xsd/XSD_OSS_ORDERMANAGER",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Pipeline/BlueBirdProject/OSS/orderManager/pipeline/PL_WS_DB_CRM_RETRIEVE_COW_ORIGINE" : {
+                "label" : "Pipeline/BlueBirdProject/OSS/orderManager/pipeline/PL_WS_DB_CRM_RETRIEVE_COW_ORIGINE",
+                "properties" : {
+                  "nodeType" : "Pipeline"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/orderManager/wsdl/WS_OSS_ORDERMANAGER" : {
+                    "label" : "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/orderManager/wsdl/WS_OSS_ORDERMANAGER",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : {
+                      "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/orderManager/xsd/XSD_OSS_ORDERMANAGER" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/orderManager/xsd/XSD_OSS_ORDERMANAGER",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      },
+                      "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "BusinessService/BlueBirdProject/OSS/orderManager/businsessservice/BS_SQL_DB_CRM_RETRIEVE_COW_ORIGINE" : {
+                    "label" : "BusinessService/BlueBirdProject/OSS/orderManager/businsessservice/BS_SQL_DB_CRM_RETRIEVE_COW_ORIGINE",
+                    "properties" : {
+                      "nodeType" : "BusinessService"
+                    },
+                    "successors" : {
+                      "WSDL/BlueBirdProject/Resources/BS_SQL_DB_CRM_RETRIEVE_COW_ORIGINE/concrete" : {
+                        "label" : "WSDL/BlueBirdProject/Resources/BS_SQL_DB_CRM_RETRIEVE_COW_ORIGINE/concrete",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : { }
+                      },
+                      "JCA/BlueBirdProject/Resources/BS_SQL_DB_CRM_RETRIEVE_COW_ORIGINE_db" : {
+                        "label" : "JCA/BlueBirdProject/Resources/BS_SQL_DB_CRM_RETRIEVE_COW_ORIGINE_db",
+                        "properties" : {
+                          "nodeType" : "JCA"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                    "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                    "properties" : {
+                      "nodeType" : "PipelineTemplate"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/BlueBirdProject/OSS/SOM/transformation/createRequest_WS_SomLogin" : {
+                "label" : "Xquery/BlueBirdProject/OSS/SOM/transformation/createRequest_WS_SomLogin",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Pipeline/BlueBirdProject/OSS/SOM/pipeline/PL_OSS_SOM_LOGIN" : {
+                "label" : "Pipeline/BlueBirdProject/OSS/SOM/pipeline/PL_OSS_SOM_LOGIN",
+                "properties" : {
+                  "nodeType" : "Pipeline"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/BLUEBIRD/OSS/SOM_login/wsdl/WS_OSS_SOM_LOGIN" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/BLUEBIRD/OSS/SOM_login/wsdl/WS_OSS_SOM_LOGIN",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "BusinessService/BlueBirdProject/OSS/SOM/businessService/BS_OSS_SOM_LOGIN" : {
+                    "label" : "BusinessService/BlueBirdProject/OSS/SOM/businessService/BS_OSS_SOM_LOGIN",
+                    "properties" : {
+                      "nodeType" : "BusinessService"
+                    },
+                    "successors" : {
+                      "WSDL/MDW_CDM/ApplicationObjects/BLUEBIRD/OSS/SOM/wsdl/LoginService" : {
+                        "label" : "WSDL/MDW_CDM/ApplicationObjects/BLUEBIRD/OSS/SOM/wsdl/LoginService",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "Xquery/BlueBirdProject/OSS/SOM/transformation/createRequest_BS_SomLogin" : {
+                    "label" : "Xquery/BlueBirdProject/OSS/SOM/transformation/createRequest_BS_SomLogin",
+                    "properties" : {
+                      "nodeType" : "Xquery"
+                    },
+                    "successors" : { }
+                  },
+                  "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                    "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                    "properties" : {
+                      "nodeType" : "PipelineTemplate"
+                    },
+                    "successors" : { }
+                  },
+                  "Xquery/BlueBirdProject/OSS/SOM/transformation/createResponse_WS_SomLogin" : {
+                    "label" : "Xquery/BlueBirdProject/OSS/SOM/transformation/createResponse_WS_SomLogin",
+                    "properties" : {
+                      "nodeType" : "Xquery"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "BusinessService/BlueBirdProject/OSS/orderManager/businsessservice/BS_WS_OSS_MANAGE_ORDER" : {
+                "label" : "BusinessService/BlueBirdProject/OSS/orderManager/businsessservice/BS_WS_OSS_MANAGE_ORDER",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/BLUEBIRD/OSS/ordermanager/wsdl/ManageOrderSvc" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/BLUEBIRD/OSS/ordermanager/wsdl/ManageOrderSvc",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "Xquery/BlueBirdProject/OSS/orderManager/transformation/createRequest_BS_ORDER_MANAGER_ManageOrder" : {
+                "label" : "Xquery/BlueBirdProject/OSS/orderManager/transformation/createRequest_BS_ORDER_MANAGER_ManageOrder",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SalesforceProject/WS_SALES_ORDER_GENERATOR/FW/proxy/PS_WS_BB_CLOSE_PDA_FROM_EXIST",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/ApplicationObjects/FASTWEB/ClosePda/WS_BB_CLOSE_PDA" : {
+        "label" : "WSDL/MDW_CDM/ApplicationObjects/FASTWEB/ClosePda/WS_BB_CLOSE_PDA",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : { }
+      },
+      "Pipeline/SalesforceProject/WS_SALES_ORDER_GENERATOR/FW/pipeline/PL_JMS_SALES_ORDER_GENERATOR_FW_ENQUEUE" : {
+        "label" : "Pipeline/SalesforceProject/WS_SALES_ORDER_GENERATOR/FW/pipeline/PL_JMS_SALES_ORDER_GENERATOR_FW_ENQUEUE",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "BusinessService/OMProject/OrderManagement/businessServices/BS_JMS_OM_ORDER_MANAGEMENT" : {
+            "label" : "BusinessService/OMProject/OrderManagement/businessServices/BS_JMS_OM_ORDER_MANAGEMENT",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/OrderGenerator/wsdl/WS_SALES_ORDER_GENERATOR" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/OrderGenerator/wsdl/WS_SALES_ORDER_GENERATOR",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/OrderGenerator/xsd/XSD_SALES_ORDER_GENERATOR" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/OrderGenerator/xsd/XSD_SALES_ORDER_GENERATOR",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_ASYNC_ENQUEUE_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_ASYNC_ENQUEUE_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

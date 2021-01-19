@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/contentwise/WS_CONTENT_DISCOVERY_CONTENTWISE",
+    "name" : "ContentWiseProject_ContentDiscoveryContentWise_proxy_PS_WS_CONTENT_DISCOVERY_CONTENTWISE",
+    "remoteName" : "ProxyService/ContentWiseProject/ContentDiscoveryContentWise/proxy/PS_WS_CONTENT_DISCOVERY_CONTENTWISE",
+    "localPath" : "osb_uat\\repo\\ContentWiseProject\\ContentDiscoveryContentWise\\PS_WS_CONTENT_DISCOVERY_CONTENTWISE",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/contentwise/WS_CONTENT_DISCOVERY_CONTENTWISE?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/ContentWiseProject/xsd/XSD_CONTENT_DISCOVERY_CONTENTWISE",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

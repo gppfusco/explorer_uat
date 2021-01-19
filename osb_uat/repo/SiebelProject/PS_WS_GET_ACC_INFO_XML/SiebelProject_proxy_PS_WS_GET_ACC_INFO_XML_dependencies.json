@@ -1,0 +1,107 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SiebelProject/proxy/PS_WS_GET_ACC_INFO_XML",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/SiebelProject/pipeline/PL_WS_GET_ACC_INFO_XML" : {
+        "label" : "Pipeline/SiebelProject/pipeline/PL_WS_GET_ACC_INFO_XML",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Xquery/SiebelProject/transformations/createRequest_GetAccInfoXML" : {
+            "label" : "Xquery/SiebelProject/transformations/createRequest_GetAccInfoXML",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/SiebelProject/transformations/createResponse_GetAccInfoXML" : {
+            "label" : "Xquery/SiebelProject/transformations/createResponse_GetAccInfoXML",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/GetAccInfoXML/wsdl/WS_SIE_GET_ACC_INFO_XML" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/GetAccInfoXML/wsdl/WS_SIE_GET_ACC_INFO_XML",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/GetAccInfoXML/xsd/XSD_SIE_GET_ACC_INFO_XML" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/GetAccInfoXML/xsd/XSD_SIE_GET_ACC_INFO_XML",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "BusinessService/SiebelProject/businessService/BS_TUX_GET_ACC_INFO_XML" : {
+            "label" : "BusinessService/SiebelProject/businessService/BS_TUX_GET_ACC_INFO_XML",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/ApplicationObjects/TUXEDO/xsd/XSD_GETACCINFO_XML" : {
+                "label" : "XMLSchema/MDW_CDM/ApplicationObjects/TUXEDO/xsd/XSD_GETACCINFO_XML",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0" : {
+                "label" : "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0",
+                "properties" : {
+                  "nodeType" : "Archive"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/GetAccInfoXML/wsdl/WS_SIE_GET_ACC_INFO_XML" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/GetAccInfoXML/wsdl/WS_SIE_GET_ACC_INFO_XML",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/GetAccInfoXML/xsd/XSD_SIE_GET_ACC_INFO_XML" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/GetAccInfoXML/xsd/XSD_SIE_GET_ACC_INFO_XML",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

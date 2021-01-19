@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.skytv.it/mdw/data"
+            targetNamespace="http://www.skytv.it/mdw/data" elementFormDefault="qualified">
+  <!-- ELEMENTS -->
+  <xsd:element name="requestRDKStartProvisioning" type="requestRDKStartProvisioningType"/>
+  <xsd:element name="responseRDKStartProvisioning" type="responseCommonType"/>
+  <xsd:complexType name="requestRDKStartProvisioningType">
+    <xsd:sequence>
+      <xsd:element name="operator" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="customerID" type="stringMinLen" minOccurs="1"/>
+      <xsd:element name="accountNumber" type="stringMinLen" minOccurs="1"/>
+      <xsd:element name="decoderSerialRDK" type="stringMinLen" minOccurs="1"/>
+      <xsd:element name="smartcardNumber" type="stringMinLen" minOccurs="1"/>
+      <xsd:element name="flagUndo" minOccurs="0">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Y"/>
+            <xsd:enumeration value="N"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="requestRDKMigration" type="requestRDKMigrationType"/>
+  <xsd:element name="responseRDKMigration" type="responseCommonType"/>
+  <xsd:complexType name="requestRDKMigrationType">
+    <xsd:sequence>
+      <xsd:element name="operator" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="smartcardNumber" type="stringMinLen" minOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="stringMinLen">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="responseCommonType">
+    <xsd:sequence>
+      <xsd:element name="resultCode" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="resultDescription" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="tid" type="xsd:string" minOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

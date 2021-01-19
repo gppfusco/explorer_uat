@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/om/WS_OM_CANCELLATION",
+    "name" : "OMProject_Cancellation_proxy_PS_WS_OM_CANCELLATION",
+    "remoteName" : "ProxyService/OMProject/Cancellation/proxy/PS_WS_OM_CANCELLATION",
+    "localPath" : "osb_uat\\repo\\OMProject\\Cancellation\\PS_WS_OM_CANCELLATION",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/om/WS_OM_CANCELLATION?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/OMProject/Cancellation/xsd/XSD_OM_CANCELLATION",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

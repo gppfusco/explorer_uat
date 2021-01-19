@@ -1,0 +1,92 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/MDWProject/KeepAlive/proxy/PS_REST_MDW_KEEP_ALIVE",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "WSDL/MDWProject/Resources/PS_REST_MDW_KEEP_ALIVE" : {
+        "label" : "WSDL/MDWProject/Resources/PS_REST_MDW_KEEP_ALIVE",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/KeepAlive/xsd/XSD_MDW_KEEPALIVE" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/KeepAlive/xsd/XSD_MDW_KEEPALIVE",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/KeepAlive/xsd/XSD_JSON_ERRORS_MDW_KEEPALIVE" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/KeepAlive/xsd/XSD_JSON_ERRORS_MDW_KEEPALIVE",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WADL/MDWProject/Resources/PS_REST_MDW_KEEP_ALIVE" : {
+        "label" : "WADL/MDWProject/Resources/PS_REST_MDW_KEEP_ALIVE",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      },
+      "Pipeline/MDWProject/KeepAlive/pipeline/PL_REST_MDW_KEEPALIVE" : {
+        "label" : "Pipeline/MDWProject/KeepAlive/pipeline/PL_REST_MDW_KEEPALIVE",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_NO_ROUTING_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_NO_ROUTING_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDWProject/Resources/PS_REST_MDW_KEEP_ALIVE" : {
+            "label" : "WSDL/MDWProject/Resources/PS_REST_MDW_KEEP_ALIVE",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/KeepAlive/xsd/XSD_MDW_KEEPALIVE" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/KeepAlive/xsd/XSD_MDW_KEEPALIVE",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/KeepAlive/xsd/XSD_JSON_ERRORS_MDW_KEEPALIVE" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/KeepAlive/xsd/XSD_JSON_ERRORS_MDW_KEEPALIVE",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/MDWProject/KeepAlive/transformation/createResponse_KeepAlive" : {
+            "label" : "Xquery/MDWProject/KeepAlive/transformation/createResponse_KeepAlive",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/MDWProject/KeepAlive/transformation/createResponse_JSON_ERRORS" : {
+            "label" : "Xquery/MDWProject/KeepAlive/transformation/createResponse_JSON_ERRORS",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

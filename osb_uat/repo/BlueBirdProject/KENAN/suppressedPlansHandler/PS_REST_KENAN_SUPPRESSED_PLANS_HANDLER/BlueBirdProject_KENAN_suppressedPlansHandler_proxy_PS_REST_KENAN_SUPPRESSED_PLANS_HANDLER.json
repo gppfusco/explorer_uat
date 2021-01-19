@@ -1,0 +1,34 @@
+{
+  "RestApi" : {
+    "type" : "REST",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/mdw/kenan/suppressedPlans",
+    "name" : "BlueBirdProject_KENAN_suppressedPlansHandler_proxy_PS_REST_KENAN_SUPPRESSED_PLANS_HANDLER",
+    "remoteName" : "ProxyService/BlueBirdProject/KENAN/suppressedPlansHandler/proxy/PS_REST_KENAN_SUPPRESSED_PLANS_HANDLER",
+    "localPath" : "osb_uat\\repo\\BlueBirdProject\\KENAN\\suppressedPlansHandler\\PS_REST_KENAN_SUPPRESSED_PLANS_HANDLER",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/mdw/kenan/suppressedPlans?WADL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "MDW_CDM/EnterpriseServices/BlueBirdProject/KENAN/suppressedPlansHandler/xsd/XSD_KENAN_SUPPRESSED_PLANS_HANDLER",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ],
+      "soapApiSpec" : {
+        "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e",
+        "xsdSchemas" : [ {
+          "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        }, {
+          "xsdPath" : "/MDW_CDM/EnterpriseServices/BlueBirdProject/KENAN/suppressedPlansHandler/xsd/XSD_KENAN_SUPPRESSED_PLANS_HANDLER",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        } ]
+      }
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

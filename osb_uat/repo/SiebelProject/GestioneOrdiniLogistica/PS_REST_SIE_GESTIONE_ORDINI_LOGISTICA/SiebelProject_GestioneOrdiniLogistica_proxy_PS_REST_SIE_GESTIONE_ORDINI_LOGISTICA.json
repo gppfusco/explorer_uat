@@ -1,0 +1,34 @@
+{
+  "RestApi" : {
+    "type" : "REST",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/siebel/rest/ordine",
+    "name" : "SiebelProject_GestioneOrdiniLogistica_proxy_PS_REST_SIE_GESTIONE_ORDINI_LOGISTICA",
+    "remoteName" : "ProxyService/SiebelProject/GestioneOrdiniLogistica/proxy/PS_REST_SIE_GESTIONE_ORDINI_LOGISTICA",
+    "localPath" : "osb_uat\\repo\\SiebelProject\\GestioneOrdiniLogistica\\PS_REST_SIE_GESTIONE_ORDINI_LOGISTICA",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/siebel/rest/ordine?WADL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "MDW_CDM/EnterpriseServices/SiebelProject/GestioneOrdiniLogistica/xsd/XSD_SBL_GESTIONE_ORDINI_LOGISTICA",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "MDW_CDM/EnterpriseServices/SiebelProject/GestioneOrdiniLogistica/xsd/XSD_FAULTS",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/rest/faults"
+      } ],
+      "soapApiSpec" : {
+        "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e",
+        "xsdSchemas" : [ {
+          "xsdPath" : "/MDW_CDM/EnterpriseServices/SiebelProject/GestioneOrdiniLogistica/xsd/XSD_SBL_GESTIONE_ORDINI_LOGISTICA",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        }, {
+          "xsdPath" : "/MDW_CDM/EnterpriseServices/SiebelProject/GestioneOrdiniLogistica/xsd/XSD_FAULTS",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/rest/faults"
+        } ]
+      }
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

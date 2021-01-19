@@ -1,0 +1,143 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/AspideProject/ManageTeams/proxy/PS_REST_TA_MANAGE_TEAMS",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "WADL/AspideProject/Resources/PS_REST_TA_MANAGE_TEAMS" : {
+        "label" : "WADL/AspideProject/Resources/PS_REST_TA_MANAGE_TEAMS",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      },
+      "Pipeline/AspideProject/ManageTeams/pipeline/PL_REST_TA_MANAGE_TEAMS" : {
+        "label" : "Pipeline/AspideProject/ManageTeams/pipeline/PL_REST_TA_MANAGE_TEAMS",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Xquery/AspideProject/ManageTeams/transformations/createRequestTAGetTimeSlot" : {
+            "label" : "Xquery/AspideProject/ManageTeams/transformations/createRequestTAGetTimeSlot",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/AspideProject/AppointmentManagement/pipeline/PL_INTERNAL_REST_ASPIDE_APPOINTMENTS" : {
+            "label" : "Pipeline/AspideProject/AppointmentManagement/pipeline/PL_INTERNAL_REST_ASPIDE_APPOINTMENTS",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "WSDL/AspideProject/Resources/BS_REST_ASPIDE_APPOINTMENTS" : {
+                "label" : "WSDL/AspideProject/Resources/BS_REST_ASPIDE_APPOINTMENTS",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "BusinessService/AspideProject/AppointmentManagement/businessService/BS_REST_ASPIDE_APPOINTMENTS" : {
+                "label" : "BusinessService/AspideProject/AppointmentManagement/businessService/BS_REST_ASPIDE_APPOINTMENTS",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/AspideProject/Resources/BS_REST_ASPIDE_APPOINTMENTS" : {
+                    "label" : "WSDL/AspideProject/Resources/BS_REST_ASPIDE_APPOINTMENTS",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "WADL/AspideProject/Resources/BS_REST_ASPIDE_APPOINTMENTS" : {
+                    "label" : "WADL/AspideProject/Resources/BS_REST_ASPIDE_APPOINTMENTS",
+                    "properties" : {
+                      "nodeType" : "WADL"
+                    },
+                    "successors" : { }
+                  },
+                  "ServiceAccount/MDW_CDM/ServiceAccount/SA_Aspide" : {
+                    "label" : "ServiceAccount/MDW_CDM/ServiceAccount/SA_Aspide",
+                    "properties" : {
+                      "nodeType" : "ServiceAccount"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "WSDL/AspideProject/Resources/PS_REST_TA_MANAGE_TEAMS" : {
+            "label" : "WSDL/AspideProject/Resources/PS_REST_TA_MANAGE_TEAMS",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/AspideProject/ManageTeams/xsd/XSD_TA_MANAGE_TEAMS" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/AspideProject/ManageTeams/xsd/XSD_TA_MANAGE_TEAMS",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/AspideProject/ManageTeams/transformations/createResponseRetrieveTimeSlot" : {
+            "label" : "Xquery/AspideProject/ManageTeams/transformations/createResponseRetrieveTimeSlot",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WSDL/AspideProject/Resources/PS_REST_TA_MANAGE_TEAMS" : {
+        "label" : "WSDL/AspideProject/Resources/PS_REST_TA_MANAGE_TEAMS",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/AspideProject/ManageTeams/xsd/XSD_TA_MANAGE_TEAMS" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/AspideProject/ManageTeams/xsd/XSD_TA_MANAGE_TEAMS",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

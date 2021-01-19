@@ -1,0 +1,28 @@
+{
+  "RestApi" : {
+    "type" : "REST",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/fastweb/REST_FASTWEB_NOWTV_BUNDLE",
+    "name" : "FASTWEBProject_nowtvBundleFastweb_proxy_PS_REST_FASTWEB_NOWTV_BUNDLE",
+    "remoteName" : "ProxyService/FASTWEBProject/nowtvBundleFastweb/proxy/PS_REST_FASTWEB_NOWTV_BUNDLE",
+    "localPath" : "osb_uat\\repo\\FASTWEBProject\\nowtvBundleFastweb\\PS_REST_FASTWEB_NOWTV_BUNDLE",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/fastweb/REST_FASTWEB_NOWTV_BUNDLE?WADL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "MDW_CDM/EnterpriseServices/FastwebProject/nowtvBundleFastweb/xsd/XSD_FASTWEB_NOWTV_BUNDLE",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ],
+      "soapApiSpec" : {
+        "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e",
+        "xsdSchemas" : [ {
+          "xsdPath" : "/MDW_CDM/EnterpriseServices/FastwebProject/nowtvBundleFastweb/xsd/XSD_FASTWEB_NOWTV_BUNDLE",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        } ]
+      }
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SalesforceProject/WS_CRM_ANNULLA_ORDINE_BATCH/proxy/PS_CRM_ANNULLA_ORDINE_BATCH",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/SalesforceProject/WS_CRM_ANNULLA_ORDINE_BATCH/pipeline/PL_WS_CRM_ANNULLA_ORDINE_BATCH" : {
+        "label" : "Pipeline/SalesforceProject/WS_CRM_ANNULLA_ORDINE_BATCH/pipeline/PL_WS_CRM_ANNULLA_ORDINE_BATCH",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Xquery/SalesforceProject/WS_CRM_ANNULLA_ORDINE_BATCH/transformations/createRequestEJB_SF_ExtractOrder" : {
+            "label" : "Xquery/SalesforceProject/WS_CRM_ANNULLA_ORDINE_BATCH/transformations/createRequestEJB_SF_ExtractOrder",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/SalesforceProject/WS_CRM_ANNULLA_ORDINE_BATCH/pipeline/PL_ITERATE_ESTRACT_CONTACT_CEASE" : {
+            "label" : "Pipeline/SalesforceProject/WS_CRM_ANNULLA_ORDINE_BATCH/pipeline/PL_ITERATE_ESTRACT_CONTACT_CEASE",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "BusinessService/OMProject/OrderManagement/businessServices/BS_JMS_OM_ORDER_MANAGEMENT" : {
+                "label" : "BusinessService/OMProject/OrderManagement/businessServices/BS_JMS_OM_ORDER_MANAGEMENT",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/AnnullaOrdineBatch/wsdl/WS_CRM_ANNULLA_ORDINE_BATCH" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/AnnullaOrdineBatch/wsdl/WS_CRM_ANNULLA_ORDINE_BATCH",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/AnnullaOrdineBatch/xsd/XSD_CRM_ANNULLA_ORDINE_BATCH" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/AnnullaOrdineBatch/xsd/XSD_CRM_ANNULLA_ORDINE_BATCH",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_ITERATE_OPERATION_PUBLISH_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_ITERATE_OPERATION_PUBLISH_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/AnnullaOrdineBatch/wsdl/WS_CRM_ANNULLA_ORDINE_BATCH" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/AnnullaOrdineBatch/wsdl/WS_CRM_ANNULLA_ORDINE_BATCH",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/AnnullaOrdineBatch/xsd/XSD_CRM_ANNULLA_ORDINE_BATCH" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/AnnullaOrdineBatch/xsd/XSD_CRM_ANNULLA_ORDINE_BATCH",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF" : {
+            "label" : "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB" : {
+                "label" : "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB",
+                "properties" : {
+                  "nodeType" : "ForeignJNDIProvider"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/SalesforceProject/WS_CRM_ANNULLA_ORDINE_BATCH/transformations/createResponseAnnullaOrdineBatch" : {
+            "label" : "Xquery/SalesforceProject/WS_CRM_ANNULLA_ORDINE_BATCH/transformations/createResponseAnnullaOrdineBatch",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/AnnullaOrdineBatch/wsdl/WS_CRM_ANNULLA_ORDINE_BATCH" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/AnnullaOrdineBatch/wsdl/WS_CRM_ANNULLA_ORDINE_BATCH",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/AnnullaOrdineBatch/xsd/XSD_CRM_ANNULLA_ORDINE_BATCH" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/AnnullaOrdineBatch/xsd/XSD_CRM_ANNULLA_ORDINE_BATCH",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,217 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/MRMProject/BurnHandler/proxy/PS_MRM_BURN_HANDLER",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/MRMProject/BurnHandler/pipeline/PL_WS_MRM_BURN_HANDLER" : {
+        "label" : "Pipeline/MRMProject/BurnHandler/pipeline/PL_WS_MRM_BURN_HANDLER",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Pipeline/MRMProject/BurnHandler/pipeline/PL_INTERNAL_MRM_BURN_BY_HIDDEN" : {
+            "label" : "Pipeline/MRMProject/BurnHandler/pipeline/PL_INTERNAL_MRM_BURN_BY_HIDDEN",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "BusinessService/MRMProject/BurnHandler/businessServices/BS_TUXEDO_VMS_BURN_BY_HIDDEN" : {
+                "label" : "BusinessService/MRMProject/BurnHandler/businessServices/BS_TUXEDO_VMS_BURN_BY_HIDDEN",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/ApplicationObjects/MRM/BurnHandler/XSD_MRM_BURN_BY_HIDDEN" : {
+                    "label" : "XMLSchema/MDW_CDM/ApplicationObjects/MRM/BurnHandler/XSD_MRM_BURN_BY_HIDDEN",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0" : {
+                    "label" : "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0",
+                    "properties" : {
+                      "nodeType" : "Archive"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/MRMProject/BurnHandler/wsdl/WS_MRM_BURN_HANDLER" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/MRMProject/BurnHandler/wsdl/WS_MRM_BURN_HANDLER",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/MRMProject/BurnHandler/xsd/XSD_MRM_BURN_HANDLER" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MRMProject/BurnHandler/xsd/XSD_MRM_BURN_HANDLER",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/MRMProject/BurnHandler/transformations/createResponseBurnByHidden" : {
+                "label" : "Xquery/MRMProject/BurnHandler/transformations/createResponseBurnByHidden",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/MRMProject/BurnHandler/transformations/createRequestBurnByHidden" : {
+                "label" : "Xquery/MRMProject/BurnHandler/transformations/createRequestBurnByHidden",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/MRMProject/BurnHandler/wsdl/WS_MRM_BURN_HANDLER" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/MRMProject/BurnHandler/wsdl/WS_MRM_BURN_HANDLER",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/MRMProject/BurnHandler/xsd/XSD_MRM_BURN_HANDLER" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MRMProject/BurnHandler/xsd/XSD_MRM_BURN_HANDLER",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/MRMProject/BurnHandler/pipeline/PL_INTERNAL_MRM_CAN_BURN_HIDDEN" : {
+            "label" : "Pipeline/MRMProject/BurnHandler/pipeline/PL_INTERNAL_MRM_CAN_BURN_HIDDEN",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/EnterpriseServices/MRMProject/BurnHandler/wsdl/WS_MRM_BURN_HANDLER" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/MRMProject/BurnHandler/wsdl/WS_MRM_BURN_HANDLER",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/MRMProject/BurnHandler/xsd/XSD_MRM_BURN_HANDLER" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MRMProject/BurnHandler/xsd/XSD_MRM_BURN_HANDLER",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/MRMProject/BurnHandler/transformations/createResponseCanBurnHidden" : {
+                "label" : "Xquery/MRMProject/BurnHandler/transformations/createResponseCanBurnHidden",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/MRMProject/BurnHandler/transformations/createRequestCanBurnHidden" : {
+                "label" : "Xquery/MRMProject/BurnHandler/transformations/createRequestCanBurnHidden",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/MRMProject/BurnHandler/businessServices/BS_TUXEDO_VMS_CAN_BURN_HIDDEN" : {
+                "label" : "BusinessService/MRMProject/BurnHandler/businessServices/BS_TUXEDO_VMS_CAN_BURN_HIDDEN",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/ApplicationObjects/MRM/BurnHandler/XSD_MRM_CAN_BURN_HIDDEN" : {
+                    "label" : "XMLSchema/MDW_CDM/ApplicationObjects/MRM/BurnHandler/XSD_MRM_CAN_BURN_HIDDEN",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0" : {
+                    "label" : "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0",
+                    "properties" : {
+                      "nodeType" : "Archive"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/MRMProject/BurnHandler/wsdl/WS_MRM_BURN_HANDLER" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/MRMProject/BurnHandler/wsdl/WS_MRM_BURN_HANDLER",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/MRMProject/BurnHandler/xsd/XSD_MRM_BURN_HANDLER" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MRMProject/BurnHandler/xsd/XSD_MRM_BURN_HANDLER",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

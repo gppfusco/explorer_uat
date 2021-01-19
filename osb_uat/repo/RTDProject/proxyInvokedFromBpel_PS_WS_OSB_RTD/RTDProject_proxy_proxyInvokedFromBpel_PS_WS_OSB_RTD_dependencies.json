@@ -1,0 +1,57 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/RTDProject/proxy/proxyInvokedFromBpel/PS_WS_OSB_RTD",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/ApplicationObjects/RTD/wsdl/SOA_RTD" : {
+        "label" : "WSDL/MDW_CDM/ApplicationObjects/RTD/wsdl/SOA_RTD",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/ApplicationObjects/RTD/xsd/SOA_RTD" : {
+            "label" : "XMLSchema/MDW_CDM/ApplicationObjects/RTD/xsd/SOA_RTD",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/RTDProject/pipeline/pipelineInvokedFromBpel/PL_OSB_RTD" : {
+        "label" : "Pipeline/RTDProject/pipeline/pipelineInvokedFromBpel/PL_OSB_RTD",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/MDW_CDM/ApplicationObjects/RTD/wsdl/SOA_RTD" : {
+            "label" : "WSDL/MDW_CDM/ApplicationObjects/RTD/wsdl/SOA_RTD",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/ApplicationObjects/RTD/xsd/SOA_RTD" : {
+                "label" : "XMLSchema/MDW_CDM/ApplicationObjects/RTD/xsd/SOA_RTD",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/rtd/PL_OSB_RTD_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/rtd/PL_OSB_RTD_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,355 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SalesforceProject/WS_SF_CREATE_ORDER/proxy/WS_SF_CREATE_ORDER",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/SalesforceProject/WS_SF_CREATE_ORDER/pipeline/PL_WS_CREATE_ORDER" : {
+        "label" : "Pipeline/SalesforceProject/WS_SF_CREATE_ORDER/pipeline/PL_WS_CREATE_ORDER",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Xquery/SalesforceProject/WS_SF_CREATE_ORDER/transformations/createRequest_NewContractEvaluationSBL" : {
+            "label" : "Xquery/SalesforceProject/WS_SF_CREATE_ORDER/transformations/createRequest_NewContractEvaluationSBL",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "ProxyService/SiebelProject/CreateOrder/proxy/PS_LOCAL_SBL_CHECK_ORDINE_DA_ANNULLAREProxyService" : {
+            "label" : "ProxyService/SiebelProject/CreateOrder/proxy/PS_LOCAL_SBL_CHECK_ORDINE_DA_ANNULLAREProxyService",
+            "properties" : {
+              "nodeType" : "ProxyService"
+            },
+            "successors" : {
+              "WSDL/SiebelProject/Resources/BS_SBL_SQL_CHECK_ORDINE_DA_ANNULLARE/concrete" : {
+                "label" : "WSDL/SiebelProject/Resources/BS_SBL_SQL_CHECK_ORDINE_DA_ANNULLARE/concrete",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "Pipeline/SiebelProject/CreateOrder/pipeline/PL_SBL_CHECK_ORDINE_DA_ANNULLARE" : {
+                "label" : "Pipeline/SiebelProject/CreateOrder/pipeline/PL_SBL_CHECK_ORDINE_DA_ANNULLARE",
+                "properties" : {
+                  "nodeType" : "Pipeline"
+                },
+                "successors" : {
+                  "BusinessService/SiebelProject/CreateOrder/businessService/BS_SBL_SQL_CHECK_ORDINE_DA_ANNULLARE" : {
+                    "label" : "BusinessService/SiebelProject/CreateOrder/businessService/BS_SBL_SQL_CHECK_ORDINE_DA_ANNULLARE",
+                    "properties" : {
+                      "nodeType" : "BusinessService"
+                    },
+                    "successors" : {
+                      "WSDL/SiebelProject/Resources/BS_SBL_SQL_CHECK_ORDINE_DA_ANNULLARE/concrete" : {
+                        "label" : "WSDL/SiebelProject/Resources/BS_SBL_SQL_CHECK_ORDINE_DA_ANNULLARE/concrete",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : { }
+                      },
+                      "JCA/SiebelProject/Resources/BS_SBL_SQL_CHECK_ORDINE_DA_ANNULLARE_db" : {
+                        "label" : "JCA/SiebelProject/Resources/BS_SBL_SQL_CHECK_ORDINE_DA_ANNULLARE_db",
+                        "properties" : {
+                          "nodeType" : "JCA"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "Xquery/SiebelProject/CreateOrder/transformations/createRequestBSCheckOrdineDaAnnullare" : {
+                    "label" : "Xquery/SiebelProject/CreateOrder/transformations/createRequestBSCheckOrdineDaAnnullare",
+                    "properties" : {
+                      "nodeType" : "Xquery"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/SiebelProject/Resources/BS_SBL_SQL_CHECK_ORDINE_DA_ANNULLARE/concrete" : {
+                    "label" : "WSDL/SiebelProject/Resources/BS_SBL_SQL_CHECK_ORDINE_DA_ANNULLARE/concrete",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                    "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                    "properties" : {
+                      "nodeType" : "PipelineTemplate"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_NO_ROUTING_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_NO_ROUTING_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/SalesforceProject/WS_SF_CREATE_ORDER/transformations/createRequest_PS_LOCAL_BS_TIBCO_ORDER_ID" : {
+            "label" : "Xquery/SalesforceProject/WS_SF_CREATE_ORDER/transformations/createRequest_PS_LOCAL_BS_TIBCO_ORDER_ID",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "ProxyService/SiebelProject/proxy/local/PS_LOCAL_SIE_CONTR_SYNC" : {
+            "label" : "ProxyService/SiebelProject/proxy/local/PS_LOCAL_SIE_CONTR_SYNC",
+            "properties" : {
+              "nodeType" : "ProxyService"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/ContrSync/wsdl/WS_CRM_SIE_CONTR_SYNC" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/ContrSync/wsdl/WS_CRM_SIE_CONTR_SYNC",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/ContrSync/xsd/XSD_CRM_SIE_CONTR_SYNC" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/ContrSync/xsd/XSD_CRM_SIE_CONTR_SYNC",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Pipeline/SiebelProject/pipeline/PL_WS_CRM_SIE_CONTR_SYNC" : {
+                "label" : "Pipeline/SiebelProject/pipeline/PL_WS_CRM_SIE_CONTR_SYNC",
+                "properties" : {
+                  "nodeType" : "Pipeline"
+                },
+                "successors" : {
+                  "Xquery/SiebelProject/transformations/createRequest_BS_EJB_SIEBEL" : {
+                    "label" : "Xquery/SiebelProject/transformations/createRequest_BS_EJB_SIEBEL",
+                    "properties" : {
+                      "nodeType" : "Xquery"
+                    },
+                    "successors" : { }
+                  },
+                  "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                    "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                    "properties" : {
+                      "nodeType" : "PipelineTemplate"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/ContrSync/wsdl/WS_CRM_SIE_CONTR_SYNC" : {
+                    "label" : "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/ContrSync/wsdl/WS_CRM_SIE_CONTR_SYNC",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : {
+                      "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/ContrSync/xsd/XSD_CRM_SIE_CONTR_SYNC" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/ContrSync/xsd/XSD_CRM_SIE_CONTR_SYNC",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      },
+                      "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log" : {
+                    "label" : "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log",
+                    "properties" : {
+                      "nodeType" : "Xquery"
+                    },
+                    "successors" : { }
+                  },
+                  "XSLT/SiebelProject/transformations/createElement" : {
+                    "label" : "XSLT/SiebelProject/transformations/createElement",
+                    "properties" : {
+                      "nodeType" : "XSLT"
+                    },
+                    "successors" : { }
+                  },
+                  "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SIEBEL" : {
+                    "label" : "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SIEBEL",
+                    "properties" : {
+                      "nodeType" : "BusinessService"
+                    },
+                    "successors" : {
+                      "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB" : {
+                        "label" : "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB",
+                        "properties" : {
+                          "nodeType" : "ForeignJNDIProvider"
+                        },
+                        "successors" : { }
+                      },
+                      "WSDL/MDW_CDM/ApplicationObjects/SIEBEL/WSDL/BS_EJB_SIEBEL" : {
+                        "label" : "WSDL/MDW_CDM/ApplicationObjects/SIEBEL/WSDL/BS_EJB_SIEBEL",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "XMLSchema/MDW_CDM/ApplicationObjects/SIEBEL/XSD_EJB_SIEBEL" : {
+                    "label" : "XMLSchema/MDW_CDM/ApplicationObjects/SIEBEL/XSD_EJB_SIEBEL",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "Pipeline/SalesforceProject/pipeline/PL_SF_MAIN_OSB_TO_BPEL" : {
+            "label" : "Pipeline/SalesforceProject/pipeline/PL_SF_MAIN_OSB_TO_BPEL",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log" : {
+                "label" : "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/wsdl/WS_CRM_GESTIONE_CLIENTE_IN" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/wsdl/WS_CRM_GESTIONE_CLIENTE_IN",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/xsd/XSD_CRM_GESTIONE_CLIENTE_IN" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/xsd/XSD_CRM_GESTIONE_CLIENTE_IN",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "BusinessService/MDW_CO/businessServices/BS_WS_BPEL_SF_INVOKER" : {
+                "label" : "BusinessService/MDW_CO/businessServices/BS_WS_BPEL_SF_INVOKER",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/SOA_PartnerOperations" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/SOA_PartnerOperations",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA" : {
+                "label" : "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA_WithUserToLoginSF" : {
+                "label" : "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA_WithUserToLoginSF",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/CreateOrder/wsdl/WS_SF_CREATE_ORDER" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/CreateOrder/wsdl/WS_SF_CREATE_ORDER",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/CreateOrder/xsd/XSD_SF_CREATE_ORDER" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/CreateOrder/xsd/XSD_SF_CREATE_ORDER",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/SalesforceProject/WS_SF_CREATE_ORDER/transformations/createResponse_NewContractEvaluationSBL" : {
+            "label" : "Xquery/SalesforceProject/WS_SF_CREATE_ORDER/transformations/createResponse_NewContractEvaluationSBL",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/CreateOrder/wsdl/WS_SF_CREATE_ORDER" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/CreateOrder/wsdl/WS_SF_CREATE_ORDER",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/CreateOrder/xsd/XSD_SF_CREATE_ORDER" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/CreateOrder/xsd/XSD_SF_CREATE_ORDER",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

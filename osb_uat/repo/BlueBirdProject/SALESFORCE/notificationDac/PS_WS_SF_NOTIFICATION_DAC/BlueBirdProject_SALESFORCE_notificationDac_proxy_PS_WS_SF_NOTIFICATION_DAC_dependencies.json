@@ -1,0 +1,137 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/BlueBirdProject/SALESFORCE/notificationDac/proxy/PS_WS_SF_NOTIFICATION_DAC",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/notificationDac/wsdl/WS_SF_NOTIFICATION_DAC" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/notificationDac/wsdl/WS_SF_NOTIFICATION_DAC",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/notificationDac/xsd/XSD_SF_NOTIFICATION_DAC" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/notificationDac/xsd/XSD_SF_NOTIFICATION_DAC",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/BlueBirdProject/SALESFORCE/notificationDac/pipeline/PL_WS_SF_NOTIFICATION_DAC" : {
+        "label" : "Pipeline/BlueBirdProject/SALESFORCE/notificationDac/pipeline/PL_WS_SF_NOTIFICATION_DAC",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Pipeline/BlueBirdProject/SALESFORCE/notificationDac/pipeline/PL_WS_SF_NOTIFICATION_DAC_DateNotification" : {
+            "label" : "Pipeline/BlueBirdProject/SALESFORCE/notificationDac/pipeline/PL_WS_SF_NOTIFICATION_DAC_DateNotification",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/BlueBirdProject/SALESFORCE/notificationDac/trasformations/createRequest_DateNotification" : {
+                "label" : "Xquery/BlueBirdProject/SALESFORCE/notificationDac/trasformations/createRequest_DateNotification",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/notificationDac/wsdl/WS_SF_NOTIFICATION_DAC" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/notificationDac/wsdl/WS_SF_NOTIFICATION_DAC",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/notificationDac/xsd/XSD_SF_NOTIFICATION_DAC" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/notificationDac/xsd/XSD_SF_NOTIFICATION_DAC",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "BusinessService/MDW_CO/businessServices/BS_WS_EJB_FORCE" : {
+                "label" : "BusinessService/MDW_CO/businessServices/BS_WS_EJB_FORCE",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/BlueBirdProject/SALESFORCE/notificationDac/trasformations/createResponse_DateNotification" : {
+                "label" : "Xquery/BlueBirdProject/SALESFORCE/notificationDac/trasformations/createResponse_DateNotification",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/notificationDac/wsdl/WS_SF_NOTIFICATION_DAC" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/notificationDac/wsdl/WS_SF_NOTIFICATION_DAC",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/notificationDac/xsd/XSD_SF_NOTIFICATION_DAC" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/notificationDac/xsd/XSD_SF_NOTIFICATION_DAC",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

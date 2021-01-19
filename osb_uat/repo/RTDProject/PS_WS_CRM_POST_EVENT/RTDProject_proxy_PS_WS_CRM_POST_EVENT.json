@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/rtd/WS_CRM_POST_EVENT",
+    "name" : "RTDProject_proxy_PS_WS_CRM_POST_EVENT",
+    "remoteName" : "ProxyService/RTDProject/proxy/PS_WS_CRM_POST_EVENT",
+    "localPath" : "osb_uat\\repo\\RTDProject\\PS_WS_CRM_POST_EVENT",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/rtd/WS_CRM_POST_EVENT?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/RTDProject/PostEvent/xsd/XSD_CRM_POST_EVENT",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

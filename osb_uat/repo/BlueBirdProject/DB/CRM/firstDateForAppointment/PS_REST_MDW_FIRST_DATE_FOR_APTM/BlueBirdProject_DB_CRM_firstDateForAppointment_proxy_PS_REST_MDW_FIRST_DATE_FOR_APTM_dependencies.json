@@ -1,0 +1,158 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/BlueBirdProject/DB_CRM/firstDateForAppointment/proxy/PS_REST_MDW_FIRST_DATE_FOR_APTM",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "Pipeline/BlueBirdProject/DB_CRM/firstDateForAppointment/pipeline/PL_REST_MDW_FIRST_DATE_FOR_APT" : {
+        "label" : "Pipeline/BlueBirdProject/DB_CRM/firstDateForAppointment/pipeline/PL_REST_MDW_FIRST_DATE_FOR_APT",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Pipeline/BlueBirdProject/DB_CRM/firstDateForAppointment/pipeline/PL_INTERNAL_GET_FIRST_DATE_FOR_APT" : {
+            "label" : "Pipeline/BlueBirdProject/DB_CRM/firstDateForAppointment/pipeline/PL_INTERNAL_GET_FIRST_DATE_FOR_APT",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "BusinessService/BlueBirdProject/DB_CRM/firstDateForAppointment/businessService/BS_SQL_FIRST_DATE_FOR_APT" : {
+                "label" : "BusinessService/BlueBirdProject/DB_CRM/firstDateForAppointment/businessService/BS_SQL_FIRST_DATE_FOR_APT",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "JCA/BlueBirdProject/Resources/BS_SQL_FIRST_DATE_FOR_APT_db" : {
+                    "label" : "JCA/BlueBirdProject/Resources/BS_SQL_FIRST_DATE_FOR_APT_db",
+                    "properties" : {
+                      "nodeType" : "JCA"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/BlueBirdProject/Resources/BS_SQL_FIRST_DATE_FOR_APT/concrete" : {
+                    "label" : "WSDL/BlueBirdProject/Resources/BS_SQL_FIRST_DATE_FOR_APT/concrete",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/BlueBirdProject/DB_CRM/firstDateForAppointment/transformation/calculate_GetFirstDateForAppointment" : {
+                "label" : "Xquery/BlueBirdProject/DB_CRM/firstDateForAppointment/transformation/calculate_GetFirstDateForAppointment",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/BlueBirdProject/Resources/PS_REST_MDW_SF_GET_FIRST_DATE_FOR_APTM" : {
+                "label" : "WSDL/BlueBirdProject/Resources/PS_REST_MDW_SF_GET_FIRST_DATE_FOR_APTM",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/firstDateForAppointment/xsd/XSD_FIRST_DATE_FOR_APPOINTMENT" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/firstDateForAppointment/xsd/XSD_FIRST_DATE_FOR_APPOINTMENT",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/BlueBirdProject/DB_CRM/firstDateForAppointment/transformation/createRequest_GetFirstDateForAppointment" : {
+                "label" : "Xquery/BlueBirdProject/DB_CRM/firstDateForAppointment/transformation/createRequest_GetFirstDateForAppointment",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/BlueBirdProject/DB_CRM/firstDateForAppointment/transformation/createResponse_GetFirstDateForAppointment" : {
+                "label" : "Xquery/BlueBirdProject/DB_CRM/firstDateForAppointment/transformation/createResponse_GetFirstDateForAppointment",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "WSDL/BlueBirdProject/Resources/PS_REST_MDW_SF_GET_FIRST_DATE_FOR_APTM" : {
+            "label" : "WSDL/BlueBirdProject/Resources/PS_REST_MDW_SF_GET_FIRST_DATE_FOR_APTM",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/firstDateForAppointment/xsd/XSD_FIRST_DATE_FOR_APPOINTMENT" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/firstDateForAppointment/xsd/XSD_FIRST_DATE_FOR_APPOINTMENT",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WSDL/BlueBirdProject/Resources/PS_REST_MDW_SF_GET_FIRST_DATE_FOR_APTM" : {
+        "label" : "WSDL/BlueBirdProject/Resources/PS_REST_MDW_SF_GET_FIRST_DATE_FOR_APTM",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/firstDateForAppointment/xsd/XSD_FIRST_DATE_FOR_APPOINTMENT" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/firstDateForAppointment/xsd/XSD_FIRST_DATE_FOR_APPOINTMENT",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WADL/BlueBirdProject/Resources/PS_REST_MDW_SF_GET_FIRST_DATE_FOR_APTM" : {
+        "label" : "WADL/BlueBirdProject/Resources/PS_REST_MDW_SF_GET_FIRST_DATE_FOR_APTM",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      }
+    }
+  }
+}

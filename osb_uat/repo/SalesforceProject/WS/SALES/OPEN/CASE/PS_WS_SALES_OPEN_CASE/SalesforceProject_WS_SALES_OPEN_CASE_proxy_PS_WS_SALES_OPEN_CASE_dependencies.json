@@ -1,0 +1,107 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SalesforceProject/WS_SALES_OPEN_CASE/proxy/PS_WS_SALES_OPEN_CASE",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/OpenCase/wsdl/WS_SALES_OPEN_CASE" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/OpenCase/wsdl/WS_SALES_OPEN_CASE",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/OpenCase/xsd/XSD_SALES_OPEN_CASE" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/OpenCase/xsd/XSD_SALES_OPEN_CASE",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/SalesforceProject/WS_SALES_OPEN_CASE/pipeline/PL_WS_SALES_OPEN_CASE" : {
+        "label" : "Pipeline/SalesforceProject/WS_SALES_OPEN_CASE/pipeline/PL_WS_SALES_OPEN_CASE",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/OpenCase/wsdl/WS_SALES_OPEN_CASE" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/OpenCase/wsdl/WS_SALES_OPEN_CASE",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/OpenCase/xsd/XSD_SALES_OPEN_CASE" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/OpenCase/xsd/XSD_SALES_OPEN_CASE",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/SalesforceProject/WS_SALES_OPEN_CASE/transformation/createRequest_OpenCase" : {
+            "label" : "Xquery/SalesforceProject/WS_SALES_OPEN_CASE/transformation/createRequest_OpenCase",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF" : {
+            "label" : "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB" : {
+                "label" : "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB",
+                "properties" : {
+                  "nodeType" : "ForeignJNDIProvider"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/SalesforceProject/WS_SALES_OPEN_CASE/transformation/createResponse_OpenCase" : {
+            "label" : "Xquery/SalesforceProject/WS_SALES_OPEN_CASE/transformation/createResponse_OpenCase",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

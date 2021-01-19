@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/siebel/WS_TIBCO_SBL_ALIGNMENT_ASYNC",
+    "name" : "SiebelProject_proxy_AlignTibcoToSBL_PS_TIBCO_SBL_ALIGNMENT_ASYNC",
+    "remoteName" : "ProxyService/SiebelProject/proxy/AlignTibcoToSBL/PS_TIBCO_SBL_ALIGNMENT_ASYNC",
+    "localPath" : "osb_uat\\repo\\SiebelProject\\AlignTibcoToSBL_PS_TIBCO_SBL_ALIGNMENT_ASYNC",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/siebel/WS_TIBCO_SBL_ALIGNMENT_ASYNC?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SiebelProject/AlignTibcoToSBL/TibcoSblAlignment_Async/xsd/XSD_TIBCO_SBL_ALIGNMENT_ASYNC",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

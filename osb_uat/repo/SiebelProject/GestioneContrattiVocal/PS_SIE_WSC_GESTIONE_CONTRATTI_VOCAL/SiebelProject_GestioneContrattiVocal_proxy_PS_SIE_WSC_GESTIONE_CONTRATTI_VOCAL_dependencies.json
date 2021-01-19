@@ -1,0 +1,180 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SiebelProject/GestioneContrattiVocal/proxy/PS_SIE_WSC_GESTIONE_CONTRATTI_VOCAL",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/GestioneContrattiVocal/wsdl/WS_WSC_GESTIONE_CONTRATTI_VOCAL" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/GestioneContrattiVocal/wsdl/WS_WSC_GESTIONE_CONTRATTI_VOCAL",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/GestioneContrattiVocal/xsd/XSD_WSC_GESTIONE_CONTRATTI_VOCAL" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/GestioneContrattiVocal/xsd/XSD_WSC_GESTIONE_CONTRATTI_VOCAL",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/SiebelProject/GestioneContrattiVocal/pipeline/PL_SIE_WSC_GESTIONE_CONTRATTI_VOCAL" : {
+        "label" : "Pipeline/SiebelProject/GestioneContrattiVocal/pipeline/PL_SIE_WSC_GESTIONE_CONTRATTI_VOCAL",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Xquery/SiebelProject/GestioneContrattiVocal/transformations/createRequest_LETTURA_CONTRATTI" : {
+            "label" : "Xquery/SiebelProject/GestioneContrattiVocal/transformations/createRequest_LETTURA_CONTRATTI",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/ApplicationObjects/SIEBEL/XSD/XSD_TUX_LETTURA_CONTRATTI" : {
+            "label" : "XMLSchema/MDW_CDM/ApplicationObjects/SIEBEL/XSD/XSD_TUX_LETTURA_CONTRATTI",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/GestioneContrattiVocal/wsdl/WS_WSC_GESTIONE_CONTRATTI_VOCAL" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/GestioneContrattiVocal/wsdl/WS_WSC_GESTIONE_CONTRATTI_VOCAL",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/GestioneContrattiVocal/xsd/XSD_WSC_GESTIONE_CONTRATTI_VOCAL" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/GestioneContrattiVocal/xsd/XSD_WSC_GESTIONE_CONTRATTI_VOCAL",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/GestioneClienti/xsd/XSD_WSC_GESTIONE_CLIENTI" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/GestioneClienti/xsd/XSD_WSC_GESTIONE_CLIENTI",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "Xquery/SiebelProject/GestioneContrattiVocal/transformations/createResponseGetContrattiVocal_GEST_CONTRATTI_VOCAL" : {
+            "label" : "Xquery/SiebelProject/GestioneContrattiVocal/transformations/createResponseGetContrattiVocal_GEST_CONTRATTI_VOCAL",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "ProxyService/SiebelProject/GestioneContrattiVocal/proxy/PS_LOCAL_LETTURA_CONTRATTI" : {
+            "label" : "ProxyService/SiebelProject/GestioneContrattiVocal/proxy/PS_LOCAL_LETTURA_CONTRATTI",
+            "properties" : {
+              "nodeType" : "ProxyService"
+            },
+            "successors" : {
+              "Pipeline/SiebelProject/GestioneContrattiVocal/pipeline/PL_INTERNAL_LETTURA_CONTRATTI" : {
+                "label" : "Pipeline/SiebelProject/GestioneContrattiVocal/pipeline/PL_INTERNAL_LETTURA_CONTRATTI",
+                "properties" : {
+                  "nodeType" : "Pipeline"
+                },
+                "successors" : {
+                  "BusinessService/SiebelProject/GestioneClienti/businessService/BS_TUX_LETTURA_CONTRATTI" : {
+                    "label" : "BusinessService/SiebelProject/GestioneClienti/businessService/BS_TUX_LETTURA_CONTRATTI",
+                    "properties" : {
+                      "nodeType" : "BusinessService"
+                    },
+                    "successors" : {
+                      "XMLSchema/MDW_CDM/ApplicationObjects/SIEBEL/XSD/XSD_TUX_LETTURA_CONTRATTI" : {
+                        "label" : "XMLSchema/MDW_CDM/ApplicationObjects/SIEBEL/XSD/XSD_TUX_LETTURA_CONTRATTI",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      },
+                      "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0" : {
+                        "label" : "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0",
+                        "properties" : {
+                          "nodeType" : "Archive"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "WSDL/MDW_CDM/ApplicationObjects/SIEBEL/WSDL/WS_SIE_LETTURA_CONTRATTI" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SIEBEL/WSDL/WS_SIE_LETTURA_CONTRATTI",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                    "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                    "properties" : {
+                      "nodeType" : "PipelineTemplate"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "WSDL/MDW_CDM/ApplicationObjects/SIEBEL/WSDL/WS_SIE_LETTURA_CONTRATTI" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/SIEBEL/WSDL/WS_SIE_LETTURA_CONTRATTI",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "BusinessService/ReitekProject/GestioneVocalOrder/businessService/BS_WS_GetVocalOrder" : {
+            "label" : "BusinessService/ReitekProject/GestioneVocalOrder/businessService/BS_WS_GetVocalOrder",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/ApplicationObjects/REITEK/VOCAL/ORDER/reitek_vocal" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/REITEK/VOCAL/ORDER/reitek_vocal",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_ITERATE_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_ITERATE_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/SiebelProject/GestioneContrattiVocal/transformations/createRequest_WS_GET_VOCAL_ORDER" : {
+            "label" : "Xquery/SiebelProject/GestioneContrattiVocal/transformations/createRequest_WS_GET_VOCAL_ORDER",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

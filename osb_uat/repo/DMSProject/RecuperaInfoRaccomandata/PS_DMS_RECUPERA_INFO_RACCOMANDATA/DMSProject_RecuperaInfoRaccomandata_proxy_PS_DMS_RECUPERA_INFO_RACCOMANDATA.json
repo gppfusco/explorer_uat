@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/dms/WS_DMS_RECUPERA_INFO_RACCOMANDATA",
+    "name" : "DMSProject_RecuperaInfoRaccomandata_proxy_PS_DMS_RECUPERA_INFO_RACCOMANDATA",
+    "remoteName" : "ProxyService/DMSProject/RecuperaInfoRaccomandata/proxy/PS_DMS_RECUPERA_INFO_RACCOMANDATA",
+    "localPath" : "osb_uat\\repo\\DMSProject\\RecuperaInfoRaccomandata\\PS_DMS_RECUPERA_INFO_RACCOMANDATA",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/dms/WS_DMS_RECUPERA_INFO_RACCOMANDATA?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/DMSProject/RecuperaInfoRaccomandata/xsd/XSD_RECUPERA_INFO_RACCOMANDATA",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

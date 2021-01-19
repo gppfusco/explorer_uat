@@ -1,0 +1,100 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/IBMSProject/ChangeAudienceProfile/proxy/PS_WS_CHANGE_AUDIENCE_PROFILE",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/IBMSProject/ChangeAudienceProfile/pipeline/PL_WS_CHANGE_AUDIENCE_PROFILE" : {
+        "label" : "Pipeline/IBMSProject/ChangeAudienceProfile/pipeline/PL_WS_CHANGE_AUDIENCE_PROFILE",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Xquery/IBMSProject/ChangeAudienceProfile/transformations/createRequestChangeAudienceProfile" : {
+            "label" : "Xquery/IBMSProject/ChangeAudienceProfile/transformations/createRequestChangeAudienceProfile",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "BusinessService/IBMSProject/ChangeAudienceProfile/businessServices/BS_WS_CHANGE_AUDIENCE_PROFILE" : {
+            "label" : "BusinessService/IBMSProject/ChangeAudienceProfile/businessServices/BS_WS_CHANGE_AUDIENCE_PROFILE",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/ApplicationObjects/IBMS/wsdl/WS_IBMS_ADSmartAudienceProfile" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/IBMS/wsdl/WS_IBMS_ADSmartAudienceProfile",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/IBMSProject/ChangeAudienceProfile/transformations/createResponseChangeAudienceProfile" : {
+            "label" : "Xquery/IBMSProject/ChangeAudienceProfile/transformations/createResponseChangeAudienceProfile",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/IBMSProject/ChangeAudienceProfile/wsdl/WS_CHANGE_AUDIENCE_PROFILE" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/IBMSProject/ChangeAudienceProfile/wsdl/WS_CHANGE_AUDIENCE_PROFILE",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/IBMSProject/ChangeAudienceProfile/xsd/XSD_CHANGE_AUDIENCE_PROFILE" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/IBMSProject/ChangeAudienceProfile/xsd/XSD_CHANGE_AUDIENCE_PROFILE",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/IBMSProject/ChangeAudienceProfile/wsdl/WS_CHANGE_AUDIENCE_PROFILE" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/IBMSProject/ChangeAudienceProfile/wsdl/WS_CHANGE_AUDIENCE_PROFILE",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/IBMSProject/ChangeAudienceProfile/xsd/XSD_CHANGE_AUDIENCE_PROFILE" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/IBMSProject/ChangeAudienceProfile/xsd/XSD_CHANGE_AUDIENCE_PROFILE",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

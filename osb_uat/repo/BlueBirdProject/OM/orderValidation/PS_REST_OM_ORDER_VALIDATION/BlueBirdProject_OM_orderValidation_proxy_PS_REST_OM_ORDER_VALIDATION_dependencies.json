@@ -1,0 +1,71 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/BlueBirdProject/OM/orderValidation/proxy/PS_REST_OM_ORDER_VALIDATION",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "WADL/BlueBirdProject/Resources/PS_REST_OM_ORDER_VALIDATION" : {
+        "label" : "WADL/BlueBirdProject/Resources/PS_REST_OM_ORDER_VALIDATION",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      },
+      "WSDL/BlueBirdProject/Resources/PS_REST_OM_ORDER_VALIDATION" : {
+        "label" : "WSDL/BlueBirdProject/Resources/PS_REST_OM_ORDER_VALIDATION",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/OrderValidation/xsd/XSD_OM_ORDER_VALIDATION" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/OrderValidation/xsd/XSD_OM_ORDER_VALIDATION",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/BlueBirdProject/OM/orderValidation/pipeline/PL_STUB" : {
+        "label" : "Pipeline/BlueBirdProject/OM/orderValidation/pipeline/PL_STUB",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/BlueBirdProject/Resources/PS_REST_OM_ORDER_VALIDATION" : {
+            "label" : "WSDL/BlueBirdProject/Resources/PS_REST_OM_ORDER_VALIDATION",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/OrderValidation/xsd/XSD_OM_ORDER_VALIDATION" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/OrderValidation/xsd/XSD_OM_ORDER_VALIDATION",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

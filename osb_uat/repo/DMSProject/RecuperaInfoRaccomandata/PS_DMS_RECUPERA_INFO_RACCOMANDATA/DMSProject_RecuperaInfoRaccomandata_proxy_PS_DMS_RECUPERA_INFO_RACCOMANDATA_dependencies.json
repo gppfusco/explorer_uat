@@ -1,0 +1,100 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/DMSProject/RecuperaInfoRaccomandata/proxy/PS_DMS_RECUPERA_INFO_RACCOMANDATA",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/DMSProject/RecuperaInfoRaccomandata/wsdl/WS_DMS_RECUPERA_INFO_RACCOMANDATA" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/DMSProject/RecuperaInfoRaccomandata/wsdl/WS_DMS_RECUPERA_INFO_RACCOMANDATA",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/DMSProject/RecuperaInfoRaccomandata/xsd/XSD_RECUPERA_INFO_RACCOMANDATA" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/DMSProject/RecuperaInfoRaccomandata/xsd/XSD_RECUPERA_INFO_RACCOMANDATA",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/DMSProject/RecuperaInfoRaccomandata/pipeline/PL_WS_DMS_RECUPERA_INFO_RACCOMANDATA" : {
+        "label" : "Pipeline/DMSProject/RecuperaInfoRaccomandata/pipeline/PL_WS_DMS_RECUPERA_INFO_RACCOMANDATA",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/MDW_CDM/EnterpriseServices/DMSProject/RecuperaInfoRaccomandata/wsdl/WS_DMS_RECUPERA_INFO_RACCOMANDATA" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/DMSProject/RecuperaInfoRaccomandata/wsdl/WS_DMS_RECUPERA_INFO_RACCOMANDATA",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/DMSProject/RecuperaInfoRaccomandata/xsd/XSD_RECUPERA_INFO_RACCOMANDATA" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/DMSProject/RecuperaInfoRaccomandata/xsd/XSD_RECUPERA_INFO_RACCOMANDATA",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/DMSProject/RecuperaInfoRaccomandata/transformation/createRequestRecuperaInfoRaccomandata" : {
+            "label" : "Xquery/DMSProject/RecuperaInfoRaccomandata/transformation/createRequestRecuperaInfoRaccomandata",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/DMSProject/RecuperaInfoRaccomandata/transformation/createResponseRecuperaInfoRaccomandata" : {
+            "label" : "Xquery/DMSProject/RecuperaInfoRaccomandata/transformation/createResponseRecuperaInfoRaccomandata",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "BusinessService/DMSProject/RecuperaInfoRaccomandata/businessServices/BS_WS_RECUPERA_INFO_RACCOMANDATA" : {
+            "label" : "BusinessService/DMSProject/RecuperaInfoRaccomandata/businessServices/BS_WS_RECUPERA_INFO_RACCOMANDATA",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/ApplicationObjects/DMS/RecuperaInfoRaccomandata/Corrispondenza/asmx" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/DMS/RecuperaInfoRaccomandata/Corrispondenza/asmx",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

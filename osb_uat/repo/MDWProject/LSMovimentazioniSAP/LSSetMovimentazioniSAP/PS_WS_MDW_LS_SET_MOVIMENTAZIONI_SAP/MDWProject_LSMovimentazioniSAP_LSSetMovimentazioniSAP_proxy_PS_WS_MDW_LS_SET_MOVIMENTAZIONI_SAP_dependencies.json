@@ -1,0 +1,107 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/MDWProject/LSMovimentazioniSAP/LSSetMovimentazioniSAP/proxy/PS_WS_MDW_LS_SET_MOVIMENTAZIONI_SAP",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/MDWProject/LSMovimentazioniSAP/LSSetMovimentazioniSAP/pipeline/PL_WS_MDW_LS_SET_MOVIMENTAZIONI_SAP" : {
+        "label" : "Pipeline/MDWProject/LSMovimentazioniSAP/LSSetMovimentazioniSAP/pipeline/PL_WS_MDW_LS_SET_MOVIMENTAZIONI_SAP",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/MDWProject/LSMovimentazioniSAP/LSSetMovimentazioniSAP/transformation/createRequest_BS_TUX_LS_SET_MOV_SAP" : {
+            "label" : "Xquery/MDWProject/LSMovimentazioniSAP/LSSetMovimentazioniSAP/transformation/createRequest_BS_TUX_LS_SET_MOV_SAP",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "BusinessService/MDWProject/LSMovimentazioniSAP/LSSetMovimentazioniSAP/businessService/BS_TUX_LS_SET_MOVIMENTAZIONI_SAP" : {
+            "label" : "BusinessService/MDWProject/LSMovimentazioniSAP/LSSetMovimentazioniSAP/businessService/BS_TUX_LS_SET_MOVIMENTAZIONI_SAP",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/ApplicationObjects/MDW/LSMovimentazioniSAP/LSSetMovimentazioniSAP/XSD_TUX_LS_SET_MOVIMENTAZIONI_SAP" : {
+                "label" : "XMLSchema/MDW_CDM/ApplicationObjects/MDW/LSMovimentazioniSAP/LSSetMovimentazioniSAP/XSD_TUX_LS_SET_MOVIMENTAZIONI_SAP",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0" : {
+                "label" : "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0",
+                "properties" : {
+                  "nodeType" : "Archive"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/MDWProject/LSMovimentazioniSAP/LSSetMovimentazioniSAP/transformation/createResponse_BS_TUX_LS_SET_MOV_SAP" : {
+            "label" : "Xquery/MDWProject/LSMovimentazioniSAP/LSSetMovimentazioniSAP/transformation/createResponse_BS_TUX_LS_SET_MOV_SAP",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/MDWProject/LSMovimentazioniSAP/LSSetMovimentazioniSAP/wsdl/WS_MDW_LS_SET_MOVIMENTAZIONI_SAP" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/MDWProject/LSMovimentazioniSAP/LSSetMovimentazioniSAP/wsdl/WS_MDW_LS_SET_MOVIMENTAZIONI_SAP",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/LSMovimentazioniSAP/LSSetMovimentazioniSAP/xsd/XSD_MDW_LS_SET_MOVIMENTAZIONI_SAP" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/LSMovimentazioniSAP/LSSetMovimentazioniSAP/xsd/XSD_MDW_LS_SET_MOVIMENTAZIONI_SAP",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/MDWProject/LSMovimentazioniSAP/LSSetMovimentazioniSAP/wsdl/WS_MDW_LS_SET_MOVIMENTAZIONI_SAP" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/MDWProject/LSMovimentazioniSAP/LSSetMovimentazioniSAP/wsdl/WS_MDW_LS_SET_MOVIMENTAZIONI_SAP",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/LSMovimentazioniSAP/LSSetMovimentazioniSAP/xsd/XSD_MDW_LS_SET_MOVIMENTAZIONI_SAP" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/LSMovimentazioniSAP/LSSetMovimentazioniSAP/xsd/XSD_MDW_LS_SET_MOVIMENTAZIONI_SAP",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

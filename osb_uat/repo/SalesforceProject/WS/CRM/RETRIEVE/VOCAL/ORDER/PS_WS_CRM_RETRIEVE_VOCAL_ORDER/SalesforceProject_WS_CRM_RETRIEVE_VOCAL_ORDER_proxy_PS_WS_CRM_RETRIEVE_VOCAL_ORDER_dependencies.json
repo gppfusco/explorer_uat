@@ -1,0 +1,107 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SalesforceProject/WS_CRM_RETRIEVE_VOCAL_ORDER/proxy/PS_WS_CRM_RETRIEVE_VOCAL_ORDER",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/SalesforceProject/WS_CRM_RETRIEVE_VOCAL_ORDER/pipeline/PL_WS_CRM_RETRIEVE_VOCAL_ORDER" : {
+        "label" : "Pipeline/SalesforceProject/WS_CRM_RETRIEVE_VOCAL_ORDER/pipeline/PL_WS_CRM_RETRIEVE_VOCAL_ORDER",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Xquery/SalesforceProject/WS_CRM_RETRIEVE_VOCAL_ORDER/transformation/createResponse_BS_PSSB_EJB_SF_RetrieveVocalOrder" : {
+            "label" : "Xquery/SalesforceProject/WS_CRM_RETRIEVE_VOCAL_ORDER/transformation/createResponse_BS_PSSB_EJB_SF_RetrieveVocalOrder",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF" : {
+            "label" : "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB" : {
+                "label" : "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB",
+                "properties" : {
+                  "nodeType" : "ForeignJNDIProvider"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/SalesforceProject/WS_CRM_RETRIEVE_VOCAL_ORDER/transformation/createRequest_BS_PSSB_EJB_SF_RetrieveVocalOrder" : {
+            "label" : "Xquery/SalesforceProject/WS_CRM_RETRIEVE_VOCAL_ORDER/transformation/createRequest_BS_PSSB_EJB_SF_RetrieveVocalOrder",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/RetrieveVocalOrder/wsdl/WS_CRM_RETRIEVE_VOCAL_ORDER" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/RetrieveVocalOrder/wsdl/WS_CRM_RETRIEVE_VOCAL_ORDER",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/RetrieveVocalOrder/xsd/XSD_CRM_RETRIEVE_VOCAL_ORDER" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/RetrieveVocalOrder/xsd/XSD_CRM_RETRIEVE_VOCAL_ORDER",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/RetrieveVocalOrder/wsdl/WS_CRM_RETRIEVE_VOCAL_ORDER" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/RetrieveVocalOrder/wsdl/WS_CRM_RETRIEVE_VOCAL_ORDER",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/RetrieveVocalOrder/xsd/XSD_CRM_RETRIEVE_VOCAL_ORDER" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/RetrieveVocalOrder/xsd/XSD_CRM_RETRIEVE_VOCAL_ORDER",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/mdw/cpq/v2/WS_CPQ_SELLING_CONFIRMATION",
+    "name" : "CPQProject_sellingConfirmation_v2_proxy_PS_WS_CPQ_SELLING_CONFIRMATION",
+    "remoteName" : "ProxyService/CPQProject/sellingConfirmation_v2/proxy/PS_WS_CPQ_SELLING_CONFIRMATION",
+    "localPath" : "osb_uat\\repo\\CPQProject\\sellingConfirmation\\v2\\PS_WS_CPQ_SELLING_CONFIRMATION",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/mdw/cpq/v2/WS_CPQ_SELLING_CONFIRMATION?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/CPQProject/SellingConfirmation_v2/xsd/XSD_CPQ_SELLING_CONFIRMATION",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

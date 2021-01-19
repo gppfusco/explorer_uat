@@ -1,0 +1,107 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/MRMProject/RollByHidden/proxy/PS_MRM_ROLL_BY_HIDDEN",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/MRMProject/RollByHidden/pipeline/PL_MRM_ROLL_BY_HIDDEN" : {
+        "label" : "Pipeline/MRMProject/RollByHidden/pipeline/PL_MRM_ROLL_BY_HIDDEN",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/MRMProject/RollByHidden/transformations/createRequestMRMRollByHidden" : {
+            "label" : "Xquery/MRMProject/RollByHidden/transformations/createRequestMRMRollByHidden",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/MRMProject/RollByHidden/wsdl/WS_MRM_ROLL_BY_HIDDEN" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/MRMProject/RollByHidden/wsdl/WS_MRM_ROLL_BY_HIDDEN",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/MRMProject/RollByHidden/xsd/XSD_MRM_ROLL_BY_HIDDEN" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MRMProject/RollByHidden/xsd/XSD_MRM_ROLL_BY_HIDDEN",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/MRMProject/RollByHidden/transformations/createResponseMRMRollByHidden" : {
+            "label" : "Xquery/MRMProject/RollByHidden/transformations/createResponseMRMRollByHidden",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "BusinessService/MRMProject/RollByHidden/businessService/BS_TUX_MRM_ROLL_BY_HIDDEN" : {
+            "label" : "BusinessService/MRMProject/RollByHidden/businessService/BS_TUX_MRM_ROLL_BY_HIDDEN",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/ApplicationObjects/MRM/RollByHidden/XSD_MRM_ROLL_BY_HIDDEN" : {
+                "label" : "XMLSchema/MDW_CDM/ApplicationObjects/MRM/RollByHidden/XSD_MRM_ROLL_BY_HIDDEN",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0" : {
+                "label" : "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0",
+                "properties" : {
+                  "nodeType" : "Archive"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/MRMProject/RollByHidden/wsdl/WS_MRM_ROLL_BY_HIDDEN" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/MRMProject/RollByHidden/wsdl/WS_MRM_ROLL_BY_HIDDEN",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/MRMProject/RollByHidden/xsd/XSD_MRM_ROLL_BY_HIDDEN" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MRMProject/RollByHidden/xsd/XSD_MRM_ROLL_BY_HIDDEN",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

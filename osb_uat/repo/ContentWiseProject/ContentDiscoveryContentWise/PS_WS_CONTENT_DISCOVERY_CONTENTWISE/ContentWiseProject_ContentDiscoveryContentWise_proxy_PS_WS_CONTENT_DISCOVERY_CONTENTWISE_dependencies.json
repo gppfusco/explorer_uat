@@ -1,0 +1,128 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/ContentWiseProject/ContentDiscoveryContentWise/proxy/PS_WS_CONTENT_DISCOVERY_CONTENTWISE",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/ContentWiseProject/ContentDiscoveryContentWise/pipeline/PL_WS_CONTENT_DISCOVERY_CONTENTWISE" : {
+        "label" : "Pipeline/ContentWiseProject/ContentDiscoveryContentWise/pipeline/PL_WS_CONTENT_DISCOVERY_CONTENTWISE",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Xquery/ContentWiseProject/ContentDiscoveryContentWise/transformations/createRequestContentWise" : {
+            "label" : "Xquery/ContentWiseProject/ContentDiscoveryContentWise/transformations/createRequestContentWise",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "BusinessService/ContentWiseProject/ContentDiscoveryContentWise/businessService/BS_REST_CONTENTWISE" : {
+            "label" : "BusinessService/ContentWiseProject/ContentDiscoveryContentWise/businessService/BS_REST_CONTENTWISE",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "WSDL/ContentWiseProject/Resources/BS_REST_CONTENTWISE" : {
+                "label" : "WSDL/ContentWiseProject/Resources/BS_REST_CONTENTWISE",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "WADL/ContentWiseProject/Resources/BS_REST_CONTENTWISE" : {
+                "label" : "WADL/ContentWiseProject/Resources/BS_REST_CONTENTWISE",
+                "properties" : {
+                  "nodeType" : "WADL"
+                },
+                "successors" : { }
+              },
+              "ServiceAccount/MDW_CDM/ServiceAccount/SA_ContentWise" : {
+                "label" : "ServiceAccount/MDW_CDM/ServiceAccount/SA_ContentWise",
+                "properties" : {
+                  "nodeType" : "ServiceAccount"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/ContentWiseProject/ContentDiscoveryContentWise/transformations/createRequestSwapSMC" : {
+            "label" : "Xquery/ContentWiseProject/ContentDiscoveryContentWise/transformations/createRequestSwapSMC",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/ContentWiseProject/ContentDiscoveryContentWise/transformations/createResponseSwapSMC" : {
+            "label" : "Xquery/ContentWiseProject/ContentDiscoveryContentWise/transformations/createResponseSwapSMC",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/ContentWiseProject/wsdl/WS_CONTENT_DISCOVERY_CONTENTWISE" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/ContentWiseProject/wsdl/WS_CONTENT_DISCOVERY_CONTENTWISE",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/ContentWiseProject/xsd/XSD_CONTENT_DISCOVERY_CONTENTWISE" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/ContentWiseProject/xsd/XSD_CONTENT_DISCOVERY_CONTENTWISE",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/ContentWiseProject/ContentDiscoveryContentWise/transformations/createResponseFromContentWise" : {
+            "label" : "Xquery/ContentWiseProject/ContentDiscoveryContentWise/transformations/createResponseFromContentWise",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/ContentWiseProject/wsdl/WS_CONTENT_DISCOVERY_CONTENTWISE" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/ContentWiseProject/wsdl/WS_CONTENT_DISCOVERY_CONTENTWISE",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/ContentWiseProject/xsd/XSD_CONTENT_DISCOVERY_CONTENTWISE" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/ContentWiseProject/xsd/XSD_CONTENT_DISCOVERY_CONTENTWISE",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

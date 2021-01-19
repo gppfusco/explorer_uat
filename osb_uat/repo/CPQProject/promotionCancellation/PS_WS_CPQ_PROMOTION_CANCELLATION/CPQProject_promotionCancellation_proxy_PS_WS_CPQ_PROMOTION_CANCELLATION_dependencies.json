@@ -1,0 +1,78 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/CPQProject/promotionCancellation/proxy/PS_WS_CPQ_PROMOTION_CANCELLATION",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/CPQProject/promotionCancellation/wsdl/WS_CPQ_PROMOTION_CANCELLATION" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/CPQProject/promotionCancellation/wsdl/WS_CPQ_PROMOTION_CANCELLATION",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/CPQProject/promotionCancellation/xsd/XSD_CPQ_PROMOTION_CANCELLATION" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/CPQProject/promotionCancellation/xsd/XSD_CPQ_PROMOTION_CANCELLATION",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/CPQProject/promotionCancellation/pipeline/PL_CPQ_PROMOTION_CANCELLATION_ENQUEUE" : {
+        "label" : "Pipeline/CPQProject/promotionCancellation/pipeline/PL_CPQ_PROMOTION_CANCELLATION_ENQUEUE",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "BusinessService/CPQProject/promotionCancellation/businessService/BS_JMS_CPQ_PROMOTION_CANCELLATION_ENQUEUE" : {
+            "label" : "BusinessService/CPQProject/promotionCancellation/businessService/BS_JMS_CPQ_PROMOTION_CANCELLATION_ENQUEUE",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/CPQProject/promotionCancellation/wsdl/WS_CPQ_PROMOTION_CANCELLATION" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/CPQProject/promotionCancellation/wsdl/WS_CPQ_PROMOTION_CANCELLATION",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/CPQProject/promotionCancellation/xsd/XSD_CPQ_PROMOTION_CANCELLATION" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/CPQProject/promotionCancellation/xsd/XSD_CPQ_PROMOTION_CANCELLATION",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_ASYNC_ENQUEUE_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_ASYNC_ENQUEUE_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

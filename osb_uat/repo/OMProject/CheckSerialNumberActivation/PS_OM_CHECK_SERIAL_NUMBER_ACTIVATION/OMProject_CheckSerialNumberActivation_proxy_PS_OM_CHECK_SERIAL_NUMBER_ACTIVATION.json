@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/om/WS_OM_CHECK_SERIAL_NUMBER_ACTIVATION",
+    "name" : "OMProject_CheckSerialNumberActivation_proxy_PS_OM_CHECK_SERIAL_NUMBER_ACTIVATION",
+    "remoteName" : "ProxyService/OMProject/CheckSerialNumberActivation/proxy/PS_OM_CHECK_SERIAL_NUMBER_ACTIVATION",
+    "localPath" : "osb_uat\\repo\\OMProject\\CheckSerialNumberActivation\\PS_OM_CHECK_SERIAL_NUMBER_ACTIVATION",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/om/WS_OM_CHECK_SERIAL_NUMBER_ACTIVATION?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/OMProject/CheckSerialNumberActivation/xsd/XSD_OM_CHECK_SERIAL_NUMBER_ACTIVATION",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

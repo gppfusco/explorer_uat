@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/scms/WS_SCMS_ETHAN_OTT",
+    "name" : "SCMSproject_proxy_PS_WS_SCMS_ETHAN_OTT",
+    "remoteName" : "ProxyService/SCMSproject/proxy/PS_WS_SCMS_ETHAN_OTT",
+    "localPath" : "osb_uat\\repo\\SCMSproject\\PS_WS_SCMS_ETHAN_OTT",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/scms/WS_SCMS_ETHAN_OTT?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SCMSproject/EthanOTT/xsd/XSD_SCMS_ETHAN_OTT",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

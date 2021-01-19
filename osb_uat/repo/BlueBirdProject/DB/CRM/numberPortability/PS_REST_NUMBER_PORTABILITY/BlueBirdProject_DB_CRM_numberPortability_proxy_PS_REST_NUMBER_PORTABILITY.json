@@ -1,0 +1,34 @@
+{
+  "RestApi" : {
+    "type" : "REST",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/mdw/portabilityNumbers",
+    "name" : "BlueBirdProject_DB_CRM_numberPortability_proxy_PS_REST_NUMBER_PORTABILITY",
+    "remoteName" : "ProxyService/BlueBirdProject/DB_CRM/numberPortability/proxy/PS_REST_NUMBER_PORTABILITY",
+    "localPath" : "osb_uat\\repo\\BlueBirdProject\\DB\\CRM\\numberPortability\\PS_REST_NUMBER_PORTABILITY",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/mdw/portabilityNumbers?WADL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/numberPortability/xsd/XSD_MDW_NUMBER_PORTABILITY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ],
+      "soapApiSpec" : {
+        "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e",
+        "xsdSchemas" : [ {
+          "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        }, {
+          "xsdPath" : "/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/numberPortability/xsd/XSD_MDW_NUMBER_PORTABILITY",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        } ]
+      }
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

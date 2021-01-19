@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/siebel/WS_CRM_GET_PACCHETTI_RETENTION",
+    "name" : "SiebelProject_proxy_PS_WS_CRM_GET_PACCHETTI_RETENTION",
+    "remoteName" : "ProxyService/SiebelProject/proxy/PS_WS_CRM_GET_PACCHETTI_RETENTION",
+    "localPath" : "osb_uat\\repo\\SiebelProject\\PS_WS_CRM_GET_PACCHETTI_RETENTION",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/siebel/WS_CRM_GET_PACCHETTI_RETENTION?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SiebelProject/GetPacchettiRetention/xsd/XSD_CRM_GET_PACCHETTI_RETENTION",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

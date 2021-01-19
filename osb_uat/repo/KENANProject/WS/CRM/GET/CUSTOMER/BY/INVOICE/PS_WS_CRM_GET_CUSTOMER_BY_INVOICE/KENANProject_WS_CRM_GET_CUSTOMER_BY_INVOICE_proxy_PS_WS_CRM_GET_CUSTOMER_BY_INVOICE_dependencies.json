@@ -1,0 +1,107 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/KENANProject/WS_CRM_GET_CUSTOMER_BY_INVOICE/proxy/PS_WS_CRM_GET_CUSTOMER_BY_INVOICE",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/KenanProject/GetCustomerByInvoice/wsdl/WS_CRM_GET_CUSTOMER_BY_INVOICE" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/KenanProject/GetCustomerByInvoice/wsdl/WS_CRM_GET_CUSTOMER_BY_INVOICE",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/GetCustomerByInvoice/xsd/XSD_CRM_GET_CUSTOMER_BY_INVOICE" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/GetCustomerByInvoice/xsd/XSD_CRM_GET_CUSTOMER_BY_INVOICE",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/KENANProject/WS_CRM_GET_CUSTOMER_BY_INVOICE/pipeline/PL_CRM_GET_CUSTOMER_BY_INVOICE" : {
+        "label" : "Pipeline/KENANProject/WS_CRM_GET_CUSTOMER_BY_INVOICE/pipeline/PL_CRM_GET_CUSTOMER_BY_INVOICE",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Xquery/KENANProject/WS_CRM_GET_CUSTOMER_BY_INVOICE/transformations/createRequestGetCustomerByInvoice" : {
+            "label" : "Xquery/KENANProject/WS_CRM_GET_CUSTOMER_BY_INVOICE/transformations/createRequestGetCustomerByInvoice",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/KenanProject/GetCustomerByInvoice/wsdl/WS_CRM_GET_CUSTOMER_BY_INVOICE" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/KenanProject/GetCustomerByInvoice/wsdl/WS_CRM_GET_CUSTOMER_BY_INVOICE",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/GetCustomerByInvoice/xsd/XSD_CRM_GET_CUSTOMER_BY_INVOICE" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/GetCustomerByInvoice/xsd/XSD_CRM_GET_CUSTOMER_BY_INVOICE",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "BusinessService/KENANProject/WS_CRM_GET_CUSTOMER_BY_INVOICE/businessService/BS_SQL_KNN_GET_CUSTOMER_BY_INVOICE" : {
+            "label" : "BusinessService/KENANProject/WS_CRM_GET_CUSTOMER_BY_INVOICE/businessService/BS_SQL_KNN_GET_CUSTOMER_BY_INVOICE",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "WSDL/KENANProject/Resources/BS_SQL_KNN_GET_CUSTOMER_BY_INVOICE/concrete" : {
+                "label" : "WSDL/KENANProject/Resources/BS_SQL_KNN_GET_CUSTOMER_BY_INVOICE/concrete",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "JCA/KENANProject/Resources/BS_SQL_KNN_GET_CUSTOMER_BY_INVOICE_db" : {
+                "label" : "JCA/KENANProject/Resources/BS_SQL_KNN_GET_CUSTOMER_BY_INVOICE_db",
+                "properties" : {
+                  "nodeType" : "JCA"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/KENANProject/WS_CRM_GET_CUSTOMER_BY_INVOICE/transformations/createResponseGetCustomerByInvoice" : {
+            "label" : "Xquery/KENANProject/WS_CRM_GET_CUSTOMER_BY_INVOICE/transformations/createResponseGetCustomerByInvoice",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

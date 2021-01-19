@@ -1,0 +1,151 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/BlueBirdProject/SALESFORCE/publicCustomerData/proxy/PS_REST_SF_GET_CUSTOMER_DATA",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "WADL/BlueBirdProject/Resources/PS_REST_SF_GET_CUSTOMER_DATA" : {
+        "label" : "WADL/BlueBirdProject/Resources/PS_REST_SF_GET_CUSTOMER_DATA",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      },
+      "WSDL/BlueBirdProject/Resources/PS_REST_SF_GET_CUSTOMER_DATA" : {
+        "label" : "WSDL/BlueBirdProject/Resources/PS_REST_SF_GET_CUSTOMER_DATA",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/publicCustomerData/xsd/XSD_SF_GET_CUSTOMER_DATA" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/publicCustomerData/xsd/XSD_SF_GET_CUSTOMER_DATA",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/BlueBirdProject/SALESFORCE/publicCustomerData/pipeline/PL_REST_SF_GET_CUSTOMER_DATA" : {
+        "label" : "Pipeline/BlueBirdProject/SALESFORCE/publicCustomerData/pipeline/PL_REST_SF_GET_CUSTOMER_DATA",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/BlueBirdProject/Resources/PS_REST_SF_GET_CUSTOMER_DATA" : {
+            "label" : "WSDL/BlueBirdProject/Resources/PS_REST_SF_GET_CUSTOMER_DATA",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/publicCustomerData/xsd/XSD_SF_GET_CUSTOMER_DATA" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/publicCustomerData/xsd/XSD_SF_GET_CUSTOMER_DATA",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "ProxyService/SalesforceProject/proxy/Local/PS_LOCAL_STD_API" : {
+            "label" : "ProxyService/SalesforceProject/proxy/Local/PS_LOCAL_STD_API",
+            "properties" : {
+              "nodeType" : "ProxyService"
+            },
+            "successors" : {
+              "Pipeline/SalesforceProject/pipeline/PL_SF_STD_API_INTERNAL" : {
+                "label" : "Pipeline/SalesforceProject/pipeline/PL_SF_STD_API_INTERNAL",
+                "properties" : {
+                  "nodeType" : "Pipeline"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF" : {
+                    "label" : "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF",
+                    "properties" : {
+                      "nodeType" : "BusinessService"
+                    },
+                    "successors" : {
+                      "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB" : {
+                        "label" : "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB",
+                        "properties" : {
+                          "nodeType" : "ForeignJNDIProvider"
+                        },
+                        "successors" : { }
+                      },
+                      "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF" : {
+                        "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                    "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                    "properties" : {
+                      "nodeType" : "PipelineTemplate"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/WS_DIRECT_SF_EJB" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/WS_DIRECT_SF_EJB",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/BlueBirdProject/SALESFORCE/publicCustomerData/tranformations/createRequest_PublicCustomerData" : {
+            "label" : "Xquery/BlueBirdProject/SALESFORCE/publicCustomerData/tranformations/createRequest_PublicCustomerData",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/BlueBirdProject/SALESFORCE/publicCustomerData/tranformations/createResponse_PublicCustomerData" : {
+            "label" : "Xquery/BlueBirdProject/SALESFORCE/publicCustomerData/tranformations/createResponse_PublicCustomerData",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

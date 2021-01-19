@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/mdw/sf/WS_SF_CONTRACT_INFO",
+    "name" : "BlueBirdProject_SALESFORCE_contractInfo_proxy_PS_WS_SF_CONTRACT_INFO",
+    "remoteName" : "ProxyService/BlueBirdProject/SALESFORCE/contractInfo/proxy/PS_WS_SF_CONTRACT_INFO",
+    "localPath" : "osb_uat\\repo\\BlueBirdProject\\SALESFORCE\\contractInfo\\PS_WS_SF_CONTRACT_INFO",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/mdw/sf/WS_SF_CONTRACT_INFO?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/contractInfo/xsd/XSD_SF_CONTRACT_INFO",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

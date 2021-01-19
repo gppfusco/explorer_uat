@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/sap/WS_SAP_PORTALE_BOOKING_HOTEL",
+    "name" : "SAPProject_PortaleBookingHotel_proxy_PS_WS_SAP_PORTALE_BOOKING_HOTEL",
+    "remoteName" : "ProxyService/SAPProject/PortaleBookingHotel/proxy/PS_WS_SAP_PORTALE_BOOKING_HOTEL",
+    "localPath" : "osb_uat\\repo\\SAPProject\\PortaleBookingHotel\\PS_WS_SAP_PORTALE_BOOKING_HOTEL",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/sap/WS_SAP_PORTALE_BOOKING_HOTEL?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SAPProject/PortaleBookingHotel/xsd/XSD_SAP_PORTALE_BOOKING_HOTEL",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

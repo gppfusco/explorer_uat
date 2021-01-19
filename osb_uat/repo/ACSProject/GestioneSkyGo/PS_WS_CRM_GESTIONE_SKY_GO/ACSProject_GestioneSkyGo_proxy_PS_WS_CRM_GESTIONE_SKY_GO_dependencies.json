@@ -1,0 +1,216 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/ACSProject/GestioneSkyGo/proxy/PS_WS_CRM_GESTIONE_SKY_GO",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/ACSProject/GestioneSkyGo/wsdl/WS_CRM_GESTIONE_SKY_GO" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/ACSProject/GestioneSkyGo/wsdl/WS_CRM_GESTIONE_SKY_GO",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/ACSProject/GestioneSkyGo/xsd/XSD_CRM_GESTIONE_SKY_GO" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/ACSProject/GestioneSkyGo/xsd/XSD_CRM_GESTIONE_SKY_GO",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/ACSProject/GestioneSkyGo/pipeline/PL_WS_ACS_GESTIONE_SKY_GO" : {
+        "label" : "Pipeline/ACSProject/GestioneSkyGo/pipeline/PL_WS_ACS_GESTIONE_SKY_GO",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Xquery/ACSProject/GestioneSkyGo/transformation/createResponse_WS_ResetCustomerPin" : {
+            "label" : "Xquery/ACSProject/GestioneSkyGo/transformation/createResponse_WS_ResetCustomerPin",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_N_OPERATIONS_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_N_OPERATIONS_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "BusinessService/ACSProject/GestioneSkyGo/businessService/BS_WS_RESET_COUNTER_ADD_DEV" : {
+            "label" : "BusinessService/ACSProject/GestioneSkyGo/businessService/BS_WS_RESET_COUNTER_ADD_DEV",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/ApplicationObjects/ACS/GestioneSkyGo/wsdl/ResetCounterAddDev" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/ACS/GestioneSkyGo/wsdl/ResetCounterAddDev",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/ACSProject/GestioneSkyGo/transformation/createRequest_BS_WS_RESET_PIN_DEVICE" : {
+            "label" : "Xquery/ACSProject/GestioneSkyGo/transformation/createRequest_BS_WS_RESET_PIN_DEVICE",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/ACSProject/GestioneSkyGo/transformation/createResponse_WS_GetDevice" : {
+            "label" : "Xquery/ACSProject/GestioneSkyGo/transformation/createResponse_WS_GetDevice",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/ACSProject/GestioneSkyGo/transformation/createResponse_WS_ResetCounterDevice" : {
+            "label" : "Xquery/ACSProject/GestioneSkyGo/transformation/createResponse_WS_ResetCounterDevice",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "BusinessService/ACSProject/GestioneSkyGo/businessService/BS_WS_GET_DEVICE" : {
+            "label" : "BusinessService/ACSProject/GestioneSkyGo/businessService/BS_WS_GET_DEVICE",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/ApplicationObjects/ACS/GestioneSkyGo/wsdl/QryDev" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/ACS/GestioneSkyGo/wsdl/QryDev",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "BusinessService/ACSProject/GestioneSkyGo/businessService/BS_WS_RESET_CUSTOMER_PIN" : {
+            "label" : "BusinessService/ACSProject/GestioneSkyGo/businessService/BS_WS_RESET_CUSTOMER_PIN",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/ApplicationObjects/ACS/GestioneSkyGo/wsdl/SkyOnSsoService" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/ACS/GestioneSkyGo/wsdl/SkyOnSsoService",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/ACSProject/GestioneSkyGo/transformation/createResponse_WS_ResetPinDevice" : {
+            "label" : "Xquery/ACSProject/GestioneSkyGo/transformation/createResponse_WS_ResetPinDevice",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/ACSProject/GestioneSkyGo/transformation/createRequest_BS_WS_RESET_DEVICE" : {
+            "label" : "Xquery/ACSProject/GestioneSkyGo/transformation/createRequest_BS_WS_RESET_DEVICE",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/ACSProject/GestioneSkyGo/wsdl/WS_CRM_GESTIONE_SKY_GO" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/ACSProject/GestioneSkyGo/wsdl/WS_CRM_GESTIONE_SKY_GO",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/ACSProject/GestioneSkyGo/xsd/XSD_CRM_GESTIONE_SKY_GO" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/ACSProject/GestioneSkyGo/xsd/XSD_CRM_GESTIONE_SKY_GO",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "BusinessService/ACSProject/GestioneSkyGo/businessService/BS_WS_RESET_PIN_DEVICE" : {
+            "label" : "BusinessService/ACSProject/GestioneSkyGo/businessService/BS_WS_RESET_PIN_DEVICE",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/ApplicationObjects/ACS/GestioneSkyGo/wsdl/ResetDevice" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/ACS/GestioneSkyGo/wsdl/ResetDevice",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "BusinessService/ACSProject/GestioneSkyGo/businessService/BS_WS_RESET_DEVICE" : {
+            "label" : "BusinessService/ACSProject/GestioneSkyGo/businessService/BS_WS_RESET_DEVICE",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/ApplicationObjects/ACS/GestioneSkyGo/wsdl/RemDev" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/ACS/GestioneSkyGo/wsdl/RemDev",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/ACSProject/GestioneSkyGo/transformation/createRequest_BS_WS_GET_DEVICE" : {
+            "label" : "Xquery/ACSProject/GestioneSkyGo/transformation/createRequest_BS_WS_GET_DEVICE",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/ACSProject/GestioneSkyGo/transformation/createRequest_BS_WS_RESET_CUSTOMER_PIN" : {
+            "label" : "Xquery/ACSProject/GestioneSkyGo/transformation/createRequest_BS_WS_RESET_CUSTOMER_PIN",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/ACSProject/GestioneSkyGo/transformation/createResponse_WS_ResetDevice" : {
+            "label" : "Xquery/ACSProject/GestioneSkyGo/transformation/createResponse_WS_ResetDevice",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/ACSProject/GestioneSkyGo/transformation/createRequest_BS_WS_RESET_COUNTER_ADD_DEV" : {
+            "label" : "Xquery/ACSProject/GestioneSkyGo/transformation/createRequest_BS_WS_RESET_COUNTER_ADD_DEV",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/salesforce/WS_SF_SBL_EXTRACT_CUSTOMER_DATA",
+    "name" : "SalesforceProject_WS_SF_SBL_EXTRACT_CUSTOMER_DATA_proxy_PS_WS_SF_SBL_EXTRACT_CUSTOMER_DATA",
+    "remoteName" : "ProxyService/SalesforceProject/WS_SF_SBL_EXTRACT_CUSTOMER_DATA/proxy/PS_WS_SF_SBL_EXTRACT_CUSTOMER_DATA",
+    "localPath" : "osb_uat\\repo\\SalesforceProject\\WS\\SF\\SBL\\EXTRACT\\CUSTOMER\\DATA\\PS_WS_SF_SBL_EXTRACT_CUSTOMER_DATA",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/salesforce/WS_SF_SBL_EXTRACT_CUSTOMER_DATA?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SalesforceProject/SF_SBL_ExtractCustomerData/xsd/XSD_SF_SBL_EXTRACT_CUSTOMER_DATA",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

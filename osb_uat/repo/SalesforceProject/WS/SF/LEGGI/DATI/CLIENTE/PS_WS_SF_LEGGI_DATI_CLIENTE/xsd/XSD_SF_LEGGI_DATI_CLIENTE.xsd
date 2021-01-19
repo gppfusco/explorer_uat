@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+  xmlns="http://www.skytv.it/mdw/data"
+  targetNamespace="http://www.skytv.it/mdw/data" 
+  elementFormDefault="qualified">
+    <!-- ELEMENTS -->
+  <xsd:element name="requestLeggiDatiClienteSF" type="requestLeggiDatiClienteSFType"/>
+  <xsd:element name="responseLeggiDatiClienteSF" type="responseLeggiDatiClienteSFType"/>
+
+  <xsd:complexType name="requestLeggiDatiClienteSFType">
+    <xsd:sequence>
+      <xsd:element name="custId" maxOccurs="1" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+
+  <xsd:complexType name="responseLeggiDatiClienteSFType">
+    <xsd:sequence>
+      <xsd:element name="Esito" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="DescrizioneEsito" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="Tid" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="Result" minOccurs="0">
+        <xsd:complexType>
+          <xsd:sequence>
+          <!-- parte aggiunta ACCOUNT-->
+            <xsd:element name="Account">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="custStatFlg" type="xsd:string"/>       
+                  <xsd:element name="custNewTechFlg" type="xsd:string"/>
+                  <xsd:element name="custFavAnalisysFlg" type="xsd:string"/>
+                  <xsd:element name="custAnywhereFlg" type="xsd:string"/>
+                  <xsd:element name="custStatus" type="xsd:string"/>
+                  <xsd:element name="custTCFlg" type="xsd:string"/>
+                  <xsd:element name="custCategory" type="xsd:string"/>
+                  <xsd:element name="custProprietorshipName" type="xsd:string"/>
+                  <xsd:element name="custSkyGoDataFlg" type="xsd:string"/>
+                  <xsd:element name="custKidsAppFlg" type="xsd:string"/>
+                  <xsd:element name="custCondKidsApp" type="xsd:string"/>
+                  <xsd:element name="custSkyExtraFlg" type="xsd:string"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          <!-- parte aggiunta CONTACT-->
+            <xsd:element name="Contact">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="contactFirstName" type="xsd:string"/>
+                  <xsd:element name="contactLastName" type="xsd:string"/>
+                  <xsd:element name="contactFiscalCode" type="xsd:string"/>
+                  <xsd:element name="contactPhone" type="xsd:string"/>
+                  <xsd:element name="contactOtherPhone" type="xsd:string"/>
+                  <xsd:element name="contactBusinessFax" type="xsd:string"/>
+                  <xsd:element name="contactMobilePhone" type="xsd:string"/>
+                  <xsd:element name="contactEmail" type="xsd:string"/>
+                  <xsd:element name="contactDocNumber" type="xsd:string"/>
+                  <xsd:element name="contactEnteRilascioDoc" type="xsd:string"/>
+                  <xsd:element name="contactDocRelDate" type="xsd:string"/>
+                  <xsd:element name="contactDocProv" type="xsd:string"/>
+                  <xsd:element name="contactDocCity" type="xsd:string"/>
+                  <xsd:element name="contactDocNation" type="xsd:string"/>
+                  <xsd:element name="contactBirthDate" type="xsd:string"/>
+                  <xsd:element name="contactBirthCity" type="xsd:string"/>
+                  <xsd:element name="contactDocType" type="xsd:string"/>
+                  <xsd:element name="contactBirthProv" type="xsd:string"/>
+                  <xsd:element name="contactGender" type="xsd:string"/>
+                  <xsd:element name="contactCoerenzaNomeCognomeCF" type="xsd:string"/>
+                  
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+
+            <xsd:element name="Contracts" maxOccurs="1">
+              <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="Contract"  minOccurs="0" maxOccurs="unbounded">
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="contrId" type="xsd:string"/>
+                      <xsd:element name="contrStatus" type="xsd:string"/>
+                      <xsd:element name="contrRequiredCeaseDate" type="xsd:string"/>
+                      <xsd:element name="contrTbyStatus" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+                </xsd:element>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+
+          </xsd:sequence>
+        </xsd:complexType>
+     </xsd:element>
+
+    </xsd:sequence>
+  </xsd:complexType>
+  </xsd:schema>

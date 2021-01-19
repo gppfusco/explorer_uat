@@ -1,0 +1,34 @@
+{
+  "RestApi" : {
+    "type" : "REST",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/mdw/spy/identitydocument/verifyID",
+    "name" : "BlueBirdProject_SPY_verifyIdentityDocument_proxy_PS_REST_SPY_VERIFY_IDENTITY_DOCUMENT",
+    "remoteName" : "ProxyService/BlueBirdProject/SPY/verifyIdentityDocument/proxy/PS_REST_SPY_VERIFY_IDENTITY_DOCUMENT",
+    "localPath" : "osb_uat\\repo\\BlueBirdProject\\SPY\\verifyIdentityDocument\\PS_REST_SPY_VERIFY_IDENTITY_DOCUMENT",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/mdw/spy/identitydocument/verifyID?WADL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "MDW_CDM/EnterpriseServices/BlueBirdProject/SPY/verifyIdentityDocument/xsd/XSD_SPY_VERIFY_IDENTITY_DOCUMENT",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ],
+      "soapApiSpec" : {
+        "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e",
+        "xsdSchemas" : [ {
+          "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        }, {
+          "xsdPath" : "/MDW_CDM/EnterpriseServices/BlueBirdProject/SPY/verifyIdentityDocument/xsd/XSD_SPY_VERIFY_IDENTITY_DOCUMENT",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        } ]
+      }
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

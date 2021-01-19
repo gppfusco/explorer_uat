@@ -1,0 +1,114 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SalesforceProject/REST_CRM_CANALE_SOTTOSCRIZIONE/proxy/PS_REST_CRM_CANALE_SOTTOSCRIZIONE",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "WSDL/SalesforceProject/Resources/PS_REST_CRM_CANALE_SOTTOSCRIZIONE" : {
+        "label" : "WSDL/SalesforceProject/Resources/PS_REST_CRM_CANALE_SOTTOSCRIZIONE",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/CanaleSottoscrizione/xsd/XSD_CRM_CANALE_SOTTOSCRIZIONE" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/CanaleSottoscrizione/xsd/XSD_CRM_CANALE_SOTTOSCRIZIONE",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WADL/SalesforceProject/Resources/PS_REST_CRM_CANALE_SOTTOSCRIZIONE" : {
+        "label" : "WADL/SalesforceProject/Resources/PS_REST_CRM_CANALE_SOTTOSCRIZIONE",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      },
+      "Pipeline/SalesforceProject/REST_CRM_CANALE_SOTTOSCRIZIONE/pipeline/PL_CRM_CANALE_SOTTOSCRIZIONE" : {
+        "label" : "Pipeline/SalesforceProject/REST_CRM_CANALE_SOTTOSCRIZIONE/pipeline/PL_CRM_CANALE_SOTTOSCRIZIONE",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/SalesforceProject/Resources/PS_REST_CRM_CANALE_SOTTOSCRIZIONE" : {
+            "label" : "WSDL/SalesforceProject/Resources/PS_REST_CRM_CANALE_SOTTOSCRIZIONE",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/CanaleSottoscrizione/xsd/XSD_CRM_CANALE_SOTTOSCRIZIONE" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/CanaleSottoscrizione/xsd/XSD_CRM_CANALE_SOTTOSCRIZIONE",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/SalesforceProject/REST_CRM_CANALE_SOTTOSCRIZIONE/trasformation/createRequestCanaleSottoscrizione" : {
+            "label" : "Xquery/SalesforceProject/REST_CRM_CANALE_SOTTOSCRIZIONE/trasformation/createRequestCanaleSottoscrizione",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF" : {
+            "label" : "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB" : {
+                "label" : "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB",
+                "properties" : {
+                  "nodeType" : "ForeignJNDIProvider"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/SalesforceProject/REST_CRM_CANALE_SOTTOSCRIZIONE/trasformation/createResponseCanaleSottoscrizione" : {
+            "label" : "Xquery/SalesforceProject/REST_CRM_CANALE_SOTTOSCRIZIONE/trasformation/createResponseCanaleSottoscrizione",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

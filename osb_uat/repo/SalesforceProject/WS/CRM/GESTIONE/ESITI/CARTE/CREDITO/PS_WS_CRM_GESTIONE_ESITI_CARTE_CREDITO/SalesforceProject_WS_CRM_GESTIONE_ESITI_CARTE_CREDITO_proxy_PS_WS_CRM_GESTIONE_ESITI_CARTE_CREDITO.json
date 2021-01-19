@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/salesforce/WS_CRM_GESTIONE_ESITI_CARTE_CREDITO",
+    "name" : "SalesforceProject_WS_CRM_GESTIONE_ESITI_CARTE_CREDITO_proxy_PS_WS_CRM_GESTIONE_ESITI_CARTE_CREDITO",
+    "remoteName" : "ProxyService/SalesforceProject/WS_CRM_GESTIONE_ESITI_CARTE_CREDITO/proxy/PS_WS_CRM_GESTIONE_ESITI_CARTE_CREDITO",
+    "localPath" : "osb_uat\\repo\\SalesforceProject\\WS\\CRM\\GESTIONE\\ESITI\\CARTE\\CREDITO\\PS_WS_CRM_GESTIONE_ESITI_CARTE_CREDITO",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/salesforce/WS_CRM_GESTIONE_ESITI_CARTE_CREDITO?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneEsitiCarteCredito/xsd/XSD_CRM_GESTIONE_ESITI_CARTE_CREDITO",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

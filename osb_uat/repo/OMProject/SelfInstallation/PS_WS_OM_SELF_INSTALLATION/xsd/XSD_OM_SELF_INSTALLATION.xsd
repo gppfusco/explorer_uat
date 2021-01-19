@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.skytv.it/mdw/data" targetNamespace="http://www.skytv.it/mdw/data" elementFormDefault="qualified">
+	<xsd:element name="requestActivationContract" type="requestActivationContractType"/>
+	<xsd:element name="responseActivationContract" type="responseActivationContractType"/>
+	<xsd:complexType name="requestActivationContractType">
+		<xsd:sequence>
+			<xsd:element name="orderNumber" type="xsd:string"/>
+			<xsd:element name="serialSMC" type="xsd:string"/> 
+			<xsd:element name="serialSTB" type="xsd:string"/>
+			<xsd:element name="operation" type="operationType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="responseActivationContractType">
+		<xsd:sequence>
+			<xsd:element name="resultCode" type="xsd:string" minOccurs="1"/>
+			<xsd:element name="resultDescription" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="operationType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="ACTIVATION"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

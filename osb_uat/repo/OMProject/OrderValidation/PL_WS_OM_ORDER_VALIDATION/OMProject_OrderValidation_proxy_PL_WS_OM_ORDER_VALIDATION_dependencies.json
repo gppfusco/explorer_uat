@@ -1,0 +1,107 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/OMProject/OrderValidation/proxy/PL_WS_OM_ORDER_VALIDATION",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/OMProject/OrderValidation/wsdl/WS_OM_ORDER_VALIDATION" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/OMProject/OrderValidation/wsdl/WS_OM_ORDER_VALIDATION",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/OrderValidation/xsd/XSD_OM_ORDER_VALIDATION" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/OrderValidation/xsd/XSD_OM_ORDER_VALIDATION",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/OMProject/OrderValidation/pipeline/PL_WS_OM_ORDER_VALIDATION" : {
+        "label" : "Pipeline/OMProject/OrderValidation/pipeline/PL_WS_OM_ORDER_VALIDATION",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "BusinessService/OMProject/OrderValidation/businessServices/BS_SQL_OM_ORDER_VALIDATION_PROCEDURA" : {
+            "label" : "BusinessService/OMProject/OrderValidation/businessServices/BS_SQL_OM_ORDER_VALIDATION_PROCEDURA",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "WSDL/OMProject/Resources/BS_SQL_OM_ORDER_VALIDATION_PROCEDURA/concrete" : {
+                "label" : "WSDL/OMProject/Resources/BS_SQL_OM_ORDER_VALIDATION_PROCEDURA/concrete",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "JCA/OMProject/Resources/BS_SQL_OM_ORDER_VALIDATION_PROCEDURA_db" : {
+                "label" : "JCA/OMProject/Resources/BS_SQL_OM_ORDER_VALIDATION_PROCEDURA_db",
+                "properties" : {
+                  "nodeType" : "JCA"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/OMProject/OrderValidation/wsdl/WS_OM_ORDER_VALIDATION" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/OMProject/OrderValidation/wsdl/WS_OM_ORDER_VALIDATION",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/OrderValidation/xsd/XSD_OM_ORDER_VALIDATION" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/OrderValidation/xsd/XSD_OM_ORDER_VALIDATION",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/OMProject/OrderValidation/transformations/createResponse_OrderValidationProcedura" : {
+            "label" : "Xquery/OMProject/OrderValidation/transformations/createResponse_OrderValidationProcedura",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/OMProject/OrderValidation/transformations/createRequest_OrderValidationProcedura" : {
+            "label" : "Xquery/OMProject/OrderValidation/transformations/createRequest_OrderValidationProcedura",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

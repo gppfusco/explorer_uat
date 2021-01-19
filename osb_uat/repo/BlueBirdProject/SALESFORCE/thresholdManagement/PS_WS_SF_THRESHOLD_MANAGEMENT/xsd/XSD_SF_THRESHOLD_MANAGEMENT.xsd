@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.skytv.it/mdw/data" targetNamespace="http://www.skytv.it/mdw/data" elementFormDefault="qualified">
+	<xs:element name="requestUpdateAlertNotification" type="requestUpdateAlertNotificationType"/>
+	<xs:element name="responseUpdateAlertNotification" type="responseUpdateAlertNotificationType"/>
+	<xs:complexType name="requestUpdateAlertNotificationType">
+		<xs:sequence>
+			<xs:element name="assetId" type="xs:string"/>
+			<xs:element name="exceededThresholdDate" type="xs:date"/>
+			<xs:element name="exceededThresholdType" type="xs:string"/>
+			<xs:element name="sendTranscomm" type="xs:string"/>
+			<xs:element name="orderNumber" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="responseUpdateAlertNotificationType">
+		<xs:sequence>
+			<xs:element name="resultCode" type="xs:string"/>
+			<xs:element name="resultDescription" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,122 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/BlueBirdProject/DMS/Appointment/proxy/PS_WS_DMS_APPOINTMENT",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/DMS/addAppointment/wsdl/WS_DMS_ADD_APPOINTMENT" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/DMS/addAppointment/wsdl/WS_DMS_ADD_APPOINTMENT",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DMS/addAppointment/xsd/XSD_DMS_ADD_APPOINTMENT" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DMS/addAppointment/xsd/XSD_DMS_ADD_APPOINTMENT",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/BlueBirdProject/DMS/Appointment/pipeline/PL_WS_DMS_APPOINTMENT" : {
+        "label" : "Pipeline/BlueBirdProject/DMS/Appointment/pipeline/PL_WS_DMS_APPOINTMENT",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/DMS/addAppointment/wsdl/WS_DMS_ADD_APPOINTMENT" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/DMS/addAppointment/wsdl/WS_DMS_ADD_APPOINTMENT",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DMS/addAppointment/xsd/XSD_DMS_ADD_APPOINTMENT" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DMS/addAppointment/xsd/XSD_DMS_ADD_APPOINTMENT",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/BlueBirdProject/DMS/Appointment/pipeline/PL_WS_DMS_APPOINTMENT_AddAppointment" : {
+            "label" : "Pipeline/BlueBirdProject/DMS/Appointment/pipeline/PL_WS_DMS_APPOINTMENT_AddAppointment",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/ApplicationObjects/BLUEBIRD/DMS/APPOINTMENT/wsdl/WS_DMS_APPOINTMENT" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/BLUEBIRD/DMS/APPOINTMENT/wsdl/WS_DMS_APPOINTMENT",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "Xquery/BlueBirdProject/DMS/Appointment/transformations/createResponse_AddAppointmentDMS" : {
+                "label" : "Xquery/BlueBirdProject/DMS/Appointment/transformations/createResponse_AddAppointmentDMS",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/BlueBirdProject/DMS/Appointment/businessService/BS_WS_DMS_APPOINTMENT" : {
+                "label" : "BusinessService/BlueBirdProject/DMS/Appointment/businessService/BS_WS_DMS_APPOINTMENT",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/BLUEBIRD/DMS/APPOINTMENT/wsdl/WS_DMS_APPOINTMENT" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/BLUEBIRD/DMS/APPOINTMENT/wsdl/WS_DMS_APPOINTMENT",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/BlueBirdProject/DMS/Appointment/transformations/createRequest_AddAppointmentDMS" : {
+                "label" : "Xquery/BlueBirdProject/DMS/Appointment/transformations/createRequest_AddAppointmentDMS",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

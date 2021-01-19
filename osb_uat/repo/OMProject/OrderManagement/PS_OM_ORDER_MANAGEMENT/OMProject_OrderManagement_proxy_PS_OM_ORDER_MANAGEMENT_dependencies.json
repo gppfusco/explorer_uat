@@ -1,0 +1,195 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/OMProject/OrderManagement/proxy/PS_OM_ORDER_MANAGEMENT",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/OMProject/OrderManagement/wsdl/WS_OM_ORDERMANAGEMENT" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/OMProject/OrderManagement/wsdl/WS_OM_ORDERMANAGEMENT",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/OrderManagement/xsd/XSD_OM_ORDERMANAGEMENT" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/OrderManagement/xsd/XSD_OM_ORDERMANAGEMENT",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/OMProject/OrderManagement/pipeline/PL_WS_OM_ORDERMANAGEMENT_ROUTING" : {
+        "label" : "Pipeline/OMProject/OrderManagement/pipeline/PL_WS_OM_ORDERMANAGEMENT_ROUTING",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Pipeline/OMProject/OrderManagement/pipeline/PL_OM_SET_KEY_OM" : {
+            "label" : "Pipeline/OMProject/OrderManagement/pipeline/PL_OM_SET_KEY_OM",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/OMProject/OrderManagement/transformation/createRequest_SetKeyOM" : {
+                "label" : "Xquery/OMProject/OrderManagement/transformation/createRequest_SetKeyOM",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/OMProject/OrderManagement/wsdl/WS_OM_ORDERMANAGEMENT" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/OMProject/OrderManagement/wsdl/WS_OM_ORDERMANAGEMENT",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/OrderManagement/xsd/XSD_OM_ORDERMANAGEMENT" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/OrderManagement/xsd/XSD_OM_ORDERMANAGEMENT",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "Xquery/OMProject/OrderManagement/transformation/createResponse_SetKeyOM" : {
+                "label" : "Xquery/OMProject/OrderManagement/transformation/createResponse_SetKeyOM",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/OMProject/OrderManagement/businessServices/BS_WS_OM_SET_KEY" : {
+                "label" : "BusinessService/OMProject/OrderManagement/businessServices/BS_WS_OM_SET_KEY",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "ServiceAccount/MDW_CDM/ServiceAccount/SA_Tibco" : {
+                    "label" : "ServiceAccount/MDW_CDM/ServiceAccount/SA_Tibco",
+                    "properties" : {
+                      "nodeType" : "ServiceAccount"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/MDW_CDM/ApplicationObjects/OM/OrderManagement/wsdl/WS_SF_TIBCO_ORDER_MANAGEMENT_SET_KEY" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/OM/OrderManagement/wsdl/WS_SF_TIBCO_ORDER_MANAGEMENT_SET_KEY",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/OMProject/OrderManagement/wsdl/WS_OM_ORDERMANAGEMENT" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/OMProject/OrderManagement/wsdl/WS_OM_ORDERMANAGEMENT",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/OrderManagement/xsd/XSD_OM_ORDERMANAGEMENT" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/OrderManagement/xsd/XSD_OM_ORDERMANAGEMENT",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/OMProject/OrderManagement/pipeline/PL_JMS_OP_ORDER_MANAGEMENT_ENQUEUE" : {
+            "label" : "Pipeline/OMProject/OrderManagement/pipeline/PL_JMS_OP_ORDER_MANAGEMENT_ENQUEUE",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "BusinessService/OMProject/OrderManagement/businessServices/BS_JMS_OM_ORDER_MANAGEMENT" : {
+                "label" : "BusinessService/OMProject/OrderManagement/businessServices/BS_JMS_OM_ORDER_MANAGEMENT",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/OMProject/OrderManagement/wsdl/WS_OM_ORDERMANAGEMENT" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/OMProject/OrderManagement/wsdl/WS_OM_ORDERMANAGEMENT",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/OrderManagement/xsd/XSD_OM_ORDERMANAGEMENT" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/OrderManagement/xsd/XSD_OM_ORDERMANAGEMENT",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/OMProject/OrderManagement/transformation/createRequest_OrderManagement" : {
+                "label" : "Xquery/OMProject/OrderManagement/transformation/createRequest_OrderManagement",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_ASYNC_ENQUEUE_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_ASYNC_ENQUEUE_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SPYProject/WS_SPY_ANTIFRAUDCHECK/proxy/PS_WS_SPY_ANTIFRAUDCHECK",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/SPYProject/WS_SPY_ANTIFRAUDCHECK/wsdl/WS_SPY_ANTIFRAUDCHECK" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/SPYProject/WS_SPY_ANTIFRAUDCHECK/wsdl/WS_SPY_ANTIFRAUDCHECK",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SPYProject/WS_SPY_ANTIFRAUDCHECK/xsd/XSD_SPY_ANTIFRAUDCHECK" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SPYProject/WS_SPY_ANTIFRAUDCHECK/xsd/XSD_SPY_ANTIFRAUDCHECK",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/SPYProject/WS_SPY_ANTIFRAUDCHECK/pipeline/PL_WS_SPY_ANTIFRAUDCHECK" : {
+        "label" : "Pipeline/SPYProject/WS_SPY_ANTIFRAUDCHECK/pipeline/PL_WS_SPY_ANTIFRAUDCHECK",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Pipeline/SPYProject/WS_SPY_ANTIFRAUDCHECK/pipeline/PL_INTERNAL_WS_SPY_ANTIFRAUDCHECK" : {
+            "label" : "Pipeline/SPYProject/WS_SPY_ANTIFRAUDCHECK/pipeline/PL_INTERNAL_WS_SPY_ANTIFRAUDCHECK",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/EnterpriseServices/SPYProject/WS_SPY_ANTIFRAUDCHECK/wsdl/WS_SPY_ANTIFRAUDCHECK" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/SPYProject/WS_SPY_ANTIFRAUDCHECK/wsdl/WS_SPY_ANTIFRAUDCHECK",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SPYProject/WS_SPY_ANTIFRAUDCHECK/xsd/XSD_SPY_ANTIFRAUDCHECK" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SPYProject/WS_SPY_ANTIFRAUDCHECK/xsd/XSD_SPY_ANTIFRAUDCHECK",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "BusinessService/SPYProject/WS_SPY_ANTIFRAUDCHECK/businessService/BS_WS_SPY_WMLSync" : {
+                "label" : "BusinessService/SPYProject/WS_SPY_ANTIFRAUDCHECK/businessService/BS_WS_SPY_WMLSync",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/SPY/WS_SPY_ANTIFRAUDCHECK/wsdl/RunWMLSync" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SPY/WS_SPY_ANTIFRAUDCHECK/wsdl/RunWMLSync",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

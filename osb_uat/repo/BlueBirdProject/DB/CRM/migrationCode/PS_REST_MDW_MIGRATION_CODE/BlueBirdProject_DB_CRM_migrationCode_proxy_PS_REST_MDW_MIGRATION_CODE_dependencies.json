@@ -1,0 +1,1421 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/BlueBirdProject/DB_CRM/migrationCode/proxy/PS_REST_MDW_MIGRATION_CODE",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "Pipeline/BlueBirdProject/DB_CRM/migrationCode/pipeline/PL_REST_MIGRATION_CODE" : {
+        "label" : "Pipeline/BlueBirdProject/DB_CRM/migrationCode/pipeline/PL_REST_MIGRATION_CODE",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Pipeline/BlueBirdProject/DB_CRM/migrationCode/pipeline/PL_REST_MIGRATION_CODE_CancelMigrationRequest" : {
+            "label" : "Pipeline/BlueBirdProject/DB_CRM/migrationCode/pipeline/PL_REST_MIGRATION_CODE_CancelMigrationRequest",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/calculateControlCode" : {
+                "label" : "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/calculateControlCode",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createRequest_BS_cancelMigrationRequest" : {
+                "label" : "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createRequest_BS_cancelMigrationRequest",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createResponse_WS_cancelMigrationRequest" : {
+                "label" : "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createResponse_WS_cancelMigrationRequest",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/MDW_CO/transformation/createErrorInfosWithDetails" : {
+                "label" : "Xquery/MDW_CO/transformation/createErrorInfosWithDetails",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "ProxyService/SalesforceProject/proxy/Local/PS_LOCAL_PL_SF_MAIN_OSB_TO_BPEL" : {
+                "label" : "ProxyService/SalesforceProject/proxy/Local/PS_LOCAL_PL_SF_MAIN_OSB_TO_BPEL",
+                "properties" : {
+                  "nodeType" : "ProxyService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/GestioneClienteIn/WS_GESTIONE_CLIENTE_IN" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/GestioneClienteIn/WS_GESTIONE_CLIENTE_IN",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "Pipeline/SalesforceProject/pipeline/PL_SF_MAIN_OSB_TO_BPEL" : {
+                    "label" : "Pipeline/SalesforceProject/pipeline/PL_SF_MAIN_OSB_TO_BPEL",
+                    "properties" : {
+                      "nodeType" : "Pipeline"
+                    },
+                    "successors" : {
+                      "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                        "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                        "properties" : {
+                          "nodeType" : "PipelineTemplate"
+                        },
+                        "successors" : { }
+                      },
+                      "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      },
+                      "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log" : {
+                        "label" : "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log",
+                        "properties" : {
+                          "nodeType" : "Xquery"
+                        },
+                        "successors" : { }
+                      },
+                      "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/wsdl/WS_CRM_GESTIONE_CLIENTE_IN" : {
+                        "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/wsdl/WS_CRM_GESTIONE_CLIENTE_IN",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : {
+                          "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/xsd/XSD_CRM_GESTIONE_CLIENTE_IN" : {
+                            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/xsd/XSD_CRM_GESTIONE_CLIENTE_IN",
+                            "properties" : {
+                              "nodeType" : "XMLSchema"
+                            },
+                            "successors" : { }
+                          },
+                          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                            "properties" : {
+                              "nodeType" : "XMLSchema"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      },
+                      "BusinessService/MDW_CO/businessServices/BS_WS_BPEL_SF_INVOKER" : {
+                        "label" : "BusinessService/MDW_CO/businessServices/BS_WS_BPEL_SF_INVOKER",
+                        "properties" : {
+                          "nodeType" : "BusinessService"
+                        },
+                        "successors" : {
+                          "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/SOA_PartnerOperations" : {
+                            "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/SOA_PartnerOperations",
+                            "properties" : {
+                              "nodeType" : "WSDL"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      },
+                      "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA" : {
+                        "label" : "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA",
+                        "properties" : {
+                          "nodeType" : "Xquery"
+                        },
+                        "successors" : { }
+                      },
+                      "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA_WithUserToLoginSF" : {
+                        "label" : "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA_WithUserToLoginSF",
+                        "properties" : {
+                          "nodeType" : "Xquery"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "WSDL/BlueBirdProject/Resources/PS_REST_MDW_SF_MIGRATION_CODE" : {
+                "label" : "WSDL/BlueBirdProject/Resources/PS_REST_MDW_SF_MIGRATION_CODE",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE_EXT1" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE_EXT1",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "Pipeline/BlueBirdProject/DB_CRM/migrationCode/pipeline/PL_REST_MIGRATION_CODE_VerifyMigrationRequest" : {
+            "label" : "Pipeline/BlueBirdProject/DB_CRM/migrationCode/pipeline/PL_REST_MIGRATION_CODE_VerifyMigrationRequest",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createRequest_BS_VerifyMigrationRequest" : {
+                "label" : "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createRequest_BS_VerifyMigrationRequest",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/calculateControlCode" : {
+                "label" : "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/calculateControlCode",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/MDW_CO/transformation/createErrorInfosWithDetails" : {
+                "label" : "Xquery/MDW_CO/transformation/createErrorInfosWithDetails",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "ProxyService/SalesforceProject/proxy/Local/PS_LOCAL_PL_SF_MAIN_OSB_TO_BPEL" : {
+                "label" : "ProxyService/SalesforceProject/proxy/Local/PS_LOCAL_PL_SF_MAIN_OSB_TO_BPEL",
+                "properties" : {
+                  "nodeType" : "ProxyService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/GestioneClienteIn/WS_GESTIONE_CLIENTE_IN" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/GestioneClienteIn/WS_GESTIONE_CLIENTE_IN",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "Pipeline/SalesforceProject/pipeline/PL_SF_MAIN_OSB_TO_BPEL" : {
+                    "label" : "Pipeline/SalesforceProject/pipeline/PL_SF_MAIN_OSB_TO_BPEL",
+                    "properties" : {
+                      "nodeType" : "Pipeline"
+                    },
+                    "successors" : {
+                      "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                        "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                        "properties" : {
+                          "nodeType" : "PipelineTemplate"
+                        },
+                        "successors" : { }
+                      },
+                      "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      },
+                      "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log" : {
+                        "label" : "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log",
+                        "properties" : {
+                          "nodeType" : "Xquery"
+                        },
+                        "successors" : { }
+                      },
+                      "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/wsdl/WS_CRM_GESTIONE_CLIENTE_IN" : {
+                        "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/wsdl/WS_CRM_GESTIONE_CLIENTE_IN",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : {
+                          "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/xsd/XSD_CRM_GESTIONE_CLIENTE_IN" : {
+                            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/xsd/XSD_CRM_GESTIONE_CLIENTE_IN",
+                            "properties" : {
+                              "nodeType" : "XMLSchema"
+                            },
+                            "successors" : { }
+                          },
+                          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                            "properties" : {
+                              "nodeType" : "XMLSchema"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      },
+                      "BusinessService/MDW_CO/businessServices/BS_WS_BPEL_SF_INVOKER" : {
+                        "label" : "BusinessService/MDW_CO/businessServices/BS_WS_BPEL_SF_INVOKER",
+                        "properties" : {
+                          "nodeType" : "BusinessService"
+                        },
+                        "successors" : {
+                          "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/SOA_PartnerOperations" : {
+                            "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/SOA_PartnerOperations",
+                            "properties" : {
+                              "nodeType" : "WSDL"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      },
+                      "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA" : {
+                        "label" : "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA",
+                        "properties" : {
+                          "nodeType" : "Xquery"
+                        },
+                        "successors" : { }
+                      },
+                      "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA_WithUserToLoginSF" : {
+                        "label" : "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA_WithUserToLoginSF",
+                        "properties" : {
+                          "nodeType" : "Xquery"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  }
+                }
+              },
+              "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createResponse_WS_VerifyMigrationRequest" : {
+                "label" : "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createResponse_WS_VerifyMigrationRequest",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "WSDL/BlueBirdProject/Resources/PS_REST_MDW_SF_MIGRATION_CODE" : {
+                "label" : "WSDL/BlueBirdProject/Resources/PS_REST_MDW_SF_MIGRATION_CODE",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE_EXT1" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE_EXT1",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "Pipeline/BlueBirdProject/DB_CRM/migrationCode/pipeline/PL_INTERNAL_NOTIFY_MIGRATION_CODE" : {
+            "label" : "Pipeline/BlueBirdProject/DB_CRM/migrationCode/pipeline/PL_INTERNAL_NOTIFY_MIGRATION_CODE",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/calculateControlCode" : {
+                "label" : "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/calculateControlCode",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createRequest_SFNotifyMigrationCode" : {
+                "label" : "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createRequest_SFNotifyMigrationCode",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/BlueBirdProject/DB_CRM/migrationCode/businessService/BS_SQL_DB_CRM_EXTRACT_COW" : {
+                "label" : "BusinessService/BlueBirdProject/DB_CRM/migrationCode/businessService/BS_SQL_DB_CRM_EXTRACT_COW",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/BlueBirdProject/Resources/BS_SQL_DB_CRM_EXTRACT_COW/concrete" : {
+                    "label" : "WSDL/BlueBirdProject/Resources/BS_SQL_DB_CRM_EXTRACT_COW/concrete",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "JCA/BlueBirdProject/Resources/BS_SQL_DB_CRM_EXTRACT_COW_db" : {
+                    "label" : "JCA/BlueBirdProject/Resources/BS_SQL_DB_CRM_EXTRACT_COW_db",
+                    "properties" : {
+                      "nodeType" : "JCA"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "ProxyService/SalesforceProject/proxy/Local/PS_LOCAL_PL_SF_MAIN_OSB_TO_BPEL" : {
+                "label" : "ProxyService/SalesforceProject/proxy/Local/PS_LOCAL_PL_SF_MAIN_OSB_TO_BPEL",
+                "properties" : {
+                  "nodeType" : "ProxyService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/GestioneClienteIn/WS_GESTIONE_CLIENTE_IN" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/GestioneClienteIn/WS_GESTIONE_CLIENTE_IN",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "Pipeline/SalesforceProject/pipeline/PL_SF_MAIN_OSB_TO_BPEL" : {
+                    "label" : "Pipeline/SalesforceProject/pipeline/PL_SF_MAIN_OSB_TO_BPEL",
+                    "properties" : {
+                      "nodeType" : "Pipeline"
+                    },
+                    "successors" : {
+                      "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                        "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                        "properties" : {
+                          "nodeType" : "PipelineTemplate"
+                        },
+                        "successors" : { }
+                      },
+                      "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      },
+                      "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log" : {
+                        "label" : "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log",
+                        "properties" : {
+                          "nodeType" : "Xquery"
+                        },
+                        "successors" : { }
+                      },
+                      "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/wsdl/WS_CRM_GESTIONE_CLIENTE_IN" : {
+                        "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/wsdl/WS_CRM_GESTIONE_CLIENTE_IN",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : {
+                          "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/xsd/XSD_CRM_GESTIONE_CLIENTE_IN" : {
+                            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/xsd/XSD_CRM_GESTIONE_CLIENTE_IN",
+                            "properties" : {
+                              "nodeType" : "XMLSchema"
+                            },
+                            "successors" : { }
+                          },
+                          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                            "properties" : {
+                              "nodeType" : "XMLSchema"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      },
+                      "BusinessService/MDW_CO/businessServices/BS_WS_BPEL_SF_INVOKER" : {
+                        "label" : "BusinessService/MDW_CO/businessServices/BS_WS_BPEL_SF_INVOKER",
+                        "properties" : {
+                          "nodeType" : "BusinessService"
+                        },
+                        "successors" : {
+                          "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/SOA_PartnerOperations" : {
+                            "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/SOA_PartnerOperations",
+                            "properties" : {
+                              "nodeType" : "WSDL"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      },
+                      "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA" : {
+                        "label" : "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA",
+                        "properties" : {
+                          "nodeType" : "Xquery"
+                        },
+                        "successors" : { }
+                      },
+                      "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA_WithUserToLoginSF" : {
+                        "label" : "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA_WithUserToLoginSF",
+                        "properties" : {
+                          "nodeType" : "Xquery"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  }
+                }
+              },
+              "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createResponse_SFNotifyMigrationCode" : {
+                "label" : "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createResponse_SFNotifyMigrationCode",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "WSDL/BlueBirdProject/Resources/PS_REST_MDW_SF_MIGRATION_CODE" : {
+                "label" : "WSDL/BlueBirdProject/Resources/PS_REST_MDW_SF_MIGRATION_CODE",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE_EXT1" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE_EXT1",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "Pipeline/BlueBirdProject/DB_CRM/migrationCode/pipeline/PL_REST_MIGRATION_CODE_NotifyMigrationRequestPhase3" : {
+            "label" : "Pipeline/BlueBirdProject/DB_CRM/migrationCode/pipeline/PL_REST_MIGRATION_CODE_NotifyMigrationRequestPhase3",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/MDW_CO/transformation/createErrorInfosWithDetails" : {
+                "label" : "Xquery/MDW_CO/transformation/createErrorInfosWithDetails",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createRequest_SFNotifyMigrationRequestPhase3" : {
+                "label" : "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createRequest_SFNotifyMigrationRequestPhase3",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createResponse_SFNotifyMigrationRequestPhase3" : {
+                "label" : "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createResponse_SFNotifyMigrationRequestPhase3",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "ProxyService/SalesforceProject/proxy/Local/PS_LOCAL_PL_SF_MAIN_OSB_TO_BPEL" : {
+                "label" : "ProxyService/SalesforceProject/proxy/Local/PS_LOCAL_PL_SF_MAIN_OSB_TO_BPEL",
+                "properties" : {
+                  "nodeType" : "ProxyService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/GestioneClienteIn/WS_GESTIONE_CLIENTE_IN" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/GestioneClienteIn/WS_GESTIONE_CLIENTE_IN",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "Pipeline/SalesforceProject/pipeline/PL_SF_MAIN_OSB_TO_BPEL" : {
+                    "label" : "Pipeline/SalesforceProject/pipeline/PL_SF_MAIN_OSB_TO_BPEL",
+                    "properties" : {
+                      "nodeType" : "Pipeline"
+                    },
+                    "successors" : {
+                      "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                        "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                        "properties" : {
+                          "nodeType" : "PipelineTemplate"
+                        },
+                        "successors" : { }
+                      },
+                      "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      },
+                      "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log" : {
+                        "label" : "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log",
+                        "properties" : {
+                          "nodeType" : "Xquery"
+                        },
+                        "successors" : { }
+                      },
+                      "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/wsdl/WS_CRM_GESTIONE_CLIENTE_IN" : {
+                        "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/wsdl/WS_CRM_GESTIONE_CLIENTE_IN",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : {
+                          "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/xsd/XSD_CRM_GESTIONE_CLIENTE_IN" : {
+                            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/xsd/XSD_CRM_GESTIONE_CLIENTE_IN",
+                            "properties" : {
+                              "nodeType" : "XMLSchema"
+                            },
+                            "successors" : { }
+                          },
+                          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                            "properties" : {
+                              "nodeType" : "XMLSchema"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      },
+                      "BusinessService/MDW_CO/businessServices/BS_WS_BPEL_SF_INVOKER" : {
+                        "label" : "BusinessService/MDW_CO/businessServices/BS_WS_BPEL_SF_INVOKER",
+                        "properties" : {
+                          "nodeType" : "BusinessService"
+                        },
+                        "successors" : {
+                          "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/SOA_PartnerOperations" : {
+                            "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/SOA_PartnerOperations",
+                            "properties" : {
+                              "nodeType" : "WSDL"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      },
+                      "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA" : {
+                        "label" : "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA",
+                        "properties" : {
+                          "nodeType" : "Xquery"
+                        },
+                        "successors" : { }
+                      },
+                      "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA_WithUserToLoginSF" : {
+                        "label" : "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA_WithUserToLoginSF",
+                        "properties" : {
+                          "nodeType" : "Xquery"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "WSDL/BlueBirdProject/Resources/PS_REST_MDW_SF_MIGRATION_CODE" : {
+                "label" : "WSDL/BlueBirdProject/Resources/PS_REST_MDW_SF_MIGRATION_CODE",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE_EXT1" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE_EXT1",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "Pipeline/BlueBirdProject/DB_CRM/migrationCode/pipeline/PL_REST_MIGRATION_CODE_NotifyMigrationRequestPhase2" : {
+            "label" : "Pipeline/BlueBirdProject/DB_CRM/migrationCode/pipeline/PL_REST_MIGRATION_CODE_NotifyMigrationRequestPhase2",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/calculateControlCode" : {
+                "label" : "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/calculateControlCode",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createResponse_WS_NotifyMigrationRequestPhase2" : {
+                "label" : "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createResponse_WS_NotifyMigrationRequestPhase2",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createRequest_BS_NotifyMigrationRequestPhase2" : {
+                "label" : "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createRequest_BS_NotifyMigrationRequestPhase2",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/MDW_CO/transformation/createErrorInfosWithDetails" : {
+                "label" : "Xquery/MDW_CO/transformation/createErrorInfosWithDetails",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "ProxyService/SalesforceProject/proxy/Local/PS_LOCAL_PL_SF_MAIN_OSB_TO_BPEL" : {
+                "label" : "ProxyService/SalesforceProject/proxy/Local/PS_LOCAL_PL_SF_MAIN_OSB_TO_BPEL",
+                "properties" : {
+                  "nodeType" : "ProxyService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/GestioneClienteIn/WS_GESTIONE_CLIENTE_IN" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/GestioneClienteIn/WS_GESTIONE_CLIENTE_IN",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "Pipeline/SalesforceProject/pipeline/PL_SF_MAIN_OSB_TO_BPEL" : {
+                    "label" : "Pipeline/SalesforceProject/pipeline/PL_SF_MAIN_OSB_TO_BPEL",
+                    "properties" : {
+                      "nodeType" : "Pipeline"
+                    },
+                    "successors" : {
+                      "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                        "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                        "properties" : {
+                          "nodeType" : "PipelineTemplate"
+                        },
+                        "successors" : { }
+                      },
+                      "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      },
+                      "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log" : {
+                        "label" : "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log",
+                        "properties" : {
+                          "nodeType" : "Xquery"
+                        },
+                        "successors" : { }
+                      },
+                      "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/wsdl/WS_CRM_GESTIONE_CLIENTE_IN" : {
+                        "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/wsdl/WS_CRM_GESTIONE_CLIENTE_IN",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : {
+                          "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/xsd/XSD_CRM_GESTIONE_CLIENTE_IN" : {
+                            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/xsd/XSD_CRM_GESTIONE_CLIENTE_IN",
+                            "properties" : {
+                              "nodeType" : "XMLSchema"
+                            },
+                            "successors" : { }
+                          },
+                          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                            "properties" : {
+                              "nodeType" : "XMLSchema"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      },
+                      "BusinessService/MDW_CO/businessServices/BS_WS_BPEL_SF_INVOKER" : {
+                        "label" : "BusinessService/MDW_CO/businessServices/BS_WS_BPEL_SF_INVOKER",
+                        "properties" : {
+                          "nodeType" : "BusinessService"
+                        },
+                        "successors" : {
+                          "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/SOA_PartnerOperations" : {
+                            "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/SOA_PartnerOperations",
+                            "properties" : {
+                              "nodeType" : "WSDL"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      },
+                      "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA" : {
+                        "label" : "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA",
+                        "properties" : {
+                          "nodeType" : "Xquery"
+                        },
+                        "successors" : { }
+                      },
+                      "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA_WithUserToLoginSF" : {
+                        "label" : "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA_WithUserToLoginSF",
+                        "properties" : {
+                          "nodeType" : "Xquery"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "WSDL/BlueBirdProject/Resources/PS_REST_MDW_SF_MIGRATION_CODE" : {
+                "label" : "WSDL/BlueBirdProject/Resources/PS_REST_MDW_SF_MIGRATION_CODE",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE_EXT1" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE_EXT1",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "Pipeline/BlueBirdProject/DB_CRM/migrationCode/pipeline/PL_INTERNAL_GENERATE_MIGRATION_CODE" : {
+            "label" : "Pipeline/BlueBirdProject/DB_CRM/migrationCode/pipeline/PL_INTERNAL_GENERATE_MIGRATION_CODE",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/calculateControlCode" : {
+                "label" : "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/calculateControlCode",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/wsdl/WS_MDW_SF_MIGRATION_CODE" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/wsdl/WS_MDW_SF_MIGRATION_CODE",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "BusinessService/BlueBirdProject/DB_CRM/migrationCode/businessService/BS_SQL_DB_CRM_EXTRACT_COW" : {
+                "label" : "BusinessService/BlueBirdProject/DB_CRM/migrationCode/businessService/BS_SQL_DB_CRM_EXTRACT_COW",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/BlueBirdProject/Resources/BS_SQL_DB_CRM_EXTRACT_COW/concrete" : {
+                    "label" : "WSDL/BlueBirdProject/Resources/BS_SQL_DB_CRM_EXTRACT_COW/concrete",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "JCA/BlueBirdProject/Resources/BS_SQL_DB_CRM_EXTRACT_COW_db" : {
+                    "label" : "JCA/BlueBirdProject/Resources/BS_SQL_DB_CRM_EXTRACT_COW_db",
+                    "properties" : {
+                      "nodeType" : "JCA"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createResponse_GenerateMigrationCode" : {
+                "label" : "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createResponse_GenerateMigrationCode",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createResponse_VerifyMigrationCode" : {
+            "label" : "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createResponse_VerifyMigrationCode",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Pipeline/BlueBirdProject/DB_CRM/migrationCode/pipeline/PL_INTERNAL_VERIFY_MIGRATION_CODE" : {
+            "label" : "Pipeline/BlueBirdProject/DB_CRM/migrationCode/pipeline/PL_INTERNAL_VERIFY_MIGRATION_CODE",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/calculateControlCode" : {
+                "label" : "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/calculateControlCode",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Pipeline/BlueBirdProject/DB_CRM/migrationCode/pipeline/PL_INTERNAL_CHECK_MIGRATION_CODE" : {
+                "label" : "Pipeline/BlueBirdProject/DB_CRM/migrationCode/pipeline/PL_INTERNAL_CHECK_MIGRATION_CODE",
+                "properties" : {
+                  "nodeType" : "Pipeline"
+                },
+                "successors" : {
+                  "BusinessService/BlueBirdProject/DB_CRM/migrationCode/businessService/BS_SQL_MDW_CHECK_MIGRATION_CODE" : {
+                    "label" : "BusinessService/BlueBirdProject/DB_CRM/migrationCode/businessService/BS_SQL_MDW_CHECK_MIGRATION_CODE",
+                    "properties" : {
+                      "nodeType" : "BusinessService"
+                    },
+                    "successors" : {
+                      "WSDL/BlueBirdProject/Resources/BS_SQL_CHECK_MIGRATION_CODE/concrete" : {
+                        "label" : "WSDL/BlueBirdProject/Resources/BS_SQL_CHECK_MIGRATION_CODE/concrete",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : { }
+                      },
+                      "JCA/BlueBirdProject/Resources/BS_SQL_CHECK_MIGRATION_CODE_db" : {
+                        "label" : "JCA/BlueBirdProject/Resources/BS_SQL_CHECK_MIGRATION_CODE_db",
+                        "properties" : {
+                          "nodeType" : "JCA"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                    "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                    "properties" : {
+                      "nodeType" : "PipelineTemplate"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/BlueBirdProject/Resources/PS_REST_MDW_SF_MIGRATION_CODE" : {
+                    "label" : "WSDL/BlueBirdProject/Resources/PS_REST_MDW_SF_MIGRATION_CODE",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : {
+                      "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      },
+                      "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      },
+                      "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE_EXT1" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE_EXT1",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  }
+                }
+              },
+              "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createRequest_MDWCheckMigrationCode" : {
+                "label" : "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createRequest_MDWCheckMigrationCode",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createRequest_Verify_COW_and_COS" : {
+                "label" : "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createRequest_Verify_COW_and_COS",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createRequest_VerifySingleMigrationCode" : {
+                "label" : "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createRequest_VerifySingleMigrationCode",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/BlueBirdProject/DB_CRM/migrationCode/businessService/BS_SQL_VERIFY_COW_AND_COS" : {
+                "label" : "BusinessService/BlueBirdProject/DB_CRM/migrationCode/businessService/BS_SQL_VERIFY_COW_AND_COS",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/BlueBirdProject/Resources/BS_SQL_VERIFY_COW_AND_COS/concrete" : {
+                    "label" : "WSDL/BlueBirdProject/Resources/BS_SQL_VERIFY_COW_AND_COS/concrete",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "JCA/BlueBirdProject/Resources/BS_SQL_VERIFY_COW_AND_COS_db" : {
+                    "label" : "JCA/BlueBirdProject/Resources/BS_SQL_VERIFY_COW_AND_COS_db",
+                    "properties" : {
+                      "nodeType" : "JCA"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createRequest_ResultListVerifyMC" : {
+                "label" : "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createRequest_ResultListVerifyMC",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createRequest_SemanticChecksVerifyMC" : {
+                "label" : "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createRequest_SemanticChecksVerifyMC",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/BlueBirdProject/Resources/PS_REST_MDW_SF_MIGRATION_CODE" : {
+                "label" : "WSDL/BlueBirdProject/Resources/PS_REST_MDW_SF_MIGRATION_CODE",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE_EXT1" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE_EXT1",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "Pipeline/BlueBirdProject/DB_CRM/migrationCode/pipeline/PL_INTERNAL_VERIFY_MIG_CODE_ITERATIONS" : {
+            "label" : "Pipeline/BlueBirdProject/DB_CRM/migrationCode/pipeline/PL_INTERNAL_VERIFY_MIG_CODE_ITERATIONS",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Pipeline/BlueBirdProject/DB_CRM/migrationCode/pipeline/PL_INTERNAL_VERIFY_MIGRATION_CODE" : {
+                "label" : "Pipeline/BlueBirdProject/DB_CRM/migrationCode/pipeline/PL_INTERNAL_VERIFY_MIGRATION_CODE",
+                "properties" : {
+                  "nodeType" : "Pipeline"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/calculateControlCode" : {
+                    "label" : "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/calculateControlCode",
+                    "properties" : {
+                      "nodeType" : "Xquery"
+                    },
+                    "successors" : { }
+                  },
+                  "Pipeline/BlueBirdProject/DB_CRM/migrationCode/pipeline/PL_INTERNAL_CHECK_MIGRATION_CODE" : {
+                    "label" : "Pipeline/BlueBirdProject/DB_CRM/migrationCode/pipeline/PL_INTERNAL_CHECK_MIGRATION_CODE",
+                    "properties" : {
+                      "nodeType" : "Pipeline"
+                    },
+                    "successors" : {
+                      "BusinessService/BlueBirdProject/DB_CRM/migrationCode/businessService/BS_SQL_MDW_CHECK_MIGRATION_CODE" : {
+                        "label" : "BusinessService/BlueBirdProject/DB_CRM/migrationCode/businessService/BS_SQL_MDW_CHECK_MIGRATION_CODE",
+                        "properties" : {
+                          "nodeType" : "BusinessService"
+                        },
+                        "successors" : {
+                          "WSDL/BlueBirdProject/Resources/BS_SQL_CHECK_MIGRATION_CODE/concrete" : {
+                            "label" : "WSDL/BlueBirdProject/Resources/BS_SQL_CHECK_MIGRATION_CODE/concrete",
+                            "properties" : {
+                              "nodeType" : "WSDL"
+                            },
+                            "successors" : { }
+                          },
+                          "JCA/BlueBirdProject/Resources/BS_SQL_CHECK_MIGRATION_CODE_db" : {
+                            "label" : "JCA/BlueBirdProject/Resources/BS_SQL_CHECK_MIGRATION_CODE_db",
+                            "properties" : {
+                              "nodeType" : "JCA"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      },
+                      "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                        "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                        "properties" : {
+                          "nodeType" : "PipelineTemplate"
+                        },
+                        "successors" : { }
+                      },
+                      "WSDL/BlueBirdProject/Resources/PS_REST_MDW_SF_MIGRATION_CODE" : {
+                        "label" : "WSDL/BlueBirdProject/Resources/PS_REST_MDW_SF_MIGRATION_CODE",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : {
+                          "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE" : {
+                            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE",
+                            "properties" : {
+                              "nodeType" : "XMLSchema"
+                            },
+                            "successors" : { }
+                          },
+                          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                            "properties" : {
+                              "nodeType" : "XMLSchema"
+                            },
+                            "successors" : { }
+                          },
+                          "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE_EXT1" : {
+                            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE_EXT1",
+                            "properties" : {
+                              "nodeType" : "XMLSchema"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createRequest_MDWCheckMigrationCode" : {
+                    "label" : "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createRequest_MDWCheckMigrationCode",
+                    "properties" : {
+                      "nodeType" : "Xquery"
+                    },
+                    "successors" : { }
+                  },
+                  "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createRequest_Verify_COW_and_COS" : {
+                    "label" : "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createRequest_Verify_COW_and_COS",
+                    "properties" : {
+                      "nodeType" : "Xquery"
+                    },
+                    "successors" : { }
+                  },
+                  "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createRequest_VerifySingleMigrationCode" : {
+                    "label" : "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createRequest_VerifySingleMigrationCode",
+                    "properties" : {
+                      "nodeType" : "Xquery"
+                    },
+                    "successors" : { }
+                  },
+                  "BusinessService/BlueBirdProject/DB_CRM/migrationCode/businessService/BS_SQL_VERIFY_COW_AND_COS" : {
+                    "label" : "BusinessService/BlueBirdProject/DB_CRM/migrationCode/businessService/BS_SQL_VERIFY_COW_AND_COS",
+                    "properties" : {
+                      "nodeType" : "BusinessService"
+                    },
+                    "successors" : {
+                      "WSDL/BlueBirdProject/Resources/BS_SQL_VERIFY_COW_AND_COS/concrete" : {
+                        "label" : "WSDL/BlueBirdProject/Resources/BS_SQL_VERIFY_COW_AND_COS/concrete",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : { }
+                      },
+                      "JCA/BlueBirdProject/Resources/BS_SQL_VERIFY_COW_AND_COS_db" : {
+                        "label" : "JCA/BlueBirdProject/Resources/BS_SQL_VERIFY_COW_AND_COS_db",
+                        "properties" : {
+                          "nodeType" : "JCA"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createRequest_ResultListVerifyMC" : {
+                    "label" : "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createRequest_ResultListVerifyMC",
+                    "properties" : {
+                      "nodeType" : "Xquery"
+                    },
+                    "successors" : { }
+                  },
+                  "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                    "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                    "properties" : {
+                      "nodeType" : "PipelineTemplate"
+                    },
+                    "successors" : { }
+                  },
+                  "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createRequest_SemanticChecksVerifyMC" : {
+                    "label" : "Xquery/BlueBirdProject/DB_CRM/migrationCode/transformation/createRequest_SemanticChecksVerifyMC",
+                    "properties" : {
+                      "nodeType" : "Xquery"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/BlueBirdProject/Resources/PS_REST_MDW_SF_MIGRATION_CODE" : {
+                    "label" : "WSDL/BlueBirdProject/Resources/PS_REST_MDW_SF_MIGRATION_CODE",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : {
+                      "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      },
+                      "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      },
+                      "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE_EXT1" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE_EXT1",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_ITERATE_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_ITERATE_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "WSDL/BlueBirdProject/Resources/PS_REST_MDW_SF_MIGRATION_CODE" : {
+                "label" : "WSDL/BlueBirdProject/Resources/PS_REST_MDW_SF_MIGRATION_CODE",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE_EXT1" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE_EXT1",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "WSDL/BlueBirdProject/Resources/PS_REST_MDW_SF_MIGRATION_CODE" : {
+            "label" : "WSDL/BlueBirdProject/Resources/PS_REST_MDW_SF_MIGRATION_CODE",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE_EXT1" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE_EXT1",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WADL/BlueBirdProject/Resources/PS_REST_MDW_SF_MIGRATION_CODE" : {
+        "label" : "WADL/BlueBirdProject/Resources/PS_REST_MDW_SF_MIGRATION_CODE",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      },
+      "WSDL/BlueBirdProject/Resources/PS_REST_MDW_SF_MIGRATION_CODE" : {
+        "label" : "WSDL/BlueBirdProject/Resources/PS_REST_MDW_SF_MIGRATION_CODE",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE_EXT1" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/migrationCode/xsd/XSD_MDW_SF_MIGRATION_CODE_EXT1",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

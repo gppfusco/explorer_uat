@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/pegasus/WS_CRM_PGS_GESTIONE_COMUNICAZIONE",
+    "name" : "PegasusProject_GestioneComunicazione_proxy_PS_WS_CRM_PGS_GESTIONE_COMUNICAZIONE",
+    "remoteName" : "ProxyService/PegasusProject/GestioneComunicazione/proxy/PS_WS_CRM_PGS_GESTIONE_COMUNICAZIONE",
+    "localPath" : "osb_uat\\repo\\PegasusProject\\GestioneComunicazione\\PS_WS_CRM_PGS_GESTIONE_COMUNICAZIONE",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/pegasus/WS_CRM_PGS_GESTIONE_COMUNICAZIONE?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/PegasusProject/GestioneComunicazione/xsd/XSD_CRM_GESTIONE_COMUNICAZIONE",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/om/WS_OM_UPDATE_CONSISTENCY",
+    "name" : "OMProject_UpdateConsistency_proxy_PS_WS_OM_UPDATE_CONSISTENCY",
+    "remoteName" : "ProxyService/OMProject/UpdateConsistency/proxy/PS_WS_OM_UPDATE_CONSISTENCY",
+    "localPath" : "osb_uat\\repo\\OMProject\\UpdateConsistency\\PS_WS_OM_UPDATE_CONSISTENCY",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/om/WS_OM_UPDATE_CONSISTENCY?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/OMProject/UpdateConsistency/xsd/XSD_OM_UPDATE_CONSISTENCY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

@@ -1,0 +1,238 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SCMSproject/DTT/proxy/PS_WS_SCMS_DTT_CHECK_SMC",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/SCMSproject/DTT/pipeline/PL_WS_SCMS_DTT_CHECK_SMC" : {
+        "label" : "Pipeline/SCMSproject/DTT/pipeline/PL_WS_SCMS_DTT_CHECK_SMC",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/SCMSproject/DTT/transformations/createRequest_CheckSmartcard" : {
+            "label" : "Xquery/SCMSproject/DTT/transformations/createRequest_CheckSmartcard",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/SCMSproject/DTT/transformations/createResponse_CheckSmartcard" : {
+            "label" : "Xquery/SCMSproject/DTT/transformations/createResponse_CheckSmartcard",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Pipeline/SCMSproject/pipeline/PL_WS_CRM_INVOKE_CAIF" : {
+            "label" : "Pipeline/SCMSproject/pipeline/PL_WS_CRM_INVOKE_CAIF",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "Xquery/SCMSproject/transformation/createResponseOVAVPR" : {
+                "label" : "Xquery/SCMSproject/transformation/createResponseOVAVPR",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/SCMSproject/transformation/createResponseHIMGSC" : {
+                "label" : "Xquery/SCMSproject/transformation/createResponseHIMGSC",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/SCMSproject/transformation/scms_request_enrichment/create_request_ejb_scms_GENERIC" : {
+                "label" : "Xquery/SCMSproject/transformation/scms_request_enrichment/create_request_ejb_scms_GENERIC",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_CAIF" : {
+                "label" : "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_CAIF",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB" : {
+                    "label" : "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB",
+                    "properties" : {
+                      "nodeType" : "ForeignJNDIProvider"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/MDW_CDM/ApplicationObjects/SCMS/ejb_mdw/wsdl_with_xsd/BS_EJB_CAIF" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SCMS/ejb_mdw/wsdl_with_xsd/BS_EJB_CAIF",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSmartCard/wsdl/WS_CRM_GESTIONE_SMARTCARD" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSmartCard/wsdl/WS_CRM_GESTIONE_SMARTCARD",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSmartCard/xsd/XSD_CRM_GESTIONE_SMARTCARD" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSmartCard/xsd/XSD_CRM_GESTIONE_SMARTCARD",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/DTT/wsdl/WS_SCMS_DTT_CHECK_SMC" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/DTT/wsdl/WS_SCMS_DTT_CHECK_SMC",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/DTT/xsd/XSD_SCMS_DTT_CHECK_SMC" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/DTT/xsd/XSD_SCMS_DTT_CHECK_SMC",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/SCMSproject/DTT/transformations/createRequest_CheckSMC_TIBCO" : {
+            "label" : "Xquery/SCMSproject/DTT/transformations/createRequest_CheckSMC_TIBCO",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "ProxyService/OMProject/DTTCheckSMC/proxy/PS_LOCAL_OM_CHECK_SMC" : {
+            "label" : "ProxyService/OMProject/DTTCheckSMC/proxy/PS_LOCAL_OM_CHECK_SMC",
+            "properties" : {
+              "nodeType" : "ProxyService"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/ApplicationObjects/OM/CheckSMC/wsdl/WS_TIBCO_CHECK_SMC_CONCRETE" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/OM/CheckSMC/wsdl/WS_TIBCO_CHECK_SMC_CONCRETE",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "Pipeline/OMProject/DTTCheckSMC/pipeline/PL_WS_OM_CHECK_SMC" : {
+                "label" : "Pipeline/OMProject/DTTCheckSMC/pipeline/PL_WS_OM_CHECK_SMC",
+                "properties" : {
+                  "nodeType" : "Pipeline"
+                },
+                "successors" : {
+                  "Xquery/OMProject/transformation/createRequestSoapHeaderTibco" : {
+                    "label" : "Xquery/OMProject/transformation/createRequestSoapHeaderTibco",
+                    "properties" : {
+                      "nodeType" : "Xquery"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/MDW_CDM/ApplicationObjects/OM/CheckSMC/wsdl/WS_TIBCO_CHECK_SMC_CONCRETE" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/OM/CheckSMC/wsdl/WS_TIBCO_CHECK_SMC_CONCRETE",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "BusinessService/OMProject/DTTCheckSMC/businessService/BS_WS_OM_CHECK_SMC" : {
+                    "label" : "BusinessService/OMProject/DTTCheckSMC/businessService/BS_WS_OM_CHECK_SMC",
+                    "properties" : {
+                      "nodeType" : "BusinessService"
+                    },
+                    "successors" : {
+                      "ServiceAccount/MDW_CDM/ServiceAccount/SA_Tibco" : {
+                        "label" : "ServiceAccount/MDW_CDM/ServiceAccount/SA_Tibco",
+                        "properties" : {
+                          "nodeType" : "ServiceAccount"
+                        },
+                        "successors" : { }
+                      },
+                      "WSDL/MDW_CDM/ApplicationObjects/OM/CheckSMC/wsdl/WS_TIBCO_CHECK_SMC_CONCRETE" : {
+                        "label" : "WSDL/MDW_CDM/ApplicationObjects/OM/CheckSMC/wsdl/WS_TIBCO_CHECK_SMC_CONCRETE",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                    "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                    "properties" : {
+                      "nodeType" : "PipelineTemplate"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/DTT/wsdl/WS_SCMS_DTT_CHECK_SMC" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/DTT/wsdl/WS_SCMS_DTT_CHECK_SMC",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/DTT/xsd/XSD_SCMS_DTT_CHECK_SMC" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/DTT/xsd/XSD_SCMS_DTT_CHECK_SMC",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

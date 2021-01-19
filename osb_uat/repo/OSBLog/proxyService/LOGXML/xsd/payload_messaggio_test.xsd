@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.skytv.it/mdw/data"
+            targetNamespace="http://www.skytv.it/mdw/data" elementFormDefault="qualified">
+  <xsd:complexType name="itemsType">
+    <xsd:sequence>
+      <xsd:element name="item" type="itemType" minOccurs="0" maxOccurs="unbounded"/>
+      
+    </xsd:sequence>
+  </xsd:complexType>
+ 
+ <xsd:complexType name="itemType">
+    <xsd:sequence>
+      <xsd:element name="campo1" type="xsd:string" minOccurs="0" />
+      <xsd:element name="campo2" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="campo3" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="campo4" type="xsd:string" minOccurs="0" />
+      <xsd:element name="campo5" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="campo6" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="child1" type="itemChildType" minOccurs="0"/>
+      
+  </xsd:sequence>
+  </xsd:complexType>
+  
+  
+  
+ <xsd:complexType name="itemChildType">
+    <xsd:sequence>
+      <xsd:element name="child_campo1" type="xsd:string" minOccurs="0" />
+      <xsd:element name="child_campo2" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="child_campo3" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="child_campo4" type="xsd:string" minOccurs="0" />
+      <xsd:element name="child_campo5" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="child_campo6" type="xsd:string" minOccurs="0"/>
+  </xsd:sequence>
+  </xsd:complexType>
+  
+  
+  
+  
+  <xsd:complexType name="ScmsResponseType">
+          <xsd:sequence>
+                  <xsd:element name="result" type="xsd:string" maxOccurs="1"/>
+                  <xsd:element name="ndserr" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                  <xsd:element name="transid" type="xsd:string" maxOccurs="1"/>
+                  <xsd:element name="descriptionerr" type="xsd:string" maxOccurs="1" minOccurs="1"/>
+          </xsd:sequence>
+  </xsd:complexType>
+  
+  <xsd:element name="requestINCSSO" type="itemsType"/>
+  <xsd:element name="responseSCMS" type="ScmsResponseType"/>
+</xsd:schema>

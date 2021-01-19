@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--https://github.com/sky-uk/mdw-services-interface-agreements/blob/master/OSB/IA_REY_290-WS_SPY_ANTIFRAUDCHECK_v0.1.docx-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.skytv.it/mdw/data" targetNamespace="http://www.skytv.it/mdw/data" elementFormDefault="qualified">
+	<xsd:element name="requestWMLSync" type="requestWMLSyncType"/>	
+	<xsd:element name="responseWMLSync" type="responseWMLSyncType"/>
+	<xsd:complexType name="requestWMLSyncType">
+		<xsd:sequence>
+			<xsd:element name="surname" type="xsd:string"/>
+			<xsd:element name="codFiscale" type="xsd:string"/>
+			<xsd:element name="address" type="xsd:string"/>
+			<xsd:element name="phoneNumber1" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="phoneNumber2" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="phoneNumber3" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="creditCardNumber" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="iban" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="email" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="promotion" type="xsd:string"/>
+			<xsd:element name="pricelist" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="account" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="dealerID" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="dealer1" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="dealer2" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="transId" type="xsd:string"/>
+			<xsd:element name="counter" type="xsd:int"/>
+			<xsd:element name="channel" type="xsd:string"/>
+			<xsd:element name="flagTryAndBuy" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="serviceType" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="materialAddress" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="responseWMLSyncType">
+		<xsd:sequence>
+			<xsd:element name="resultCode" type="xsd:string" minOccurs="1"/>
+			<xsd:element name="resultDescription" type="xsd:string" minOccurs="1"/>
+			<xsd:element name="data" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="account" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="channel" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="counter" type="xsd:string"/>
+						<xsd:element name="result" type="xsd:string"/>
+						<xsd:element name="transId" type="xsd:string" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>	
+</xsd:schema>

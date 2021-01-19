@@ -1,0 +1,144 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/KENANProject/InsRIDDECA/proxy/PS_WS_KNN_INSRIDDECA",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/KENANProject/InsRIDDECA/pipeline/PL_WS_KNN_INSRIDDECA" : {
+        "label" : "Pipeline/KENANProject/InsRIDDECA/pipeline/PL_WS_KNN_INSRIDDECA",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/MDW_CDM/EnterpriseServices/KenanProject/InsRIDDECA/wsdl/WS_KNN_INSRIDDECA" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/KenanProject/InsRIDDECA/wsdl/WS_KNN_INSRIDDECA",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/InsRIDDECA/xsd/XSD_TUX_INSRIDDECA" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/InsRIDDECA/xsd/XSD_TUX_INSRIDDECA",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/KENANProject/InsRIDDECA/pipeline/PL_INTERNAL_WS_KNN_INSRIDDECA" : {
+            "label" : "Pipeline/KENANProject/InsRIDDECA/pipeline/PL_INTERNAL_WS_KNN_INSRIDDECA",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/EnterpriseServices/KenanProject/InsRIDDECA/wsdl/WS_KNN_INSRIDDECA" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/KenanProject/InsRIDDECA/wsdl/WS_KNN_INSRIDDECA",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/InsRIDDECA/xsd/XSD_TUX_INSRIDDECA" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/InsRIDDECA/xsd/XSD_TUX_INSRIDDECA",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "BusinessService/KENANProject/InsRIDDECA/businessServices/BS_TUX_KNN_INSRIDDECA" : {
+                "label" : "BusinessService/KENANProject/InsRIDDECA/businessServices/BS_TUX_KNN_INSRIDDECA",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/ApplicationObjects/KENAN/tuxedo_mdw/XSD_TUX_INSRIDDECA_KENAN" : {
+                    "label" : "XMLSchema/MDW_CDM/ApplicationObjects/KENAN/tuxedo_mdw/XSD_TUX_INSRIDDECA_KENAN",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0" : {
+                    "label" : "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0",
+                    "properties" : {
+                      "nodeType" : "Archive"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/KENANProject/InsRIDDECA/transformations/createResponse_InsRIDDECA" : {
+                "label" : "Xquery/KENANProject/InsRIDDECA/transformations/createResponse_InsRIDDECA",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/KENANProject/InsRIDDECA/transformations/createRequest_InsRIDDECA" : {
+                "label" : "Xquery/KENANProject/InsRIDDECA/transformations/createRequest_InsRIDDECA",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/KenanProject/InsRIDDECA/wsdl/WS_KNN_INSRIDDECA" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/KenanProject/InsRIDDECA/wsdl/WS_KNN_INSRIDDECA",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/InsRIDDECA/xsd/XSD_TUX_INSRIDDECA" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/InsRIDDECA/xsd/XSD_TUX_INSRIDDECA",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

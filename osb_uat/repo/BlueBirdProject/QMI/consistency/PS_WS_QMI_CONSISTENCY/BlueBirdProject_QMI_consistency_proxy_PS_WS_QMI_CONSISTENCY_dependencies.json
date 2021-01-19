@@ -1,0 +1,144 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/BlueBirdProject/QMI/consistency/proxy/PS_WS_QMI_CONSISTENCY",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/QMI/consistenza/wsdl/WS_QMI_CONSISTENCY" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/QMI/consistenza/wsdl/WS_QMI_CONSISTENCY",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/QMI/consistenza/xsd/XSD_QMI_CONSISTENCY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/QMI/consistenza/xsd/XSD_QMI_CONSISTENCY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/BlueBirdProject/QMI/consistency/pipeline/PS_WS_QMI_CONSISTENCY" : {
+        "label" : "Pipeline/BlueBirdProject/QMI/consistency/pipeline/PS_WS_QMI_CONSISTENCY",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/QMI/consistenza/wsdl/WS_QMI_CONSISTENCY" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/QMI/consistenza/wsdl/WS_QMI_CONSISTENCY",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/QMI/consistenza/xsd/XSD_QMI_CONSISTENCY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/QMI/consistenza/xsd/XSD_QMI_CONSISTENCY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Pipeline/BlueBirdProject/QMI/consistency/pipeline/PL_WS_QMI_CONSISTENCY_GetConsistency" : {
+            "label" : "Pipeline/BlueBirdProject/QMI/consistency/pipeline/PL_WS_QMI_CONSISTENCY_GetConsistency",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "BusinessService/BlueBirdProject/QMI/consistency/businessservice/BS_REST_QMI_CONSISTENCY" : {
+                "label" : "BusinessService/BlueBirdProject/QMI/consistency/businessservice/BS_REST_QMI_CONSISTENCY",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WADL/BlueBirdProject/Resources/BS_REST_QMI_CONSISTENCY" : {
+                    "label" : "WADL/BlueBirdProject/Resources/BS_REST_QMI_CONSISTENCY",
+                    "properties" : {
+                      "nodeType" : "WADL"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/BlueBirdProject/Resources/BS_REST_QMI_CONSISTENCY" : {
+                    "label" : "WSDL/BlueBirdProject/Resources/BS_REST_QMI_CONSISTENCY",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/QMI/consistenza/wsdl/WS_QMI_CONSISTENCY" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/QMI/consistenza/wsdl/WS_QMI_CONSISTENCY",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/QMI/consistenza/xsd/XSD_QMI_CONSISTENCY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/QMI/consistenza/xsd/XSD_QMI_CONSISTENCY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/BlueBirdProject/QMI/consistency/transformation/createResponse_WS_GetConsistency" : {
+                "label" : "Xquery/BlueBirdProject/QMI/consistency/transformation/createResponse_WS_GetConsistency",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/BlueBirdProject/QMI/consistency/transformation/createRequest_BS_GetConsistency" : {
+                "label" : "Xquery/BlueBirdProject/QMI/consistency/transformation/createRequest_BS_GetConsistency",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/siebel/WS_SBL_SBLOCCO_CONTRATTO",
+    "name" : "SiebelProject_proxy_AlignTibcoToSBL_PS_SBL_SBLOCCO_CONTRATTO",
+    "remoteName" : "ProxyService/SiebelProject/proxy/AlignTibcoToSBL/PS_SBL_SBLOCCO_CONTRATTO",
+    "localPath" : "osb_uat\\repo\\SiebelProject\\AlignTibcoToSBL_PS_SBL_SBLOCCO_CONTRATTO",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/siebel/WS_SBL_SBLOCCO_CONTRATTO?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SiebelProject/AlignTibcoToSBL/SbloccoContratto/xsd/XSD_SBL_SBLOCCO_CONTRATTO",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

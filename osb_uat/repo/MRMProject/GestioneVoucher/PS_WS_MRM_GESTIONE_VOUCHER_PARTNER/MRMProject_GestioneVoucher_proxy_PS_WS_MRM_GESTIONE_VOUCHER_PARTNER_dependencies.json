@@ -1,0 +1,473 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/MRMProject/GestioneVoucher/proxy/PS_WS_MRM_GESTIONE_VOUCHER_PARTNER",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/MRMProject/GestioneVoucher/pipeline/PL_WS_MRM_GESTIONE_VOUCHER_PARTNER" : {
+        "label" : "Pipeline/MRMProject/GestioneVoucher/pipeline/PL_WS_MRM_GESTIONE_VOUCHER_PARTNER",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/MRMProject/GestioneVoucher/pipeline/PL_VMS_GET_INFO_VOUCHER" : {
+            "label" : "Pipeline/MRMProject/GestioneVoucher/pipeline/PL_VMS_GET_INFO_VOUCHER",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "Xquery/MRMProject/GestioneVoucher/transformations/createRequestVMS_INFOTCKPART" : {
+                "label" : "Xquery/MRMProject/GestioneVoucher/transformations/createRequestVMS_INFOTCKPART",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/MRMProject/GestioneVoucher/businessService/BS_TUXEDO_VMS_INFOTCKPART" : {
+                "label" : "BusinessService/MRMProject/GestioneVoucher/businessService/BS_TUXEDO_VMS_INFOTCKPART",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/ApplicationObjects/MRM/GestioneVoucher/XSD_MRM_VMS_INFOTCKPART" : {
+                    "label" : "XMLSchema/MDW_CDM/ApplicationObjects/MRM/GestioneVoucher/XSD_MRM_VMS_INFOTCKPART",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0" : {
+                    "label" : "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0",
+                    "properties" : {
+                      "nodeType" : "Archive"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/MRMProject/GestioneVoucher/wsdl/WS_MRM_GESTIONE_VOUCHER_PARTNER" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/MRMProject/GestioneVoucher/wsdl/WS_MRM_GESTIONE_VOUCHER_PARTNER",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/MRMProject/GestioneVoucher/xsd/XSD_MRM_GESTIONE_VOUCHER_PARTNER" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MRMProject/GestioneVoucher/xsd/XSD_MRM_GESTIONE_VOUCHER_PARTNER",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/MRMProject/GestioneVoucher/transformations/createResponseVMS_INFOTCKPART" : {
+                "label" : "Xquery/MRMProject/GestioneVoucher/transformations/createResponseVMS_INFOTCKPART",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/MRMProject/GestioneVoucher/wsdl/WS_MRM_GESTIONE_VOUCHER_PARTNER" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/MRMProject/GestioneVoucher/wsdl/WS_MRM_GESTIONE_VOUCHER_PARTNER",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/MRMProject/GestioneVoucher/xsd/XSD_MRM_GESTIONE_VOUCHER_PARTNER" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MRMProject/GestioneVoucher/xsd/XSD_MRM_GESTIONE_VOUCHER_PARTNER",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Pipeline/MRMProject/GestioneVoucher/pipeline/PL_VMS_SOSPENSIONE_VOUCHER" : {
+            "label" : "Pipeline/MRMProject/GestioneVoucher/pipeline/PL_VMS_SOSPENSIONE_VOUCHER",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "Xquery/MRMProject/GestioneVoucher/transformations/createResponseVMS_SOSPTCKPART" : {
+                "label" : "Xquery/MRMProject/GestioneVoucher/transformations/createResponseVMS_SOSPTCKPART",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/MRMProject/GestioneVoucher/transformations/createRequestVMS_SOSPTCKPART" : {
+                "label" : "Xquery/MRMProject/GestioneVoucher/transformations/createRequestVMS_SOSPTCKPART",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/MRMProject/GestioneVoucher/businessService/BS_TUXEDO_VMS_SOSPTCKPART" : {
+                "label" : "BusinessService/MRMProject/GestioneVoucher/businessService/BS_TUXEDO_VMS_SOSPTCKPART",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/ApplicationObjects/MRM/GestioneVoucher/XSD_MRM_VMS_SOSPTCKPART" : {
+                    "label" : "XMLSchema/MDW_CDM/ApplicationObjects/MRM/GestioneVoucher/XSD_MRM_VMS_SOSPTCKPART",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0" : {
+                    "label" : "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0",
+                    "properties" : {
+                      "nodeType" : "Archive"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/MRMProject/GestioneVoucher/wsdl/WS_MRM_GESTIONE_VOUCHER_PARTNER" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/MRMProject/GestioneVoucher/wsdl/WS_MRM_GESTIONE_VOUCHER_PARTNER",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/MRMProject/GestioneVoucher/xsd/XSD_MRM_GESTIONE_VOUCHER_PARTNER" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MRMProject/GestioneVoucher/xsd/XSD_MRM_GESTIONE_VOUCHER_PARTNER",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "Pipeline/MRMProject/GestioneVoucher/pipeline/PL_VMS_GET_VOUCHER" : {
+            "label" : "Pipeline/MRMProject/GestioneVoucher/pipeline/PL_VMS_GET_VOUCHER",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/MRMProject/GestioneVoucher/transformations/createResponseVMS_GETTCKPART" : {
+                "label" : "Xquery/MRMProject/GestioneVoucher/transformations/createResponseVMS_GETTCKPART",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "Xquery/MRMProject/GestioneVoucher/transformations/createRequestVMS_GETTCKPART" : {
+                "label" : "Xquery/MRMProject/GestioneVoucher/transformations/createRequestVMS_GETTCKPART",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/MRMProject/GestioneVoucher/transformations/createRequest_CreaEsigenzaChiusaRichiestaSpotify" : {
+                "label" : "Xquery/MRMProject/GestioneVoucher/transformations/createRequest_CreaEsigenzaChiusaRichiestaSpotify",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "ProxyService/SalesforceProject/proxy/Local/PS_LOCAL_STD_API" : {
+                "label" : "ProxyService/SalesforceProject/proxy/Local/PS_LOCAL_STD_API",
+                "properties" : {
+                  "nodeType" : "ProxyService"
+                },
+                "successors" : {
+                  "Pipeline/SalesforceProject/pipeline/PL_SF_STD_API_INTERNAL" : {
+                    "label" : "Pipeline/SalesforceProject/pipeline/PL_SF_STD_API_INTERNAL",
+                    "properties" : {
+                      "nodeType" : "Pipeline"
+                    },
+                    "successors" : {
+                      "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF" : {
+                        "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : { }
+                      },
+                      "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF" : {
+                        "label" : "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF",
+                        "properties" : {
+                          "nodeType" : "BusinessService"
+                        },
+                        "successors" : {
+                          "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB" : {
+                            "label" : "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB",
+                            "properties" : {
+                              "nodeType" : "ForeignJNDIProvider"
+                            },
+                            "successors" : { }
+                          },
+                          "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF" : {
+                            "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF",
+                            "properties" : {
+                              "nodeType" : "WSDL"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      },
+                      "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                        "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                        "properties" : {
+                          "nodeType" : "PipelineTemplate"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/WS_DIRECT_SF_EJB" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/WS_DIRECT_SF_EJB",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "ProxyService/SalesforceProject/WS_CRM_CREA_ESIGENZE_CHIUSE/proxy/PS_CRM_CREA_ESIGENZE_CHIUSE" : {
+                "label" : "ProxyService/SalesforceProject/WS_CRM_CREA_ESIGENZE_CHIUSE/proxy/PS_CRM_CREA_ESIGENZE_CHIUSE",
+                "properties" : {
+                  "nodeType" : "ProxyService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/CreaEsigenzeChiuse/wsdl/WS_CRM_CREA_ESIGENZE_CHIUSE" : {
+                    "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/CreaEsigenzeChiuse/wsdl/WS_CRM_CREA_ESIGENZE_CHIUSE",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : {
+                      "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      },
+                      "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/CreaEsigenzeChiuse/xsd/XSD_CRM_CREA_ESIGENZE_CHIUSE" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/CreaEsigenzeChiuse/xsd/XSD_CRM_CREA_ESIGENZE_CHIUSE",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "Pipeline/SalesforceProject/pipeline/PL_SF_MAIN_OSB_TO_BPEL" : {
+                    "label" : "Pipeline/SalesforceProject/pipeline/PL_SF_MAIN_OSB_TO_BPEL",
+                    "properties" : {
+                      "nodeType" : "Pipeline"
+                    },
+                    "successors" : {
+                      "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                        "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                        "properties" : {
+                          "nodeType" : "PipelineTemplate"
+                        },
+                        "successors" : { }
+                      },
+                      "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      },
+                      "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log" : {
+                        "label" : "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log",
+                        "properties" : {
+                          "nodeType" : "Xquery"
+                        },
+                        "successors" : { }
+                      },
+                      "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/wsdl/WS_CRM_GESTIONE_CLIENTE_IN" : {
+                        "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/wsdl/WS_CRM_GESTIONE_CLIENTE_IN",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : {
+                          "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/xsd/XSD_CRM_GESTIONE_CLIENTE_IN" : {
+                            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneClienteIn/xsd/XSD_CRM_GESTIONE_CLIENTE_IN",
+                            "properties" : {
+                              "nodeType" : "XMLSchema"
+                            },
+                            "successors" : { }
+                          },
+                          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                            "properties" : {
+                              "nodeType" : "XMLSchema"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      },
+                      "BusinessService/MDW_CO/businessServices/BS_WS_BPEL_SF_INVOKER" : {
+                        "label" : "BusinessService/MDW_CO/businessServices/BS_WS_BPEL_SF_INVOKER",
+                        "properties" : {
+                          "nodeType" : "BusinessService"
+                        },
+                        "successors" : {
+                          "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/SOA_PartnerOperations" : {
+                            "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WSDL/SOA_PartnerOperations",
+                            "properties" : {
+                              "nodeType" : "WSDL"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      },
+                      "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA" : {
+                        "label" : "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA",
+                        "properties" : {
+                          "nodeType" : "Xquery"
+                        },
+                        "successors" : { }
+                      },
+                      "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA_WithUserToLoginSF" : {
+                        "label" : "Xquery/MDW_CO/transformation/salesforce/createRequestForSOA_WithUserToLoginSF",
+                        "properties" : {
+                          "nodeType" : "Xquery"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  }
+                }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/MRMProject/GestioneVoucher/wsdl/WS_MRM_GESTIONE_VOUCHER_PARTNER" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/MRMProject/GestioneVoucher/wsdl/WS_MRM_GESTIONE_VOUCHER_PARTNER",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/MRMProject/GestioneVoucher/xsd/XSD_MRM_GESTIONE_VOUCHER_PARTNER" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MRMProject/GestioneVoucher/xsd/XSD_MRM_GESTIONE_VOUCHER_PARTNER",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/MRMProject/GestioneVoucher/transformations/createRequest_getCodiceClientePagatore" : {
+                "label" : "Xquery/MRMProject/GestioneVoucher/transformations/createRequest_getCodiceClientePagatore",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/MRMProject/GestioneVoucher/businessService/BS_TUXEDO_VMS_GETTCKPART" : {
+                "label" : "BusinessService/MRMProject/GestioneVoucher/businessService/BS_TUXEDO_VMS_GETTCKPART",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/ApplicationObjects/MRM/GestioneVoucher/XSD_MRM_VMS_GETTCKPART" : {
+                    "label" : "XMLSchema/MDW_CDM/ApplicationObjects/MRM/GestioneVoucher/XSD_MRM_VMS_GETTCKPART",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0" : {
+                    "label" : "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0",
+                    "properties" : {
+                      "nodeType" : "Archive"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/MRMProject/GestioneVoucher/wsdl/WS_MRM_GESTIONE_VOUCHER_PARTNER" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/MRMProject/GestioneVoucher/wsdl/WS_MRM_GESTIONE_VOUCHER_PARTNER",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/MRMProject/GestioneVoucher/xsd/XSD_MRM_GESTIONE_VOUCHER_PARTNER" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MRMProject/GestioneVoucher/xsd/XSD_MRM_GESTIONE_VOUCHER_PARTNER",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

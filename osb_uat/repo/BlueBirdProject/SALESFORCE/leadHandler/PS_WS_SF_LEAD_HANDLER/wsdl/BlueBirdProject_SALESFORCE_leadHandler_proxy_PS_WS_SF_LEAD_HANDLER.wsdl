@@ -1,0 +1,82 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions
+     name="WS_SF_LEAD_HANDLER"
+     targetNamespace="http://skytv.it/mdw/data"
+     xmlns:tns="http://skytv.it/mdw/data"
+     xmlns:inp1="http://www.skytv.it/mdw/data"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+    <wsdl:types>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://www.skytv.it/mdw/data" schemaLocation="../xsd/XSD_SF_LEAD_HANDLER.xsd"/>
+            <xsd:import namespace="http://www.skytv.it/mdw/data" schemaLocation="../../../../../EnterpriseObjects/CommonEntities/SoapHeaderSKY.xsd"/>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="requestMessageCreateLead">
+        <wsdl:part name="part_requestCreateLead" element="inp1:requestCreateLead"/>
+    </wsdl:message>
+    <wsdl:message name="responseMessageCreateLead">
+        <wsdl:part name="part_responseCreateLead" element="inp1:responseCreateLead"/>
+    </wsdl:message>
+    <wsdl:portType name="leadHandler_ptt">
+        <wsdl:operation name="CreateLead">
+            <wsdl:input message="tns:requestMessageCreateLead"/>
+            <wsdl:output message="tns:responseMessageCreateLead"/>
+        </wsdl:operation>
+        <wsdl:operation name="UpdateLead">
+            <wsdl:input message="tns:requestMessageUpdateLead"/>
+            <wsdl:output message="tns:responseMessageUpdateLead"/>
+        </wsdl:operation>
+        <wsdl:operation name="RetrieveLead">
+            <wsdl:input message="tns:requestMessageRetrieveLead"/>
+            <wsdl:output message="tns:responseMessageRetrieveLead"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="execute_LeadHandler" type="tns:leadHandler_ptt">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="CreateLead">
+            <soap:operation style="document" soapAction="execute_CreateLead"/>
+            <wsdl:input>
+                <soap:body use="literal" namespace="http://skytv.it/mdw/data"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" namespace="http://skytv.it/mdw/data"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="UpdateLead">
+            <soap:operation/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="RetrieveLead">
+            <soap:operation/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:message name="requestMessageUpdateLead">
+        <wsdl:part name="part_requestUpdateLead" element="inp1:requestUpdateLead"/>
+    </wsdl:message>
+    <wsdl:message name="responseMessageUpdateLead">
+        <wsdl:part name="responseUpdateLead" element="inp1:responseUpdateLead"/>
+    </wsdl:message>
+    <wsdl:message name="requestMessageRetrieveLead">
+        <wsdl:part name="part_requestRetrieveLead" element="inp1:requestRetrieveLead"/>
+    </wsdl:message>
+    <wsdl:message name="responseMessageRetrieveLead">
+        <wsdl:part name="part_responseRetrieveLead" element="inp1:responseRetrieveLead"/>
+    </wsdl:message>
+     <wsdl:message name="header_message">
+              <wsdl:part name="part_header" element="inp1:Header"/>
+     </wsdl:message>    
+</wsdl:definitions>

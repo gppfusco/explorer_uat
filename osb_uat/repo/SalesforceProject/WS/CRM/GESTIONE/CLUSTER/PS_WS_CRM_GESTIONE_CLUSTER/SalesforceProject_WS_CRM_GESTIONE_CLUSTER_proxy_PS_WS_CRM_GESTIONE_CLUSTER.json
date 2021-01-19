@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/salesforce/WS_CRM_GESTIONE_CLUSTER",
+    "name" : "SalesforceProject_WS_CRM_GESTIONE_CLUSTER_proxy_PS_WS_CRM_GESTIONE_CLUSTER",
+    "remoteName" : "ProxyService/SalesforceProject/WS_CRM_GESTIONE_CLUSTER/proxy/PS_WS_CRM_GESTIONE_CLUSTER",
+    "localPath" : "osb_uat\\repo\\SalesforceProject\\WS\\CRM\\GESTIONE\\CLUSTER\\PS_WS_CRM_GESTIONE_CLUSTER",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/salesforce/WS_CRM_GESTIONE_CLUSTER?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SalesforceProject/GestioneCluster/xsd/XSD_CRM_GESTIONE_CLUSTER",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

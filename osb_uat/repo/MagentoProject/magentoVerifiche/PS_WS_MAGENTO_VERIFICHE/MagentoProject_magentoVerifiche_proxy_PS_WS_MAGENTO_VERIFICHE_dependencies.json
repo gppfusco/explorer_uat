@@ -1,0 +1,100 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/MagentoProject/magentoVerifiche/proxy/PS_WS_MAGENTO_VERIFICHE",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/MagentoProject/magentoVerifiche/wsdl/WSDL_WS_MAGENTO_VERIFICHE" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/MagentoProject/magentoVerifiche/wsdl/WSDL_WS_MAGENTO_VERIFICHE",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/MagentoProject/magentoVerifiche/xsd/XSD_WS_MAGENTO_VERIFICHE" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MagentoProject/magentoVerifiche/xsd/XSD_WS_MAGENTO_VERIFICHE",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/MagentoProject/magentoVerifiche/pipeline/PL_WS_MAGENTO_VERIFICHE" : {
+        "label" : "Pipeline/MagentoProject/magentoVerifiche/pipeline/PL_WS_MAGENTO_VERIFICHE",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/MDW_CDM/EnterpriseServices/MagentoProject/magentoVerifiche/wsdl/WSDL_WS_MAGENTO_VERIFICHE" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/MagentoProject/magentoVerifiche/wsdl/WSDL_WS_MAGENTO_VERIFICHE",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/MagentoProject/magentoVerifiche/xsd/XSD_WS_MAGENTO_VERIFICHE" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MagentoProject/magentoVerifiche/xsd/XSD_WS_MAGENTO_VERIFICHE",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/MagentoProject/magentoVerifiche/transformations/createResponse_BS_REST_MAGENTO_VERIFICHE" : {
+            "label" : "Xquery/MagentoProject/magentoVerifiche/transformations/createResponse_BS_REST_MAGENTO_VERIFICHE",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "BusinessService/MagentoProject/magentoVerifiche/businessService/BS_REST_MAGENTO_VERIFICHE" : {
+            "label" : "BusinessService/MagentoProject/magentoVerifiche/businessService/BS_REST_MAGENTO_VERIFICHE",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "WADL/MagentoProject/Resources/BS_REST_MAGENTO_VERIFICHE" : {
+                "label" : "WADL/MagentoProject/Resources/BS_REST_MAGENTO_VERIFICHE",
+                "properties" : {
+                  "nodeType" : "WADL"
+                },
+                "successors" : { }
+              },
+              "WSDL/MagentoProject/Resources/BS_REST_MAGENTO_VERIFICHE" : {
+                "label" : "WSDL/MagentoProject/Resources/BS_REST_MAGENTO_VERIFICHE",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

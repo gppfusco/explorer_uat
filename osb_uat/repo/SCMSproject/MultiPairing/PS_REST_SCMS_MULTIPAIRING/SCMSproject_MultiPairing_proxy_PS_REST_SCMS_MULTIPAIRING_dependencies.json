@@ -1,0 +1,195 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SCMSproject/MultiPairing/proxy/PS_REST_SCMS_MULTIPAIRING",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "WSDL/SCMSproject/Resources/PS_REST_SCMS_MULTIPAIRING" : {
+        "label" : "WSDL/SCMSproject/Resources/PS_REST_SCMS_MULTIPAIRING",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/MultiPairing/xsd/XSD_SCMS_MULTIPAIRING" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/MultiPairing/xsd/XSD_SCMS_MULTIPAIRING",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/SCMSproject/MultiPairing/pipeline/PL_REST_SCMS_MULTIPAIRING" : {
+        "label" : "Pipeline/SCMSproject/MultiPairing/pipeline/PL_REST_SCMS_MULTIPAIRING",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/SCMSproject/Resources/PS_REST_SCMS_MULTIPAIRING" : {
+            "label" : "WSDL/SCMSproject/Resources/PS_REST_SCMS_MULTIPAIRING",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/MultiPairing/xsd/XSD_SCMS_MULTIPAIRING" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/MultiPairing/xsd/XSD_SCMS_MULTIPAIRING",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Pipeline/SCMSproject/MultiPairing/pipeline/PL_INTERNAL_REST_SCMS_MULTIPAIRING" : {
+            "label" : "Pipeline/SCMSproject/MultiPairing/pipeline/PL_INTERNAL_REST_SCMS_MULTIPAIRING",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "WSDL/SCMSproject/Resources/PS_REST_SCMS_MULTIPAIRING" : {
+                "label" : "WSDL/SCMSproject/Resources/PS_REST_SCMS_MULTIPAIRING",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/MultiPairing/xsd/XSD_SCMS_MULTIPAIRING" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/MultiPairing/xsd/XSD_SCMS_MULTIPAIRING",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/SCMSproject/MultiPairing/transformations/createRequest_MultiPairing" : {
+                "label" : "Xquery/SCMSproject/MultiPairing/transformations/createRequest_MultiPairing",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/SCMSproject/MultiPairing/transformations/createResponse_MultiPairing" : {
+                "label" : "Xquery/SCMSproject/MultiPairing/transformations/createResponse_MultiPairing",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Pipeline/SCMSproject/pipeline/PL_INTERNAL_INVOKE_CAIF" : {
+                "label" : "Pipeline/SCMSproject/pipeline/PL_INTERNAL_INVOKE_CAIF",
+                "properties" : {
+                  "nodeType" : "Pipeline"
+                },
+                "successors" : {
+                  "Xquery/SCMSproject/transformation/scms_request_enrichment/create_request_ejb_scms_GENERIC" : {
+                    "label" : "Xquery/SCMSproject/transformation/scms_request_enrichment/create_request_ejb_scms_GENERIC",
+                    "properties" : {
+                      "nodeType" : "Xquery"
+                    },
+                    "successors" : { }
+                  },
+                  "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_CAIF" : {
+                    "label" : "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_CAIF",
+                    "properties" : {
+                      "nodeType" : "BusinessService"
+                    },
+                    "successors" : {
+                      "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB" : {
+                        "label" : "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB",
+                        "properties" : {
+                          "nodeType" : "ForeignJNDIProvider"
+                        },
+                        "successors" : { }
+                      },
+                      "WSDL/MDW_CDM/ApplicationObjects/SCMS/ejb_mdw/wsdl_with_xsd/BS_EJB_CAIF" : {
+                        "label" : "WSDL/MDW_CDM/ApplicationObjects/SCMS/ejb_mdw/wsdl_with_xsd/BS_EJB_CAIF",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSmartCard/wsdl/WS_CRM_GESTIONE_SMARTCARD" : {
+                    "label" : "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSmartCard/wsdl/WS_CRM_GESTIONE_SMARTCARD",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : {
+                      "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSmartCard/xsd/XSD_CRM_GESTIONE_SMARTCARD" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSmartCard/xsd/XSD_CRM_GESTIONE_SMARTCARD",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      },
+                      "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                    "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                    "properties" : {
+                      "nodeType" : "PipelineTemplate"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WADL/SCMSproject/Resources/PS_REST_SCMS_MULTIPAIRING" : {
+        "label" : "WADL/SCMSproject/Resources/PS_REST_SCMS_MULTIPAIRING",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/mdw/oss/WS_OSS_ORDERMANAGER_STUB",
+    "name" : "BlueBirdProject_OSS_orderManager_proxy_PS_WS_OSS_ORDERMANAGER_STUB",
+    "remoteName" : "ProxyService/BlueBirdProject/OSS/orderManager/proxy/PS_WS_OSS_ORDERMANAGER_STUB",
+    "localPath" : "osb_uat\\repo\\BlueBirdProject\\OSS\\orderManager\\PS_WS_OSS_ORDERMANAGER_STUB",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/mdw/oss/WS_OSS_ORDERMANAGER_STUB?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/orderManager/xsd/XSD_OSS_ORDERMANAGER",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

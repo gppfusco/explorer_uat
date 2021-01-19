@@ -1,0 +1,151 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/OMProject/SelfInstallation/proxy/PS_WS_OM_SELF_INSTALLATION",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/OMProject/SelfInstallation/wsdl/WS_OM_SELF_INSTALLATION" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/OMProject/SelfInstallation/wsdl/WS_OM_SELF_INSTALLATION",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/SelfInstallation/xsd/XSD_OM_SELF_INSTALLATION" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/SelfInstallation/xsd/XSD_OM_SELF_INSTALLATION",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/OMProject/SelfInstallation/pipeline/PL_WS_OM_SELF_INSTALLATION" : {
+        "label" : "Pipeline/OMProject/SelfInstallation/pipeline/PL_WS_OM_SELF_INSTALLATION",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/MDW_CDM/EnterpriseServices/OMProject/SelfInstallation/wsdl/WS_OM_SELF_INSTALLATION" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/OMProject/SelfInstallation/wsdl/WS_OM_SELF_INSTALLATION",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/SelfInstallation/xsd/XSD_OM_SELF_INSTALLATION" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/SelfInstallation/xsd/XSD_OM_SELF_INSTALLATION",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/OMProject/SelfInstallation/transformations/createRequestActivationContract" : {
+            "label" : "Xquery/OMProject/SelfInstallation/transformations/createRequestActivationContract",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/OMProject/SelfInstallation/transformations/createResponseActivationContract" : {
+            "label" : "Xquery/OMProject/SelfInstallation/transformations/createResponseActivationContract",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Pipeline/OMProject/SelfInstallation/pipeline/PL_INTERNAL_OM_SELF_INSTALLATION" : {
+            "label" : "Pipeline/OMProject/SelfInstallation/pipeline/PL_INTERNAL_OM_SELF_INSTALLATION",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/OMProject/transformation/createRequestSoapHeaderTibco" : {
+                "label" : "Xquery/OMProject/transformation/createRequestSoapHeaderTibco",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/OMProject/SelfInstallation/wsdl/WS_OM_SELF_INSTALLATION" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/OMProject/SelfInstallation/wsdl/WS_OM_SELF_INSTALLATION",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/SelfInstallation/xsd/XSD_OM_SELF_INSTALLATION" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/SelfInstallation/xsd/XSD_OM_SELF_INSTALLATION",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "BusinessService/OMProject/SelfInstallation/businessServices/BS_WS_OM_SELF_INSTALLATION" : {
+                "label" : "BusinessService/OMProject/SelfInstallation/businessServices/BS_WS_OM_SELF_INSTALLATION",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "ServiceAccount/MDW_CDM/ServiceAccount/SA_Tibco" : {
+                    "label" : "ServiceAccount/MDW_CDM/ServiceAccount/SA_Tibco",
+                    "properties" : {
+                      "nodeType" : "ServiceAccount"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/MDW_CDM/ApplicationObjects/OM/SelfInstallation/wsdl/WS_SCMS_TIB_SELF_INSTALLATION_Concrete" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/OM/SelfInstallation/wsdl/WS_SCMS_TIB_SELF_INSTALLATION_Concrete",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SCMSproject/proxy/PS_WS_CRM_GESTIONE_SMS_PPV",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSMSPPV/wsdl/WS_CRM_GESTIONE_SMS_PPV" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSMSPPV/wsdl/WS_CRM_GESTIONE_SMS_PPV",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSMSPPV/xsd/XSD_CRM_GESTIONE_SMS_PPV" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSMSPPV/xsd/XSD_CRM_GESTIONE_SMS_PPV",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/SCMSproject/pipeline/PL_WS_CRM_GESTIONE_SMS_PPV" : {
+        "label" : "Pipeline/SCMSproject/pipeline/PL_WS_CRM_GESTIONE_SMS_PPV",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_N_OPERATIONS_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_N_OPERATIONS_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/SCMSproject/transformation/createResponse_WS_CRM_GESTIONE_SMS_PPV_ReadSms" : {
+            "label" : "Xquery/SCMSproject/transformation/createResponse_WS_CRM_GESTIONE_SMS_PPV_ReadSms",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/SCMSproject/transformation/createRequest_WS_SCMS_ReadSMS" : {
+            "label" : "Xquery/SCMSproject/transformation/createRequest_WS_SCMS_ReadSMS",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "BusinessService/SCMSproject/businessService/BS_TUXEDO_PPVSMS_ReadReg" : {
+            "label" : "BusinessService/SCMSproject/businessService/BS_TUXEDO_PPVSMS_ReadReg",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/ApplicationObjects/SCMS/GestioneSMSPPV/XSD_TUX_GESTIONE_SMS_PPV" : {
+                "label" : "XMLSchema/MDW_CDM/ApplicationObjects/SCMS/GestioneSMSPPV/XSD_TUX_GESTIONE_SMS_PPV",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0" : {
+                "label" : "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0",
+                "properties" : {
+                  "nodeType" : "Archive"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/SCMSproject/transformation/createRequest_TUX_PPVSMS_ReadRegInfo" : {
+            "label" : "Xquery/SCMSproject/transformation/createRequest_TUX_PPVSMS_ReadRegInfo",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/SCMSproject/transformation/createResponse_TUX_PPVSMS_REG" : {
+            "label" : "Xquery/SCMSproject/transformation/createResponse_TUX_PPVSMS_REG",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "XSLT/SCMSproject/transformation/createResponse_TUX_PPVSMS_ReadReg" : {
+            "label" : "XSLT/SCMSproject/transformation/createResponse_TUX_PPVSMS_ReadReg",
+            "properties" : {
+              "nodeType" : "XSLT"
+            },
+            "successors" : { }
+          },
+          "BusinessService/SCMSproject/businessService/BS_TUXEDO_PPVSMS_REG" : {
+            "label" : "BusinessService/SCMSproject/businessService/BS_TUXEDO_PPVSMS_REG",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/ApplicationObjects/SCMS/GestioneSMSPPV/XSD_TUX_GESTIONE_SMS_PPV" : {
+                "label" : "XMLSchema/MDW_CDM/ApplicationObjects/SCMS/GestioneSMSPPV/XSD_TUX_GESTIONE_SMS_PPV",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0" : {
+                "label" : "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0",
+                "properties" : {
+                  "nodeType" : "Archive"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/SCMSproject/transformation/createRequest_TUX_PPVSMS_REG" : {
+            "label" : "Xquery/SCMSproject/transformation/createRequest_TUX_PPVSMS_REG",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/SCMSproject/transformation/createRequest_TUX_PPVSMS_DEREG" : {
+            "label" : "Xquery/SCMSproject/transformation/createRequest_TUX_PPVSMS_DEREG",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSMSPPV/wsdl/WS_CRM_GESTIONE_SMS_PPV" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSMSPPV/wsdl/WS_CRM_GESTIONE_SMS_PPV",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSMSPPV/xsd/XSD_CRM_GESTIONE_SMS_PPV" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSMSPPV/xsd/XSD_CRM_GESTIONE_SMS_PPV",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/SCMSproject/transformation/createResponse_TUX_PPVSMS_DEREG" : {
+            "label" : "Xquery/SCMSproject/transformation/createResponse_TUX_PPVSMS_DEREG",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "BusinessService/SCMSproject/businessService/BS_TUXEDO_PPVSMS_DEREG" : {
+            "label" : "BusinessService/SCMSproject/businessService/BS_TUXEDO_PPVSMS_DEREG",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/ApplicationObjects/SCMS/GestioneSMSPPV/XSD_TUX_GESTIONE_SMS_PPV" : {
+                "label" : "XMLSchema/MDW_CDM/ApplicationObjects/SCMS/GestioneSMSPPV/XSD_TUX_GESTIONE_SMS_PPV",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0" : {
+                "label" : "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0",
+                "properties" : {
+                  "nodeType" : "Archive"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "BusinessService/SCMSproject/businessService/BS_WS_SCMS_SMSSERVICE" : {
+            "label" : "BusinessService/SCMSproject/businessService/BS_WS_SCMS_SMSSERVICE",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/ApplicationObjects/SCMS/GestioneSMSPPV/smsservices" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/SCMS/GestioneSMSPPV/smsservices",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SalesforceProject/REST_CRM_ATTR_PROD_CAT/proxy/PS_REST_CRM_ATTR_PROD_CAT",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "WADL/SalesforceProject/Resources/PS_REST_CRM_ATTR_PROD_CAT" : {
+        "label" : "WADL/SalesforceProject/Resources/PS_REST_CRM_ATTR_PROD_CAT",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      },
+      "Pipeline/SalesforceProject/REST_CRM_ATTR_PROD_CAT/pipeline/PL_REST_CRM_ATTR_PROD_CAT" : {
+        "label" : "Pipeline/SalesforceProject/REST_CRM_ATTR_PROD_CAT/pipeline/PL_REST_CRM_ATTR_PROD_CAT",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Pipeline/SalesforceProject/REST_CRM_ATTR_PROD_CAT/pipeline/PL_INTERNAL_REST_CRM_ATTR_PROD_CAT" : {
+            "label" : "Pipeline/SalesforceProject/REST_CRM_ATTR_PROD_CAT/pipeline/PL_INTERNAL_REST_CRM_ATTR_PROD_CAT",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/SalesforceProject/REST_CRM_ATTR_PROD_CAT/trasformation/response_AttrProdCat" : {
+                "label" : "Xquery/SalesforceProject/REST_CRM_ATTR_PROD_CAT/trasformation/response_AttrProdCat",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/SalesforceProject/REST_CRM_ATTR_PROD_CAT/trasformation/createRequestEjb" : {
+                "label" : "Xquery/SalesforceProject/REST_CRM_ATTR_PROD_CAT/trasformation/createRequestEjb",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/MDW_CO/businessServices/BS_WS_EJB_FORCE" : {
+                "label" : "BusinessService/MDW_CO/businessServices/BS_WS_EJB_FORCE",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "WSDL/SalesforceProject/Resources/PS_REST_CRM_ATTR_PROD_CAT" : {
+                "label" : "WSDL/SalesforceProject/Resources/PS_REST_CRM_ATTR_PROD_CAT",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_Crm_Attr_Prod_Cat/xsd/XSD_REST_CRM_ATTR_PROD_CAT" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_Crm_Attr_Prod_Cat/xsd/XSD_REST_CRM_ATTR_PROD_CAT",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "WSDL/SalesforceProject/Resources/PS_REST_CRM_ATTR_PROD_CAT" : {
+            "label" : "WSDL/SalesforceProject/Resources/PS_REST_CRM_ATTR_PROD_CAT",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_Crm_Attr_Prod_Cat/xsd/XSD_REST_CRM_ATTR_PROD_CAT" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_Crm_Attr_Prod_Cat/xsd/XSD_REST_CRM_ATTR_PROD_CAT",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/SalesforceProject/Resources/PS_REST_CRM_ATTR_PROD_CAT" : {
+        "label" : "WSDL/SalesforceProject/Resources/PS_REST_CRM_ATTR_PROD_CAT",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_Crm_Attr_Prod_Cat/xsd/XSD_REST_CRM_ATTR_PROD_CAT" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_Crm_Attr_Prod_Cat/xsd/XSD_REST_CRM_ATTR_PROD_CAT",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

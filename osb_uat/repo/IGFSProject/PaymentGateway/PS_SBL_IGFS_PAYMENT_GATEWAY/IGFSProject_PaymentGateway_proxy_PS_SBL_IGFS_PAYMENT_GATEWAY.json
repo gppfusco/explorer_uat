@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/igfs/WS_IGFS_PAYMENT_GATEWAY",
+    "name" : "IGFSProject_PaymentGateway_proxy_PS_SBL_IGFS_PAYMENT_GATEWAY",
+    "remoteName" : "ProxyService/IGFSProject/PaymentGateway/proxy/PS_SBL_IGFS_PAYMENT_GATEWAY",
+    "localPath" : "osb_uat\\repo\\IGFSProject\\PaymentGateway\\PS_SBL_IGFS_PAYMENT_GATEWAY",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/igfs/WS_IGFS_PAYMENT_GATEWAY?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/IGFSProject/PaymentGateway/xsd/XSD_SBL_IGFS_PAYMENT_GATEWAY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

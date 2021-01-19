@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/siebel/WS_SBL_DMS_UPD_FIRMA",
+    "name" : "SiebelProject_proxy_AlignTibcoToSBL_PS_SBL_DMS_UPD_FIRMA",
+    "remoteName" : "ProxyService/SiebelProject/proxy/AlignTibcoToSBL/PS_SBL_DMS_UPD_FIRMA",
+    "localPath" : "osb_uat\\repo\\SiebelProject\\AlignTibcoToSBL_PS_SBL_DMS_UPD_FIRMA",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/siebel/WS_SBL_DMS_UPD_FIRMA?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SiebelProject/AlignTibcoToSBL/DMSUpdateFirma/xsd/XSD_SBL_DMS_UPD_FIRMA",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

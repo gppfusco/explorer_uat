@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/egon/WS_CRM_EGON_NORMALIZZA_INDIRIZZO",
+    "name" : "EgonProject_NormalizzaIndirizzo_proxy_PS_EGON_NORMALIZZA_INDIRIZZO",
+    "remoteName" : "ProxyService/EgonProject/NormalizzaIndirizzo/proxy/PS_EGON_NORMALIZZA_INDIRIZZO",
+    "localPath" : "osb_uat\\repo\\EgonProject\\NormalizzaIndirizzo\\PS_EGON_NORMALIZZA_INDIRIZZO",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/egon/WS_CRM_EGON_NORMALIZZA_INDIRIZZO?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/EgonProject/NormalizzaIndirizzo/xsd/XSD_CRM_EGON_NORMALIZZA_INDIRIZZO",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

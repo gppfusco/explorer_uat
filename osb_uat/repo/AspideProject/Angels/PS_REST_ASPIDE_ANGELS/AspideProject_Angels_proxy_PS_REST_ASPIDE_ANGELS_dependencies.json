@@ -1,0 +1,231 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/AspideProject/Angels/proxy/PS_REST_ASPIDE_ANGELS",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "Pipeline/AspideProject/Angels/pipeline/PL_REST_ASPIDE_ANGELS" : {
+        "label" : "Pipeline/AspideProject/Angels/pipeline/PL_REST_ASPIDE_ANGELS",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/AspideProject/Resources/PS_REST_ASPIDE_ANGELS" : {
+            "label" : "WSDL/AspideProject/Resources/PS_REST_ASPIDE_ANGELS",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/AspideProject/AngelManagement/xsd/XSD_ASPIDE_ANGELS" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/AspideProject/AngelManagement/xsd/XSD_ASPIDE_ANGELS",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/AspideProject/Angels/pipeline/PL_REST_INTERNAL_GET_ANGEL" : {
+            "label" : "Pipeline/AspideProject/Angels/pipeline/PL_REST_INTERNAL_GET_ANGEL",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "WSDL/AspideProject/Resources/PS_REST_ASPIDE_ANGELS" : {
+                "label" : "WSDL/AspideProject/Resources/PS_REST_ASPIDE_ANGELS",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/AspideProject/AngelManagement/xsd/XSD_ASPIDE_ANGELS" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/AspideProject/AngelManagement/xsd/XSD_ASPIDE_ANGELS",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/AspideProject/Angels/trasformation/createRequestGetAngel" : {
+                "label" : "Xquery/AspideProject/Angels/trasformation/createRequestGetAngel",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/AspideProject/Angels/businessServices/BS_REST_ASPIDE_ANGELS" : {
+                "label" : "BusinessService/AspideProject/Angels/businessServices/BS_REST_ASPIDE_ANGELS",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WADL/AspideProject/Resources/BS_REST_ASPIDE_ANGELS" : {
+                    "label" : "WADL/AspideProject/Resources/BS_REST_ASPIDE_ANGELS",
+                    "properties" : {
+                      "nodeType" : "WADL"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/AspideProject/Resources/BS_REST_ASPIDE_ANGELS" : {
+                    "label" : "WSDL/AspideProject/Resources/BS_REST_ASPIDE_ANGELS",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "ServiceAccount/MDW_CDM/ServiceAccount/SA_Aspide" : {
+                    "label" : "ServiceAccount/MDW_CDM/ServiceAccount/SA_Aspide",
+                    "properties" : {
+                      "nodeType" : "ServiceAccount"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "Xquery/AspideProject/Angels/trasformation/createResponseGetAngel" : {
+                "label" : "Xquery/AspideProject/Angels/trasformation/createResponseGetAngel",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Pipeline/AspideProject/Angels/pipeline/PL_REST_INTERNAL_CHANGE_ANGEL" : {
+            "label" : "Pipeline/AspideProject/Angels/pipeline/PL_REST_INTERNAL_CHANGE_ANGEL",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "WSDL/AspideProject/Resources/PS_REST_ASPIDE_ANGELS" : {
+                "label" : "WSDL/AspideProject/Resources/PS_REST_ASPIDE_ANGELS",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/AspideProject/AngelManagement/xsd/XSD_ASPIDE_ANGELS" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/AspideProject/AngelManagement/xsd/XSD_ASPIDE_ANGELS",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/AspideProject/Angels/trasformation/createRequestChangeAngel" : {
+                "label" : "Xquery/AspideProject/Angels/trasformation/createRequestChangeAngel",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/AspideProject/Angels/businessServices/BS_REST_ASPIDE_ANGELS" : {
+                "label" : "BusinessService/AspideProject/Angels/businessServices/BS_REST_ASPIDE_ANGELS",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WADL/AspideProject/Resources/BS_REST_ASPIDE_ANGELS" : {
+                    "label" : "WADL/AspideProject/Resources/BS_REST_ASPIDE_ANGELS",
+                    "properties" : {
+                      "nodeType" : "WADL"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/AspideProject/Resources/BS_REST_ASPIDE_ANGELS" : {
+                    "label" : "WSDL/AspideProject/Resources/BS_REST_ASPIDE_ANGELS",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "ServiceAccount/MDW_CDM/ServiceAccount/SA_Aspide" : {
+                    "label" : "ServiceAccount/MDW_CDM/ServiceAccount/SA_Aspide",
+                    "properties" : {
+                      "nodeType" : "ServiceAccount"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/AspideProject/Resources/PS_REST_ASPIDE_ANGELS" : {
+        "label" : "WSDL/AspideProject/Resources/PS_REST_ASPIDE_ANGELS",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/AspideProject/AngelManagement/xsd/XSD_ASPIDE_ANGELS" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/AspideProject/AngelManagement/xsd/XSD_ASPIDE_ANGELS",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WADL/AspideProject/Resources/PS_REST_ASPIDE_ANGELS" : {
+        "label" : "WADL/AspideProject/Resources/PS_REST_ASPIDE_ANGELS",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      }
+    }
+  }
+}

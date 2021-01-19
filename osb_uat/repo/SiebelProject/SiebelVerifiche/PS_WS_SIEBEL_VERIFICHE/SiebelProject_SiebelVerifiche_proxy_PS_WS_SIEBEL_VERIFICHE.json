@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/siebel/WS_SIEBEL_VERIFICHE",
+    "name" : "SiebelProject_SiebelVerifiche_proxy_PS_WS_SIEBEL_VERIFICHE",
+    "remoteName" : "ProxyService/SiebelProject/SiebelVerifiche/proxy/PS_WS_SIEBEL_VERIFICHE",
+    "localPath" : "osb_uat\\repo\\SiebelProject\\SiebelVerifiche\\PS_WS_SIEBEL_VERIFICHE",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/siebel/WS_SIEBEL_VERIFICHE?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SiebelProject/SiebelVerifiche/xsd/XSD_SIEBEL_VERIFICHE",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SalesforceProject/API_REST/CLIENTE/proxy/PS_WS_CRM_GESTIONE_CLIENTE",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/API_REST/cliente/wsdl/WS_CRM_GESTIONE_CLIENTE" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/API_REST/cliente/wsdl/WS_CRM_GESTIONE_CLIENTE",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/API_REST/cliente/XSD_API_CLIENTE" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/API_REST/cliente/XSD_API_CLIENTE",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/SalesforceProject/API_REST/CLIENTE/pipeline/PL_REST_API_CLIENTE_SERVICE_ROUTING" : {
+        "label" : "Pipeline/SalesforceProject/API_REST/CLIENTE/pipeline/PL_REST_API_CLIENTE_SERVICE_ROUTING",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/SalesforceProject/Resources/PS_REST_API_CLIENTE" : {
+            "label" : "WSDL/SalesforceProject/Resources/PS_REST_API_CLIENTE",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/API_REST/cliente/XSD_API_CLIENTE" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/API_REST/cliente/XSD_API_CLIENTE",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Pipeline/SalesforceProject/API_REST/CLIENTE/pipeline/PL_INTERNAL_LEGGI_DATI_CLIENTE" : {
+            "label" : "Pipeline/SalesforceProject/API_REST/CLIENTE/pipeline/PL_INTERNAL_LEGGI_DATI_CLIENTE",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "WSDL/SalesforceProject/Resources/PS_REST_API_CLIENTE" : {
+                "label" : "WSDL/SalesforceProject/Resources/PS_REST_API_CLIENTE",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/API_REST/cliente/XSD_API_CLIENTE" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/API_REST/cliente/XSD_API_CLIENTE",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/SalesforceProject/API_REST/CLIENTE/transformations/createResponse_LeggiDatiCliente" : {
+                "label" : "Xquery/SalesforceProject/API_REST/CLIENTE/transformations/createResponse_LeggiDatiCliente",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF" : {
+                "label" : "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB" : {
+                    "label" : "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB",
+                    "properties" : {
+                      "nodeType" : "ForeignJNDIProvider"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/SalesforceProject/API_REST/CLIENTE/transformations/createRequest_LeggiDatiCliente" : {
+                "label" : "Xquery/SalesforceProject/API_REST/CLIENTE/transformations/createRequest_LeggiDatiCliente",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log" : {
+            "label" : "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/SalesforceProject/API_REST/CLIENTE/pipeline/stub" : {
+            "label" : "Pipeline/SalesforceProject/API_REST/CLIENTE/pipeline/stub",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "WSDL/SalesforceProject/Resources/PS_REST_API_CLIENTE" : {
+                "label" : "WSDL/SalesforceProject/Resources/PS_REST_API_CLIENTE",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/API_REST/cliente/XSD_API_CLIENTE" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/API_REST/cliente/XSD_API_CLIENTE",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

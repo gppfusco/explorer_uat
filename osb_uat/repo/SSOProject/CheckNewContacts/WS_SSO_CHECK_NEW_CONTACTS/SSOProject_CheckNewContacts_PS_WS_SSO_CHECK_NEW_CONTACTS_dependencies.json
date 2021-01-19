@@ -1,0 +1,107 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SSOProject/CheckNewContacts/PS_WS_SSO_CHECK_NEW_CONTACTS",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/SSOProject/CheckNewContacts/wsdl/WS_SSO_CHECK_NEW_CONTACTS" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/SSOProject/CheckNewContacts/wsdl/WS_SSO_CHECK_NEW_CONTACTS",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SSOProject/CheckNewContacts/xsd/XSD_SSO_CHECK_NEW_CONTACTS" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SSOProject/CheckNewContacts/xsd/XSD_SSO_CHECK_NEW_CONTACTS",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/SSOProject/CheckNewContacts/pipeline/PL_WS_SSO_CHECK_NEW_CONTACTS" : {
+        "label" : "Pipeline/SSOProject/CheckNewContacts/pipeline/PL_WS_SSO_CHECK_NEW_CONTACTS",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/SSOProject/CheckNewContacts/transformations/createRequestCheckNewContacts" : {
+            "label" : "Xquery/SSOProject/CheckNewContacts/transformations/createRequestCheckNewContacts",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "BusinessService/SSOProject/CheckNewContacts/businessServices/BS_WS_SSO_CHECK_NEW_CONTACTS" : {
+            "label" : "BusinessService/SSOProject/CheckNewContacts/businessServices/BS_WS_SSO_CHECK_NEW_CONTACTS",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/ApplicationObjects/SSO/wsdl/AddNewContract" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/SSO/wsdl/AddNewContract",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "ServiceAccount/MDW_CDM/ServiceAccount/SA_SSO" : {
+                "label" : "ServiceAccount/MDW_CDM/ServiceAccount/SA_SSO",
+                "properties" : {
+                  "nodeType" : "ServiceAccount"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/SSOProject/CheckNewContacts/transformations/createResponseCheckNewContacts" : {
+            "label" : "Xquery/SSOProject/CheckNewContacts/transformations/createResponseCheckNewContacts",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/SSOProject/CheckNewContacts/wsdl/WS_SSO_CHECK_NEW_CONTACTS" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/SSOProject/CheckNewContacts/wsdl/WS_SSO_CHECK_NEW_CONTACTS",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SSOProject/CheckNewContacts/xsd/XSD_SSO_CHECK_NEW_CONTACTS" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SSOProject/CheckNewContacts/xsd/XSD_SSO_CHECK_NEW_CONTACTS",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

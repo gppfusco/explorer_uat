@@ -1,0 +1,107 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/BIProject/WS_BI_KPI/proxy/PS_WS_BI_KPI",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/BIProject/GetKpiRealTimeOffer/wsdl/WS_BI_KPI" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/BIProject/GetKpiRealTimeOffer/wsdl/WS_BI_KPI",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/BIProject/GetKpiRealTimeOffer/xsd/XSD_BI_KPI" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BIProject/GetKpiRealTimeOffer/xsd/XSD_BI_KPI",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/BIProject/WS_BI_KPI/pipeline/PL_WS_BI_KPI" : {
+        "label" : "Pipeline/BIProject/WS_BI_KPI/pipeline/PL_WS_BI_KPI",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/BIProject/GetKpiRealTimeOffer/wsdl/WS_BI_KPI" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/BIProject/GetKpiRealTimeOffer/wsdl/WS_BI_KPI",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/BIProject/GetKpiRealTimeOffer/xsd/XSD_BI_KPI" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BIProject/GetKpiRealTimeOffer/xsd/XSD_BI_KPI",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/BIProject/WS_BI_KPI/trasformations/createResponse_WS_BI_KPI" : {
+            "label" : "Xquery/BIProject/WS_BI_KPI/trasformations/createResponse_WS_BI_KPI",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/BIProject/WS_BI_KPI/trasformations/createRequest_WS_BI_KPI" : {
+            "label" : "Xquery/BIProject/WS_BI_KPI/trasformations/createRequest_WS_BI_KPI",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "BusinessService/BIProject/WS_BI_KPI/businessServices/BS_DB_BI_GETKPI" : {
+            "label" : "BusinessService/BIProject/WS_BI_KPI/businessServices/BS_DB_BI_GETKPI",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "WSDL/BIProject/Resources/BS_DB_BI_GETKPI/concrete" : {
+                "label" : "WSDL/BIProject/Resources/BS_DB_BI_GETKPI/concrete",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "JCA/BIProject/Resources/BS_DB_BI_GETKPI_db" : {
+                "label" : "JCA/BIProject/Resources/BS_DB_BI_GETKPI_db",
+                "properties" : {
+                  "nodeType" : "JCA"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

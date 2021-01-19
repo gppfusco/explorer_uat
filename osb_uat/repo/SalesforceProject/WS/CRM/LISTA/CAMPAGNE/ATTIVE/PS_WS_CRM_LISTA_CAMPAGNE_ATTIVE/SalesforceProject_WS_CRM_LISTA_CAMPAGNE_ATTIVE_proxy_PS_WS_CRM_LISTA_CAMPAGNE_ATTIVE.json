@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/salesforce/WS_CRM_LISTA_CAMPAGNE_ATTIVE",
+    "name" : "SalesforceProject_WS_CRM_LISTA_CAMPAGNE_ATTIVE_proxy_PS_WS_CRM_LISTA_CAMPAGNE_ATTIVE",
+    "remoteName" : "ProxyService/SalesforceProject/WS_CRM_LISTA_CAMPAGNE_ATTIVE/proxy/PS_WS_CRM_LISTA_CAMPAGNE_ATTIVE",
+    "localPath" : "osb_uat\\repo\\SalesforceProject\\WS\\CRM\\LISTA\\CAMPAGNE\\ATTIVE\\PS_WS_CRM_LISTA_CAMPAGNE_ATTIVE",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/salesforce/WS_CRM_LISTA_CAMPAGNE_ATTIVE?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SalesforceProject/ListaCampagneAttive/xsd/XSD_CRM_LISTA_CAMPAGNE_ATTIVE",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

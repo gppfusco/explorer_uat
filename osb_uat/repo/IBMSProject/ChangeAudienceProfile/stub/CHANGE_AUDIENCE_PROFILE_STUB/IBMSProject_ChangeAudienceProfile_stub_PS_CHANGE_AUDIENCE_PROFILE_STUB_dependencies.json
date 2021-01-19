@@ -1,0 +1,64 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/IBMSProject/ChangeAudienceProfile/stub/PS_CHANGE_AUDIENCE_PROFILE_STUB",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/IBMSProject/ChangeAudienceProfile/stub/PL_CHANGE_AUDIENCE_PROFILE_STUB" : {
+        "label" : "Pipeline/IBMSProject/ChangeAudienceProfile/stub/PL_CHANGE_AUDIENCE_PROFILE_STUB",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/MDW_CDM/EnterpriseServices/IBMSProject/ChangeAudienceProfile/wsdl/WS_CHANGE_AUDIENCE_PROFILE" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/IBMSProject/ChangeAudienceProfile/wsdl/WS_CHANGE_AUDIENCE_PROFILE",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/IBMSProject/ChangeAudienceProfile/xsd/XSD_CHANGE_AUDIENCE_PROFILE" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/IBMSProject/ChangeAudienceProfile/xsd/XSD_CHANGE_AUDIENCE_PROFILE",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/IBMSProject/ChangeAudienceProfile/wsdl/WS_CHANGE_AUDIENCE_PROFILE" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/IBMSProject/ChangeAudienceProfile/wsdl/WS_CHANGE_AUDIENCE_PROFILE",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/IBMSProject/ChangeAudienceProfile/xsd/XSD_CHANGE_AUDIENCE_PROFILE" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/IBMSProject/ChangeAudienceProfile/xsd/XSD_CHANGE_AUDIENCE_PROFILE",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

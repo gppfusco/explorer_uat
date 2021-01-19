@@ -1,0 +1,41 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/VODAFONEProject/nowtvBundleFastweb/proxy/PS_REST_VODAFONE_NOWTV_BUNDLE",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "Pipeline/VODAFONEProject/nowtvBundleFastweb/pipeline/stub" : {
+        "label" : "Pipeline/VODAFONEProject/nowtvBundleFastweb/pipeline/stub",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : { }
+      },
+      "WADL/VODAFONEProject/Resources/PS_REST_VODAFONE_NOWTV_BUNDLE" : {
+        "label" : "WADL/VODAFONEProject/Resources/PS_REST_VODAFONE_NOWTV_BUNDLE",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      },
+      "WSDL/VODAFONEProject/Resources/PS_REST_VODAFONE_NOWTV_BUNDLE" : {
+        "label" : "WSDL/VODAFONEProject/Resources/PS_REST_VODAFONE_NOWTV_BUNDLE",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/VodafoneProject/nowtvBundleFastweb/xsd/XSD_VODAFONE_NOWTV_BUNDLE" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/VodafoneProject/nowtvBundleFastweb/xsd/XSD_VODAFONE_NOWTV_BUNDLE",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

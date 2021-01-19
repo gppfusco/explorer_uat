@@ -1,0 +1,144 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/BlueBirdProject/OM/orderStatusView/proxy/PS_OM_BB_ORDER_STATUS_VIEW",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/BlueBirdProject/OM/orderStatusView/pipeline/PL_OM_BB_ORDER_STATUS_VIEW" : {
+        "label" : "Pipeline/BlueBirdProject/OM/orderStatusView/pipeline/PL_OM_BB_ORDER_STATUS_VIEW",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Xquery/BlueBirdProject/OM/orderStatusView/transformations/createRequest_TuxFirstActivationOrderBB" : {
+            "label" : "Xquery/BlueBirdProject/OM/orderStatusView/transformations/createRequest_TuxFirstActivationOrderBB",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/OM/orderStatusView/wsdl/WS_OM_BB_ORDER_STATUS_VIEW" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/OM/orderStatusView/wsdl/WS_OM_BB_ORDER_STATUS_VIEW",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OM/orderStatusView/xsd/XSD_OM_BB_ORDER_STATUS_VIEW" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OM/orderStatusView/xsd/XSD_OM_BB_ORDER_STATUS_VIEW",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/BlueBirdProject/OM/orderStatusView/pipeline/PL_OM_TUX_INTERNAL_FIRST_ACTIVATION_ORDER_BB" : {
+            "label" : "Pipeline/BlueBirdProject/OM/orderStatusView/pipeline/PL_OM_TUX_INTERNAL_FIRST_ACTIVATION_ORDER_BB",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/OM/orderStatusView/wsdl/WS_OM_BB_ORDER_STATUS_VIEW" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/OM/orderStatusView/wsdl/WS_OM_BB_ORDER_STATUS_VIEW",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OM/orderStatusView/xsd/XSD_OM_BB_ORDER_STATUS_VIEW" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OM/orderStatusView/xsd/XSD_OM_BB_ORDER_STATUS_VIEW",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "BusinessService/OMProject/GetOrder/businessServices/BS_TUX_GET_FIRST_ACTIVATION_ORDER" : {
+                "label" : "BusinessService/OMProject/GetOrder/businessServices/BS_TUX_GET_FIRST_ACTIVATION_ORDER",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/ApplicationObjects/OM/GetOrder/xsd/XSD_TUX_GetFirstActivationOrder" : {
+                    "label" : "XMLSchema/MDW_CDM/ApplicationObjects/OM/GetOrder/xsd/XSD_TUX_GetFirstActivationOrder",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0" : {
+                    "label" : "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0",
+                    "properties" : {
+                      "nodeType" : "Archive"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/BlueBirdProject/OM/orderStatusView/transformations/createResponse_TuxFirstActivationOrderBB" : {
+            "label" : "Xquery/BlueBirdProject/OM/orderStatusView/transformations/createResponse_TuxFirstActivationOrderBB",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/OM/orderStatusView/wsdl/WS_OM_BB_ORDER_STATUS_VIEW" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/OM/orderStatusView/wsdl/WS_OM_BB_ORDER_STATUS_VIEW",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OM/orderStatusView/xsd/XSD_OM_BB_ORDER_STATUS_VIEW" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OM/orderStatusView/xsd/XSD_OM_BB_ORDER_STATUS_VIEW",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,239 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/BlueBirdProject/Reitek/callMeNow/proxy/PS_REST_REITEK_CALL_ME_NOW",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "Pipeline/BlueBirdProject/Reitek/callMeNow/pipeline/PL_REST_REITEK_CALL_ME_NOW" : {
+        "label" : "Pipeline/BlueBirdProject/Reitek/callMeNow/pipeline/PL_REST_REITEK_CALL_ME_NOW",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/BlueBirdProject/Resources/PS_REST_REITEK_CALL_ME_NOW" : {
+            "label" : "WSDL/BlueBirdProject/Resources/PS_REST_REITEK_CALL_ME_NOW",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/Reitek/callMeNow/xsd/XSD_REST_REITEK_CALL_ME_NOW" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/Reitek/callMeNow/xsd/XSD_REST_REITEK_CALL_ME_NOW",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Pipeline/BlueBirdProject/Reitek/callMeNow/pipeline/PL_JMS_REITEK_CALL_ME_NOW_InsertProblemToSF_ENQUEUE" : {
+            "label" : "Pipeline/BlueBirdProject/Reitek/callMeNow/pipeline/PL_JMS_REITEK_CALL_ME_NOW_InsertProblemToSF_ENQUEUE",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Pipeline/BlueBirdProject/Reitek/callMeNow/pipeline/PL_JMS_REITEK_CALL_ME_NOW_NotifyCallMeNowToReitek_ENQUEUE" : {
+                "label" : "Pipeline/BlueBirdProject/Reitek/callMeNow/pipeline/PL_JMS_REITEK_CALL_ME_NOW_NotifyCallMeNowToReitek_ENQUEUE",
+                "properties" : {
+                  "nodeType" : "Pipeline"
+                },
+                "successors" : {
+                  "BusinessService/BlueBirdProject/Reitek/businessService/BS_JMS_BB_REITEK" : {
+                    "label" : "BusinessService/BlueBirdProject/Reitek/businessService/BS_JMS_BB_REITEK",
+                    "properties" : {
+                      "nodeType" : "BusinessService"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/BlueBirdProject/Resources/PS_REST_REITEK_CALL_ME_NOW" : {
+                    "label" : "WSDL/BlueBirdProject/Resources/PS_REST_REITEK_CALL_ME_NOW",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : {
+                      "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      },
+                      "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/Reitek/callMeNow/xsd/XSD_REST_REITEK_CALL_ME_NOW" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/Reitek/callMeNow/xsd/XSD_REST_REITEK_CALL_ME_NOW",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                    "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                    "properties" : {
+                      "nodeType" : "PipelineTemplate"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "WSDL/BlueBirdProject/Resources/PS_REST_REITEK_CALL_ME_NOW" : {
+                "label" : "WSDL/BlueBirdProject/Resources/PS_REST_REITEK_CALL_ME_NOW",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/Reitek/callMeNow/xsd/XSD_REST_REITEK_CALL_ME_NOW" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/Reitek/callMeNow/xsd/XSD_REST_REITEK_CALL_ME_NOW",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/BlueBirdProject/Reitek/callMeNow/transformations/createResponse_WS_NotifyCallMeNow" : {
+                "label" : "Xquery/BlueBirdProject/Reitek/callMeNow/transformations/createResponse_WS_NotifyCallMeNow",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "BusinessService/BlueBirdProject/SALESFORCE/businessService/BS_JMS_BB_SALESFORCE" : {
+                "label" : "BusinessService/BlueBirdProject/SALESFORCE/businessService/BS_JMS_BB_SALESFORCE",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/BlueBirdProject/Reitek/callMeNow/pipeline/PL_WS_REITEK_CALL_ME_NOW_NotifyCallMeNowWithoutInsertProblem" : {
+            "label" : "Pipeline/BlueBirdProject/Reitek/callMeNow/pipeline/PL_WS_REITEK_CALL_ME_NOW_NotifyCallMeNowWithoutInsertProblem",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "BusinessService/BlueBirdProject/Reitek/callMeNow/businessService/BS_REST_REITEK_CALL_ME_NOW" : {
+                "label" : "BusinessService/BlueBirdProject/Reitek/callMeNow/businessService/BS_REST_REITEK_CALL_ME_NOW",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WADL/BlueBirdProject/Resources/BS_REST_REITEK_CALL_ME_NOW" : {
+                    "label" : "WADL/BlueBirdProject/Resources/BS_REST_REITEK_CALL_ME_NOW",
+                    "properties" : {
+                      "nodeType" : "WADL"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/BlueBirdProject/Resources/BS_REST_REITEK_CALL_ME_NOW" : {
+                    "label" : "WSDL/BlueBirdProject/Resources/BS_REST_REITEK_CALL_ME_NOW",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/BlueBirdProject/Reitek/callMeNow/transformations/createRequest_BS_NotifyCallMeNowWithoutInsertProblem" : {
+                "label" : "Xquery/BlueBirdProject/Reitek/callMeNow/transformations/createRequest_BS_NotifyCallMeNowWithoutInsertProblem",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/Reitek/callMeNow/wsdl/WS_REITEK_CALL_ME_NOW" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/Reitek/callMeNow/wsdl/WS_REITEK_CALL_ME_NOW",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/Reitek/callMeNow/xsd/XSD_REITEK_CALL_ME_NOW" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/Reitek/callMeNow/xsd/XSD_REITEK_CALL_ME_NOW",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/BlueBirdProject/Resources/PS_REST_REITEK_CALL_ME_NOW" : {
+        "label" : "WSDL/BlueBirdProject/Resources/PS_REST_REITEK_CALL_ME_NOW",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/Reitek/callMeNow/xsd/XSD_REST_REITEK_CALL_ME_NOW" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/Reitek/callMeNow/xsd/XSD_REST_REITEK_CALL_ME_NOW",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WADL/BlueBirdProject/Resources/PS_REST_REITEK_CALL_ME_NOW" : {
+        "label" : "WADL/BlueBirdProject/Resources/PS_REST_REITEK_CALL_ME_NOW",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "RestApi" : {
+    "type" : "REST",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/salesforce/rest/vocalOrders/",
+    "name" : "SalesforceProject_REST_CRM_VOCAL_ORDER_HANDLER_proxy_PS_REST_CRM_VOCAL_ORDER_HANDLER",
+    "remoteName" : "ProxyService/SalesforceProject/REST_CRM_VOCAL_ORDER_HANDLER/proxy/PS_REST_CRM_VOCAL_ORDER_HANDLER",
+    "localPath" : "osb_uat\\repo\\SalesforceProject\\REST\\CRM\\VOCAL\\ORDER\\HANDLER\\PS_REST_CRM_VOCAL_ORDER_HANDLER",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/salesforce/rest/vocalOrders/?WADL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "MDW_CDM/EnterpriseServices/SalesforceProject/Rest_VocalOrderHandler/xsd/XSD_CRM_VOCAL_ORDER_HANDLER",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ],
+      "soapApiSpec" : {
+        "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e",
+        "xsdSchemas" : [ {
+          "xsdPath" : "/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_VocalOrderHandler/xsd/XSD_CRM_VOCAL_ORDER_HANDLER",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        }, {
+          "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        } ]
+      }
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

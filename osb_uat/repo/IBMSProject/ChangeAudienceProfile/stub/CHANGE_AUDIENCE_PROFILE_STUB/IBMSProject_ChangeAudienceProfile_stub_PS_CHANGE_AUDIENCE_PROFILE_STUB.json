@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/ibms/WS_CHANGE_AUDIENCE_PROFILE_STUB",
+    "name" : "IBMSProject_ChangeAudienceProfile_stub_PS_CHANGE_AUDIENCE_PROFILE_STUB",
+    "remoteName" : "ProxyService/IBMSProject/ChangeAudienceProfile/stub/PS_CHANGE_AUDIENCE_PROFILE_STUB",
+    "localPath" : "osb_uat\\repo\\IBMSProject\\ChangeAudienceProfile\\stub\\CHANGE_AUDIENCE_PROFILE_STUB",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/ibms/WS_CHANGE_AUDIENCE_PROFILE_STUB?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/IBMSProject/ChangeAudienceProfile/xsd/XSD_CHANGE_AUDIENCE_PROFILE",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

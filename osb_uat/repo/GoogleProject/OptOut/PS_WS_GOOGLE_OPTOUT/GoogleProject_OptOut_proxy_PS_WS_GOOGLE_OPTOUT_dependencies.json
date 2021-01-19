@@ -1,0 +1,136 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/GoogleProject/OptOut/proxy/PS_WS_GOOGLE_OPTOUT",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/GoogleProject/OptOut/wsdl/WS_GOOGLE_OPTOUT" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/GoogleProject/OptOut/wsdl/WS_GOOGLE_OPTOUT",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/GoogleProject/OptOut/xsd/XSD_GOOGLE_OPTOUT" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/GoogleProject/OptOut/xsd/XSD_GOOGLE_OPTOUT",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/GoogleProject/OptOut/pipeline/PL_WS_GOOGLE_OPTOUT" : {
+        "label" : "Pipeline/GoogleProject/OptOut/pipeline/PL_WS_GOOGLE_OPTOUT",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "BusinessService/GoogleProject/OptOut/businessService/BS_EJB_GOOGLE_OPTOUT" : {
+            "label" : "BusinessService/GoogleProject/OptOut/businessService/BS_EJB_GOOGLE_OPTOUT",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/ApplicationObjects/GOOGLE/MDW_EJB/wsdl/GoogleEJB_OPTService" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/GOOGLE/MDW_EJB/wsdl/GoogleEJB_OPTService",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/GoogleProject/OptOut/transformation/createRequestEJBGoogleOPTOUT" : {
+            "label" : "Xquery/GoogleProject/OptOut/transformation/createRequestEJBGoogleOPTOUT",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/GoogleProject/OptOut/transformation/createResponsePublish" : {
+            "label" : "Xquery/GoogleProject/OptOut/transformation/createResponsePublish",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/GoogleProject/OptOut/transformation/createDeleteInfoRequestType" : {
+            "label" : "Xquery/GoogleProject/OptOut/transformation/createDeleteInfoRequestType",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/GoogleProject/OptOut/wsdl/WS_GOOGLE_OPTOUT" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/GoogleProject/OptOut/wsdl/WS_GOOGLE_OPTOUT",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/GoogleProject/OptOut/xsd/XSD_GOOGLE_OPTOUT" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/GoogleProject/OptOut/xsd/XSD_GOOGLE_OPTOUT",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "BusinessService/GoogleProject/OptOut/businessService/BS_GOOGLE_PUBSUB" : {
+            "label" : "BusinessService/GoogleProject/OptOut/businessService/BS_GOOGLE_PUBSUB",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "WADL/GoogleProject/Resources/BS_GOOGLE_PUBSUB" : {
+                "label" : "WADL/GoogleProject/Resources/BS_GOOGLE_PUBSUB",
+                "properties" : {
+                  "nodeType" : "WADL"
+                },
+                "successors" : { }
+              },
+              "WSDL/GoogleProject/Resources/BS_GOOGLE_PUBSUB" : {
+                "label" : "WSDL/GoogleProject/Resources/BS_GOOGLE_PUBSUB",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/GoogleProject/OptOut/transformation/createRequestPublish" : {
+            "label" : "Xquery/GoogleProject/OptOut/transformation/createRequestPublish",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

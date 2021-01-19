@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/mdw/sf/WS_SF_AGENDA_MANAGEMENT",
+    "name" : "BlueBirdProject_SALESFORCE_agendaManagement_proxy_PS_WS_SF_AGENDA_MANAGEMENT",
+    "remoteName" : "ProxyService/BlueBirdProject/SALESFORCE/agendaManagement/proxy/PS_WS_SF_AGENDA_MANAGEMENT",
+    "localPath" : "osb_uat\\repo\\BlueBirdProject\\SALESFORCE\\agendaManagement\\PS_WS_SF_AGENDA_MANAGEMENT",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/mdw/sf/WS_SF_AGENDA_MANAGEMENT?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/agendaManagement/xsd/XSD_SF_AGENDA_MANAGEMENT",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

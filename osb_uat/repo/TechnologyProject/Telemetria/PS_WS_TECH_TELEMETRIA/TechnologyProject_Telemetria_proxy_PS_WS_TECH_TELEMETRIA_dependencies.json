@@ -1,0 +1,262 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/TechnologyProject/Telemetria/proxy/PS_WS_TECH_TELEMETRIA",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/TechnologyProject/Telemetria/pipeline/PL_WS_TECH_TELEMETRIA" : {
+        "label" : "Pipeline/TechnologyProject/Telemetria/pipeline/PL_WS_TECH_TELEMETRIA",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/TechnologyProject/Telemetria/wsdl/WS_TECH_TELEMETRIA" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/TechnologyProject/Telemetria/wsdl/WS_TECH_TELEMETRIA",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/TechnologyProject/Telemetria/xsd/XSD_TECH_TELEMETRIA" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/TechnologyProject/Telemetria/xsd/XSD_TECH_TELEMETRIA",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Pipeline/TechnologyProject/Telemetria/pipeline/PL_REST_TECH_TELEMETRIA_GetIptvSpeedTestInfo" : {
+            "label" : "Pipeline/TechnologyProject/Telemetria/pipeline/PL_REST_TECH_TELEMETRIA_GetIptvSpeedTestInfo",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "Xquery/TechnologyProject/Telemetria/transformation/createResponse_GetIptvSpeedTestInfo" : {
+                "label" : "Xquery/TechnologyProject/Telemetria/transformation/createResponse_GetIptvSpeedTestInfo",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/TechnologyProject/Telemetria/transformation/createRequest_GetIptvSpeedTestInfo" : {
+                "label" : "Xquery/TechnologyProject/Telemetria/transformation/createRequest_GetIptvSpeedTestInfo",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/TechnologyProject/Telemetria/wsdl/WS_TECH_TELEMETRIA" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/TechnologyProject/Telemetria/wsdl/WS_TECH_TELEMETRIA",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/TechnologyProject/Telemetria/xsd/XSD_TECH_TELEMETRIA" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/TechnologyProject/Telemetria/xsd/XSD_TECH_TELEMETRIA",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "BusinessService/TechnologyProject/Telemetria/businessService/BS_REST_TECH_TELEMETRIA_GetIptvSpeedTestInfo" : {
+                "label" : "BusinessService/TechnologyProject/Telemetria/businessService/BS_REST_TECH_TELEMETRIA_GetIptvSpeedTestInfo",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Pipeline/TechnologyProject/Telemetria/pipeline/PL_REST_TECH_TELEMETRIA_GetIptvStbInfo" : {
+            "label" : "Pipeline/TechnologyProject/Telemetria/pipeline/PL_REST_TECH_TELEMETRIA_GetIptvStbInfo",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "BusinessService/TechnologyProject/Telemetria/businessService/BS_REST_TECH_TELEMETRIA_GetIptvInfo" : {
+                "label" : "BusinessService/TechnologyProject/Telemetria/businessService/BS_REST_TECH_TELEMETRIA_GetIptvInfo",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/TechnologyProject/Telemetria/wsdl/WS_TECH_TELEMETRIA" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/TechnologyProject/Telemetria/wsdl/WS_TECH_TELEMETRIA",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/TechnologyProject/Telemetria/xsd/XSD_TECH_TELEMETRIA" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/TechnologyProject/Telemetria/xsd/XSD_TECH_TELEMETRIA",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/TechnologyProject/Telemetria/transformation/createResponse_GetIptvStbInfoWithOSDText" : {
+                "label" : "Xquery/TechnologyProject/Telemetria/transformation/createResponse_GetIptvStbInfoWithOSDText",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "ProxyService/MDWProject/TranscodificheOSD/proxy/PS_LOCACL_SELECT_TRANSCODIFICHE_OSD" : {
+                "label" : "ProxyService/MDWProject/TranscodificheOSD/proxy/PS_LOCACL_SELECT_TRANSCODIFICHE_OSD",
+                "properties" : {
+                  "transport-type" : "local",
+                  "nodeType" : "Proxy",
+                  "service-type" : "SOAP"
+                },
+                "successors" : {
+                  "WSDL/MDWProject/Resources/BS_SQL_SELECT_TRANSCODIFICHE_OSD/concrete" : {
+                    "label" : "WSDL/MDWProject/Resources/BS_SQL_SELECT_TRANSCODIFICHE_OSD/concrete",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "Pipeline/MDWProject/TranscodificheOSD/pipeline/PL_INTERNAL_SELECT_TRANSCODIFICHE_OSD" : {
+                    "label" : "Pipeline/MDWProject/TranscodificheOSD/pipeline/PL_INTERNAL_SELECT_TRANSCODIFICHE_OSD",
+                    "properties" : {
+                      "nodeType" : "Pipeline"
+                    },
+                    "successors" : {
+                      "WSDL/MDWProject/Resources/BS_SQL_SELECT_TRANSCODIFICHE_OSD/concrete" : {
+                        "label" : "WSDL/MDWProject/Resources/BS_SQL_SELECT_TRANSCODIFICHE_OSD/concrete",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : { }
+                      },
+                      "BusinessService/MDWProject/TranscodificheOSD/businessService/BS_SQL_SELECT_TRANSCODIFICHE_OSD" : {
+                        "label" : "BusinessService/MDWProject/TranscodificheOSD/businessService/BS_SQL_SELECT_TRANSCODIFICHE_OSD",
+                        "properties" : {
+                          "nodeType" : "BusinessService"
+                        },
+                        "successors" : {
+                          "WSDL/MDWProject/Resources/BS_SQL_SELECT_TRANSCODIFICHE_OSD/concrete" : {
+                            "label" : "WSDL/MDWProject/Resources/BS_SQL_SELECT_TRANSCODIFICHE_OSD/concrete",
+                            "properties" : {
+                              "nodeType" : "WSDL"
+                            },
+                            "successors" : { }
+                          },
+                          "JCA/MDWProject/Resources/BS_SQL_SELECT_TRANSCODIFICHE_OSD_db" : {
+                            "label" : "JCA/MDWProject/Resources/BS_SQL_SELECT_TRANSCODIFICHE_OSD_db",
+                            "properties" : {
+                              "nodeType" : "JCA"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      },
+                      "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                        "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                        "properties" : {
+                          "nodeType" : "PipelineTemplate"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  }
+                }
+              },
+              "Xquery/TechnologyProject/Telemetria/transformation/createRequest_GetIptvStbInfo" : {
+                "label" : "Xquery/TechnologyProject/Telemetria/transformation/createRequest_GetIptvStbInfo",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/TechnologyProject/Telemetria/transformation/createRequest_TranscodificheOSD" : {
+                "label" : "Xquery/TechnologyProject/Telemetria/transformation/createRequest_TranscodificheOSD",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/TechnologyProject/Telemetria/transformation/createResponse_GetIptvStbInfo" : {
+                "label" : "Xquery/TechnologyProject/Telemetria/transformation/createResponse_GetIptvStbInfo",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/TechnologyProject/Telemetria/wsdl/WS_TECH_TELEMETRIA" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/TechnologyProject/Telemetria/wsdl/WS_TECH_TELEMETRIA",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/TechnologyProject/Telemetria/xsd/XSD_TECH_TELEMETRIA" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/TechnologyProject/Telemetria/xsd/XSD_TECH_TELEMETRIA",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

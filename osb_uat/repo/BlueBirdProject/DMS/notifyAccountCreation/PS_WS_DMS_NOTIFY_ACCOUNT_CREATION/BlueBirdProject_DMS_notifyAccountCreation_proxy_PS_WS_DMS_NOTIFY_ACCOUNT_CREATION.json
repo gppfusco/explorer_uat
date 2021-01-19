@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/service/mdw/dms/WS_DMS_NOTIFY_ACCOUNT_CREATION",
+    "name" : "BlueBirdProject_DMS_notifyAccountCreation_proxy_PS_WS_DMS_NOTIFY_ACCOUNT_CREATION",
+    "remoteName" : "ProxyService/BlueBirdProject/DMS/notifyAccountCreation/proxy/PS_WS_DMS_NOTIFY_ACCOUNT_CREATION",
+    "localPath" : "osb_uat\\repo\\BlueBirdProject\\DMS\\notifyAccountCreation\\PS_WS_DMS_NOTIFY_ACCOUNT_CREATION",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/service/mdw/dms/WS_DMS_NOTIFY_ACCOUNT_CREATION?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/BlueBirdProject/DMS/notifyAccountCreation/xsd/XSD_DMS_NOTIFY_ACCOUNT_CREATION",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

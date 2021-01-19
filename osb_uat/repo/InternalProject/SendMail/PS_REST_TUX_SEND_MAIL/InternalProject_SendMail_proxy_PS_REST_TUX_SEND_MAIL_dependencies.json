@@ -1,0 +1,137 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/InternalProject/SendMail/proxy/PS_REST_TUX_SEND_MAIL",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "WADL/InternalProject/Resources/PS_REST_TUX_SEND_MAIL" : {
+        "label" : "WADL/InternalProject/Resources/PS_REST_TUX_SEND_MAIL",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/InternalProject/SendMail/wsdl/WS_TUX_SEND_MAIL" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/InternalProject/SendMail/wsdl/WS_TUX_SEND_MAIL",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/InternalProject/SendMail/xsd/XSD_SEND_MAIL" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/InternalProject/SendMail/xsd/XSD_SEND_MAIL",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "ProxyService/InternalProject/SendMail/proxy/PS_WS_TUX_SEND_MAIL" : {
+        "label" : "ProxyService/InternalProject/SendMail/proxy/PS_WS_TUX_SEND_MAIL",
+        "properties" : {
+          "nodeType" : "ProxyService"
+        },
+        "successors" : {
+          "Pipeline/InternalProject/SendMail/pipeline/PL_TUX_SEND_MAIL" : {
+            "label" : "Pipeline/InternalProject/SendMail/pipeline/PL_TUX_SEND_MAIL",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/EnterpriseServices/InternalProject/SendMail/wsdl/WS_TUX_SEND_MAIL" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/InternalProject/SendMail/wsdl/WS_TUX_SEND_MAIL",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/InternalProject/SendMail/xsd/XSD_SEND_MAIL" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/InternalProject/SendMail/xsd/XSD_SEND_MAIL",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/InternalProject/SendMail/transformation/createResponse_WS_TUX_SEND_MAIL" : {
+                "label" : "Xquery/InternalProject/SendMail/transformation/createResponse_WS_TUX_SEND_MAIL",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/InternalProject/SendMail/businessService/BS_TUX_SEND_MAIL" : {
+                "label" : "BusinessService/InternalProject/SendMail/businessService/BS_TUX_SEND_MAIL",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/ApplicationObjects/INTERNAL_PROJECT/SendMail/XSD_TUX_SEND_MAIL" : {
+                    "label" : "XMLSchema/MDW_CDM/ApplicationObjects/INTERNAL_PROJECT/SendMail/XSD_TUX_SEND_MAIL",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0" : {
+                    "label" : "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0",
+                    "properties" : {
+                      "nodeType" : "Archive"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/InternalProject/SendMail/transformation/createRequest_BS_TUX_SEND_MAIL" : {
+                "label" : "Xquery/InternalProject/SendMail/transformation/createRequest_BS_TUX_SEND_MAIL",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/InternalProject/SendMail/wsdl/WS_TUX_SEND_MAIL" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/InternalProject/SendMail/wsdl/WS_TUX_SEND_MAIL",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/InternalProject/SendMail/xsd/XSD_SEND_MAIL" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/InternalProject/SendMail/xsd/XSD_SEND_MAIL",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

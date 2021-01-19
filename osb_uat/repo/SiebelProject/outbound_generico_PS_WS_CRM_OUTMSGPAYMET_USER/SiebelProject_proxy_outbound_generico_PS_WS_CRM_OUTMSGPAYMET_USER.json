@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/siebel/WS_CRM_OUTMSGPAYMET_USER",
+    "name" : "SiebelProject_proxy_outbound_generico_PS_WS_CRM_OUTMSGPAYMET_USER",
+    "remoteName" : "ProxyService/SiebelProject/proxy/outbound/generico/PS_WS_CRM_OUTMSGPAYMET_USER",
+    "localPath" : "osb_uat\\repo\\SiebelProject\\outbound_generico_PS_WS_CRM_OUTMSGPAYMET_USER",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/siebel/WS_CRM_OUTMSGPAYMET_USER?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

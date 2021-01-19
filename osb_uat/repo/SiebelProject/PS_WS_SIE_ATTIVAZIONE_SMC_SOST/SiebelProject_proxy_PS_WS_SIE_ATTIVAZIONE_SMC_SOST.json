@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/siebel/WS_SIE_ATTIVAZIONE_SMC_SOST",
+    "name" : "SiebelProject_proxy_PS_WS_SIE_ATTIVAZIONE_SMC_SOST",
+    "remoteName" : "ProxyService/SiebelProject/proxy/PS_WS_SIE_ATTIVAZIONE_SMC_SOST",
+    "localPath" : "osb_uat\\repo\\SiebelProject\\PS_WS_SIE_ATTIVAZIONE_SMC_SOST",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/siebel/WS_SIE_ATTIVAZIONE_SMC_SOST?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SiebelProject/AttivazioneSmcSost/xsd/XSD_SIE_ATTIVAZIONE_SMC_SOST",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

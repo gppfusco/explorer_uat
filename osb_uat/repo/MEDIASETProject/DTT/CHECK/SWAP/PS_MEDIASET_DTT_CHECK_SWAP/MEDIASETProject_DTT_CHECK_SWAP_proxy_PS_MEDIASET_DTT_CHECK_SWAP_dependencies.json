@@ -1,0 +1,224 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/MEDIASETProject/DTT_CHECK_SWAP/proxy/PS_MEDIASET_DTT_CHECK_SWAP",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/MEDIASETProject/DTT_CHECK_SWAP/pipeline/PL_WS_MEDIASET_DTT_CHECK_SWAP_ROUTING" : {
+        "label" : "Pipeline/MEDIASETProject/DTT_CHECK_SWAP/pipeline/PL_WS_MEDIASET_DTT_CHECK_SWAP_ROUTING",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Pipeline/MEDIASETProject/DTT_CHECK_SWAP/pipeline/PL_WS_MEDIASET_DTT_CHECK_SWAP" : {
+            "label" : "Pipeline/MEDIASETProject/DTT_CHECK_SWAP/pipeline/PL_WS_MEDIASET_DTT_CHECK_SWAP",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/MEDIASETProject/DTT_CHECK_SWAP/transformations/createResponseCheckSwap" : {
+                "label" : "Xquery/MEDIASETProject/DTT_CHECK_SWAP/transformations/createResponseCheckSwap",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "Xquery/MEDIASETProject/DTT_CHECK_SWAP/transformations/createResponseByFault" : {
+                "label" : "Xquery/MEDIASETProject/DTT_CHECK_SWAP/transformations/createResponseByFault",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/MediasetProject/DTTCheckSwap/wsdl/WS_MEDIASET_DTT_CHECK_SWAP" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/MediasetProject/DTTCheckSwap/wsdl/WS_MEDIASET_DTT_CHECK_SWAP",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/MediasetProject/DTTCheckSwap/xsd/XSD_MEDIASET_DTT_CHECK_SWAP" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MediasetProject/DTTCheckSwap/xsd/XSD_MEDIASET_DTT_CHECK_SWAP",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/MEDIASETProject/DTT_CHECK_SWAP/transformations/createRequestCheckSwap" : {
+                "label" : "Xquery/MEDIASETProject/DTT_CHECK_SWAP/transformations/createRequestCheckSwap",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/MEDIASETProject/DTT_CHECK_SWAP/businessService/BS_WS_R2_DTT_SMARTCARD_SKY_SC" : {
+                "label" : "BusinessService/MEDIASETProject/DTT_CHECK_SWAP/businessService/BS_WS_R2_DTT_SMARTCARD_SKY_SC",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/MEDIASET/FL_SMARTCARD_SKY_SC/wsdl/FL_SMARTCARD_SKY_SC" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/MEDIASET/FL_SMARTCARD_SKY_SC/wsdl/FL_SMARTCARD_SKY_SC",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "ServiceAccount/MEDIASETProject/serviceAccount/SA_R2Mediaset" : {
+                    "label" : "ServiceAccount/MEDIASETProject/serviceAccount/SA_R2Mediaset",
+                    "properties" : {
+                      "nodeType" : "ServiceAccount"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/MEDIASETProject/DTT_CHECK_SWAP/pipeline/PL_WS_MEDIASET_DTT_CHECK_REPLACEMENT_REQUEST" : {
+            "label" : "Pipeline/MEDIASETProject/DTT_CHECK_SWAP/pipeline/PL_WS_MEDIASET_DTT_CHECK_REPLACEMENT_REQUEST",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/MediasetProject/DTTCheckSwap/wsdl/WS_MEDIASET_DTT_CHECK_SWAP" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/MediasetProject/DTTCheckSwap/wsdl/WS_MEDIASET_DTT_CHECK_SWAP",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/MediasetProject/DTTCheckSwap/xsd/XSD_MEDIASET_DTT_CHECK_SWAP" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MediasetProject/DTTCheckSwap/xsd/XSD_MEDIASET_DTT_CHECK_SWAP",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/MEDIASETProject/DTT_CHECK_SWAP/transformations/createRequestCheckReplacementRequest" : {
+                "label" : "Xquery/MEDIASETProject/DTT_CHECK_SWAP/transformations/createRequestCheckReplacementRequest",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/MEDIASETProject/DTT_CHECK_SWAP/businessService/BS_WS_R2_DTT_SMARTCARD_SKY_SC" : {
+                "label" : "BusinessService/MEDIASETProject/DTT_CHECK_SWAP/businessService/BS_WS_R2_DTT_SMARTCARD_SKY_SC",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/MEDIASET/FL_SMARTCARD_SKY_SC/wsdl/FL_SMARTCARD_SKY_SC" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/MEDIASET/FL_SMARTCARD_SKY_SC/wsdl/FL_SMARTCARD_SKY_SC",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "ServiceAccount/MEDIASETProject/serviceAccount/SA_R2Mediaset" : {
+                    "label" : "ServiceAccount/MEDIASETProject/serviceAccount/SA_R2Mediaset",
+                    "properties" : {
+                      "nodeType" : "ServiceAccount"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/MEDIASETProject/DTT_CHECK_SWAP/transformations/createResponseCheckReplacementRequest" : {
+                "label" : "Xquery/MEDIASETProject/DTT_CHECK_SWAP/transformations/createResponseCheckReplacementRequest",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/MediasetProject/DTTCheckSwap/wsdl/WS_MEDIASET_DTT_CHECK_SWAP" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/MediasetProject/DTTCheckSwap/wsdl/WS_MEDIASET_DTT_CHECK_SWAP",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/MediasetProject/DTTCheckSwap/xsd/XSD_MEDIASET_DTT_CHECK_SWAP" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MediasetProject/DTTCheckSwap/xsd/XSD_MEDIASET_DTT_CHECK_SWAP",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/MediasetProject/DTTCheckSwap/wsdl/WS_MEDIASET_DTT_CHECK_SWAP" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/MediasetProject/DTTCheckSwap/wsdl/WS_MEDIASET_DTT_CHECK_SWAP",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/MediasetProject/DTTCheckSwap/xsd/XSD_MEDIASET_DTT_CHECK_SWAP" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MediasetProject/DTTCheckSwap/xsd/XSD_MEDIASET_DTT_CHECK_SWAP",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.skytv.it/mdw/data" targetNamespace="http://www.skytv.it/mdw/data" elementFormDefault="qualified">
+	<xsd:element name="requestCallbackSFNotify" type="requestCallbackSFNotifyType"/>
+	<xsd:element name="responseCallbackSFNotify" type="responseCallbackSFNotifyType"/>
+	<xsd:complexType name="requestCallbackSFNotifyType">
+		<xsd:sequence>
+			<xsd:element name="orderNumber" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="orderRef" type="xsd:string"/>
+			<xsd:element name="tibcoOrderId" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="action" type="xsd:string"/>
+			<xsd:element name="subAction" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="responseCallbackSFNotifyType">
+		<xsd:sequence>
+			<xsd:element name="resultCode" type="xsd:string"/>
+			<xsd:element name="resultDescription" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

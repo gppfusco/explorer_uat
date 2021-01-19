@@ -1,0 +1,99 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/OTTUkProject/OPTApi/proxy/PS_WS_OTT_DEQUEUE_OP",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/OTTUkProject/OPTApi/pipeline/PL_WS_OTT_OPT_DEQUEUE_OP" : {
+        "label" : "Pipeline/OTTUkProject/OPTApi/pipeline/PL_WS_OTT_OPT_DEQUEUE_OP",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/OTTUkProject/OPTApi/pipeline/PL_WS_OTT_OPT_OUT_INTERNAL" : {
+            "label" : "Pipeline/OTTUkProject/OPTApi/pipeline/PL_WS_OTT_OPT_OUT_INTERNAL",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/OTTUkProject/OPTApi/tranformation/createRequest_JSON_OptOut" : {
+                "label" : "Xquery/OTTUkProject/OPTApi/tranformation/createRequest_JSON_OptOut",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/OTTUkProject/OPTApi/tranformation/createResponse_fromJSON_optOut" : {
+                "label" : "Xquery/OTTUkProject/OPTApi/tranformation/createResponse_fromJSON_optOut",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/OTTUkProject/Resources/BS_TEXT_OTT_OPT_API" : {
+                "label" : "WSDL/OTTUkProject/Resources/BS_TEXT_OTT_OPT_API",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "BusinessService/OTTUkProject/OPTApi/businessService/BS_TEXT_OTT_OPT_OUT_API" : {
+                "label" : "BusinessService/OTTUkProject/OPTApi/businessService/BS_TEXT_OTT_OPT_OUT_API",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "WSDL/MDW_CDM/ApplicationObjects/OTT_UK/OPT_API/SOAEnqueueOp/WS_SOA_OTT_ENQUEUE" : {
+            "label" : "WSDL/MDW_CDM/ApplicationObjects/OTT_UK/OPT_API/SOAEnqueueOp/WS_SOA_OTT_ENQUEUE",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/ApplicationObjects/OTT_UK/OPT_API/SOACallback/wsdl/WS_SOA_OTT_DEQUEUE_OP" : {
+        "label" : "WSDL/MDW_CDM/ApplicationObjects/OTT_UK/OPT_API/SOACallback/wsdl/WS_SOA_OTT_DEQUEUE_OP",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/ApplicationObjects/OTT_UK/OPT_API/SOACallback/xsd/XSD_SOA_OTT_DEQUEUE_OP" : {
+            "label" : "XMLSchema/MDW_CDM/ApplicationObjects/OTT_UK/OPT_API/SOACallback/xsd/XSD_SOA_OTT_DEQUEUE_OP",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

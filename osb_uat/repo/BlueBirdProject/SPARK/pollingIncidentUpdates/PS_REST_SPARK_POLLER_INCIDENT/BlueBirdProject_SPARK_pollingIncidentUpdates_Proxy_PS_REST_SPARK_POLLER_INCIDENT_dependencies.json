@@ -1,0 +1,210 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/BlueBirdProject/SPARK/pollingIncidentUpdates/Proxy/PS_REST_SPARK_POLLER_INCIDENT",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "Pipeline/BlueBirdProject/SPARK/pollingIncidentUpdates/pipeline/PL_REST_SPARK_POLLER_INCIDENT_MDW_CACHED" : {
+        "label" : "Pipeline/BlueBirdProject/SPARK/pollingIncidentUpdates/pipeline/PL_REST_SPARK_POLLER_INCIDENT_MDW_CACHED",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/BlueBirdProject/SPARK/pollingIncidentUpdates/pipeline/PL_REST_SPARK_POLLER_INCIDENT_MDW_CACHED_callPoller" : {
+            "label" : "Pipeline/BlueBirdProject/SPARK/pollingIncidentUpdates/pipeline/PL_REST_SPARK_POLLER_INCIDENT_MDW_CACHED_callPoller",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/MDWProject/AlignSfByBpel/transformations/createRequest_EJBAlign_IsExistCorrelationID" : {
+                "label" : "Xquery/MDWProject/AlignSfByBpel/transformations/createRequest_EJBAlign_IsExistCorrelationID",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/BlueBirdProject/SPARK/pollingIncidentUpdates/businessService/BS_REST_SPARK_POLLER_INCIDENT_MDW_CACHED" : {
+                "label" : "BusinessService/BlueBirdProject/SPARK/pollingIncidentUpdates/businessService/BS_REST_SPARK_POLLER_INCIDENT_MDW_CACHED",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : { }
+              },
+              "Pipeline/BlueBirdProject/SPARK/pollingIncidentUpdates/pipeline/PL_REST_SPARK_POLLER_INCIDENT_MDW_CACHED_semaphore" : {
+                "label" : "Pipeline/BlueBirdProject/SPARK/pollingIncidentUpdates/pipeline/PL_REST_SPARK_POLLER_INCIDENT_MDW_CACHED_semaphore",
+                "properties" : {
+                  "nodeType" : "Pipeline"
+                },
+                "successors" : {
+                  "BusinessService/MDWProject/AlignSfByBpel/businessServices/BS_WS_EJB_ALIGN_MESSAGE" : {
+                    "label" : "BusinessService/MDWProject/AlignSfByBpel/businessServices/BS_WS_EJB_ALIGN_MESSAGE",
+                    "properties" : {
+                      "nodeType" : "BusinessService"
+                    },
+                    "successors" : {
+                      "WSDL/MDW_CDM/ApplicationObjects/MDW/AlignMessageServiceCOHE/wsdl/WS_BS_EJB_ALIGN_MESSAGE" : {
+                        "label" : "WSDL/MDW_CDM/ApplicationObjects/MDW/AlignMessageServiceCOHE/wsdl/WS_BS_EJB_ALIGN_MESSAGE",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : {
+                          "XMLSchema/MDW_CDM/ApplicationObjects/MDW/AlignMessageServiceCOHE/xsd/XSD_EJB_ALIGN_MESSAGE" : {
+                            "label" : "XMLSchema/MDW_CDM/ApplicationObjects/MDW/AlignMessageServiceCOHE/xsd/XSD_EJB_ALIGN_MESSAGE",
+                            "properties" : {
+                              "nodeType" : "XMLSchema"
+                            },
+                            "successors" : { }
+                          },
+                          "XMLSchema/MDW_CDM/ApplicationObjects/MDW/AlignMessageServiceCOHE/xsd/XSD_EJB_ALIGN_MESSAGE_ENTITIES" : {
+                            "label" : "XMLSchema/MDW_CDM/ApplicationObjects/MDW/AlignMessageServiceCOHE/xsd/XSD_EJB_ALIGN_MESSAGE_ENTITIES",
+                            "properties" : {
+                              "nodeType" : "XMLSchema"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "WSDL/MDW_CDM/ApplicationObjects/MDW/AlignMessageServiceCOHE/wsdl/WS_BS_EJB_ALIGN_MESSAGE" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/MDW/AlignMessageServiceCOHE/wsdl/WS_BS_EJB_ALIGN_MESSAGE",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : {
+                      "XMLSchema/MDW_CDM/ApplicationObjects/MDW/AlignMessageServiceCOHE/xsd/XSD_EJB_ALIGN_MESSAGE" : {
+                        "label" : "XMLSchema/MDW_CDM/ApplicationObjects/MDW/AlignMessageServiceCOHE/xsd/XSD_EJB_ALIGN_MESSAGE",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      },
+                      "XMLSchema/MDW_CDM/ApplicationObjects/MDW/AlignMessageServiceCOHE/xsd/XSD_EJB_ALIGN_MESSAGE_ENTITIES" : {
+                        "label" : "XMLSchema/MDW_CDM/ApplicationObjects/MDW/AlignMessageServiceCOHE/xsd/XSD_EJB_ALIGN_MESSAGE_ENTITIES",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                    "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                    "properties" : {
+                      "nodeType" : "PipelineTemplate"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/MDWProject/AlignSfByBpel/transformations/createRequest_EJBAlign_RemoveCorrelationID" : {
+                "label" : "Xquery/MDWProject/AlignSfByBpel/transformations/createRequest_EJBAlign_RemoveCorrelationID",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/BlueBirdProject/SPARK/pollingIncidentUpdates/trasformation/createRequest_BS_poller_MDW_CACHED" : {
+                "label" : "Xquery/BlueBirdProject/SPARK/pollingIncidentUpdates/trasformation/createRequest_BS_poller_MDW_CACHED",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/BlueBirdProject/Resources/PS_REST_SPARK_POLLER_INCIDENT" : {
+                "label" : "WSDL/BlueBirdProject/Resources/PS_REST_SPARK_POLLER_INCIDENT",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SPARK/pollingIncidentUpdates/XSD/XSD_POLLING_INCIDENT_UPD" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SPARK/pollingIncidentUpdates/XSD/XSD_POLLING_INCIDENT_UPD",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "WSDL/BlueBirdProject/Resources/PS_REST_SPARK_POLLER_INCIDENT" : {
+            "label" : "WSDL/BlueBirdProject/Resources/PS_REST_SPARK_POLLER_INCIDENT",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SPARK/pollingIncidentUpdates/XSD/XSD_POLLING_INCIDENT_UPD" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SPARK/pollingIncidentUpdates/XSD/XSD_POLLING_INCIDENT_UPD",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/BlueBirdProject/Resources/PS_REST_SPARK_POLLER_INCIDENT" : {
+        "label" : "WSDL/BlueBirdProject/Resources/PS_REST_SPARK_POLLER_INCIDENT",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SPARK/pollingIncidentUpdates/XSD/XSD_POLLING_INCIDENT_UPD" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SPARK/pollingIncidentUpdates/XSD/XSD_POLLING_INCIDENT_UPD",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WADL/BlueBirdProject/Resources/PS_REST_SPARK_POLLER_INCIDENT" : {
+        "label" : "WADL/BlueBirdProject/Resources/PS_REST_SPARK_POLLER_INCIDENT",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      }
+    }
+  }
+}

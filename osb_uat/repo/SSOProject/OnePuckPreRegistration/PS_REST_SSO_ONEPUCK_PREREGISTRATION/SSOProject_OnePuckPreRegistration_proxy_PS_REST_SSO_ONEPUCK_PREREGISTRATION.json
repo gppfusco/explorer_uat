@@ -1,0 +1,34 @@
+{
+  "RestApi" : {
+    "type" : "REST",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/sso/onePuckPreRegistration",
+    "name" : "SSOProject_OnePuckPreRegistration_proxy_PS_REST_SSO_ONEPUCK_PREREGISTRATION",
+    "remoteName" : "ProxyService/SSOProject/OnePuckPreRegistration/proxy/PS_REST_SSO_ONEPUCK_PREREGISTRATION",
+    "localPath" : "osb_uat\\repo\\SSOProject\\OnePuckPreRegistration\\PS_REST_SSO_ONEPUCK_PREREGISTRATION",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/sso/onePuckPreRegistration?WADL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "MDW_CDM/EnterpriseServices/SSOProject/OnePuckPreRegistration/xsd/XSD_SSO_ONEPUCK_PREREGISTRATION",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ],
+      "soapApiSpec" : {
+        "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e",
+        "xsdSchemas" : [ {
+          "xsdPath" : "/MDW_CDM/EnterpriseServices/SSOProject/OnePuckPreRegistration/xsd/XSD_SSO_ONEPUCK_PREREGISTRATION",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        }, {
+          "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        } ]
+      }
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

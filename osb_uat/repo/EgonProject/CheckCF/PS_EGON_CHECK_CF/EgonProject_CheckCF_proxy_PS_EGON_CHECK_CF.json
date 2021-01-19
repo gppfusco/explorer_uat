@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/egon/WS_CRM_EGON_CHECK_CF",
+    "name" : "EgonProject_CheckCF_proxy_PS_EGON_CHECK_CF",
+    "remoteName" : "ProxyService/EgonProject/CheckCF/proxy/PS_EGON_CHECK_CF",
+    "localPath" : "osb_uat\\repo\\EgonProject\\CheckCF\\PS_EGON_CHECK_CF",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/egon/WS_CRM_EGON_CHECK_CF?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/EgonProject/CheckCF/xsd/XSD_CRM_EGON_CHECK_CF",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

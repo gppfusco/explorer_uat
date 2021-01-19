@@ -1,0 +1,114 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/OMProject/NofityCommitOrder/proxy/PS_OM_NOTIFY_COMMIT_ORDER",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/OMProject/NotifyCommitOrder/wsdl/WS_OM_NOTIFY_COMMIT_ORDER" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/OMProject/NotifyCommitOrder/wsdl/WS_OM_NOTIFY_COMMIT_ORDER",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/NotifyCommitOrder/xsd/XSD_OM_NOTIFY_COMMIT_ORDER" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/NotifyCommitOrder/xsd/XSD_OM_NOTIFY_COMMIT_ORDER",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/OMProject/NofityCommitOrder/pipeline/PL_WS_OM_NOTIFY_COMMIT_ORDER" : {
+        "label" : "Pipeline/OMProject/NofityCommitOrder/pipeline/PL_WS_OM_NOTIFY_COMMIT_ORDER",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/OMProject/transformation/createRequestSoapHeaderTibco" : {
+            "label" : "Xquery/OMProject/transformation/createRequestSoapHeaderTibco",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/OMProject/NotifyCommitOrder/wsdl/WS_OM_NOTIFY_COMMIT_ORDER" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/OMProject/NotifyCommitOrder/wsdl/WS_OM_NOTIFY_COMMIT_ORDER",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/NotifyCommitOrder/xsd/XSD_OM_NOTIFY_COMMIT_ORDER" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/NotifyCommitOrder/xsd/XSD_OM_NOTIFY_COMMIT_ORDER",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/OMProject/NofityCommitOrder/transformations/createResponse_NotifyOrder" : {
+            "label" : "Xquery/OMProject/NofityCommitOrder/transformations/createResponse_NotifyOrder",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/OMProject/NofityCommitOrder/transformations/createRequest_NotifyOrder" : {
+            "label" : "Xquery/OMProject/NofityCommitOrder/transformations/createRequest_NotifyOrder",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "BusinessService/OMProject/NofityCommitOrder/businessServices/BS_WS_OM_NOTIFY_COMMIT_ORDER" : {
+            "label" : "BusinessService/OMProject/NofityCommitOrder/businessServices/BS_WS_OM_NOTIFY_COMMIT_ORDER",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "ServiceAccount/MDW_CDM/ServiceAccount/SA_Tibco" : {
+                "label" : "ServiceAccount/MDW_CDM/ServiceAccount/SA_Tibco",
+                "properties" : {
+                  "nodeType" : "ServiceAccount"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/ApplicationObjects/OM/NotifyCommitOrder/WSDL/WS_FW_TIBCO_NOTIFY_COMMIT_ORDER_CONCRETO_EMBEDDED" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/OM/NotifyCommitOrder/WSDL/WS_FW_TIBCO_NOTIFY_COMMIT_ORDER_CONCRETO_EMBEDDED",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

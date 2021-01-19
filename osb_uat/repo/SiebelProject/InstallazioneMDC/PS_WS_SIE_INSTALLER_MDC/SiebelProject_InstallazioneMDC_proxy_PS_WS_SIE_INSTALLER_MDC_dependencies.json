@@ -1,0 +1,100 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SiebelProject/InstallazioneMDC/proxy/PS_WS_SIE_INSTALLER_MDC",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/InstallazioneMDC/wsdl/WS_SIE_INSTALLER_MDC" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/InstallazioneMDC/wsdl/WS_SIE_INSTALLER_MDC",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/InstallazioneMDC/xsd/XSD_SIE_INSTALLER_MDC" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/InstallazioneMDC/xsd/XSD_SIE_INSTALLER_MDC",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/SiebelProject/InstallazioneMDC/pipeline/PL_WS_SIE_INSTALLER_MDC" : {
+        "label" : "Pipeline/SiebelProject/InstallazioneMDC/pipeline/PL_WS_SIE_INSTALLER_MDC",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Xquery/SiebelProject/transformations/createRequest_BS_EJB_SIEBEL" : {
+            "label" : "Xquery/SiebelProject/transformations/createRequest_BS_EJB_SIEBEL",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SIEBEL" : {
+            "label" : "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SIEBEL",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB" : {
+                "label" : "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB",
+                "properties" : {
+                  "nodeType" : "ForeignJNDIProvider"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/ApplicationObjects/SIEBEL/WSDL/BS_EJB_SIEBEL" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/SIEBEL/WSDL/BS_EJB_SIEBEL",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/InstallazioneMDC/wsdl/WS_SIE_INSTALLER_MDC" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/InstallazioneMDC/wsdl/WS_SIE_INSTALLER_MDC",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/InstallazioneMDC/xsd/XSD_SIE_INSTALLER_MDC" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/InstallazioneMDC/xsd/XSD_SIE_INSTALLER_MDC",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

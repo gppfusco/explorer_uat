@@ -1,0 +1,107 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/OMProject/GetSblOrder/proxy/PS_WS_GET_SBL_ORDER",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/OMProject/GetSblOrder/pipeline/PL_WS_GET_FIRST_ACTIVATION_SBL_ORDER" : {
+        "label" : "Pipeline/OMProject/GetSblOrder/pipeline/PL_WS_GET_FIRST_ACTIVATION_SBL_ORDER",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/OMProject/GetSblOrder/transformations/createRequestTuxGetFirstActivationSblOrder" : {
+            "label" : "Xquery/OMProject/GetSblOrder/transformations/createRequestTuxGetFirstActivationSblOrder",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/OMProject/GetSblOrder/wsdl/WS_OM_GET_SBL_ORDER" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/OMProject/GetSblOrder/wsdl/WS_OM_GET_SBL_ORDER",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/GetSblOrder/xsd/XSD_OM_GET_SBL_ORDER" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/GetSblOrder/xsd/XSD_OM_GET_SBL_ORDER",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "BusinessService/OMProject/GetSblOrder/businessServices/BS_TUX_GET_FIRST_ACTIVATION_SBL_ORDER" : {
+            "label" : "BusinessService/OMProject/GetSblOrder/businessServices/BS_TUX_GET_FIRST_ACTIVATION_SBL_ORDER",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/ApplicationObjects/OM/GetSblOrder/xsd/XSD_TUX_GetFirstActivationSblOrder" : {
+                "label" : "XMLSchema/MDW_CDM/ApplicationObjects/OM/GetSblOrder/xsd/XSD_TUX_GetFirstActivationSblOrder",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0" : {
+                "label" : "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0",
+                "properties" : {
+                  "nodeType" : "Archive"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/OMProject/GetSblOrder/transformations/createResponseTuxGetFirstActivationSblOrder" : {
+            "label" : "Xquery/OMProject/GetSblOrder/transformations/createResponseTuxGetFirstActivationSblOrder",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/OMProject/GetSblOrder/wsdl/WS_OM_GET_SBL_ORDER" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/OMProject/GetSblOrder/wsdl/WS_OM_GET_SBL_ORDER",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/GetSblOrder/xsd/XSD_OM_GET_SBL_ORDER" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/GetSblOrder/xsd/XSD_OM_GET_SBL_ORDER",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

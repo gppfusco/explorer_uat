@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/tuxedo/WS_KNN_INSRIDDECA",
+    "name" : "KENANProject_InsRIDDECA_proxy_PS_WS_KNN_INSRIDDECA",
+    "remoteName" : "ProxyService/KENANProject/InsRIDDECA/proxy/PS_WS_KNN_INSRIDDECA",
+    "localPath" : "osb_uat\\repo\\KENANProject\\InsRIDDECA\\PS_WS_KNN_INSRIDDECA",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/tuxedo/WS_KNN_INSRIDDECA?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/KenanProject/InsRIDDECA/xsd/XSD_TUX_INSRIDDECA",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

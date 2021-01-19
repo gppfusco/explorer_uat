@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/tibco/WS_TIBCO_LEGGI_DATI_SISAL",
+    "name" : "OMProject_LeggiDatiSisal_proxy_PS_WS_TIBCO_LEGGI_DATI_SISAL",
+    "remoteName" : "ProxyService/OMProject/LeggiDatiSisal/proxy/PS_WS_TIBCO_LEGGI_DATI_SISAL",
+    "localPath" : "osb_uat\\repo\\OMProject\\LeggiDatiSisal\\PS_WS_TIBCO_LEGGI_DATI_SISAL",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/tibco/WS_TIBCO_LEGGI_DATI_SISAL?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/OMProject/LeggiDatiSisal/xsd/XSD_TIBCO_LEGGI_DATI_SISAL",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/salesforce/WS_SALES_ORDERMANAGEMENT_STUB",
+    "name" : "OMProject_TestTIBCO_proxy_PS_SALES_ORDERMANAGEMENT_TEST",
+    "remoteName" : "ProxyService/OMProject/TestTIBCO/proxy/PS_SALES_ORDERMANAGEMENT_TEST",
+    "localPath" : "osb_uat\\repo\\OMProject\\TestTIBCO\\PS_SALES_ORDERMANAGEMENT_TEST",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/salesforce/WS_SALES_ORDERMANAGEMENT_STUB?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SalesforceProject/SalesOrdermanagement/xsd/XSD_SALES_ORDERMANAGEMENT",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/BlueBirdProject/OM/whsNotifyEvent/Proxy/PS_WS_OM_WHS_NOTIFY_EVENT",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/OM/whsNotifyEvent/wsdl/WS_WHS_NOTIFY_EVENT" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/OM/whsNotifyEvent/wsdl/WS_WHS_NOTIFY_EVENT",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OM/whsNotifyEvent/xsd/XSD_SF_WHS_NOTIFY_EVENT" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OM/whsNotifyEvent/xsd/XSD_SF_WHS_NOTIFY_EVENT",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/BlueBirdProject/OM/whsNotifyEvent/Pipeline/PL_OM_WHS_NOTIFY_EVENT" : {
+        "label" : "Pipeline/BlueBirdProject/OM/whsNotifyEvent/Pipeline/PL_OM_WHS_NOTIFY_EVENT",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/OM/whsNotifyEvent/wsdl/WS_WHS_NOTIFY_EVENT" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/OM/whsNotifyEvent/wsdl/WS_WHS_NOTIFY_EVENT",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OM/whsNotifyEvent/xsd/XSD_SF_WHS_NOTIFY_EVENT" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OM/whsNotifyEvent/xsd/XSD_SF_WHS_NOTIFY_EVENT",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/BlueBirdProject/OM/whsNotifyEvent/Pipeline/PL_OM_WHS_NOTIFY_EVENT_NotifyEventWHS" : {
+            "label" : "Pipeline/BlueBirdProject/OM/whsNotifyEvent/Pipeline/PL_OM_WHS_NOTIFY_EVENT_NotifyEventWHS",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "BusinessService/BlueBirdProject/OM/whsNotifyEvent/BusinessService/BS_WS_OM_WHS_NOTIFY_EVENT" : {
+                "label" : "BusinessService/BlueBirdProject/OM/whsNotifyEvent/BusinessService/BS_WS_OM_WHS_NOTIFY_EVENT",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/BLUEBIRD/OM/WS_OSS_TIBCO_NOTIFY_EVENT/WS_OSS_TIBCO_NOTIFY_EVENT" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/BLUEBIRD/OM/WS_OSS_TIBCO_NOTIFY_EVENT/WS_OSS_TIBCO_NOTIFY_EVENT",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/OM/whsNotifyEvent/wsdl/WS_WHS_NOTIFY_EVENT" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/OM/whsNotifyEvent/wsdl/WS_WHS_NOTIFY_EVENT",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OM/whsNotifyEvent/xsd/XSD_SF_WHS_NOTIFY_EVENT" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OM/whsNotifyEvent/xsd/XSD_SF_WHS_NOTIFY_EVENT",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/BlueBirdProject/OM/whsNotifyEvent/Trasformation/create_response_whs_event" : {
+                "label" : "Xquery/BlueBirdProject/OM/whsNotifyEvent/Trasformation/create_response_whs_event",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/BlueBirdProject/OM/whsNotifyEvent/Trasformation/create_request_WHS_event" : {
+                "label" : "Xquery/BlueBirdProject/OM/whsNotifyEvent/Trasformation/create_request_WHS_event",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

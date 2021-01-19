@@ -1,0 +1,121 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SalesforceProject/WS_CRM_AGREEMENTS/proxy/PS_WS_CRM_AGREEMENTS",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/SalesforceProject/WS_CRM_AGREEMENTS/pipeline/PL_WS_CRM_AGREEMENTS_UPDATE" : {
+        "label" : "Pipeline/SalesforceProject/WS_CRM_AGREEMENTS/pipeline/PL_WS_CRM_AGREEMENTS_UPDATE",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_N_OPERATIONS_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_N_OPERATIONS_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/SalesforceProject/WS_CRM_AGREEMENTS/transformation/createRequest_UpdateAdSmartAgreement" : {
+            "label" : "Xquery/SalesforceProject/WS_CRM_AGREEMENTS/transformation/createRequest_UpdateAdSmartAgreement",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/SalesforceProject/WS_CRM_AGREEMENTS/transformation/createResponse_UpdateAdSmartAgreementBySMC" : {
+            "label" : "Xquery/SalesforceProject/WS_CRM_AGREEMENTS/transformation/createResponse_UpdateAdSmartAgreementBySMC",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/SalesforceProject/WS_CRM_AGREEMENTS/transformation/createRequest_UpdateAdSmartAgreementBySMC" : {
+            "label" : "Xquery/SalesforceProject/WS_CRM_AGREEMENTS/transformation/createRequest_UpdateAdSmartAgreementBySMC",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/Agreements/wsdl/WS_CRM_AGREEMENTS" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/Agreements/wsdl/WS_CRM_AGREEMENTS",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Agreements/xsd/XSD_CRM_AGREEMENTS" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Agreements/xsd/XSD_CRM_AGREEMENTS",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/SalesforceProject/WS_CRM_AGREEMENTS/transformation/createResponse_UpdateAdSmartAgreement" : {
+            "label" : "Xquery/SalesforceProject/WS_CRM_AGREEMENTS/transformation/createResponse_UpdateAdSmartAgreement",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF" : {
+            "label" : "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB" : {
+                "label" : "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB",
+                "properties" : {
+                  "nodeType" : "ForeignJNDIProvider"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/Agreements/wsdl/WS_CRM_AGREEMENTS" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/Agreements/wsdl/WS_CRM_AGREEMENTS",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Agreements/xsd/XSD_CRM_AGREEMENTS" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Agreements/xsd/XSD_CRM_AGREEMENTS",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/MTFSProject/WS_CRM_MTFS_VALIDA_CC/proxy/PS_WS_CRM_MTFS_VALIDA_CC",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/MTFSProject/WS_CRM_MTFS_VALIDA_CC/pipeline/PL_WS_CRM_MTFS_VALIDA_CC" : {
+        "label" : "Pipeline/MTFSProject/WS_CRM_MTFS_VALIDA_CC/pipeline/PL_WS_CRM_MTFS_VALIDA_CC",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "BusinessService/MTFSProject/WS_CRM_MTFS_VALIDA_CC/businessService/BS_TUX_VALIDA_CC" : {
+            "label" : "BusinessService/MTFSProject/WS_CRM_MTFS_VALIDA_CC/businessService/BS_TUX_VALIDA_CC",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/ApplicationObjects/MTFS/ValidaCC/XSD_TUX_VALIDA_CC" : {
+                "label" : "XMLSchema/MDW_CDM/ApplicationObjects/MTFS/ValidaCC/XSD_TUX_VALIDA_CC",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0" : {
+                "label" : "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0",
+                "properties" : {
+                  "nodeType" : "Archive"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/MTFSProject/WS_CRM_MTFS_VALIDA_CC/trasformation/CreateResponse_WS_VALIDA_CC" : {
+            "label" : "Xquery/MTFSProject/WS_CRM_MTFS_VALIDA_CC/trasformation/CreateResponse_WS_VALIDA_CC",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/MTFSProject/WS_CRM_MTFS_VALIDA_CC/trasformation/CreateRequest_BS_TUX_VALIDA_CC" : {
+            "label" : "Xquery/MTFSProject/WS_CRM_MTFS_VALIDA_CC/trasformation/CreateRequest_BS_TUX_VALIDA_CC",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/MTFSProject/ValidaCC/wsdl/WS_CRM_MTFS_VALIDA_CC" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/MTFSProject/ValidaCC/wsdl/WS_CRM_MTFS_VALIDA_CC",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/MTFSProject/ValidaCC/xsd/XSD_CRM_MTFS_VALIDA_CC" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MTFSProject/ValidaCC/xsd/XSD_CRM_MTFS_VALIDA_CC",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/MTFSProject/ValidaCC/wsdl/WS_CRM_MTFS_VALIDA_CC" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/MTFSProject/ValidaCC/wsdl/WS_CRM_MTFS_VALIDA_CC",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/MTFSProject/ValidaCC/xsd/XSD_CRM_MTFS_VALIDA_CC" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MTFSProject/ValidaCC/xsd/XSD_CRM_MTFS_VALIDA_CC",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,282 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/BlueBirdProject/OSS/normAddress/proxy/PS_WS_MDW_ADDRESS_NORMALIZATION",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/BlueBirdProject/OSS/normAddress/pipeline/PL_MDW_ADDRESS_NORMALIZATION" : {
+        "label" : "Pipeline/BlueBirdProject/OSS/normAddress/pipeline/PL_MDW_ADDRESS_NORMALIZATION",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/BlueBirdProject/OSS/normAddress/pipeline/PL_REST_OSS_NORM_ADDRESS" : {
+            "label" : "Pipeline/BlueBirdProject/OSS/normAddress/pipeline/PL_REST_OSS_NORM_ADDRESS",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/BlueBirdProject/OSS/normAddress/transformations/createResponse_NormAddressIGW" : {
+                "label" : "Xquery/BlueBirdProject/OSS/normAddress/transformations/createResponse_NormAddressIGW",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/BlueBirdProject/OSS/normAddress/transformations/createRequest_NornAddressIGW" : {
+                "label" : "Xquery/BlueBirdProject/OSS/normAddress/transformations/createRequest_NornAddressIGW",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/BlueBirdProject/OSS/normAddress/businessService/BS_REST_OSS_NORM_ADDRESS" : {
+                "label" : "BusinessService/BlueBirdProject/OSS/normAddress/businessService/BS_REST_OSS_NORM_ADDRESS",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WADL/BlueBirdProject/Resources/BS_REST_OSS_NORM_ADDRESS" : {
+                    "label" : "WADL/BlueBirdProject/Resources/BS_REST_OSS_NORM_ADDRESS",
+                    "properties" : {
+                      "nodeType" : "WADL"
+                    },
+                    "successors" : { }
+                  },
+                  "ServiceAccount/MDW_CDM/ServiceAccount/SA_OSS_IGW_OLOGW" : {
+                    "label" : "ServiceAccount/MDW_CDM/ServiceAccount/SA_OSS_IGW_OLOGW",
+                    "properties" : {
+                      "nodeType" : "ServiceAccount"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/BlueBirdProject/Resources/BS_REST_OSS_NORM_ADDRESS" : {
+                    "label" : "WSDL/BlueBirdProject/Resources/BS_REST_OSS_NORM_ADDRESS",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "WSDL/BlueBirdProject/Resources/PS_REST_MDW_ADDRESS_NORMALIZATION" : {
+                "label" : "WSDL/BlueBirdProject/Resources/PS_REST_MDW_ADDRESS_NORMALIZATION",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/normAddress/XSD_MDW_NORMADDRESS" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/normAddress/XSD_MDW_NORMADDRESS",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Pipeline/BlueBirdProject/Egon/normAddress/pipeline/PL_REST_EGON_NORM_CAP" : {
+            "label" : "Pipeline/BlueBirdProject/Egon/normAddress/pipeline/PL_REST_EGON_NORM_CAP",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/BlueBirdProject/Egon/normAddress/transformations/createResponse_NormAddressEGON" : {
+                "label" : "Xquery/BlueBirdProject/Egon/normAddress/transformations/createResponse_NormAddressEGON",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/BlueBirdProject/Resources/BS_REST_EGON_NORM_ADDRESS" : {
+                "label" : "WSDL/BlueBirdProject/Resources/BS_REST_EGON_NORM_ADDRESS",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "Xquery/BlueBirdProject/Egon/normAddress/transformations/createRequest_NormAddressEGON" : {
+                "label" : "Xquery/BlueBirdProject/Egon/normAddress/transformations/createRequest_NormAddressEGON",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "BusinessService/BlueBirdProject/Egon/normAddress/businessService/BS_REST_EGON_NORM_ADDRESS" : {
+                "label" : "BusinessService/BlueBirdProject/Egon/normAddress/businessService/BS_REST_EGON_NORM_ADDRESS",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WADL/BlueBirdProject/Resources/BS_REST_EGON_NORM_ADDRESS" : {
+                    "label" : "WADL/BlueBirdProject/Resources/BS_REST_EGON_NORM_ADDRESS",
+                    "properties" : {
+                      "nodeType" : "WADL"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/BlueBirdProject/Resources/BS_REST_EGON_NORM_ADDRESS" : {
+                    "label" : "WSDL/BlueBirdProject/Resources/BS_REST_EGON_NORM_ADDRESS",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "WSDL/BlueBirdProject/Resources/PS_REST_MDW_ADDRESS_NORMALIZATION" : {
+            "label" : "WSDL/BlueBirdProject/Resources/PS_REST_MDW_ADDRESS_NORMALIZATION",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/normAddress/XSD_MDW_NORMADDRESS" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/normAddress/XSD_MDW_NORMADDRESS",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Pipeline/BlueBirdProject/Egon/normAddress/pipeline/PL_REST_EGON_NORM_ADDRESS" : {
+            "label" : "Pipeline/BlueBirdProject/Egon/normAddress/pipeline/PL_REST_EGON_NORM_ADDRESS",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/BlueBirdProject/Egon/normAddress/transformations/createResponse_NormAddressEGON" : {
+                "label" : "Xquery/BlueBirdProject/Egon/normAddress/transformations/createResponse_NormAddressEGON",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/BlueBirdProject/Egon/normAddress/transformations/createRequest_NormAddressEGON" : {
+                "label" : "Xquery/BlueBirdProject/Egon/normAddress/transformations/createRequest_NormAddressEGON",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/BlueBirdProject/Resources/PS_REST_MDW_ADDRESS_NORMALIZATION" : {
+                "label" : "WSDL/BlueBirdProject/Resources/PS_REST_MDW_ADDRESS_NORMALIZATION",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/normAddress/XSD_MDW_NORMADDRESS" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/normAddress/XSD_MDW_NORMADDRESS",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "BusinessService/BlueBirdProject/Egon/normAddress/businessService/BS_REST_EGON_NORM_ADDRESS" : {
+                "label" : "BusinessService/BlueBirdProject/Egon/normAddress/businessService/BS_REST_EGON_NORM_ADDRESS",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WADL/BlueBirdProject/Resources/BS_REST_EGON_NORM_ADDRESS" : {
+                    "label" : "WADL/BlueBirdProject/Resources/BS_REST_EGON_NORM_ADDRESS",
+                    "properties" : {
+                      "nodeType" : "WADL"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/BlueBirdProject/Resources/BS_REST_EGON_NORM_ADDRESS" : {
+                    "label" : "WSDL/BlueBirdProject/Resources/BS_REST_EGON_NORM_ADDRESS",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/normAddress/wsdl/WS_MDW_NORMADDRESS" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/normAddress/wsdl/WS_MDW_NORMADDRESS",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/normAddress/XSD_MDW_NORMADDRESS" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/normAddress/XSD_MDW_NORMADDRESS",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

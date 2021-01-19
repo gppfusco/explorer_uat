@@ -1,0 +1,143 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/BlueBirdProject/OSS/appointmentManagement/proxy/PS_WS_OSS_MANAGE_APPOINTMENTS_STUB",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/manageAppointment/wsdl/WS_OSS_MANAGE_APPOINTMENTS" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/manageAppointment/wsdl/WS_OSS_MANAGE_APPOINTMENTS",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/manageAppointment/xsd/XSD_OSS_MANAGE_APPOINTMENTS" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/manageAppointment/xsd/XSD_OSS_MANAGE_APPOINTMENTS",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/BlueBirdProject/OSS/appointmentManagement/pipeline/PL_OSS_MANAGE_APPOINTMENTS/_STUB" : {
+        "label" : "Pipeline/BlueBirdProject/OSS/appointmentManagement/pipeline/PL_OSS_MANAGE_APPOINTMENTS/_STUB",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/BlueBirdProject/Resources/PS_REST_OSS_MANAGE_APPOINTMENTS" : {
+            "label" : "WSDL/BlueBirdProject/Resources/PS_REST_OSS_MANAGE_APPOINTMENTS",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/manageAppointment/xsd/XSD_OSS_MANAGE_APPOINTMENTS" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/manageAppointment/xsd/XSD_OSS_MANAGE_APPOINTMENTS",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/BlueBirdProject/STUB/pipeline/PL_SQL_STUB_RETRIEVE_INFO" : {
+            "label" : "Pipeline/BlueBirdProject/STUB/pipeline/PL_SQL_STUB_RETRIEVE_INFO",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "BusinessService/BlueBirdProject/STUB/businessService/BS_SQL_RETRIEVE_STUB_INFOS" : {
+                "label" : "BusinessService/BlueBirdProject/STUB/businessService/BS_SQL_RETRIEVE_STUB_INFOS",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "JCA/BlueBirdProject/Resources/BS_SQL_RETRIEVE_STUB_INFOS_db" : {
+                    "label" : "JCA/BlueBirdProject/Resources/BS_SQL_RETRIEVE_STUB_INFOS_db",
+                    "properties" : {
+                      "nodeType" : "JCA"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/BlueBirdProject/Resources/BS_SQL_RETRIEVE_STUB_INFOS/concrete" : {
+                    "label" : "WSDL/BlueBirdProject/Resources/BS_SQL_RETRIEVE_STUB_INFOS/concrete",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "XMLSchema/BlueBirdProject/Resources/BS_SQL_RETRIEVE_STUB_INFOS" : {
+                "label" : "XMLSchema/BlueBirdProject/Resources/BS_SQL_RETRIEVE_STUB_INFOS",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/ApplicationObjects/BLUEBIRD/STUB/wsdl/WSDL_SQL_STUB_INFO" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/BLUEBIRD/STUB/wsdl/WSDL_SQL_STUB_INFO",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "Xquery/BlueBirdProject/STUB/transformation/createRequest_BS_SQL_STUB_RETRIEVE_INFO" : {
+                "label" : "Xquery/BlueBirdProject/STUB/transformation/createRequest_BS_SQL_STUB_RETRIEVE_INFO",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/manageAppointment/xsd/XSD_OSS_MANAGE_APPOINTMENTS" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/manageAppointment/xsd/XSD_OSS_MANAGE_APPOINTMENTS",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "Xquery/BlueBirdProject/STUB/transformation/createRequest_PL_SQL_STUB_RETRIEVE_INFO" : {
+            "label" : "Xquery/BlueBirdProject/STUB/transformation/createRequest_PL_SQL_STUB_RETRIEVE_INFO",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

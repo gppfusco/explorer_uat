@@ -1,0 +1,403 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SCMSproject/proxy/PS_REST_SCMS_ETHAN_OTT",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "WSDL/SCMSproject/Resources/PS_REST_SCMS_ETHAN_OTT" : {
+        "label" : "WSDL/SCMSproject/Resources/PS_REST_SCMS_ETHAN_OTT",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneDevice/xsd/XSD_CRM_GESTIONE_DEVICE_JSON_ERRORS" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneDevice/xsd/XSD_CRM_GESTIONE_DEVICE_JSON_ERRORS",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/RemoteBooking/xsd/XSD_SCMS_REMOTE_BOOKING_JSON_ERRORS" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/RemoteBooking/xsd/XSD_SCMS_REMOTE_BOOKING_JSON_ERRORS",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneDevice/xsd/XSD_CRM_GESTIONE_DEVICE" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneDevice/xsd/XSD_CRM_GESTIONE_DEVICE",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/RemoteBooking/xsd/XSD_SCMS_REMOTE_BOOKING" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/RemoteBooking/xsd/XSD_SCMS_REMOTE_BOOKING",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/SCMSproject/pipeline/PL_REST_SCMS_ETHAN_OTT" : {
+        "label" : "Pipeline/SCMSproject/pipeline/PL_REST_SCMS_ETHAN_OTT",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/SCMSproject/Resources/PS_REST_SCMS_ETHAN_OTT" : {
+            "label" : "WSDL/SCMSproject/Resources/PS_REST_SCMS_ETHAN_OTT",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneDevice/xsd/XSD_CRM_GESTIONE_DEVICE_JSON_ERRORS" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneDevice/xsd/XSD_CRM_GESTIONE_DEVICE_JSON_ERRORS",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/RemoteBooking/xsd/XSD_SCMS_REMOTE_BOOKING_JSON_ERRORS" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/RemoteBooking/xsd/XSD_SCMS_REMOTE_BOOKING_JSON_ERRORS",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneDevice/xsd/XSD_CRM_GESTIONE_DEVICE" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneDevice/xsd/XSD_CRM_GESTIONE_DEVICE",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/RemoteBooking/xsd/XSD_SCMS_REMOTE_BOOKING" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/RemoteBooking/xsd/XSD_SCMS_REMOTE_BOOKING",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/SCMSproject/transformation/createResponseForJSONErrors" : {
+            "label" : "Xquery/SCMSproject/transformation/createResponseForJSONErrors",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Pipeline/SCMSproject/pipeline/PL_ETHAN_REMBOK_GENERIC_OPERATION" : {
+            "label" : "Pipeline/SCMSproject/pipeline/PL_ETHAN_REMBOK_GENERIC_OPERATION",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/SCMSproject/transformation/createRequest_REMBOK_ETHAN" : {
+                "label" : "Xquery/SCMSproject/transformation/createRequest_REMBOK_ETHAN",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/SCMSproject/Resources/PS_REST_SCMS_ETHAN_OTT" : {
+                "label" : "WSDL/SCMSproject/Resources/PS_REST_SCMS_ETHAN_OTT",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneDevice/xsd/XSD_CRM_GESTIONE_DEVICE_JSON_ERRORS" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneDevice/xsd/XSD_CRM_GESTIONE_DEVICE_JSON_ERRORS",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/RemoteBooking/xsd/XSD_SCMS_REMOTE_BOOKING_JSON_ERRORS" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/RemoteBooking/xsd/XSD_SCMS_REMOTE_BOOKING_JSON_ERRORS",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneDevice/xsd/XSD_CRM_GESTIONE_DEVICE" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneDevice/xsd/XSD_CRM_GESTIONE_DEVICE",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/RemoteBooking/xsd/XSD_SCMS_REMOTE_BOOKING" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/RemoteBooking/xsd/XSD_SCMS_REMOTE_BOOKING",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "Xquery/SCMSproject/transformation/createResponse_REMBOK_ETHAN" : {
+                "label" : "Xquery/SCMSproject/transformation/createResponse_REMBOK_ETHAN",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Pipeline/SCMSproject/pipeline/PL_WS_CRM_INVOKE_CAIF" : {
+                "label" : "Pipeline/SCMSproject/pipeline/PL_WS_CRM_INVOKE_CAIF",
+                "properties" : {
+                  "nodeType" : "Pipeline"
+                },
+                "successors" : {
+                  "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                    "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                    "properties" : {
+                      "nodeType" : "PipelineTemplate"
+                    },
+                    "successors" : { }
+                  },
+                  "Xquery/SCMSproject/transformation/createResponseOVAVPR" : {
+                    "label" : "Xquery/SCMSproject/transformation/createResponseOVAVPR",
+                    "properties" : {
+                      "nodeType" : "Xquery"
+                    },
+                    "successors" : { }
+                  },
+                  "Xquery/SCMSproject/transformation/createResponseHIMGSC" : {
+                    "label" : "Xquery/SCMSproject/transformation/createResponseHIMGSC",
+                    "properties" : {
+                      "nodeType" : "Xquery"
+                    },
+                    "successors" : { }
+                  },
+                  "Xquery/SCMSproject/transformation/scms_request_enrichment/create_request_ejb_scms_GENERIC" : {
+                    "label" : "Xquery/SCMSproject/transformation/scms_request_enrichment/create_request_ejb_scms_GENERIC",
+                    "properties" : {
+                      "nodeType" : "Xquery"
+                    },
+                    "successors" : { }
+                  },
+                  "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_CAIF" : {
+                    "label" : "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_CAIF",
+                    "properties" : {
+                      "nodeType" : "BusinessService"
+                    },
+                    "successors" : {
+                      "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB" : {
+                        "label" : "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB",
+                        "properties" : {
+                          "nodeType" : "ForeignJNDIProvider"
+                        },
+                        "successors" : { }
+                      },
+                      "WSDL/MDW_CDM/ApplicationObjects/SCMS/ejb_mdw/wsdl_with_xsd/BS_EJB_CAIF" : {
+                        "label" : "WSDL/MDW_CDM/ApplicationObjects/SCMS/ejb_mdw/wsdl_with_xsd/BS_EJB_CAIF",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSmartCard/wsdl/WS_CRM_GESTIONE_SMARTCARD" : {
+                    "label" : "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSmartCard/wsdl/WS_CRM_GESTIONE_SMARTCARD",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : {
+                      "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSmartCard/xsd/XSD_CRM_GESTIONE_SMARTCARD" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSmartCard/xsd/XSD_CRM_GESTIONE_SMARTCARD",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      },
+                      "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "Pipeline/SCMSproject/pipeline/PL_ETHAN_AQEDCM_GENERIC_OPERATION" : {
+            "label" : "Pipeline/SCMSproject/pipeline/PL_ETHAN_AQEDCM_GENERIC_OPERATION",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "WSDL/SCMSproject/Resources/PS_REST_SCMS_ETHAN_OTT" : {
+                "label" : "WSDL/SCMSproject/Resources/PS_REST_SCMS_ETHAN_OTT",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneDevice/xsd/XSD_CRM_GESTIONE_DEVICE_JSON_ERRORS" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneDevice/xsd/XSD_CRM_GESTIONE_DEVICE_JSON_ERRORS",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/RemoteBooking/xsd/XSD_SCMS_REMOTE_BOOKING_JSON_ERRORS" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/RemoteBooking/xsd/XSD_SCMS_REMOTE_BOOKING_JSON_ERRORS",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneDevice/xsd/XSD_CRM_GESTIONE_DEVICE" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneDevice/xsd/XSD_CRM_GESTIONE_DEVICE",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/RemoteBooking/xsd/XSD_SCMS_REMOTE_BOOKING" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/RemoteBooking/xsd/XSD_SCMS_REMOTE_BOOKING",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "Xquery/SCMSproject/transformation/createRequest_AQEDCM_ETHAN" : {
+                "label" : "Xquery/SCMSproject/transformation/createRequest_AQEDCM_ETHAN",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Pipeline/SCMSproject/pipeline/PL_WS_CRM_INVOKE_CAIF" : {
+                "label" : "Pipeline/SCMSproject/pipeline/PL_WS_CRM_INVOKE_CAIF",
+                "properties" : {
+                  "nodeType" : "Pipeline"
+                },
+                "successors" : {
+                  "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                    "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                    "properties" : {
+                      "nodeType" : "PipelineTemplate"
+                    },
+                    "successors" : { }
+                  },
+                  "Xquery/SCMSproject/transformation/createResponseOVAVPR" : {
+                    "label" : "Xquery/SCMSproject/transformation/createResponseOVAVPR",
+                    "properties" : {
+                      "nodeType" : "Xquery"
+                    },
+                    "successors" : { }
+                  },
+                  "Xquery/SCMSproject/transformation/createResponseHIMGSC" : {
+                    "label" : "Xquery/SCMSproject/transformation/createResponseHIMGSC",
+                    "properties" : {
+                      "nodeType" : "Xquery"
+                    },
+                    "successors" : { }
+                  },
+                  "Xquery/SCMSproject/transformation/scms_request_enrichment/create_request_ejb_scms_GENERIC" : {
+                    "label" : "Xquery/SCMSproject/transformation/scms_request_enrichment/create_request_ejb_scms_GENERIC",
+                    "properties" : {
+                      "nodeType" : "Xquery"
+                    },
+                    "successors" : { }
+                  },
+                  "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_CAIF" : {
+                    "label" : "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_CAIF",
+                    "properties" : {
+                      "nodeType" : "BusinessService"
+                    },
+                    "successors" : {
+                      "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB" : {
+                        "label" : "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB",
+                        "properties" : {
+                          "nodeType" : "ForeignJNDIProvider"
+                        },
+                        "successors" : { }
+                      },
+                      "WSDL/MDW_CDM/ApplicationObjects/SCMS/ejb_mdw/wsdl_with_xsd/BS_EJB_CAIF" : {
+                        "label" : "WSDL/MDW_CDM/ApplicationObjects/SCMS/ejb_mdw/wsdl_with_xsd/BS_EJB_CAIF",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSmartCard/wsdl/WS_CRM_GESTIONE_SMARTCARD" : {
+                    "label" : "WSDL/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSmartCard/wsdl/WS_CRM_GESTIONE_SMARTCARD",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : {
+                      "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSmartCard/xsd/XSD_CRM_GESTIONE_SMARTCARD" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SCMSproject/GestioneSmartCard/xsd/XSD_CRM_GESTIONE_SMARTCARD",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      },
+                      "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  }
+                }
+              },
+              "Xquery/SCMSproject/transformation/createResponse_AQEDCM_ETHAN" : {
+                "label" : "Xquery/SCMSproject/transformation/createResponse_AQEDCM_ETHAN",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WADL/SCMSproject/Resources/PS_REST_SCMS_ETHAN_OTT" : {
+        "label" : "WADL/SCMSproject/Resources/PS_REST_SCMS_ETHAN_OTT",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/ottuk/WS_OTT_PIN_HANDLER",
+    "name" : "OTTUkProject_PinHandler_proxy_PS_WS_OTT_PIN_HANDLER",
+    "remoteName" : "ProxyService/OTTUkProject/PinHandler/proxy/PS_WS_OTT_PIN_HANDLER",
+    "localPath" : "osb_uat\\repo\\OTTUkProject\\PinHandler\\PS_WS_OTT_PIN_HANDLER",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/ottuk/WS_OTT_PIN_HANDLER?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/OTTUk/PinHandler/xsd/XSD_OTT_PIN_HANDLER",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/BitwinProject/DecaDownPayment/proxy/PS_WS_DECA_DOWN_PAYMENT",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/BitwinProject/DECADownPayment/wsdl/WS_DECA_DOWN_PAYMENT" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/BitwinProject/DECADownPayment/wsdl/WS_DECA_DOWN_PAYMENT",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/BitwinProject/DECADownPayment/xsd/XSD_DECA_DOWN_PAYMENT" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BitwinProject/DECADownPayment/xsd/XSD_DECA_DOWN_PAYMENT",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/BitwinProject/DecaDownPayment/pipeline/PL_DECA_DOWN_PAYMENT" : {
+        "label" : "Pipeline/BitwinProject/DecaDownPayment/pipeline/PL_DECA_DOWN_PAYMENT",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Xquery/BitwinProject/DecaDownPayment/transformations/createRequestCalculateDecaDownPayment" : {
+            "label" : "Xquery/BitwinProject/DecaDownPayment/transformations/createRequestCalculateDecaDownPayment",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/BitwinProject/DECADownPayment/wsdl/WS_DECA_DOWN_PAYMENT" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/BitwinProject/DECADownPayment/wsdl/WS_DECA_DOWN_PAYMENT",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/BitwinProject/DECADownPayment/xsd/XSD_DECA_DOWN_PAYMENT" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BitwinProject/DECADownPayment/xsd/XSD_DECA_DOWN_PAYMENT",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "BusinessService/BitwinProject/DecaDownPayment/businessServices/BS_WS_DECA_DOWN_PAYMENT" : {
+            "label" : "BusinessService/BitwinProject/DecaDownPayment/businessServices/BS_WS_DECA_DOWN_PAYMENT",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/ApplicationObjects/BITWIN/wsdl/WS_ENGINE_DECA_DP" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/BITWIN/wsdl/WS_ENGINE_DECA_DP",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "ServiceAccount/MDW_CDM/ServiceAccount/SA_DecaDP" : {
+                "label" : "ServiceAccount/MDW_CDM/ServiceAccount/SA_DecaDP",
+                "properties" : {
+                  "nodeType" : "ServiceAccount"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/BitwinProject/DecaDownPayment/transformations/createResponseCalculateDecaDownPayment" : {
+            "label" : "Xquery/BitwinProject/DecaDownPayment/transformations/createResponseCalculateDecaDownPayment",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

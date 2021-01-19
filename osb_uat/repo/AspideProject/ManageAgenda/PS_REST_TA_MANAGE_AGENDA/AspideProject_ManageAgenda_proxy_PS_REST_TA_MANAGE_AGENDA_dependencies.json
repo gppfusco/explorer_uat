@@ -1,0 +1,746 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/AspideProject/ManageAgenda/proxy/PS_REST_TA_MANAGE_AGENDA",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "WSDL/AspideProject/Resources/PS_REST_TA_MANAGE_AGENDA" : {
+        "label" : "WSDL/AspideProject/Resources/PS_REST_TA_MANAGE_AGENDA",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/AspideProject/ManageAgenda/xsd/XSD_TA_MANAGE_AGENDA" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/AspideProject/ManageAgenda/xsd/XSD_TA_MANAGE_AGENDA",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WADL/AspideProject/Resources/PS_REST_TA_MANAGE_AGENDA" : {
+        "label" : "WADL/AspideProject/Resources/PS_REST_TA_MANAGE_AGENDA",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      },
+      "Pipeline/AspideProject/ManageAgenda/pipeline/PL_REST_TA_MANAGE_AGENDA" : {
+        "label" : "Pipeline/AspideProject/ManageAgenda/pipeline/PL_REST_TA_MANAGE_AGENDA",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/AspideProject/Resources/PS_REST_TA_MANAGE_AGENDA" : {
+            "label" : "WSDL/AspideProject/Resources/PS_REST_TA_MANAGE_AGENDA",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/AspideProject/ManageAgenda/xsd/XSD_TA_MANAGE_AGENDA" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/AspideProject/ManageAgenda/xsd/XSD_TA_MANAGE_AGENDA",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/AspideProject/ManageAgenda/transformation/createRequest_DeleteAppointment" : {
+            "label" : "Xquery/AspideProject/ManageAgenda/transformation/createRequest_DeleteAppointment",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/AspideProject/ManageAgenda/transformation/createRequest_UpdateAppointment" : {
+            "label" : "Xquery/AspideProject/ManageAgenda/transformation/createRequest_UpdateAppointment",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/AspideProject/ManageAgenda/pipeline/PL_INTERNAL_TA_CREATE_APPOINTMENT" : {
+            "label" : "Pipeline/AspideProject/ManageAgenda/pipeline/PL_INTERNAL_TA_CREATE_APPOINTMENT",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "WSDL/AspideProject/Resources/PS_REST_TA_MANAGE_AGENDA" : {
+                "label" : "WSDL/AspideProject/Resources/PS_REST_TA_MANAGE_AGENDA",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/AspideProject/ManageAgenda/xsd/XSD_TA_MANAGE_AGENDA" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/AspideProject/ManageAgenda/xsd/XSD_TA_MANAGE_AGENDA",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "ProxyService/SalesforceProject/proxy/Local/PS_LOCAL_SF_EJB_REST_INTERNAL" : {
+                "label" : "ProxyService/SalesforceProject/proxy/Local/PS_LOCAL_SF_EJB_REST_INTERNAL",
+                "properties" : {
+                  "nodeType" : "ProxyService"
+                },
+                "successors" : {
+                  "Pipeline/SalesforceProject/pipeline/PL_SF_EJB_REST_INTERNAL" : {
+                    "label" : "Pipeline/SalesforceProject/pipeline/PL_SF_EJB_REST_INTERNAL",
+                    "properties" : {
+                      "nodeType" : "Pipeline"
+                    },
+                    "successors" : {
+                      "BusinessService/MDW_CO/businessServices/BS_WS_EJB_FORCE" : {
+                        "label" : "BusinessService/MDW_CO/businessServices/BS_WS_EJB_FORCE",
+                        "properties" : {
+                          "nodeType" : "BusinessService"
+                        },
+                        "successors" : {
+                          "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService" : {
+                            "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService",
+                            "properties" : {
+                              "nodeType" : "WSDL"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      },
+                      "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService" : {
+                        "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : { }
+                      },
+                      "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                        "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                        "properties" : {
+                          "nodeType" : "PipelineTemplate"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/AspideProject/ManageAgenda/transformation/createRequest_SFCreateAppointment" : {
+                "label" : "Xquery/AspideProject/ManageAgenda/transformation/createRequest_SFCreateAppointment",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/AspideProject/ManageAgenda/transformation/createResponse_TA_CreateAppointment" : {
+                "label" : "Xquery/AspideProject/ManageAgenda/transformation/createResponse_TA_CreateAppointment",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/AspideProject/ManageAgenda/transformation/createRequest_DeleteAppointment_Enqueue" : {
+                "label" : "Xquery/AspideProject/ManageAgenda/transformation/createRequest_DeleteAppointment_Enqueue",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/AspideProject/ManageAgenda/transformation/createRequest_OMGetOffer" : {
+                "label" : "Xquery/AspideProject/ManageAgenda/transformation/createRequest_OMGetOffer",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/AspideProject/ManageAgenda/transformation/createRequest_TA_CreateAppointment" : {
+                "label" : "Xquery/AspideProject/ManageAgenda/transformation/createRequest_TA_CreateAppointment",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Pipeline/AspideProject/ManageAgenda/pipeline/PL_INTERNAL_TA_APPOINTMENT_ENQUEUE" : {
+                "label" : "Pipeline/AspideProject/ManageAgenda/pipeline/PL_INTERNAL_TA_APPOINTMENT_ENQUEUE",
+                "properties" : {
+                  "nodeType" : "Pipeline"
+                },
+                "successors" : {
+                  "WSDL/AspideProject/Resources/BS_REST_ASPIDE_APPOINTMENTS" : {
+                    "label" : "WSDL/AspideProject/Resources/BS_REST_ASPIDE_APPOINTMENTS",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "BusinessService/SalesforceProject/businessService/BS_JMS_SF_ENQUEUE" : {
+                    "label" : "BusinessService/SalesforceProject/businessService/BS_JMS_SF_ENQUEUE",
+                    "properties" : {
+                      "nodeType" : "BusinessService"
+                    },
+                    "successors" : { }
+                  },
+                  "PipelineTemplate/MDW_CO/templates/pipeline/PL_ENQUEUE_INTERNAL_TEMPLATE" : {
+                    "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_ENQUEUE_INTERNAL_TEMPLATE",
+                    "properties" : {
+                      "nodeType" : "PipelineTemplate"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "ProxyService/BlueBirdProject/SALESFORCE/appointmentHandler/proxy/PS_LOCAL_SF_BOOK_APPOINTMENT_ID" : {
+                "label" : "ProxyService/BlueBirdProject/SALESFORCE/appointmentHandler/proxy/PS_LOCAL_SF_BOOK_APPOINTMENT_ID",
+                "properties" : {
+                  "transport-type" : "local",
+                  "nodeType" : "Proxy",
+                  "service-type" : "SOAP"
+                },
+                "successors" : {
+                  "Pipeline/BlueBirdProject/SALESFORCE/appointmentHandler/pipeline/PL_SF_APPOINTMENT_HANDLER" : {
+                    "label" : "Pipeline/BlueBirdProject/SALESFORCE/appointmentHandler/pipeline/PL_SF_APPOINTMENT_HANDLER",
+                    "properties" : {
+                      "nodeType" : "Pipeline"
+                    },
+                    "successors" : {
+                      "Xquery/BlueBirdProject/SALESFORCE/appointmentHandler/transformation/createResponseEjbRestAppointmentHandler" : {
+                        "label" : "Xquery/BlueBirdProject/SALESFORCE/appointmentHandler/transformation/createResponseEjbRestAppointmentHandler",
+                        "properties" : {
+                          "nodeType" : "Xquery"
+                        },
+                        "successors" : { }
+                      },
+                      "ProxyService/SalesforceProject/proxy/Local/PS_LOCAL_SF_EJB_REST_INTERNAL" : {
+                        "label" : "ProxyService/SalesforceProject/proxy/Local/PS_LOCAL_SF_EJB_REST_INTERNAL",
+                        "properties" : {
+                          "nodeType" : "ProxyService"
+                        },
+                        "successors" : {
+                          "Pipeline/SalesforceProject/pipeline/PL_SF_EJB_REST_INTERNAL" : {
+                            "label" : "Pipeline/SalesforceProject/pipeline/PL_SF_EJB_REST_INTERNAL",
+                            "properties" : {
+                              "nodeType" : "Pipeline"
+                            },
+                            "successors" : {
+                              "BusinessService/MDW_CO/businessServices/BS_WS_EJB_FORCE" : {
+                                "label" : "BusinessService/MDW_CO/businessServices/BS_WS_EJB_FORCE",
+                                "properties" : {
+                                  "nodeType" : "BusinessService"
+                                },
+                                "successors" : {
+                                  "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService" : {
+                                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService",
+                                    "properties" : {
+                                      "nodeType" : "WSDL"
+                                    },
+                                    "successors" : { }
+                                  }
+                                }
+                              },
+                              "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService" : {
+                                "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService",
+                                "properties" : {
+                                  "nodeType" : "WSDL"
+                                },
+                                "successors" : { }
+                              },
+                              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                                "properties" : {
+                                  "nodeType" : "PipelineTemplate"
+                                },
+                                "successors" : { }
+                              }
+                            }
+                          },
+                          "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService" : {
+                            "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/SalesForcePartnerAdapterCRMService",
+                            "properties" : {
+                              "nodeType" : "WSDL"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      },
+                      "Xquery/BlueBirdProject/SALESFORCE/appointmentHandler/transformation/createRequestEjbRestAppointmentHandler" : {
+                        "label" : "Xquery/BlueBirdProject/SALESFORCE/appointmentHandler/transformation/createRequestEjbRestAppointmentHandler",
+                        "properties" : {
+                          "nodeType" : "Xquery"
+                        },
+                        "successors" : { }
+                      },
+                      "WSDL/BlueBirdProject/Resources/PS_REST_SF_APPOINTMENT_HANDLER" : {
+                        "label" : "WSDL/BlueBirdProject/Resources/PS_REST_SF_APPOINTMENT_HANDLER",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : {
+                          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                            "properties" : {
+                              "nodeType" : "XMLSchema"
+                            },
+                            "successors" : { }
+                          },
+                          "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/appointmentHandler/xsd/XSD_SF_APPOINTMENT_HANDLER" : {
+                            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/appointmentHandler/xsd/XSD_SF_APPOINTMENT_HANDLER",
+                            "properties" : {
+                              "nodeType" : "XMLSchema"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      },
+                      "Xquery/BlueBirdProject/SALESFORCE/appointmentHandler/transformation/createRequestEjbRestBookAppointmentId" : {
+                        "label" : "Xquery/BlueBirdProject/SALESFORCE/appointmentHandler/transformation/createRequestEjbRestBookAppointmentId",
+                        "properties" : {
+                          "nodeType" : "Xquery"
+                        },
+                        "successors" : { }
+                      },
+                      "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH" : {
+                        "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH",
+                        "properties" : {
+                          "nodeType" : "PipelineTemplate"
+                        },
+                        "successors" : { }
+                      },
+                      "Xquery/BlueBirdProject/SALESFORCE/appointmentHandler/transformation/createResponseEjbRestBookAppointmentId" : {
+                        "label" : "Xquery/BlueBirdProject/SALESFORCE/appointmentHandler/transformation/createResponseEjbRestBookAppointmentId",
+                        "properties" : {
+                          "nodeType" : "Xquery"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "WSDL/BlueBirdProject/Resources/PS_REST_SF_APPOINTMENT_HANDLER" : {
+                    "label" : "WSDL/BlueBirdProject/Resources/PS_REST_SF_APPOINTMENT_HANDLER",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : {
+                      "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      },
+                      "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/appointmentHandler/xsd/XSD_SF_APPOINTMENT_HANDLER" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/appointmentHandler/xsd/XSD_SF_APPOINTMENT_HANDLER",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  }
+                }
+              },
+              "Xquery/AspideProject/ManageAgenda/transformation/createRequest_SFEjbRestGetRouting" : {
+                "label" : "Xquery/AspideProject/ManageAgenda/transformation/createRequest_SFEjbRestGetRouting",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "ProxyService/BlueBirdProject/OM/getOffers/proxy/PS_LOCAL_OM_GET_OFFER" : {
+                "label" : "ProxyService/BlueBirdProject/OM/getOffers/proxy/PS_LOCAL_OM_GET_OFFER",
+                "properties" : {
+                  "transport-type" : "local",
+                  "nodeType" : "Proxy",
+                  "service-type" : "SOAP"
+                },
+                "successors" : {
+                  "Pipeline/BlueBirdProject/OM/getOffers/pipeline/PL_REST_OM_GET_OFFERS" : {
+                    "label" : "Pipeline/BlueBirdProject/OM/getOffers/pipeline/PL_REST_OM_GET_OFFERS",
+                    "properties" : {
+                      "nodeType" : "Pipeline"
+                    },
+                    "successors" : {
+                      "Pipeline/BlueBirdProject/OM/getOffers/pipeline/PL_INTERNAL_OM_GET_OFFERS" : {
+                        "label" : "Pipeline/BlueBirdProject/OM/getOffers/pipeline/PL_INTERNAL_OM_GET_OFFERS",
+                        "properties" : {
+                          "nodeType" : "Pipeline"
+                        },
+                        "successors" : {
+                          "WSDL/BlueBirdProject/Resources/BS_SQL_OM_GET_OFFERS/concrete" : {
+                            "label" : "WSDL/BlueBirdProject/Resources/BS_SQL_OM_GET_OFFERS/concrete",
+                            "properties" : {
+                              "nodeType" : "WSDL"
+                            },
+                            "successors" : { }
+                          },
+                          "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                            "properties" : {
+                              "nodeType" : "PipelineTemplate"
+                            },
+                            "successors" : { }
+                          },
+                          "BusinessService/BlueBirdProject/OM/getOffers/businessService/BS_SQL_OM_GET_OFFERS" : {
+                            "label" : "BusinessService/BlueBirdProject/OM/getOffers/businessService/BS_SQL_OM_GET_OFFERS",
+                            "properties" : {
+                              "nodeType" : "BusinessService"
+                            },
+                            "successors" : {
+                              "WSDL/BlueBirdProject/Resources/BS_SQL_OM_GET_OFFERS/concrete" : {
+                                "label" : "WSDL/BlueBirdProject/Resources/BS_SQL_OM_GET_OFFERS/concrete",
+                                "properties" : {
+                                  "nodeType" : "WSDL"
+                                },
+                                "successors" : { }
+                              },
+                              "JCA/BlueBirdProject/Resources/BS_SQL_OM_GET_OFFERS_db" : {
+                                "label" : "JCA/BlueBirdProject/Resources/BS_SQL_OM_GET_OFFERS_db",
+                                "properties" : {
+                                  "nodeType" : "JCA"
+                                },
+                                "successors" : { }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "Pipeline/BlueBirdProject/OM/getOffers/pipeline/PL_INTERNAL_OM_GET_APPOINTMENT_DETAILS_FW" : {
+                        "label" : "Pipeline/BlueBirdProject/OM/getOffers/pipeline/PL_INTERNAL_OM_GET_APPOINTMENT_DETAILS_FW",
+                        "properties" : {
+                          "nodeType" : "Pipeline"
+                        },
+                        "successors" : {
+                          "Xquery/BlueBirdProject/OM/getOffers/transformations/createRequest_GetOffersAppointmentDetails_FW" : {
+                            "label" : "Xquery/BlueBirdProject/OM/getOffers/transformations/createRequest_GetOffersAppointmentDetails_FW",
+                            "properties" : {
+                              "nodeType" : "Xquery"
+                            },
+                            "successors" : { }
+                          },
+                          "Xquery/BlueBirdProject/OM/getOffers/transformations/createResponse_GetOffersAppointmentDetails_FW" : {
+                            "label" : "Xquery/BlueBirdProject/OM/getOffers/transformations/createResponse_GetOffersAppointmentDetails_FW",
+                            "properties" : {
+                              "nodeType" : "Xquery"
+                            },
+                            "successors" : { }
+                          },
+                          "WSDL/BlueBirdProject/Resources/BS_SQL_OM_GET_APPOINTMENT_DETAILS/concrete" : {
+                            "label" : "WSDL/BlueBirdProject/Resources/BS_SQL_OM_GET_APPOINTMENT_DETAILS/concrete",
+                            "properties" : {
+                              "nodeType" : "WSDL"
+                            },
+                            "successors" : { }
+                          },
+                          "BusinessService/BlueBirdProject/OM/getOffers/businessService/BS_SQL_OM_GET_APPOINTMENT_DETAILS_FW" : {
+                            "label" : "BusinessService/BlueBirdProject/OM/getOffers/businessService/BS_SQL_OM_GET_APPOINTMENT_DETAILS_FW",
+                            "properties" : {
+                              "nodeType" : "BusinessService"
+                            },
+                            "successors" : {
+                              "JCA/BlueBirdProject/Resources/BS_SQL_OM_GET_APPOINTMENT_DETAILS_FW_db" : {
+                                "label" : "JCA/BlueBirdProject/Resources/BS_SQL_OM_GET_APPOINTMENT_DETAILS_FW_db",
+                                "properties" : {
+                                  "nodeType" : "JCA"
+                                },
+                                "successors" : { }
+                              },
+                              "WSDL/BlueBirdProject/Resources/BS_SQL_OM_GET_APPOINTMENT_DETAILS_FW/concrete" : {
+                                "label" : "WSDL/BlueBirdProject/Resources/BS_SQL_OM_GET_APPOINTMENT_DETAILS_FW/concrete",
+                                "properties" : {
+                                  "nodeType" : "WSDL"
+                                },
+                                "successors" : { }
+                              }
+                            }
+                          },
+                          "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                            "properties" : {
+                              "nodeType" : "PipelineTemplate"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      },
+                      "Xquery/BlueBirdProject/OM/getOffers/transformations/createResponse_GetOffersAppointmentDetails" : {
+                        "label" : "Xquery/BlueBirdProject/OM/getOffers/transformations/createResponse_GetOffersAppointmentDetails",
+                        "properties" : {
+                          "nodeType" : "Xquery"
+                        },
+                        "successors" : { }
+                      },
+                      "Xquery/BlueBirdProject/OM/getOffers/transformations/createResponse_GetOffers" : {
+                        "label" : "Xquery/BlueBirdProject/OM/getOffers/transformations/createResponse_GetOffers",
+                        "properties" : {
+                          "nodeType" : "Xquery"
+                        },
+                        "successors" : { }
+                      },
+                      "WSDL/BlueBirdProject/Resources/PS_REST_OM_GET_OFFER" : {
+                        "label" : "WSDL/BlueBirdProject/Resources/PS_REST_OM_GET_OFFER",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : {
+                          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                            "properties" : {
+                              "nodeType" : "XMLSchema"
+                            },
+                            "successors" : { }
+                          },
+                          "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OM/getOffers/xsd/XSD_OM_GET_OFFERS" : {
+                            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OM/getOffers/xsd/XSD_OM_GET_OFFERS",
+                            "properties" : {
+                              "nodeType" : "XMLSchema"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      },
+                      "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH" : {
+                        "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH",
+                        "properties" : {
+                          "nodeType" : "PipelineTemplate"
+                        },
+                        "successors" : { }
+                      },
+                      "Xquery/BlueBirdProject/OM/getOffers/transformations/createRequest_GetOffersAppointmentDetails" : {
+                        "label" : "Xquery/BlueBirdProject/OM/getOffers/transformations/createRequest_GetOffersAppointmentDetails",
+                        "properties" : {
+                          "nodeType" : "Xquery"
+                        },
+                        "successors" : { }
+                      },
+                      "Pipeline/BlueBirdProject/OM/getOffers/pipeline/PL_INTERNAL_OM_GET_APPOINTMENT_DETAILS" : {
+                        "label" : "Pipeline/BlueBirdProject/OM/getOffers/pipeline/PL_INTERNAL_OM_GET_APPOINTMENT_DETAILS",
+                        "properties" : {
+                          "nodeType" : "Pipeline"
+                        },
+                        "successors" : {
+                          "BusinessService/BlueBirdProject/OM/getOffers/businessService/BS_SQL_OM_GET_APPOINTMENT_DETAILS" : {
+                            "label" : "BusinessService/BlueBirdProject/OM/getOffers/businessService/BS_SQL_OM_GET_APPOINTMENT_DETAILS",
+                            "properties" : {
+                              "nodeType" : "BusinessService"
+                            },
+                            "successors" : {
+                              "JCA/BlueBirdProject/Resources/BS_SQL_OM_GET_APPOINTMENT_DETAILS_db" : {
+                                "label" : "JCA/BlueBirdProject/Resources/BS_SQL_OM_GET_APPOINTMENT_DETAILS_db",
+                                "properties" : {
+                                  "nodeType" : "JCA"
+                                },
+                                "successors" : { }
+                              },
+                              "WSDL/BlueBirdProject/Resources/BS_SQL_OM_GET_APPOINTMENT_DETAILS/concrete" : {
+                                "label" : "WSDL/BlueBirdProject/Resources/BS_SQL_OM_GET_APPOINTMENT_DETAILS/concrete",
+                                "properties" : {
+                                  "nodeType" : "WSDL"
+                                },
+                                "successors" : { }
+                              }
+                            }
+                          },
+                          "WSDL/BlueBirdProject/Resources/BS_SQL_OM_GET_APPOINTMENT_DETAILS/concrete" : {
+                            "label" : "WSDL/BlueBirdProject/Resources/BS_SQL_OM_GET_APPOINTMENT_DETAILS/concrete",
+                            "properties" : {
+                              "nodeType" : "WSDL"
+                            },
+                            "successors" : { }
+                          },
+                          "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                            "properties" : {
+                              "nodeType" : "PipelineTemplate"
+                            },
+                            "successors" : { }
+                          }
+                        }
+                      },
+                      "Xquery/BlueBirdProject/OM/getOffers/transformations/createRequest_GetOffers" : {
+                        "label" : "Xquery/BlueBirdProject/OM/getOffers/transformations/createRequest_GetOffers",
+                        "properties" : {
+                          "nodeType" : "Xquery"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "WSDL/BlueBirdProject/Resources/PS_REST_OM_GET_OFFER" : {
+                    "label" : "WSDL/BlueBirdProject/Resources/PS_REST_OM_GET_OFFER",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : {
+                      "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      },
+                      "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OM/getOffers/xsd/XSD_OM_GET_OFFERS" : {
+                        "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OM/getOffers/xsd/XSD_OM_GET_OFFERS",
+                        "properties" : {
+                          "nodeType" : "XMLSchema"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "Pipeline/AspideProject/AppointmentManagement/pipeline/PL_INTERNAL_REST_ASPIDE_APPOINTMENTS" : {
+                "label" : "Pipeline/AspideProject/AppointmentManagement/pipeline/PL_INTERNAL_REST_ASPIDE_APPOINTMENTS",
+                "properties" : {
+                  "nodeType" : "Pipeline"
+                },
+                "successors" : {
+                  "WSDL/AspideProject/Resources/BS_REST_ASPIDE_APPOINTMENTS" : {
+                    "label" : "WSDL/AspideProject/Resources/BS_REST_ASPIDE_APPOINTMENTS",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "BusinessService/AspideProject/AppointmentManagement/businessService/BS_REST_ASPIDE_APPOINTMENTS" : {
+                    "label" : "BusinessService/AspideProject/AppointmentManagement/businessService/BS_REST_ASPIDE_APPOINTMENTS",
+                    "properties" : {
+                      "nodeType" : "BusinessService"
+                    },
+                    "successors" : {
+                      "WSDL/AspideProject/Resources/BS_REST_ASPIDE_APPOINTMENTS" : {
+                        "label" : "WSDL/AspideProject/Resources/BS_REST_ASPIDE_APPOINTMENTS",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : { }
+                      },
+                      "WADL/AspideProject/Resources/BS_REST_ASPIDE_APPOINTMENTS" : {
+                        "label" : "WADL/AspideProject/Resources/BS_REST_ASPIDE_APPOINTMENTS",
+                        "properties" : {
+                          "nodeType" : "WADL"
+                        },
+                        "successors" : { }
+                      },
+                      "ServiceAccount/MDW_CDM/ServiceAccount/SA_Aspide" : {
+                        "label" : "ServiceAccount/MDW_CDM/ServiceAccount/SA_Aspide",
+                        "properties" : {
+                          "nodeType" : "ServiceAccount"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                    "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                    "properties" : {
+                      "nodeType" : "PipelineTemplate"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "Pipeline/AspideProject/AppointmentManagement/pipeline/PL_INTERNAL_REST_ASPIDE_APPOINTMENTS" : {
+            "label" : "Pipeline/AspideProject/AppointmentManagement/pipeline/PL_INTERNAL_REST_ASPIDE_APPOINTMENTS",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "WSDL/AspideProject/Resources/BS_REST_ASPIDE_APPOINTMENTS" : {
+                "label" : "WSDL/AspideProject/Resources/BS_REST_ASPIDE_APPOINTMENTS",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "BusinessService/AspideProject/AppointmentManagement/businessService/BS_REST_ASPIDE_APPOINTMENTS" : {
+                "label" : "BusinessService/AspideProject/AppointmentManagement/businessService/BS_REST_ASPIDE_APPOINTMENTS",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/AspideProject/Resources/BS_REST_ASPIDE_APPOINTMENTS" : {
+                    "label" : "WSDL/AspideProject/Resources/BS_REST_ASPIDE_APPOINTMENTS",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "WADL/AspideProject/Resources/BS_REST_ASPIDE_APPOINTMENTS" : {
+                    "label" : "WADL/AspideProject/Resources/BS_REST_ASPIDE_APPOINTMENTS",
+                    "properties" : {
+                      "nodeType" : "WADL"
+                    },
+                    "successors" : { }
+                  },
+                  "ServiceAccount/MDW_CDM/ServiceAccount/SA_Aspide" : {
+                    "label" : "ServiceAccount/MDW_CDM/ServiceAccount/SA_Aspide",
+                    "properties" : {
+                      "nodeType" : "ServiceAccount"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

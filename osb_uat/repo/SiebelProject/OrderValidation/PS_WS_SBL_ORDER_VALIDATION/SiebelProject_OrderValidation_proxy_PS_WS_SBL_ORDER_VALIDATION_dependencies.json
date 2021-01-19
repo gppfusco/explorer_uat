@@ -1,0 +1,173 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SiebelProject/OrderValidation/proxy/PS_WS_SBL_ORDER_VALIDATION",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/SiebelProject/OrderValidation/pipeline/PL_SBL_ORDER_VALIDATION" : {
+        "label" : "Pipeline/SiebelProject/OrderValidation/pipeline/PL_SBL_ORDER_VALIDATION",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "BusinessService/SiebelProject/OrderValidation/businessServices/BS_SQL_SBL_ORDER_VALIDATION" : {
+            "label" : "BusinessService/SiebelProject/OrderValidation/businessServices/BS_SQL_SBL_ORDER_VALIDATION",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "WSDL/SiebelProject/Resources/BS_SQL_SBL_ORDER_VALIDATION/concrete" : {
+                "label" : "WSDL/SiebelProject/Resources/BS_SQL_SBL_ORDER_VALIDATION/concrete",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "JCA/SiebelProject/Resources/BS_SQL_SBL_ORDER_VALIDATION_db" : {
+                "label" : "JCA/SiebelProject/Resources/BS_SQL_SBL_ORDER_VALIDATION_db",
+                "properties" : {
+                  "nodeType" : "JCA"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/SiebelProject/OrderValidation/transformation/createRequest_ValidateOrderTIBCO" : {
+            "label" : "Xquery/SiebelProject/OrderValidation/transformation/createRequest_ValidateOrderTIBCO",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/SiebelProject/OrderValidation/transformation/createRequest_ValidateOrderSBL" : {
+            "label" : "Xquery/SiebelProject/OrderValidation/transformation/createRequest_ValidateOrderSBL",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "ProxyService/OMProject/OrderValidation/proxy/PS_LOCAL_OM_ORDER_VALIDATION" : {
+            "label" : "ProxyService/OMProject/OrderValidation/proxy/PS_LOCAL_OM_ORDER_VALIDATION",
+            "properties" : {
+              "nodeType" : "ProxyService"
+            },
+            "successors" : {
+              "WSDL/OMProject/Resources/BS_SQL_OM_ORDER_VALIDATION/concrete" : {
+                "label" : "WSDL/OMProject/Resources/BS_SQL_OM_ORDER_VALIDATION/concrete",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "Pipeline/OMProject/OrderValidation/pipeline/PL_INTERNAL_OM_ORDER_VALIDATION" : {
+                "label" : "Pipeline/OMProject/OrderValidation/pipeline/PL_INTERNAL_OM_ORDER_VALIDATION",
+                "properties" : {
+                  "nodeType" : "Pipeline"
+                },
+                "successors" : {
+                  "BusinessService/OMProject/OrderValidation/businessServices/BS_SQL_OM_ORDER_VALIDATION" : {
+                    "label" : "BusinessService/OMProject/OrderValidation/businessServices/BS_SQL_OM_ORDER_VALIDATION",
+                    "properties" : {
+                      "nodeType" : "BusinessService"
+                    },
+                    "successors" : {
+                      "WSDL/OMProject/Resources/BS_SQL_OM_ORDER_VALIDATION/concrete" : {
+                        "label" : "WSDL/OMProject/Resources/BS_SQL_OM_ORDER_VALIDATION/concrete",
+                        "properties" : {
+                          "nodeType" : "WSDL"
+                        },
+                        "successors" : { }
+                      },
+                      "JCA/OMProject/Resources/BS_SQL_OM_ORDER_VALIDATION_db" : {
+                        "label" : "JCA/OMProject/Resources/BS_SQL_OM_ORDER_VALIDATION_db",
+                        "properties" : {
+                          "nodeType" : "JCA"
+                        },
+                        "successors" : { }
+                      }
+                    }
+                  },
+                  "WSDL/OMProject/Resources/BS_SQL_OM_ORDER_VALIDATION/concrete" : {
+                    "label" : "WSDL/OMProject/Resources/BS_SQL_OM_ORDER_VALIDATION/concrete",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                    "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                    "properties" : {
+                      "nodeType" : "PipelineTemplate"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/OrderValidation/wsdl/WS_SBL_ORDER_VALIDATION" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/OrderValidation/wsdl/WS_SBL_ORDER_VALIDATION",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/OrderValidation/xsd/XSD_OM_ORDER_VALIDATION" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/OrderValidation/xsd/XSD_OM_ORDER_VALIDATION",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/SiebelProject/OrderValidation/transformation/createResponse_ValidateOrder" : {
+            "label" : "Xquery/SiebelProject/OrderValidation/transformation/createResponse_ValidateOrder",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/OrderValidation/wsdl/WS_SBL_ORDER_VALIDATION" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/OrderValidation/wsdl/WS_SBL_ORDER_VALIDATION",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/OrderValidation/xsd/XSD_OM_ORDER_VALIDATION" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/OrderValidation/xsd/XSD_OM_ORDER_VALIDATION",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

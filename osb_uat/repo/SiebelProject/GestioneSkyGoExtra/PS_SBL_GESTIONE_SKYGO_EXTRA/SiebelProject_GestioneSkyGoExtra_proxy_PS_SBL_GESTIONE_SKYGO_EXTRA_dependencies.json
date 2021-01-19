@@ -1,0 +1,107 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SiebelProject/GestioneSkyGoExtra/proxy/PS_SBL_GESTIONE_SKYGO_EXTRA",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/SkyGoExtra/wsdl/WS_SIE_SKY_GO_EXTRA" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/SkyGoExtra/wsdl/WS_SIE_SKY_GO_EXTRA",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/SkyGoExtra/xsd/XSD_SKY_GO_EXTRA" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/SkyGoExtra/xsd/XSD_SKY_GO_EXTRA",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/SiebelProject/GestioneSkyGoExtra/pipeline/PL_SBL_GESTIONE_SKYGO_EXTRA" : {
+        "label" : "Pipeline/SiebelProject/GestioneSkyGoExtra/pipeline/PL_SBL_GESTIONE_SKYGO_EXTRA",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "BusinessService/SiebelProject/GestioneSkyGoExtra/businessService/BS_SQL_SBL_SKYGO_EXTRA_CHECK" : {
+            "label" : "BusinessService/SiebelProject/GestioneSkyGoExtra/businessService/BS_SQL_SBL_SKYGO_EXTRA_CHECK",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "JCA/SiebelProject/Resources/JCA_DB_SBL_SKYGO_EXTRA_CHECK_db" : {
+                "label" : "JCA/SiebelProject/Resources/JCA_DB_SBL_SKYGO_EXTRA_CHECK_db",
+                "properties" : {
+                  "nodeType" : "JCA"
+                },
+                "successors" : { }
+              },
+              "WSDL/SiebelProject/Resources/JCA_DB_SBL_SKYGO_EXTRA_CHECK/concrete" : {
+                "label" : "WSDL/SiebelProject/Resources/JCA_DB_SBL_SKYGO_EXTRA_CHECK/concrete",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/SiebelProject/GestioneSkyGoExtra/transformations/createRequestSkygoExtraCheck" : {
+            "label" : "Xquery/SiebelProject/GestioneSkyGoExtra/transformations/createRequestSkygoExtraCheck",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/SkyGoExtra/wsdl/WS_SIE_SKY_GO_EXTRA" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/SkyGoExtra/wsdl/WS_SIE_SKY_GO_EXTRA",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/SkyGoExtra/xsd/XSD_SKY_GO_EXTRA" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/SkyGoExtra/xsd/XSD_SKY_GO_EXTRA",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/SiebelProject/GestioneSkyGoExtra/transformations/createResponseSkygoExtraCheck" : {
+            "label" : "Xquery/SiebelProject/GestioneSkyGoExtra/transformations/createResponseSkygoExtraCheck",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/siebel/WS_CRM_GET_PROMO_TIER",
+    "name" : "SiebelProject_proxy_PS_WS_CRM_GET_PROMO_TIER",
+    "remoteName" : "ProxyService/SiebelProject/proxy/PS_WS_CRM_GET_PROMO_TIER",
+    "localPath" : "osb_uat\\repo\\SiebelProject\\PS_WS_CRM_GET_PROMO_TIER",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/siebel/WS_CRM_GET_PROMO_TIER?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SiebelProject/GetPromoTier/xsd/XSD_CRM_GET_PROMO_TIER",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

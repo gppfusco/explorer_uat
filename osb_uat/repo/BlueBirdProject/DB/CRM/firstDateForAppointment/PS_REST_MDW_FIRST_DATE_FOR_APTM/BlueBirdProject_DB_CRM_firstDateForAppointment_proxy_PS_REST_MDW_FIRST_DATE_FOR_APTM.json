@@ -1,0 +1,34 @@
+{
+  "RestApi" : {
+    "type" : "REST",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/mdw/startingDateForAppointments",
+    "name" : "BlueBirdProject_DB_CRM_firstDateForAppointment_proxy_PS_REST_MDW_FIRST_DATE_FOR_APTM",
+    "remoteName" : "ProxyService/BlueBirdProject/DB_CRM/firstDateForAppointment/proxy/PS_REST_MDW_FIRST_DATE_FOR_APTM",
+    "localPath" : "osb_uat\\repo\\BlueBirdProject\\DB\\CRM\\firstDateForAppointment\\PS_REST_MDW_FIRST_DATE_FOR_APTM",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/mdw/startingDateForAppointments?WADL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/firstDateForAppointment/xsd/XSD_FIRST_DATE_FOR_APPOINTMENT",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ],
+      "soapApiSpec" : {
+        "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e",
+        "xsdSchemas" : [ {
+          "xsdPath" : "/MDW_CDM/EnterpriseServices/BlueBirdProject/DB_CRM/firstDateForAppointment/xsd/XSD_FIRST_DATE_FOR_APPOINTMENT",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        }, {
+          "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        } ]
+      }
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

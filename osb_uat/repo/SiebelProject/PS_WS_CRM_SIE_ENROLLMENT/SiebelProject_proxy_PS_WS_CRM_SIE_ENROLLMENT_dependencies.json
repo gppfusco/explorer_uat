@@ -1,0 +1,128 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SiebelProject/proxy/PS_WS_CRM_SIE_ENROLLMENT",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/SiebelProject/pipeline/PL_WS_CRM_SIE_ENROLLMENT" : {
+        "label" : "Pipeline/SiebelProject/pipeline/PL_WS_CRM_SIE_ENROLLMENT",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Xquery/SiebelProject/transformations/createRequest_BS_EJB_SIEBEL" : {
+            "label" : "Xquery/SiebelProject/transformations/createRequest_BS_EJB_SIEBEL",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SIEBEL" : {
+            "label" : "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SIEBEL",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB" : {
+                "label" : "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB",
+                "properties" : {
+                  "nodeType" : "ForeignJNDIProvider"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/ApplicationObjects/SIEBEL/WSDL/BS_EJB_SIEBEL" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/SIEBEL/WSDL/BS_EJB_SIEBEL",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/SiebelProject/transformations/createResponse_WS_STORICO_LOYALTY" : {
+            "label" : "Xquery/SiebelProject/transformations/createResponse_WS_STORICO_LOYALTY",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/Enrollment/wsdl/WS_CRM_SIE_ENROLLMENT" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/Enrollment/wsdl/WS_CRM_SIE_ENROLLMENT",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/Enrollment/xsd/XSD_CRM_SIE_ENROLLMENT" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/Enrollment/xsd/XSD_CRM_SIE_ENROLLMENT",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/SiebelProject/transformations/createRequest_SIEBEL_ENROLL" : {
+            "label" : "Xquery/SiebelProject/transformations/createRequest_SIEBEL_ENROLL",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/SiebelProject/transformations/createResponse_WS_GET_DATI_LOYALTY" : {
+            "label" : "Xquery/SiebelProject/transformations/createResponse_WS_GET_DATI_LOYALTY",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/SiebelProject/transformations/createResponse_WS_ENROLL" : {
+            "label" : "Xquery/SiebelProject/transformations/createResponse_WS_ENROLL",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/Enrollment/wsdl/WS_CRM_SIE_ENROLLMENT" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/Enrollment/wsdl/WS_CRM_SIE_ENROLLMENT",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/Enrollment/xsd/XSD_CRM_SIE_ENROLLMENT" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/Enrollment/xsd/XSD_CRM_SIE_ENROLLMENT",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

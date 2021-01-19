@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/om/WS_OM_GETORDER",
+    "name" : "OMProject_GetOrder_proxy_PS_WS_GET_ORDER",
+    "remoteName" : "ProxyService/OMProject/GetOrder/proxy/PS_WS_GET_ORDER",
+    "localPath" : "osb_uat\\repo\\OMProject\\GetOrder\\PS_WS_GET_ORDER",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/om/WS_OM_GETORDER?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/OMProject/GetOrder/xsd/XSD_OM_GETORDER",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

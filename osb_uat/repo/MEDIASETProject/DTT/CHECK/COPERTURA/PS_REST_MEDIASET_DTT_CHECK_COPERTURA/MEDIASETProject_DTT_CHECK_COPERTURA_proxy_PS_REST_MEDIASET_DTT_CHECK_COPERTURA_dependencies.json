@@ -1,0 +1,100 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/MEDIASETProject/DTT_CHECK_COPERTURA/proxy/PS_REST_MEDIASET_DTT_CHECK_COPERTURA",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "WADL/MEDIASETProject/Resources/PS_REST_MEDIASET_DTT_CHECK_COPERTURA" : {
+        "label" : "WADL/MEDIASETProject/Resources/PS_REST_MEDIASET_DTT_CHECK_COPERTURA",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      },
+      "WSDL/MEDIASETProject/Resources/PS_REST_MEDIASET_DTT_CHECK_COPERTURA" : {
+        "label" : "WSDL/MEDIASETProject/Resources/PS_REST_MEDIASET_DTT_CHECK_COPERTURA",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/MediasetProject/DTTCheckCopertura/xsd/XSD_MEDIASET_DTT_CHECK_COPERTURA" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MediasetProject/DTTCheckCopertura/xsd/XSD_MEDIASET_DTT_CHECK_COPERTURA",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/MEDIASETProject/DTT_CHECK_COPERTURA/pipeline/PL_REST_MEDIASET_DTT_CHECK_COPERTURA" : {
+        "label" : "Pipeline/MEDIASETProject/DTT_CHECK_COPERTURA/pipeline/PL_REST_MEDIASET_DTT_CHECK_COPERTURA",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "BusinessService/MEDIASETProject/DTT_CHECK_COPERTURA/businessService/BS_WS_R2_DTT_SKY_NET" : {
+            "label" : "BusinessService/MEDIASETProject/DTT_CHECK_COPERTURA/businessService/BS_WS_R2_DTT_SKY_NET",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/ApplicationObjects/MEDIASET/FL_DTT_SKY_Net/wsdl/FL_DTT_SKY_Net" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/MEDIASET/FL_DTT_SKY_Net/wsdl/FL_DTT_SKY_Net",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "ServiceAccount/MEDIASETProject/serviceAccount/SA_R2Mediaset" : {
+                "label" : "ServiceAccount/MEDIASETProject/serviceAccount/SA_R2Mediaset",
+                "properties" : {
+                  "nodeType" : "ServiceAccount"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/MEDIASETProject/DTT_CHECK_COPERTURA/transformation/createRequest_BS_WS_MEDIASET_FL_SKY_MUX" : {
+            "label" : "Xquery/MEDIASETProject/DTT_CHECK_COPERTURA/transformation/createRequest_BS_WS_MEDIASET_FL_SKY_MUX",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MEDIASETProject/Resources/PS_REST_MEDIASET_DTT_CHECK_COPERTURA" : {
+            "label" : "WSDL/MEDIASETProject/Resources/PS_REST_MEDIASET_DTT_CHECK_COPERTURA",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/MediasetProject/DTTCheckCopertura/xsd/XSD_MEDIASET_DTT_CHECK_COPERTURA" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MediasetProject/DTTCheckCopertura/xsd/XSD_MEDIASET_DTT_CHECK_COPERTURA",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/MEDIASETProject/DTT_CHECK_COPERTURA/transformation/createResponse_BS_WS_MEDIASET_FL_SKY_MUX" : {
+            "label" : "Xquery/MEDIASETProject/DTT_CHECK_COPERTURA/transformation/createResponse_BS_WS_MEDIASET_FL_SKY_MUX",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

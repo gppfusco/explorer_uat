@@ -1,0 +1,34 @@
+{
+  "RestApi" : {
+    "type" : "REST",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/mdw/cpq/v2/sellingConfirmation",
+    "name" : "CPQProject_sellingConfirmation_v2_proxy_PS_REST_CPQ_SELLING_CONFIRMATION_V2",
+    "remoteName" : "ProxyService/CPQProject/sellingConfirmation_v2/proxy/PS_REST_CPQ_SELLING_CONFIRMATION_V2",
+    "localPath" : "osb_uat\\repo\\CPQProject\\sellingConfirmation\\v2\\PS_REST_CPQ_SELLING_CONFIRMATION_V2",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/mdw/cpq/v2/sellingConfirmation?WADL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "MDW_CDM/EnterpriseServices/CPQProject/SellingConfirmation_v2/xsd/XSD_CPQ_SELLING_CONFIRMATION",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ],
+      "soapApiSpec" : {
+        "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e",
+        "xsdSchemas" : [ {
+          "xsdPath" : "/MDW_CDM/EnterpriseServices/CPQProject/SellingConfirmation_v2/xsd/XSD_CPQ_SELLING_CONFIRMATION",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        }, {
+          "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        } ]
+      }
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

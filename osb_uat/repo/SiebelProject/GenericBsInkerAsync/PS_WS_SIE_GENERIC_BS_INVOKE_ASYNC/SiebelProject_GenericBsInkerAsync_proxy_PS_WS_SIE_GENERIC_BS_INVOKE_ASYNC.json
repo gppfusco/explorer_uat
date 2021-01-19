@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/siebel/WS_SIE_GENERIC_BS_INVOKE_ASYNC",
+    "name" : "SiebelProject_GenericBsInkerAsync_proxy_PS_WS_SIE_GENERIC_BS_INVOKE_ASYNC",
+    "remoteName" : "ProxyService/SiebelProject/GenericBsInkerAsync/proxy/PS_WS_SIE_GENERIC_BS_INVOKE_ASYNC",
+    "localPath" : "osb_uat\\repo\\SiebelProject\\GenericBsInkerAsync\\PS_WS_SIE_GENERIC_BS_INVOKE_ASYNC",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/siebel/WS_SIE_GENERIC_BS_INVOKE_ASYNC?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SiebelProject/GenericBsInvokeAsync/xsd/XSD_CRM_SIE_GENERIC_BS_INVOKE_ASYNC",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

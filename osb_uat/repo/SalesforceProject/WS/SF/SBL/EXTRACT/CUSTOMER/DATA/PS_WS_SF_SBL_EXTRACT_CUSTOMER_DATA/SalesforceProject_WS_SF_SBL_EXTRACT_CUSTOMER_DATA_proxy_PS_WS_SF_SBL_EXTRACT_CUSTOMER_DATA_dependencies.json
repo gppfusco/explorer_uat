@@ -1,0 +1,217 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SalesforceProject/WS_SF_SBL_EXTRACT_CUSTOMER_DATA/proxy/PS_WS_SF_SBL_EXTRACT_CUSTOMER_DATA",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/SF_SBL_ExtractCustomerData/wsdl/WS_SF_SBL_EXTRACT_CUSTOMER_DATA" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/SF_SBL_ExtractCustomerData/wsdl/WS_SF_SBL_EXTRACT_CUSTOMER_DATA",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/SF_SBL_ExtractCustomerData/xsd/XSD_SF_SBL_EXTRACT_CUSTOMER_DATA" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/SF_SBL_ExtractCustomerData/xsd/XSD_SF_SBL_EXTRACT_CUSTOMER_DATA",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/SalesforceProject/WS_SF_SBL_EXTRACT_CUSTOMER_DATA/pipeline/PL_WS_SF_SBL_EXTRACT_CUSTOMER_DATA" : {
+        "label" : "Pipeline/SalesforceProject/WS_SF_SBL_EXTRACT_CUSTOMER_DATA/pipeline/PL_WS_SF_SBL_EXTRACT_CUSTOMER_DATA",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/SF_SBL_ExtractCustomerData/wsdl/WS_SF_SBL_EXTRACT_CUSTOMER_DATA" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/SF_SBL_ExtractCustomerData/wsdl/WS_SF_SBL_EXTRACT_CUSTOMER_DATA",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/SF_SBL_ExtractCustomerData/xsd/XSD_SF_SBL_EXTRACT_CUSTOMER_DATA" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/SF_SBL_ExtractCustomerData/xsd/XSD_SF_SBL_EXTRACT_CUSTOMER_DATA",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_NO_ROUTING_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_NO_ROUTING_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/SalesforceProject/WS_SF_SBL_EXTRACT_CUSTOMER_DATA/pipeline/PL_INTERNAL_TUXEDO_RID_CLI_DATA" : {
+            "label" : "Pipeline/SalesforceProject/WS_SF_SBL_EXTRACT_CUSTOMER_DATA/pipeline/PL_INTERNAL_TUXEDO_RID_CLI_DATA",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/SF_SBL_ExtractCustomerData/wsdl/WS_SF_SBL_EXTRACT_CUSTOMER_DATA" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/SF_SBL_ExtractCustomerData/wsdl/WS_SF_SBL_EXTRACT_CUSTOMER_DATA",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/SF_SBL_ExtractCustomerData/xsd/XSD_SF_SBL_EXTRACT_CUSTOMER_DATA" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/SF_SBL_ExtractCustomerData/xsd/XSD_SF_SBL_EXTRACT_CUSTOMER_DATA",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/SalesforceProject/WS_SF_SBL_EXTRACT_CUSTOMER_DATA/transformation/createRequestBsTuxedoRidCliData" : {
+                "label" : "Xquery/SalesforceProject/WS_SF_SBL_EXTRACT_CUSTOMER_DATA/transformation/createRequestBsTuxedoRidCliData",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/SalesforceProject/WS_SF_SBL_EXTRACT_CUSTOMER_DATA/transformation/createResponseBsTuxedoRidCliData" : {
+                "label" : "Xquery/SalesforceProject/WS_SF_SBL_EXTRACT_CUSTOMER_DATA/transformation/createResponseBsTuxedoRidCliData",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "BusinessService/SalesforceProject/WS_SF_SBL_EXTRACT_CUSTOMER_DATA/businessService/BS_TUXEDO_RID_CLI_DATA" : {
+                "label" : "BusinessService/SalesforceProject/WS_SF_SBL_EXTRACT_CUSTOMER_DATA/businessService/BS_TUXEDO_RID_CLI_DATA",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/ApplicationObjects/SALESFORCE/SF_SBL_EXTRACT_CUSTOMER_DATA/XSD_TUXEDO_RID_CLI_DATA" : {
+                    "label" : "XMLSchema/MDW_CDM/ApplicationObjects/SALESFORCE/SF_SBL_EXTRACT_CUSTOMER_DATA/XSD_TUXEDO_RID_CLI_DATA",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0" : {
+                    "label" : "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0",
+                    "properties" : {
+                      "nodeType" : "Archive"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "Pipeline/SalesforceProject/WS_SF_SBL_EXTRACT_CUSTOMER_DATA/pipeline/PL_INTERNAL_SF_EXTRACT_CUSTOMER_DATA" : {
+            "label" : "Pipeline/SalesforceProject/WS_SF_SBL_EXTRACT_CUSTOMER_DATA/pipeline/PL_INTERNAL_SF_EXTRACT_CUSTOMER_DATA",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/SF_SBL_ExtractCustomerData/wsdl/WS_SF_SBL_EXTRACT_CUSTOMER_DATA" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/SF_SBL_ExtractCustomerData/wsdl/WS_SF_SBL_EXTRACT_CUSTOMER_DATA",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/SF_SBL_ExtractCustomerData/xsd/XSD_SF_SBL_EXTRACT_CUSTOMER_DATA" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/SF_SBL_ExtractCustomerData/xsd/XSD_SF_SBL_EXTRACT_CUSTOMER_DATA",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF" : {
+                "label" : "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB" : {
+                    "label" : "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB",
+                    "properties" : {
+                      "nodeType" : "ForeignJNDIProvider"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/SalesforceProject/WS_SF_SBL_EXTRACT_CUSTOMER_DATA/transformation/createResponseSFExtractCustomerData" : {
+                "label" : "Xquery/SalesforceProject/WS_SF_SBL_EXTRACT_CUSTOMER_DATA/transformation/createResponseSFExtractCustomerData",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "Xquery/SalesforceProject/WS_SF_SBL_EXTRACT_CUSTOMER_DATA/transformation/createRequestSFExtractCustomerData" : {
+                "label" : "Xquery/SalesforceProject/WS_SF_SBL_EXTRACT_CUSTOMER_DATA/transformation/createRequestSFExtractCustomerData",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

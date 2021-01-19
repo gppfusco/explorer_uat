@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/salesforce/WS_SF_CREA_PIANO_KB",
+    "name" : "SalesforceProject_WS_SF_CREA_PIANO_KB_proxy_PS_WS_SF_CREA_PIANO_KB",
+    "remoteName" : "ProxyService/SalesforceProject/WS_SF_CREA_PIANO_KB/proxy/PS_WS_SF_CREA_PIANO_KB",
+    "localPath" : "osb_uat\\repo\\SalesforceProject\\WS\\SF\\CREA\\PIANO\\KB\\PS_WS_SF_CREA_PIANO_KB",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/salesforce/WS_SF_CREA_PIANO_KB?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SalesforceProject/CreaPianoKB/xsd/XSD_SF_CREA_PIANO_KB",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

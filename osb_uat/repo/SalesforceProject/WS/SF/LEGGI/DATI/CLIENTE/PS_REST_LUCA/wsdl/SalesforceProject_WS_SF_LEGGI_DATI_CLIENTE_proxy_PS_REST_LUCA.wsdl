@@ -1,0 +1,34 @@
+<wsdl:definitions name="PS_REST_LUCA" targetNamespace="http://xmlns.oracle.com/OSBSvil/SalesforceProject/PS_REST_LUCA" xmlns:tns="http://xmlns.oracle.com/OSBSvil/SalesforceProject/PS_REST_LUCA" xmlns:inp1="http://www.skytv.it/mdw/data" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <plnk:partnerLinkType name="PS_REST_LUCA">
+        <plnk:role name="PS_REST_LUCAProvider" portType="tns:PS_REST_LUCA_ptt"/>
+    </plnk:partnerLinkType>
+    <wsdl:types>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://www.skytv.it/mdw/data" schemaLocation="../../MDW_CDM/EnterpriseServices/SalesforceProject/LeggiDatiClienteSF/xsd/XSD_SF_LEGGI_DATI_CLIENTE.xsd"/>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="leggiDatiCliente_inputMessage">
+        <wsdl:part name="request" element="inp1:requestLeggiDatiClienteSF"/>
+    </wsdl:message>
+    <wsdl:message name="leggiDatiCliente_outputMessage">
+        <wsdl:part name="reply" element="inp1:responseLeggiDatiClienteSF"/>
+    </wsdl:message>
+    <wsdl:portType name="PS_REST_LUCA_ptt">
+        <wsdl:operation name="leggiDatiCliente">
+            <wsdl:input message="tns:leggiDatiCliente_inputMessage"/>
+            <wsdl:output message="tns:leggiDatiCliente_outputMessage"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="PS_REST_LUCA_ptt-binding" type="tns:PS_REST_LUCA_ptt">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="leggiDatiCliente">
+            <soap:operation soapAction="leggiDatiCliente"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>

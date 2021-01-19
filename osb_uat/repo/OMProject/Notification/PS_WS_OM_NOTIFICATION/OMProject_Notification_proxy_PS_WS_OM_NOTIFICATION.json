@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/om/WS_OM_NOTIFICATION",
+    "name" : "OMProject_Notification_proxy_PS_WS_OM_NOTIFICATION",
+    "remoteName" : "ProxyService/OMProject/Notification/proxy/PS_WS_OM_NOTIFICATION",
+    "localPath" : "osb_uat\\repo\\OMProject\\Notification\\PS_WS_OM_NOTIFICATION",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/om/WS_OM_NOTIFICATION?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/OMProject/Notification/xsd/XSD_OM_NOTIFICATION",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

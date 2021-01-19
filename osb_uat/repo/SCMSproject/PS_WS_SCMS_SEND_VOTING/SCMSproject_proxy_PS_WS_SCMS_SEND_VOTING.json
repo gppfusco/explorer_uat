@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/scms/WS_SCMS_SEND_VOTING",
+    "name" : "SCMSproject_proxy_PS_WS_SCMS_SEND_VOTING",
+    "remoteName" : "ProxyService/SCMSproject/proxy/PS_WS_SCMS_SEND_VOTING",
+    "localPath" : "osb_uat\\repo\\SCMSproject\\PS_WS_SCMS_SEND_VOTING",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/scms/WS_SCMS_SEND_VOTING?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SCMSproject/SendVoting/xsd/XSD_SCMS_SEND_VOTING",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

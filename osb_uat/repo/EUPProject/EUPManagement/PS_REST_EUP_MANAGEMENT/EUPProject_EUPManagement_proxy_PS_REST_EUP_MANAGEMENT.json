@@ -1,0 +1,28 @@
+{
+  "RestApi" : {
+    "type" : "REST",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/eup/management",
+    "name" : "EUPProject_EUPManagement_proxy_PS_REST_EUP_MANAGEMENT",
+    "remoteName" : "ProxyService/EUPProject/EUPManagement/proxy/PS_REST_EUP_MANAGEMENT",
+    "localPath" : "osb_uat\\repo\\EUPProject\\EUPManagement\\PS_REST_EUP_MANAGEMENT",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/eup/management?WADL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "MDW_CDM/EnterpriseServices/EUPProject/EUPManagement/xsd/XSD_EUP_MANAGEMENT",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ],
+      "soapApiSpec" : {
+        "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e",
+        "xsdSchemas" : [ {
+          "xsdPath" : "/MDW_CDM/EnterpriseServices/EUPProject/EUPManagement/xsd/XSD_EUP_MANAGEMENT",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        } ]
+      }
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/SiebelProject/PROBlEM_HANDLER/proxy/PS_WS_SF_PROBLEM_HANDLER",
+    "name" : "SalesforceProject_PROBLEM_HANDLER_proxy_PS_WS_SF_PROBLEM_HANDLER",
+    "remoteName" : "ProxyService/SalesforceProject/PROBLEM_HANDLER/proxy/PS_WS_SF_PROBLEM_HANDLER",
+    "localPath" : "osb_uat\\repo\\SalesforceProject\\PROBLEM\\HANDLER\\PS_WS_SF_PROBLEM_HANDLER",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/SiebelProject/PROBlEM_HANDLER/proxy/PS_WS_SF_PROBLEM_HANDLER?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SalesforceProject/problemHandler/XSD_SF_PROBLEM_HANDLER",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

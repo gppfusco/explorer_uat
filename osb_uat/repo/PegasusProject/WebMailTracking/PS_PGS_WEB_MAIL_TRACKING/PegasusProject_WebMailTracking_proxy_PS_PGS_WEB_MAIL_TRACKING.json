@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/pegasus/WS_PGS_WEB_MAIL_TRACKING",
+    "name" : "PegasusProject_WebMailTracking_proxy_PS_PGS_WEB_MAIL_TRACKING",
+    "remoteName" : "ProxyService/PegasusProject/WebMailTracking/proxy/PS_PGS_WEB_MAIL_TRACKING",
+    "localPath" : "osb_uat\\repo\\PegasusProject\\WebMailTracking\\PS_PGS_WEB_MAIL_TRACKING",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/pegasus/WS_PGS_WEB_MAIL_TRACKING?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/PegasusProject/WebMailTracking/xsd/XSD_PGS_WEB_MAIL_TRACKING",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

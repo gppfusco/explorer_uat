@@ -1,0 +1,92 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/MDWProject/AlignSfByBpel/RetriveScenariosBusinessRules/proxy/PS_WS_MDW_RETRIVE_SCENARIOS_BUSINESS_RULES",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/MDWProject/AlignFromSF/wsdl/WS_MDW_RETRIVE_SCENARIOS_BUSINESS_RULES" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/MDWProject/AlignFromSF/wsdl/WS_MDW_RETRIVE_SCENARIOS_BUSINESS_RULES",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/AlignFromSF/xsd/XSD_MDW_RETRIVE_SCENARIOS_BUSINESS_RULES" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/AlignFromSF/xsd/XSD_MDW_RETRIVE_SCENARIOS_BUSINESS_RULES",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/MDWProject/AlignSfByBpel/RetriveScenariosBusinessRules/pipeline/PL_WS_MDW_RETRIVE_SCENARIOS_BUSINESS_RULES" : {
+        "label" : "Pipeline/MDWProject/AlignSfByBpel/RetriveScenariosBusinessRules/pipeline/PL_WS_MDW_RETRIVE_SCENARIOS_BUSINESS_RULES",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/MDW_CDM/EnterpriseServices/MDWProject/AlignFromSF/wsdl/WS_MDW_RETRIVE_SCENARIOS_BUSINESS_RULES" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/MDWProject/AlignFromSF/wsdl/WS_MDW_RETRIVE_SCENARIOS_BUSINESS_RULES",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/AlignFromSF/xsd/XSD_MDW_RETRIVE_SCENARIOS_BUSINESS_RULES" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/AlignFromSF/xsd/XSD_MDW_RETRIVE_SCENARIOS_BUSINESS_RULES",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/MDWProject/AlignSfByBpel/RetriveScenariosBusinessRules/transformations/createRequestRetriveScenariosBRuleSFAlign" : {
+            "label" : "Xquery/MDWProject/AlignSfByBpel/RetriveScenariosBusinessRules/transformations/createRequestRetriveScenariosBRuleSFAlign",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "BusinessService/MDWProject/AlignSfByBpel/RetriveScenariosBusinessRules/businessService/BS_WS_SOA_RETRIVE_SCENARIOS_RULES_SF_ALIGN" : {
+            "label" : "BusinessService/MDWProject/AlignSfByBpel/RetriveScenariosBusinessRules/businessService/BS_WS_SOA_RETRIVE_SCENARIOS_RULES_SF_ALIGN",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : { }
+          },
+          "Xquery/MDWProject/AlignSfByBpel/RetriveScenariosBusinessRules/transformations/createResponseRetriveScenariosBRuleSFAlign" : {
+            "label" : "Xquery/MDWProject/AlignSfByBpel/RetriveScenariosBusinessRules/transformations/createResponseRetriveScenariosBRuleSFAlign",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

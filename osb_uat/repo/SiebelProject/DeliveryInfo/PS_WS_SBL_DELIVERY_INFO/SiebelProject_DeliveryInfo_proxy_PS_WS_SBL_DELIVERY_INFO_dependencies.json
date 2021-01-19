@@ -1,0 +1,144 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SiebelProject/DeliveryInfo/proxy/PS_WS_SBL_DELIVERY_INFO",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/SiebelProject/DeliveryInfo/pipeline/PL_WS_SBL_DELIVERY_INFO" : {
+        "label" : "Pipeline/SiebelProject/DeliveryInfo/pipeline/PL_WS_SBL_DELIVERY_INFO",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Pipeline/SiebelProject/DeliveryInfo/pipeline/PL_INTERNAL_SBL_DELIVERY_INFO" : {
+            "label" : "Pipeline/SiebelProject/DeliveryInfo/pipeline/PL_INTERNAL_SBL_DELIVERY_INFO",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/SiebelProject/DeliveryInfo/transformation/createRequestDeliveryInfo" : {
+                "label" : "Xquery/SiebelProject/DeliveryInfo/transformation/createRequestDeliveryInfo",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/SiebelProject/DeliveryInfo/businessService/BS_SQL_SBL_DELIVERY_INFO" : {
+                "label" : "BusinessService/SiebelProject/DeliveryInfo/businessService/BS_SQL_SBL_DELIVERY_INFO",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/SiebelProject/Resources/BS_SQL_SBL_DELIVERY_INFO/concrete" : {
+                    "label" : "WSDL/SiebelProject/Resources/BS_SQL_SBL_DELIVERY_INFO/concrete",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "JCA/SiebelProject/Resources/BS_SQL_SBL_DELIVERY_INFO_db" : {
+                    "label" : "JCA/SiebelProject/Resources/BS_SQL_SBL_DELIVERY_INFO_db",
+                    "properties" : {
+                      "nodeType" : "JCA"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/DeliveryInfo/wsdl/WS_SBL_DELIVERY_INFO" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/DeliveryInfo/wsdl/WS_SBL_DELIVERY_INFO",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/DeliveryInfo/xsd/XSD_SBL_DELIVERY_INFO" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/DeliveryInfo/xsd/XSD_SBL_DELIVERY_INFO",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/SiebelProject/DeliveryInfo/transformation/createResponseDeliveryInfo" : {
+                "label" : "Xquery/SiebelProject/DeliveryInfo/transformation/createResponseDeliveryInfo",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/DeliveryInfo/wsdl/WS_SBL_DELIVERY_INFO" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/DeliveryInfo/wsdl/WS_SBL_DELIVERY_INFO",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/DeliveryInfo/xsd/XSD_SBL_DELIVERY_INFO" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/DeliveryInfo/xsd/XSD_SBL_DELIVERY_INFO",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/DeliveryInfo/wsdl/WS_SBL_DELIVERY_INFO" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/SiebelProject/DeliveryInfo/wsdl/WS_SBL_DELIVERY_INFO",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/DeliveryInfo/xsd/XSD_SBL_DELIVERY_INFO" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/DeliveryInfo/xsd/XSD_SBL_DELIVERY_INFO",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

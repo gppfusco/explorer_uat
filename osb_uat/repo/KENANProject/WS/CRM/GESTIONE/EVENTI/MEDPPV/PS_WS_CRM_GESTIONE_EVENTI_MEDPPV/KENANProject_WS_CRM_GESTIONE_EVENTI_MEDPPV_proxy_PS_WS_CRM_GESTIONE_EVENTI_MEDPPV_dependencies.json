@@ -1,0 +1,436 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/proxy/PS_WS_CRM_GESTIONE_EVENTI_MEDPPV",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/pipelines/PL_WS_CRM_GESTIONE_EVENTI_MEDPPV" : {
+        "label" : "Pipeline/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/pipelines/PL_WS_CRM_GESTIONE_EVENTI_MEDPPV",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Pipeline/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/pipelines/PL_WS_CRM_GESTIONE_EVENTI_MEDPPV_GetEventiOPPV" : {
+            "label" : "Pipeline/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/pipelines/PL_WS_CRM_GESTIONE_EVENTI_MEDPPV_GetEventiOPPV",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "PipelineTemplate/MDW_CO/templates/pipeline/kenan/PL_WS_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/kenan/PL_WS_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "BusinessService/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/businessService/BS_SQL_MED_GET_EVENTI_OPPV" : {
+                "label" : "BusinessService/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/businessService/BS_SQL_MED_GET_EVENTI_OPPV",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "JCA/KENANProject/Resources/BS_SQL_MED_GET_EVENTI_OPPV_db" : {
+                    "label" : "JCA/KENANProject/Resources/BS_SQL_MED_GET_EVENTI_OPPV_db",
+                    "properties" : {
+                      "nodeType" : "JCA"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/KENANProject/Resources/BS_SQL_MED_GET_EVENTI_OPPV/concrete" : {
+                    "label" : "WSDL/KENANProject/Resources/BS_SQL_MED_GET_EVENTI_OPPV/concrete",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/transformations/createResponse_WS_GetEventiOPPV" : {
+                "label" : "Xquery/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/transformations/createResponse_WS_GetEventiOPPV",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/transformations/createRequest_BS_SQL_MED_GET_EVENTI_OPPV" : {
+                "label" : "Xquery/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/transformations/createRequest_BS_SQL_MED_GET_EVENTI_OPPV",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/KenanProject/GestioneEventiMedPPV/wsdl/WS_CRM_GESTIONE_EVENTI_MEDPPV" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/KenanProject/GestioneEventiMedPPV/wsdl/WS_CRM_GESTIONE_EVENTI_MEDPPV",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/GestioneEventiMedPPV/xsd/XSD_CRM_GESTIONE_EVENTI_MEDPPV" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/GestioneEventiMedPPV/xsd/XSD_CRM_GESTIONE_EVENTI_MEDPPV",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/pipelines/PL_WS_CRM_GESTIONE_EVENTI_MEDPPV_GetEventiAllPPV" : {
+            "label" : "Pipeline/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/pipelines/PL_WS_CRM_GESTIONE_EVENTI_MEDPPV_GetEventiAllPPV",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "PipelineTemplate/MDW_CO/templates/pipeline/kenan/PL_WS_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/kenan/PL_WS_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "Xquery/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/transformations/createRequest_BS_SQL_MED_GET_EVENTI_ALL_PPV" : {
+                "label" : "Xquery/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/transformations/createRequest_BS_SQL_MED_GET_EVENTI_ALL_PPV",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/transformations/createResponse_WS_GetEventiAllPPV" : {
+                "label" : "Xquery/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/transformations/createResponse_WS_GetEventiAllPPV",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/KenanProject/GestioneEventiMedPPV/wsdl/WS_CRM_GESTIONE_EVENTI_MEDPPV" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/KenanProject/GestioneEventiMedPPV/wsdl/WS_CRM_GESTIONE_EVENTI_MEDPPV",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/GestioneEventiMedPPV/xsd/XSD_CRM_GESTIONE_EVENTI_MEDPPV" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/GestioneEventiMedPPV/xsd/XSD_CRM_GESTIONE_EVENTI_MEDPPV",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "BusinessService/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/businessService/BS_SQL_MED_GET_EVENTI_ALL_PPV" : {
+                "label" : "BusinessService/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/businessService/BS_SQL_MED_GET_EVENTI_ALL_PPV",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/KENANProject/Resources/BS_SQL_MED_GET_EVENTI_ALL_PPV/concrete" : {
+                    "label" : "WSDL/KENANProject/Resources/BS_SQL_MED_GET_EVENTI_ALL_PPV/concrete",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "JCA/KENANProject/Resources/BS_SQL_MED_GET_EVENTI_ALL_PPV_db" : {
+                    "label" : "JCA/KENANProject/Resources/BS_SQL_MED_GET_EVENTI_ALL_PPV_db",
+                    "properties" : {
+                      "nodeType" : "JCA"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "Pipeline/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/pipelines/PL_WS_CRM_GESTIONE_EVENTI_MEDPPV_GetEventiPPV" : {
+            "label" : "Pipeline/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/pipelines/PL_WS_CRM_GESTIONE_EVENTI_MEDPPV_GetEventiPPV",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "PipelineTemplate/MDW_CO/templates/pipeline/kenan/PL_WS_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/kenan/PL_WS_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "BusinessService/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/businessService/BS_SQL_MED_GET_EVENTI_PPV" : {
+                "label" : "BusinessService/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/businessService/BS_SQL_MED_GET_EVENTI_PPV",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "JCA/KENANProject/Resources/BS_SQL_MED_GET_EVENTI_PPV_db" : {
+                    "label" : "JCA/KENANProject/Resources/BS_SQL_MED_GET_EVENTI_PPV_db",
+                    "properties" : {
+                      "nodeType" : "JCA"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/KENANProject/Resources/BS_SQL_MED_GET_EVENTI_PPV/concrete" : {
+                    "label" : "WSDL/KENANProject/Resources/BS_SQL_MED_GET_EVENTI_PPV/concrete",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/transformations/createResponse_WS_GetEventiPPV" : {
+                "label" : "Xquery/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/transformations/createResponse_WS_GetEventiPPV",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/KenanProject/GestioneEventiMedPPV/wsdl/WS_CRM_GESTIONE_EVENTI_MEDPPV" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/KenanProject/GestioneEventiMedPPV/wsdl/WS_CRM_GESTIONE_EVENTI_MEDPPV",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/GestioneEventiMedPPV/xsd/XSD_CRM_GESTIONE_EVENTI_MEDPPV" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/GestioneEventiMedPPV/xsd/XSD_CRM_GESTIONE_EVENTI_MEDPPV",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/transformations/createRequest_BS_SQL_MED_GET_EVENTI_PPV" : {
+                "label" : "Xquery/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/transformations/createRequest_BS_SQL_MED_GET_EVENTI_PPV",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Pipeline/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/pipelines/PL_WS_CRM_GESTIONE_EVENTI_MEDPPV_GetEventiAllOPPV" : {
+            "label" : "Pipeline/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/pipelines/PL_WS_CRM_GESTIONE_EVENTI_MEDPPV_GetEventiAllOPPV",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "PipelineTemplate/MDW_CO/templates/pipeline/kenan/PL_WS_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/kenan/PL_WS_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "Xquery/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/transformations/createResponse_WS_GetEventiAllOPPV" : {
+                "label" : "Xquery/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/transformations/createResponse_WS_GetEventiAllOPPV",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/transformations/createRequest_BS_SQL_MED_GET_EVENTI_ALL_OPPV" : {
+                "label" : "Xquery/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/transformations/createRequest_BS_SQL_MED_GET_EVENTI_ALL_OPPV",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/KenanProject/GestioneEventiMedPPV/wsdl/WS_CRM_GESTIONE_EVENTI_MEDPPV" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/KenanProject/GestioneEventiMedPPV/wsdl/WS_CRM_GESTIONE_EVENTI_MEDPPV",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/GestioneEventiMedPPV/xsd/XSD_CRM_GESTIONE_EVENTI_MEDPPV" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/GestioneEventiMedPPV/xsd/XSD_CRM_GESTIONE_EVENTI_MEDPPV",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "BusinessService/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/businessService/BS_SQL_MED_GET_EVENTI_ALL_OPPV" : {
+                "label" : "BusinessService/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/businessService/BS_SQL_MED_GET_EVENTI_ALL_OPPV",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "JCA/KENANProject/Resources/BS_SQL_MED_GET_EVENTI_ALL_OPPV_db" : {
+                    "label" : "JCA/KENANProject/Resources/BS_SQL_MED_GET_EVENTI_ALL_OPPV_db",
+                    "properties" : {
+                      "nodeType" : "JCA"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/KENANProject/Resources/BS_SQL_MED_GET_EVENTI_ALL_OPPV/concrete" : {
+                    "label" : "WSDL/KENANProject/Resources/BS_SQL_MED_GET_EVENTI_ALL_OPPV/concrete",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "Pipeline/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/pipelines/PL_WS_CRM_GESTIONE_EVENTI_MEDPPV_GetEventiVOD" : {
+            "label" : "Pipeline/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/pipelines/PL_WS_CRM_GESTIONE_EVENTI_MEDPPV_GetEventiVOD",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "PipelineTemplate/MDW_CO/templates/pipeline/kenan/PL_WS_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/kenan/PL_WS_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "BusinessService/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/businessService/BS_SQL_MED_GET_EVENTI_VOD" : {
+                "label" : "BusinessService/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/businessService/BS_SQL_MED_GET_EVENTI_VOD",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/KENANProject/Resources/BS_SQL_MED_GET_EVENTI_VOD/concrete" : {
+                    "label" : "WSDL/KENANProject/Resources/BS_SQL_MED_GET_EVENTI_VOD/concrete",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "JCA/KENANProject/Resources/BS_SQL_MED_GET_EVENTI_VOD_db" : {
+                    "label" : "JCA/KENANProject/Resources/BS_SQL_MED_GET_EVENTI_VOD_db",
+                    "properties" : {
+                      "nodeType" : "JCA"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/transformations/createRequest_BS_SQL_MED_GET_EVENTI_VOD" : {
+                "label" : "Xquery/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/transformations/createRequest_BS_SQL_MED_GET_EVENTI_VOD",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/transformations/createResponse_WS_GetEventiVOD" : {
+                "label" : "Xquery/KENANProject/WS_CRM_GESTIONE_EVENTI_MEDPPV/transformations/createResponse_WS_GetEventiVOD",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/KenanProject/GestioneEventiMedPPV/wsdl/WS_CRM_GESTIONE_EVENTI_MEDPPV" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/KenanProject/GestioneEventiMedPPV/wsdl/WS_CRM_GESTIONE_EVENTI_MEDPPV",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/GestioneEventiMedPPV/xsd/XSD_CRM_GESTIONE_EVENTI_MEDPPV" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/GestioneEventiMedPPV/xsd/XSD_CRM_GESTIONE_EVENTI_MEDPPV",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/KenanProject/GestioneEventiMedPPV/wsdl/WS_CRM_GESTIONE_EVENTI_MEDPPV" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/KenanProject/GestioneEventiMedPPV/wsdl/WS_CRM_GESTIONE_EVENTI_MEDPPV",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/GestioneEventiMedPPV/xsd/XSD_CRM_GESTIONE_EVENTI_MEDPPV" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/GestioneEventiMedPPV/xsd/XSD_CRM_GESTIONE_EVENTI_MEDPPV",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/KenanProject/GestioneEventiMedPPV/wsdl/WS_CRM_GESTIONE_EVENTI_MEDPPV" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/KenanProject/GestioneEventiMedPPV/wsdl/WS_CRM_GESTIONE_EVENTI_MEDPPV",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/GestioneEventiMedPPV/xsd/XSD_CRM_GESTIONE_EVENTI_MEDPPV" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/GestioneEventiMedPPV/xsd/XSD_CRM_GESTIONE_EVENTI_MEDPPV",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

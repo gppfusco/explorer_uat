@@ -1,0 +1,107 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/MDWProject/PAYMENT_TRANSACTION_PI/proxy/PS_WS_PAYMENT_TRANSACTION_PI",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/MDWProject/PAYMENT_TRANSACTION_PI/pipelines/PL_OP_READ_PAYMENT_TRANSACTION" : {
+        "label" : "Pipeline/MDWProject/PAYMENT_TRANSACTION_PI/pipelines/PL_OP_READ_PAYMENT_TRANSACTION",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "BusinessService/MDWProject/businessServices/BS_SQL_CRM_EAI_BOLLETTINI_DEMAT" : {
+            "label" : "BusinessService/MDWProject/businessServices/BS_SQL_CRM_EAI_BOLLETTINI_DEMAT",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "JCA/MDWProject/Resources/BS_SQL_CRM_EAI_BOLLETTINI_DEMAT_db" : {
+                "label" : "JCA/MDWProject/Resources/BS_SQL_CRM_EAI_BOLLETTINI_DEMAT_db",
+                "properties" : {
+                  "nodeType" : "JCA"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDWProject/Resources/BS_SQL_CRM_EAI_BOLLETTINI_DEMAT/concrete" : {
+                "label" : "WSDL/MDWProject/Resources/BS_SQL_CRM_EAI_BOLLETTINI_DEMAT/concrete",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/MDWProject/PAYMENT_TRANSACTION_PI/transformations/createRequestCrmEaiBollettiniDemat" : {
+            "label" : "Xquery/MDWProject/PAYMENT_TRANSACTION_PI/transformations/createRequestCrmEaiBollettiniDemat",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/MDWProject/PAYMENT_TRANSACTION_PI/transformations/createResponseReadPaymentTransaction" : {
+            "label" : "Xquery/MDWProject/PAYMENT_TRANSACTION_PI/transformations/createResponseReadPaymentTransaction",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/MDWProject/PaymentTransactionPI/wsdl/WSDL_PAYMENT_TRANSACTION_PI" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/MDWProject/PaymentTransactionPI/wsdl/WSDL_PAYMENT_TRANSACTION_PI",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/PaymentTransactionPI/xsd/XSD_PAYMENT_TRANSACTION_PI" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/PaymentTransactionPI/xsd/XSD_PAYMENT_TRANSACTION_PI",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/MDWProject/PaymentTransactionPI/wsdl/WSDL_PAYMENT_TRANSACTION_PI" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/MDWProject/PaymentTransactionPI/wsdl/WSDL_PAYMENT_TRANSACTION_PI",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/PaymentTransactionPI/xsd/XSD_PAYMENT_TRANSACTION_PI" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/PaymentTransactionPI/xsd/XSD_PAYMENT_TRANSACTION_PI",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

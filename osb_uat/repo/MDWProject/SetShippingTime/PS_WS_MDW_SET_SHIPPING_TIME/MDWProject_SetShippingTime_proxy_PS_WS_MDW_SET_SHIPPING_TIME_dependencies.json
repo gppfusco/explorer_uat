@@ -1,0 +1,260 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/MDWProject/SetShippingTime/proxy/PS_WS_MDW_SET_SHIPPING_TIME",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/MDWProject/SetShippingTime/pipeline/PL_WS_MDW_SET_SHIPPING_TIME" : {
+        "label" : "Pipeline/MDWProject/SetShippingTime/pipeline/PL_WS_MDW_SET_SHIPPING_TIME",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Xquery/MDWProject/SetShippingTime/transformations/createRequestStartShippingTime" : {
+            "label" : "Xquery/MDWProject/SetShippingTime/transformations/createRequestStartShippingTime",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/MDWProject/SetShippingTime/transformations/createRequestEndShippingTime" : {
+            "label" : "Xquery/MDWProject/SetShippingTime/transformations/createRequestEndShippingTime",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Pipeline/MDWProject/SetShippingTime/pipeline/PL_INTERNAL_TUXEDO_SET_SHIP_TIME" : {
+            "label" : "Pipeline/MDWProject/SetShippingTime/pipeline/PL_INTERNAL_TUXEDO_SET_SHIP_TIME",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/MDWProject/SetShippingTime/transformations/createResponseTuxSetShipTime" : {
+                "label" : "Xquery/MDWProject/SetShippingTime/transformations/createResponseTuxSetShipTime",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/MDWProject/SetShippingTime/businessServices/BS_TUXEDO_SET_SHIP_TIME" : {
+                "label" : "BusinessService/MDWProject/SetShippingTime/businessServices/BS_TUXEDO_SET_SHIP_TIME",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/ApplicationObjects/MDW/TUX_SetShipTime/xsd/XSD_TUX_SET_SHIP_TIME" : {
+                    "label" : "XMLSchema/MDW_CDM/ApplicationObjects/MDW/TUX_SetShipTime/xsd/XSD_TUX_SET_SHIP_TIME",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0" : {
+                    "label" : "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0",
+                    "properties" : {
+                      "nodeType" : "Archive"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/MDWProject/SetShippingTime/wsdl/WS_MDW_SET_SHIPPING_TIME" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/MDWProject/SetShippingTime/wsdl/WS_MDW_SET_SHIPPING_TIME",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/SetShippingTime/xsd/XSD_MDW_SET_SHIPPING_TIME" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/SetShippingTime/xsd/XSD_MDW_SET_SHIPPING_TIME",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "Xquery/MDWProject/SetShippingTime/transformations/createRequestTuxSetShipTime" : {
+                "label" : "Xquery/MDWProject/SetShippingTime/transformations/createRequestTuxSetShipTime",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Pipeline/MDWProject/SetShippingTime/pipeline/PL_INTERNAL_UPDATE_SHIPPING_TIME_END" : {
+            "label" : "Pipeline/MDWProject/SetShippingTime/pipeline/PL_INTERNAL_UPDATE_SHIPPING_TIME_END",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "BusinessService/MDWProject/SetShippingTime/businessServices/BS_SQL_UPDATE_SHIPPING_TIME_END" : {
+                "label" : "BusinessService/MDWProject/SetShippingTime/businessServices/BS_SQL_UPDATE_SHIPPING_TIME_END",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/MDWProject/Resources/BS_SQL_UPDATE_SHIPPING_TIME_END/concrete" : {
+                    "label" : "WSDL/MDWProject/Resources/BS_SQL_UPDATE_SHIPPING_TIME_END/concrete",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "JCA/MDWProject/Resources/BS_SQL_UPDATE_SHIPPING_TIME_END_db" : {
+                    "label" : "JCA/MDWProject/Resources/BS_SQL_UPDATE_SHIPPING_TIME_END_db",
+                    "properties" : {
+                      "nodeType" : "JCA"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "WSDL/MDWProject/Resources/BS_SQL_UPDATE_SHIPPING_TIME_END/concrete" : {
+                "label" : "WSDL/MDWProject/Resources/BS_SQL_UPDATE_SHIPPING_TIME_END/concrete",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Pipeline/MDWProject/SetShippingTime/pipeline/PL_INTERNAL_INSERT_SHIPPING_TIME_START" : {
+            "label" : "Pipeline/MDWProject/SetShippingTime/pipeline/PL_INTERNAL_INSERT_SHIPPING_TIME_START",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "WSDL/MDWProject/Resources/BS_SQL_INSERT_SHIPPING_TIME_START/concrete" : {
+                "label" : "WSDL/MDWProject/Resources/BS_SQL_INSERT_SHIPPING_TIME_START/concrete",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "BusinessService/MDWProject/SetShippingTime/businessServices/BS_SQL_INSERT_SHIPPING_TIME_START" : {
+                "label" : "BusinessService/MDWProject/SetShippingTime/businessServices/BS_SQL_INSERT_SHIPPING_TIME_START",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/MDWProject/Resources/BS_SQL_INSERT_SHIPPING_TIME_START/concrete" : {
+                    "label" : "WSDL/MDWProject/Resources/BS_SQL_INSERT_SHIPPING_TIME_START/concrete",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "JCA/MDWProject/Resources/BS_SQL_INSERT_SHIPPING_TIME_START_db" : {
+                    "label" : "JCA/MDWProject/Resources/BS_SQL_INSERT_SHIPPING_TIME_START_db",
+                    "properties" : {
+                      "nodeType" : "JCA"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/MDWProject/SetShippingTime/transformations/createResponseEndShippingTime" : {
+            "label" : "Xquery/MDWProject/SetShippingTime/transformations/createResponseEndShippingTime",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/MDWProject/SetShippingTime/wsdl/WS_MDW_SET_SHIPPING_TIME" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/MDWProject/SetShippingTime/wsdl/WS_MDW_SET_SHIPPING_TIME",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/SetShippingTime/xsd/XSD_MDW_SET_SHIPPING_TIME" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/SetShippingTime/xsd/XSD_MDW_SET_SHIPPING_TIME",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/MDWProject/SetShippingTime/transformations/createResponseStartShippingTime" : {
+            "label" : "Xquery/MDWProject/SetShippingTime/transformations/createResponseStartShippingTime",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/MDWProject/SetShippingTime/wsdl/WS_MDW_SET_SHIPPING_TIME" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/MDWProject/SetShippingTime/wsdl/WS_MDW_SET_SHIPPING_TIME",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/SetShippingTime/xsd/XSD_MDW_SET_SHIPPING_TIME" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/SetShippingTime/xsd/XSD_MDW_SET_SHIPPING_TIME",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

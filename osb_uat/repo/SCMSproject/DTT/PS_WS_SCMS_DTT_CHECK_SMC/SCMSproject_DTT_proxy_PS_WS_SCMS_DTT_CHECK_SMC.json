@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/scms/WS_SCMS_DTT_CHECK_SMC",
+    "name" : "SCMSproject_DTT_proxy_PS_WS_SCMS_DTT_CHECK_SMC",
+    "remoteName" : "ProxyService/SCMSproject/DTT/proxy/PS_WS_SCMS_DTT_CHECK_SMC",
+    "localPath" : "osb_uat\\repo\\SCMSproject\\DTT\\PS_WS_SCMS_DTT_CHECK_SMC",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/scms/WS_SCMS_DTT_CHECK_SMC?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SCMSproject/DTT/xsd/XSD_SCMS_DTT_CHECK_SMC",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

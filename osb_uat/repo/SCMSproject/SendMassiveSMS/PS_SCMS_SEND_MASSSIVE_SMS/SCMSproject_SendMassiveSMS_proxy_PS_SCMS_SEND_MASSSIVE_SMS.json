@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/scms/WS_SCMS_SEND_MASSIVE_SMS",
+    "name" : "SCMSproject_SendMassiveSMS_proxy_PS_SCMS_SEND_MASSSIVE_SMS",
+    "remoteName" : "ProxyService/SCMSproject/SendMassiveSMS/proxy/PS_SCMS_SEND_MASSSIVE_SMS",
+    "localPath" : "osb_uat\\repo\\SCMSproject\\SendMassiveSMS\\PS_SCMS_SEND_MASSSIVE_SMS",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/scms/WS_SCMS_SEND_MASSIVE_SMS?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SCMSproject/SendMassiveSMS/xsd/XSD_SEND_MASSIVE_SMS",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

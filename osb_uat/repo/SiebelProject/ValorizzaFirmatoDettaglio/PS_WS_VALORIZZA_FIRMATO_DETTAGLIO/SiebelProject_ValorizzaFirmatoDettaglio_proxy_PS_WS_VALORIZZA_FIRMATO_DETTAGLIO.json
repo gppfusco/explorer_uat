@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/siebel/WS_VALORIZZA_FIRMATO_DETTAGLIO",
+    "name" : "SiebelProject_ValorizzaFirmatoDettaglio_proxy_PS_WS_VALORIZZA_FIRMATO_DETTAGLIO",
+    "remoteName" : "ProxyService/SiebelProject/ValorizzaFirmatoDettaglio/proxy/PS_WS_VALORIZZA_FIRMATO_DETTAGLIO",
+    "localPath" : "osb_uat\\repo\\SiebelProject\\ValorizzaFirmatoDettaglio\\PS_WS_VALORIZZA_FIRMATO_DETTAGLIO",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/siebel/WS_VALORIZZA_FIRMATO_DETTAGLIO?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SiebelProject/ValorizzaFirmatoDettaglio/xsd/XSD_VALORIZZA_FIRMATO_DETTAGLIO",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

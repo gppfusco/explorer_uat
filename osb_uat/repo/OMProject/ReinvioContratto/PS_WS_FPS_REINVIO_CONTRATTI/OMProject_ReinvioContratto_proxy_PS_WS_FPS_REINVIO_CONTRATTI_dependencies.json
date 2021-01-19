@@ -1,0 +1,64 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/OMProject/ReinvioContratto/proxy/PS_WS_FPS_REINVIO_CONTRATTI",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/OMProject/ReinvioContratto/pipeline/PS_WS_FPS_REINVIO_CONTRATTIPipeline" : {
+        "label" : "Pipeline/OMProject/ReinvioContratto/pipeline/PS_WS_FPS_REINVIO_CONTRATTIPipeline",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/MDW_CDM/EnterpriseServices/OMProject/ReinvioContratti/wsdl/WS_FPS_REINVIO_CONTRATTI" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/OMProject/ReinvioContratti/wsdl/WS_FPS_REINVIO_CONTRATTI",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/ReinvioContratti/xsd/XSD_FPS_REINVIO_CONTRATTI" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/ReinvioContratti/xsd/XSD_FPS_REINVIO_CONTRATTI",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/OMProject/ReinvioContratti/wsdl/WS_FPS_REINVIO_CONTRATTI" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/OMProject/ReinvioContratti/wsdl/WS_FPS_REINVIO_CONTRATTI",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/ReinvioContratti/xsd/XSD_FPS_REINVIO_CONTRATTI" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/ReinvioContratti/xsd/XSD_FPS_REINVIO_CONTRATTI",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SalesforceProject/ContractEvaluation/proxy/PS_WS_FPS_CONTRACT_EVALUATION",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/ContractEvaluation/wsdl/WS_FPS_CONTRACT_EVALUATION" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/ContractEvaluation/wsdl/WS_FPS_CONTRACT_EVALUATION",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/ContractEvaluation/xsd/XSD_FPS_CONTRACT_EVALUATION" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/ContractEvaluation/xsd/XSD_FPS_CONTRACT_EVALUATION",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/SalesforceProject/ContractEvaluation/pipeline/PL_WS_FPS_CONTRACT_EVALUATIONPipeline" : {
+        "label" : "Pipeline/SalesforceProject/ContractEvaluation/pipeline/PL_WS_FPS_CONTRACT_EVALUATIONPipeline",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/ContractEvaluation/wsdl/WS_FPS_CONTRACT_EVALUATION" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/ContractEvaluation/wsdl/WS_FPS_CONTRACT_EVALUATION",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/ContractEvaluation/xsd/XSD_FPS_CONTRACT_EVALUATION" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/ContractEvaluation/xsd/XSD_FPS_CONTRACT_EVALUATION",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

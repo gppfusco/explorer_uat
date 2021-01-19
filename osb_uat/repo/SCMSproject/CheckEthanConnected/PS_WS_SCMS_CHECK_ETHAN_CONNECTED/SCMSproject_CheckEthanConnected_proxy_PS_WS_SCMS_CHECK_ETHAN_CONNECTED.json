@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/scms/WS_SCMS_CHECK_ETHAN_CONNECTED",
+    "name" : "SCMSproject_CheckEthanConnected_proxy_PS_WS_SCMS_CHECK_ETHAN_CONNECTED",
+    "remoteName" : "ProxyService/SCMSproject/CheckEthanConnected/proxy/PS_WS_SCMS_CHECK_ETHAN_CONNECTED",
+    "localPath" : "osb_uat\\repo\\SCMSproject\\CheckEthanConnected\\PS_WS_SCMS_CHECK_ETHAN_CONNECTED",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/scms/WS_SCMS_CHECK_ETHAN_CONNECTED?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SCMSproject/CheckEthanConnected/xsd/XSD_SCMS_CHECK_ETHAN_CONNECTED",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

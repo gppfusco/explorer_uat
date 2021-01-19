@@ -1,0 +1,107 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/IGFSProject/TokenizerGateway/proxy/PS_IGFS_TOKENIZER_GATEWAY",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/IGFSProject/TokenizerGateway/wsdl/WS_IGFS_TOKENIZER_GATEWAY" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/IGFSProject/TokenizerGateway/wsdl/WS_IGFS_TOKENIZER_GATEWAY",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/IGFSProject/TokenizerGateway/xsd/XSD_IGFS_TOKENIZER_GATEWAY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/IGFSProject/TokenizerGateway/xsd/XSD_IGFS_TOKENIZER_GATEWAY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/IGFSProject/TokenizerGateway/pipeline/PL_IGFS_TOKENIZER_GATEWAY" : {
+        "label" : "Pipeline/IGFSProject/TokenizerGateway/pipeline/PL_IGFS_TOKENIZER_GATEWAY",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "BusinessService/IGFSProject/TokenizerGateway/businessServices/BS_WS_IGFS_TOKENIZER_GATEWAY" : {
+            "label" : "BusinessService/IGFSProject/TokenizerGateway/businessServices/BS_WS_IGFS_TOKENIZER_GATEWAY",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "ServiceAccount/MDW_CDM/ServiceAccount/SA_IGFS" : {
+                "label" : "ServiceAccount/MDW_CDM/ServiceAccount/SA_IGFS",
+                "properties" : {
+                  "nodeType" : "ServiceAccount"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/ApplicationObjects/IGFS/wsdl/TokenizerGateway" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/IGFS/wsdl/TokenizerGateway",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/IGFSProject/TokenizerGateway/wsdl/WS_IGFS_TOKENIZER_GATEWAY" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/IGFSProject/TokenizerGateway/wsdl/WS_IGFS_TOKENIZER_GATEWAY",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/IGFSProject/TokenizerGateway/xsd/XSD_IGFS_TOKENIZER_GATEWAY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/IGFSProject/TokenizerGateway/xsd/XSD_IGFS_TOKENIZER_GATEWAY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/IGFSProject/TokenizerGateway/transformations/createResponse_Check" : {
+            "label" : "Xquery/IGFSProject/TokenizerGateway/transformations/createResponse_Check",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/IGFSProject/TokenizerGateway/transformations/createRequest_Check" : {
+            "label" : "Xquery/IGFSProject/TokenizerGateway/transformations/createRequest_Check",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

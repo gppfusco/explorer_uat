@@ -1,0 +1,217 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/OMProject/GetOrder/proxy/PS_WS_OM_GET_CANCELLABLE_ORDER",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/OMProject/GetOrder/wsdl/WS_OM_GETORDER" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/OMProject/GetOrder/wsdl/WS_OM_GETORDER",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/GetOrder/xsd/XSD_OM_GETORDER" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/GetOrder/xsd/XSD_OM_GETORDER",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/OMProject/GetOrder/pipeline/PL_WS_GET_ORDER_ROUTING" : {
+        "label" : "Pipeline/OMProject/GetOrder/pipeline/PL_WS_GET_ORDER_ROUTING",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_N_OPERATIONS_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_N_OPERATIONS_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/OMProject/GetOrder/pipeline/PL_INTERNAL_GET_CANCELLABLE_ORDER" : {
+            "label" : "Pipeline/OMProject/GetOrder/pipeline/PL_INTERNAL_GET_CANCELLABLE_ORDER",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/OMProject/GetOrder/transformations/createResponseGetCancellableOrder" : {
+                "label" : "Xquery/OMProject/GetOrder/transformations/createResponseGetCancellableOrder",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/OMProject/GetOrder/transformations/createRequestGetCancellableOrder" : {
+                "label" : "Xquery/OMProject/GetOrder/transformations/createRequestGetCancellableOrder",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/OMProject/GetOrder/wsdl/WS_OM_GETORDER" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/OMProject/GetOrder/wsdl/WS_OM_GETORDER",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/GetOrder/xsd/XSD_OM_GETORDER" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/GetOrder/xsd/XSD_OM_GETORDER",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "BusinessService/OMProject/GetOrder/businessServices/BS_SQL_PROCEDURE_GET_CANCELLABLE_ORDER" : {
+                "label" : "BusinessService/OMProject/GetOrder/businessServices/BS_SQL_PROCEDURE_GET_CANCELLABLE_ORDER",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/OMProject/Resources/BS_SQL_PROCEDURE_GET_CANCELLABLE_ORDER/concrete" : {
+                    "label" : "WSDL/OMProject/Resources/BS_SQL_PROCEDURE_GET_CANCELLABLE_ORDER/concrete",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "JCA/OMProject/Resources/BS_SQL_PROCEDURE_GET_CANCELLABLE_ORDER_db" : {
+                    "label" : "JCA/OMProject/Resources/BS_SQL_PROCEDURE_GET_CANCELLABLE_ORDER_db",
+                    "properties" : {
+                      "nodeType" : "JCA"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/OMProject/GetOrder/wsdl/WS_OM_GETORDER" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/OMProject/GetOrder/wsdl/WS_OM_GETORDER",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/GetOrder/xsd/XSD_OM_GETORDER" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/GetOrder/xsd/XSD_OM_GETORDER",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Pipeline/OMProject/GetOrder/pipeline/PL_INTERNAL_GET_FIRST_ACTIVATION_ORDER" : {
+            "label" : "Pipeline/OMProject/GetOrder/pipeline/PL_INTERNAL_GET_FIRST_ACTIVATION_ORDER",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/OMProject/GetOrder/transformations/createRequestTuxGetFirstActivationOrder" : {
+                "label" : "Xquery/OMProject/GetOrder/transformations/createRequestTuxGetFirstActivationOrder",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/OMProject/GetOrder/wsdl/WS_OM_GETORDER" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/OMProject/GetOrder/wsdl/WS_OM_GETORDER",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/GetOrder/xsd/XSD_OM_GETORDER" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/GetOrder/xsd/XSD_OM_GETORDER",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "BusinessService/OMProject/GetOrder/businessServices/BS_TUX_GET_FIRST_ACTIVATION_ORDER" : {
+                "label" : "BusinessService/OMProject/GetOrder/businessServices/BS_TUX_GET_FIRST_ACTIVATION_ORDER",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/ApplicationObjects/OM/GetOrder/xsd/XSD_TUX_GetFirstActivationOrder" : {
+                    "label" : "XMLSchema/MDW_CDM/ApplicationObjects/OM/GetOrder/xsd/XSD_TUX_GetFirstActivationOrder",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0" : {
+                    "label" : "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0",
+                    "properties" : {
+                      "nodeType" : "Archive"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/OMProject/GetOrder/transformations/createResponseTuxGetFirstActivationOrder" : {
+                "label" : "Xquery/OMProject/GetOrder/transformations/createResponseTuxGetFirstActivationOrder",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

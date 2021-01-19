@@ -1,0 +1,136 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SiebelProject/SwapMateriale/proxy/PS_REST_SBL_SWAP_MATERIALE",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "Pipeline/SiebelProject/SwapMateriale/pipeline/PL_REST_SBL_SWAP_MATERIALE" : {
+        "label" : "Pipeline/SiebelProject/SwapMateriale/pipeline/PL_REST_SBL_SWAP_MATERIALE",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Xquery/SiebelProject/SwapMateriale/transformations/createRequestSwapMateriale" : {
+            "label" : "Xquery/SiebelProject/SwapMateriale/transformations/createRequestSwapMateriale",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/SiebelProject/Resources/PS_REST_SBL_SWAP_MATERIALE" : {
+            "label" : "WSDL/SiebelProject/Resources/PS_REST_SBL_SWAP_MATERIALE",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/Rest_SwapMateriale/xsd/XSD_REST_SWAP_MATERIALE" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/Rest_SwapMateriale/xsd/XSD_REST_SWAP_MATERIALE",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/SiebelProject/SwapMateriale/pipeline/PL_INTERNAL_SBL_SWAP_MATERIALE" : {
+            "label" : "Pipeline/SiebelProject/SwapMateriale/pipeline/PL_INTERNAL_SBL_SWAP_MATERIALE",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "WSDL/SiebelProject/Resources/BS_SQL_SBL_SWAP_MATERIALE/concrete" : {
+                "label" : "WSDL/SiebelProject/Resources/BS_SQL_SBL_SWAP_MATERIALE/concrete",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "BusinessService/SiebelProject/SwapMateriale/businessService/BS_SQL_SBL_SWAP_MATERIALE" : {
+                "label" : "BusinessService/SiebelProject/SwapMateriale/businessService/BS_SQL_SBL_SWAP_MATERIALE",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/SiebelProject/Resources/BS_SQL_SBL_SWAP_MATERIALE/concrete" : {
+                    "label" : "WSDL/SiebelProject/Resources/BS_SQL_SBL_SWAP_MATERIALE/concrete",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "JCA/SiebelProject/Resources/BS_SQL_SBL_SWAP_MATERIALE_db" : {
+                    "label" : "JCA/SiebelProject/Resources/BS_SQL_SBL_SWAP_MATERIALE_db",
+                    "properties" : {
+                      "nodeType" : "JCA"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/SiebelProject/SwapMateriale/transformations/createResponseSwapMateriale" : {
+            "label" : "Xquery/SiebelProject/SwapMateriale/transformations/createResponseSwapMateriale",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WSDL/SiebelProject/Resources/PS_REST_SBL_SWAP_MATERIALE" : {
+        "label" : "WSDL/SiebelProject/Resources/PS_REST_SBL_SWAP_MATERIALE",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/Rest_SwapMateriale/xsd/XSD_REST_SWAP_MATERIALE" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SiebelProject/Rest_SwapMateriale/xsd/XSD_REST_SWAP_MATERIALE",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WADL/SiebelProject/Resources/PS_REST_SBL_SWAP_MATERIALE" : {
+        "label" : "WADL/SiebelProject/Resources/PS_REST_SBL_SWAP_MATERIALE",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      }
+    }
+  }
+}

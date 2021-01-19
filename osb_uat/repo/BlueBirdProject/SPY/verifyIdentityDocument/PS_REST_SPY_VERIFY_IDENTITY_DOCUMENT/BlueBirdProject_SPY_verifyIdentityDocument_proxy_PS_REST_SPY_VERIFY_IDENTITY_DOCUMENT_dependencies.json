@@ -1,0 +1,144 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/BlueBirdProject/SPY/verifyIdentityDocument/proxy/PS_REST_SPY_VERIFY_IDENTITY_DOCUMENT",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "WADL/BlueBirdProject/Resources/PS_REST_SPY_VERIFY_IDENTITY_DOCUMENT" : {
+        "label" : "WADL/BlueBirdProject/Resources/PS_REST_SPY_VERIFY_IDENTITY_DOCUMENT",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      },
+      "WSDL/BlueBirdProject/Resources/PS_REST_SPY_VERIFY_IDENTITY_DOCUMENT" : {
+        "label" : "WSDL/BlueBirdProject/Resources/PS_REST_SPY_VERIFY_IDENTITY_DOCUMENT",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SPY/verifyIdentityDocument/xsd/XSD_SPY_VERIFY_IDENTITY_DOCUMENT" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SPY/verifyIdentityDocument/xsd/XSD_SPY_VERIFY_IDENTITY_DOCUMENT",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/BlueBirdProject/SPY/verifyIdentityDocument/pipeline/PL_SPY_VERIFY_IDENTITY_DOCUMENT" : {
+        "label" : "Pipeline/BlueBirdProject/SPY/verifyIdentityDocument/pipeline/PL_SPY_VERIFY_IDENTITY_DOCUMENT",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/BlueBirdProject/SPY/verifyIdentityDocument/pipeline/PL_SPY_VERIFY_IDENTITY_DOCUMENT_VerifyID" : {
+            "label" : "Pipeline/BlueBirdProject/SPY/verifyIdentityDocument/pipeline/PL_SPY_VERIFY_IDENTITY_DOCUMENT_VerifyID",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "BusinessService/BlueBirdProject/SPY/verifyIdentityDocument/businessService/BS_WS_SPY_VERIFY_IDENTITY_DOCUMENT" : {
+                "label" : "BusinessService/BlueBirdProject/SPY/verifyIdentityDocument/businessService/BS_WS_SPY_VERIFY_IDENTITY_DOCUMENT",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/BLUEBIRD/SPY/wsdl/WS_SPY_CheckID_runCheckId" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/BLUEBIRD/SPY/wsdl/WS_SPY_CheckID_runCheckId",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "WSDL/BlueBirdProject/Resources/PS_REST_SPY_VERIFY_IDENTITY_DOCUMENT" : {
+                "label" : "WSDL/BlueBirdProject/Resources/PS_REST_SPY_VERIFY_IDENTITY_DOCUMENT",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SPY/verifyIdentityDocument/xsd/XSD_SPY_VERIFY_IDENTITY_DOCUMENT" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SPY/verifyIdentityDocument/xsd/XSD_SPY_VERIFY_IDENTITY_DOCUMENT",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "Xquery/BlueBirdProject/SPY/verifyIdentityDocument/transformation/createResponse_WS_verifyIdentityDocument" : {
+                "label" : "Xquery/BlueBirdProject/SPY/verifyIdentityDocument/transformation/createResponse_WS_verifyIdentityDocument",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/BlueBirdProject/SPY/verifyIdentityDocument/transformation/createRequest_BS_VERIFY_ID" : {
+                "label" : "Xquery/BlueBirdProject/SPY/verifyIdentityDocument/transformation/createRequest_BS_VERIFY_ID",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "WSDL/BlueBirdProject/Resources/PS_REST_SPY_VERIFY_IDENTITY_DOCUMENT" : {
+            "label" : "WSDL/BlueBirdProject/Resources/PS_REST_SPY_VERIFY_IDENTITY_DOCUMENT",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SPY/verifyIdentityDocument/xsd/XSD_SPY_VERIFY_IDENTITY_DOCUMENT" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SPY/verifyIdentityDocument/xsd/XSD_SPY_VERIFY_IDENTITY_DOCUMENT",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

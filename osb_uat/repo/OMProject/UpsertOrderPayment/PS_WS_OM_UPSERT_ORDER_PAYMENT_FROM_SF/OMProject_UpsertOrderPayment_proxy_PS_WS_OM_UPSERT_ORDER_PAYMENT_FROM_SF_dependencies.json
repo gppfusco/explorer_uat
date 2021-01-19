@@ -1,0 +1,165 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/OMProject/UpsertOrderPayment/proxy/PS_WS_OM_UPSERT_ORDER_PAYMENT_FROM_SF",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/OMProject/UpsertOrderPayment/wsdl/WS_OM_UPSERT_ORDER_PAYMENT_FROM_SF" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/OMProject/UpsertOrderPayment/wsdl/WS_OM_UPSERT_ORDER_PAYMENT_FROM_SF",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/UpsertOrderPayment/xsd/XSD_OM_UPSERT_ORDER_PAYMENT" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/UpsertOrderPayment/xsd/XSD_OM_UPSERT_ORDER_PAYMENT",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/OMProject/UpsertOrderPayment/pipeline/PL_WS_OM_UPSERT_ORDER_PAYMENT_FROM_SF" : {
+        "label" : "Pipeline/OMProject/UpsertOrderPayment/pipeline/PL_WS_OM_UPSERT_ORDER_PAYMENT_FROM_SF",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Xquery/OMProject/UpsertOrderPayment/transformations/createRequest_fromSF" : {
+            "label" : "Xquery/OMProject/UpsertOrderPayment/transformations/createRequest_fromSF",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/OMProject/UpsertOrderPayment/wsdl/WS_OM_UPSERT_ORDER_PAYMENT_FROM_SF" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/OMProject/UpsertOrderPayment/wsdl/WS_OM_UPSERT_ORDER_PAYMENT_FROM_SF",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/UpsertOrderPayment/xsd/XSD_OM_UPSERT_ORDER_PAYMENT" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/UpsertOrderPayment/xsd/XSD_OM_UPSERT_ORDER_PAYMENT",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/OMProject/UpsertOrderPayment/pipeline/PL_WS_OM_UPSERT_ORDER_PAYMENT" : {
+            "label" : "Pipeline/OMProject/UpsertOrderPayment/pipeline/PL_WS_OM_UPSERT_ORDER_PAYMENT",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "Xquery/OMProject/transformation/createRequestSoapHeaderTibco" : {
+                "label" : "Xquery/OMProject/transformation/createRequestSoapHeaderTibco",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/OMProject/UpsertOrderPayment/businessServices/BS_TIBCO_UPSERT_ORDER_PAYMENT" : {
+                "label" : "BusinessService/OMProject/UpsertOrderPayment/businessServices/BS_TIBCO_UPSERT_ORDER_PAYMENT",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "ServiceAccount/MDW_CDM/ServiceAccount/SA_Tibco" : {
+                    "label" : "ServiceAccount/MDW_CDM/ServiceAccount/SA_Tibco",
+                    "properties" : {
+                      "nodeType" : "ServiceAccount"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/MDW_CDM/ApplicationObjects/OM/UpsertOrderPayment/wsdl/WS_SBL_TIB_MANAGE_ORDER_PAYMENT_CONCRETE_Notembedded" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/OM/UpsertOrderPayment/wsdl/WS_SBL_TIB_MANAGE_ORDER_PAYMENT_CONCRETE_Notembedded",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/OMProject/UpsertOrderPayment/transformations/createRequest_upsertOrderPayment" : {
+                "label" : "Xquery/OMProject/UpsertOrderPayment/transformations/createRequest_upsertOrderPayment",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/OMProject/UpsertOrderPayment/wsdl/WS_OM_UPSERT_ORDER_PAYMENT" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/OMProject/UpsertOrderPayment/wsdl/WS_OM_UPSERT_ORDER_PAYMENT",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/UpsertOrderPayment/xsd/XSD_OM_UPSERT_ORDER_PAYMENT" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/OMProject/UpsertOrderPayment/xsd/XSD_OM_UPSERT_ORDER_PAYMENT",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/OMProject/UpsertOrderPayment/transformations/createResponse_upsertOrderPayment" : {
+                "label" : "Xquery/OMProject/UpsertOrderPayment/transformations/createResponse_upsertOrderPayment",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/OMProject/UpsertOrderPayment/transformations/createResponse_ForSF" : {
+            "label" : "Xquery/OMProject/UpsertOrderPayment/transformations/createResponse_ForSF",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

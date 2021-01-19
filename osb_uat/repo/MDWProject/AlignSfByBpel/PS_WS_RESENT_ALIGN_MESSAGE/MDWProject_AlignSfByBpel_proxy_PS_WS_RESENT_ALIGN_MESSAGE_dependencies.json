@@ -1,0 +1,160 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/MDWProject/AlignSfByBpel/proxy/PS_WS_RESENT_ALIGN_MESSAGE",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/MDWProject/AlignSfByBpel/pipelines/PL_WS_EJB_RESENT_ALIGN_MESSAGE" : {
+        "label" : "Pipeline/MDWProject/AlignSfByBpel/pipelines/PL_WS_EJB_RESENT_ALIGN_MESSAGE",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Pipeline/MDWProject/AlignSfByBpel/pipelines/PL_WS_EJB_ALIGN_MESSAGE" : {
+            "label" : "Pipeline/MDWProject/AlignSfByBpel/pipelines/PL_WS_EJB_ALIGN_MESSAGE",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "BusinessService/MDWProject/AlignSfByBpel/businessServices/BS_WS_HTTP_ALIGN_MESSAGE" : {
+                "label" : "BusinessService/MDWProject/AlignSfByBpel/businessServices/BS_WS_HTTP_ALIGN_MESSAGE",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/MDW/AlignMessageServiceCOHE/wsdl/AlignMessageService" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/MDW/AlignMessageServiceCOHE/wsdl/AlignMessageService",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/ApplicationObjects/MDW/AlignMessageServiceCOHE/wsdl/WS_BS_EJB_ALIGN_MESSAGE" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/MDW/AlignMessageServiceCOHE/wsdl/WS_BS_EJB_ALIGN_MESSAGE",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/ApplicationObjects/MDW/AlignMessageServiceCOHE/xsd/XSD_EJB_ALIGN_MESSAGE" : {
+                    "label" : "XMLSchema/MDW_CDM/ApplicationObjects/MDW/AlignMessageServiceCOHE/xsd/XSD_EJB_ALIGN_MESSAGE",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/ApplicationObjects/MDW/AlignMessageServiceCOHE/xsd/XSD_EJB_ALIGN_MESSAGE_ENTITIES" : {
+                    "label" : "XMLSchema/MDW_CDM/ApplicationObjects/MDW/AlignMessageServiceCOHE/xsd/XSD_EJB_ALIGN_MESSAGE_ENTITIES",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "Pipeline/MDWProject/AlignSfByBpel/pipelines/PL_JMS_RESENT_ALIGN_MESSAGE_ENQUEUE" : {
+            "label" : "Pipeline/MDWProject/AlignSfByBpel/pipelines/PL_JMS_RESENT_ALIGN_MESSAGE_ENQUEUE",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/ApplicationObjects/MDW/AlignMessageServiceCOHE/wsdl/WS_BS_EJB_ALIGN_MESSAGE" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/MDW/AlignMessageServiceCOHE/wsdl/WS_BS_EJB_ALIGN_MESSAGE",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/ApplicationObjects/MDW/AlignMessageServiceCOHE/xsd/XSD_EJB_ALIGN_MESSAGE" : {
+                    "label" : "XMLSchema/MDW_CDM/ApplicationObjects/MDW/AlignMessageServiceCOHE/xsd/XSD_EJB_ALIGN_MESSAGE",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/ApplicationObjects/MDW/AlignMessageServiceCOHE/xsd/XSD_EJB_ALIGN_MESSAGE_ENTITIES" : {
+                    "label" : "XMLSchema/MDW_CDM/ApplicationObjects/MDW/AlignMessageServiceCOHE/xsd/XSD_EJB_ALIGN_MESSAGE_ENTITIES",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "BusinessService/MDWProject/AlignSfByBpel/businessServices/BS_JMS_SOA_ALIGN_BY_BPEL_ENQUEUE" : {
+                "label" : "BusinessService/MDWProject/AlignSfByBpel/businessServices/BS_JMS_SOA_ALIGN_BY_BPEL_ENQUEUE",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_ASYNC_ENQUEUE_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_ASYNC_ENQUEUE_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/MDWProject/AlignMessageServiceCOHE/wsdl/WS_BS_EJB_ALIGN_MESSAGE" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/MDWProject/AlignMessageServiceCOHE/wsdl/WS_BS_EJB_ALIGN_MESSAGE",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/AlignMessageServiceCOHE/xsd/XSD_EJB_ALIGN_MESSAGE_ENTITIES" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/AlignMessageServiceCOHE/xsd/XSD_EJB_ALIGN_MESSAGE_ENTITIES",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/MDWProject/AlignSfByBpel/transformations/createRequest_resent" : {
+            "label" : "Xquery/MDWProject/AlignSfByBpel/transformations/createRequest_resent",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_ITERATE_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_ITERATE_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/MDWProject/AlignMessageServiceCOHE/wsdl/WS_BS_EJB_ALIGN_MESSAGE" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/MDWProject/AlignMessageServiceCOHE/wsdl/WS_BS_EJB_ALIGN_MESSAGE",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/AlignMessageServiceCOHE/xsd/XSD_EJB_ALIGN_MESSAGE_ENTITIES" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/AlignMessageServiceCOHE/xsd/XSD_EJB_ALIGN_MESSAGE_ENTITIES",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

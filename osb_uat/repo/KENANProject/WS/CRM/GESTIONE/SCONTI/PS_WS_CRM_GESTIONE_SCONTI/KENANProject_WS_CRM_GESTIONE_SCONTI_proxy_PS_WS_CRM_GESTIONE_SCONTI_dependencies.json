@@ -1,0 +1,107 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/KENANProject/WS_CRM_GESTIONE_SCONTI/proxy/PS_WS_CRM_GESTIONE_SCONTI",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/KENANProject/WS_CRM_GESTIONE_SCONTI/pipeline/PL_WS_CRM_GESTIONE_SCONTI" : {
+        "label" : "Pipeline/KENANProject/WS_CRM_GESTIONE_SCONTI/pipeline/PL_WS_CRM_GESTIONE_SCONTI",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/KENANProject/WS_CRM_GESTIONE_SCONTI/trasformation/createRequestGetScontiFromPureSQL" : {
+            "label" : "Xquery/KENANProject/WS_CRM_GESTIONE_SCONTI/trasformation/createRequestGetScontiFromPureSQL",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/KenanProject/GestioneSconti/wsdl/WS_CRM_GESTIONE_SCONTI" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/KenanProject/GestioneSconti/wsdl/WS_CRM_GESTIONE_SCONTI",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/GestioneSconti/xsd/XSD_CRM_GESTIONE_SCONTI" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/GestioneSconti/xsd/XSD_CRM_GESTIONE_SCONTI",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "BusinessService/KENANProject/WS_CRM_GESTIONE_SCONTI/businessService/BS_SQL_KNN_GET_SCONTI_PURE_SQL" : {
+            "label" : "BusinessService/KENANProject/WS_CRM_GESTIONE_SCONTI/businessService/BS_SQL_KNN_GET_SCONTI_PURE_SQL",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "JCA/KENANProject/Resources/BS_SQL_KNN_GET_SCONTI_PURE_SQL_db" : {
+                "label" : "JCA/KENANProject/Resources/BS_SQL_KNN_GET_SCONTI_PURE_SQL_db",
+                "properties" : {
+                  "nodeType" : "JCA"
+                },
+                "successors" : { }
+              },
+              "WSDL/KENANProject/Resources/BS_SQL_KNN_GET_SCONTI_PURE_SQL/concrete" : {
+                "label" : "WSDL/KENANProject/Resources/BS_SQL_KNN_GET_SCONTI_PURE_SQL/concrete",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/KENANProject/WS_CRM_GESTIONE_SCONTI/trasformation/createResponseGetScontiFromPureSql" : {
+            "label" : "Xquery/KENANProject/WS_CRM_GESTIONE_SCONTI/trasformation/createResponseGetScontiFromPureSql",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/KenanProject/GestioneSconti/wsdl/WS_CRM_GESTIONE_SCONTI" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/KenanProject/GestioneSconti/wsdl/WS_CRM_GESTIONE_SCONTI",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/GestioneSconti/xsd/XSD_CRM_GESTIONE_SCONTI" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/GestioneSconti/xsd/XSD_CRM_GESTIONE_SCONTI",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

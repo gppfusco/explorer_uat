@@ -1,0 +1,114 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/BlueBirdProject/SALESFORCE/calculatedMatrices/proxy/PS_REST_MDW_CALCULATED_MATRICES",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "WSDL/BlueBirdProject/Resources/PS_REST_MDW_CALCULATED_MATRICES" : {
+        "label" : "WSDL/BlueBirdProject/Resources/PS_REST_MDW_CALCULATED_MATRICES",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/CalculatedMatrices/xsd/XSD_GET_CALCULATED_MATRICES" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/CalculatedMatrices/xsd/XSD_GET_CALCULATED_MATRICES",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/BlueBirdProject/SALESFORCE/calculatedMatrices/pipeline/PL_REST_MDW_SF_CALCULATED_MATRICES" : {
+        "label" : "Pipeline/BlueBirdProject/SALESFORCE/calculatedMatrices/pipeline/PL_REST_MDW_SF_CALCULATED_MATRICES",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Xquery/BlueBirdProject/SALESFORCE/calculatedMatrices/transformation/createResponse_CalculatedMatrices" : {
+            "label" : "Xquery/BlueBirdProject/SALESFORCE/calculatedMatrices/transformation/createResponse_CalculatedMatrices",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/BlueBirdProject/Resources/PS_REST_MDW_CALCULATED_MATRICES" : {
+            "label" : "WSDL/BlueBirdProject/Resources/PS_REST_MDW_CALCULATED_MATRICES",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/CalculatedMatrices/xsd/XSD_GET_CALCULATED_MATRICES" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/CalculatedMatrices/xsd/XSD_GET_CALCULATED_MATRICES",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF_CACHE_QUERY_BY_SELECT" : {
+            "label" : "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF_CACHE_QUERY_BY_SELECT",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB" : {
+                "label" : "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB",
+                "properties" : {
+                  "nodeType" : "ForeignJNDIProvider"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/BlueBirdProject/SALESFORCE/calculatedMatrices/transformation/createRequest_CalculatedMatrices" : {
+            "label" : "Xquery/BlueBirdProject/SALESFORCE/calculatedMatrices/transformation/createRequest_CalculatedMatrices",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WADL/BlueBirdProject/Resources/PS_REST_MDW_CALCULATED_MATRICES" : {
+        "label" : "WADL/BlueBirdProject/Resources/PS_REST_MDW_CALCULATED_MATRICES",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      }
+    }
+  }
+}

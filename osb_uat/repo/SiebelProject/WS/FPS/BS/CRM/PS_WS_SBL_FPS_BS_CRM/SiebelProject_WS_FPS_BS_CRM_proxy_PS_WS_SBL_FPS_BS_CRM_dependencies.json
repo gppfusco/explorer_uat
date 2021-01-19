@@ -1,0 +1,195 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SiebelProject/WS_FPS_BS_CRM/proxy/PS_WS_SBL_FPS_BS_CRM",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/SiebelProject/WS_FPS_BS_CRM/pipeline/PL_SBL_FPS_BS_CRM" : {
+        "label" : "Pipeline/SiebelProject/WS_FPS_BS_CRM/pipeline/PL_SBL_FPS_BS_CRM",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Xquery/SiebelProject/WS_FPS_BS_CRM/transformation/createResponse_generic" : {
+            "label" : "Xquery/SiebelProject/WS_FPS_BS_CRM/transformation/createResponse_generic",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/SiebelProject/WS_FPS_BS_CRM/transformation/createRequest_SelectSistemaPerInvioSPY" : {
+            "label" : "Xquery/SiebelProject/WS_FPS_BS_CRM/transformation/createRequest_SelectSistemaPerInvioSPY",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Pipeline/SiebelProject/pipeline/PL_INTERNAL_SBL_GENERIC_CALL" : {
+            "label" : "Pipeline/SiebelProject/pipeline/PL_INTERNAL_SBL_GENERIC_CALL",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/SiebelProject/transformations/createRequest_BS_EJB_SIEBEL" : {
+                "label" : "Xquery/SiebelProject/transformations/createRequest_BS_EJB_SIEBEL",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SIEBEL" : {
+                "label" : "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SIEBEL",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB" : {
+                    "label" : "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB",
+                    "properties" : {
+                      "nodeType" : "ForeignJNDIProvider"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/MDW_CDM/ApplicationObjects/SIEBEL/WSDL/BS_EJB_SIEBEL" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SIEBEL/WSDL/BS_EJB_SIEBEL",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "WSDL/MDW_CDM/ApplicationObjects/GENERIC/wsdl/WS_GENERIC_OPERATION" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/GENERIC/wsdl/WS_GENERIC_OPERATION",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/SiebelProject/WS_FPS_BS_CRM/transformation/createResponse_CheckSistema" : {
+            "label" : "Xquery/SiebelProject/WS_FPS_BS_CRM/transformation/createResponse_CheckSistema",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/ApplicationObjects/SIEBEL/WS_FPS_BS_CRM/WS_FPS_BS_CRM" : {
+            "label" : "WSDL/MDW_CDM/ApplicationObjects/SIEBEL/WS_FPS_BS_CRM/WS_FPS_BS_CRM",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : { }
+          },
+          "Xquery/SiebelProject/WS_FPS_BS_CRM/transformation/createRequest_BSSiebel" : {
+            "label" : "Xquery/SiebelProject/WS_FPS_BS_CRM/transformation/createRequest_BSSiebel",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/SiebelProject/WS_FPS_BS_CRM/transformation/createRequest_ToSalesForce" : {
+            "label" : "Xquery/SiebelProject/WS_FPS_BS_CRM/transformation/createRequest_ToSalesForce",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "BusinessService/SiebelProject/WS_FPS_BS_CRM/businessService/BS_SQL_SBL_SELECT_SISTEMA_PER_INVO_SPY" : {
+            "label" : "BusinessService/SiebelProject/WS_FPS_BS_CRM/businessService/BS_SQL_SBL_SELECT_SISTEMA_PER_INVO_SPY",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "JCA/SiebelProject/Resources/BS_SQL_SBL_SELECT_SISTEMA_PER_INVO_SPY_db" : {
+                "label" : "JCA/SiebelProject/Resources/BS_SQL_SBL_SELECT_SISTEMA_PER_INVO_SPY_db",
+                "properties" : {
+                  "nodeType" : "JCA"
+                },
+                "successors" : { }
+              },
+              "WSDL/SiebelProject/Resources/BS_SQL_SBL_SELECT_SISTEMA_PER_INVO_SPY/concrete" : {
+                "label" : "WSDL/SiebelProject/Resources/BS_SQL_SBL_SELECT_SISTEMA_PER_INVO_SPY/concrete",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "ProxyService/SalesforceProject/WS_FPS_BS_CRM/proxy/PS_WS_CREATE_MESSAGE_WS_FPS_BS_CRM" : {
+            "label" : "ProxyService/SalesforceProject/WS_FPS_BS_CRM/proxy/PS_WS_CREATE_MESSAGE_WS_FPS_BS_CRM",
+            "properties" : {
+              "transport-type" : "local",
+              "nodeType" : "Proxy",
+              "service-type" : "SOAP"
+            },
+            "successors" : {
+              "Pipeline/SalesforceProject/WS_FPS_BS_CRM/pipeline/PL_JMS_WS_FPS_BS_CRM_ENQUEUE" : {
+                "label" : "Pipeline/SalesforceProject/WS_FPS_BS_CRM/pipeline/PL_JMS_WS_FPS_BS_CRM_ENQUEUE",
+                "properties" : {
+                  "nodeType" : "Pipeline"
+                },
+                "successors" : {
+                  "BusinessService/SalesforceProject/businessService/BS_JMS_SF_ENQUEUE" : {
+                    "label" : "BusinessService/SalesforceProject/businessService/BS_JMS_SF_ENQUEUE",
+                    "properties" : {
+                      "nodeType" : "BusinessService"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WS_FPS_BS_CRM/wsdl/WS_FPS_BS_CRM_TO_SF" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WS_FPS_BS_CRM/wsdl/WS_FPS_BS_CRM_TO_SF",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_ASYNC_ENQUEUE_TEMPLATE" : {
+                    "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_OPERATION_ASYNC_ENQUEUE_TEMPLATE",
+                    "properties" : {
+                      "nodeType" : "PipelineTemplate"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WS_FPS_BS_CRM/wsdl/WS_FPS_BS_CRM_TO_SF" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/WS_FPS_BS_CRM/wsdl/WS_FPS_BS_CRM_TO_SF",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/ApplicationObjects/SIEBEL/WS_FPS_BS_CRM/WS_FPS_BS_CRM" : {
+        "label" : "WSDL/MDW_CDM/ApplicationObjects/SIEBEL/WS_FPS_BS_CRM/WS_FPS_BS_CRM",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : { }
+      }
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SalesforceProject/WS_CRM_LIVE_CHAT/proxy/PS_CRM_LIVE_CHAT",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/SalesforceProject/WS_CRM_LIVE_CHAT/pipeline/PL_WS_CRM_LIVE_CHAT" : {
+        "label" : "Pipeline/SalesforceProject/WS_CRM_LIVE_CHAT/pipeline/PL_WS_CRM_LIVE_CHAT",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_N_OPERATIONS_TEMPLATE" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_GENERIC_N_OPERATIONS_TEMPLATE",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Xquery/SalesforceProject/WS_CRM_LIVE_CHAT/transformations/createRequestRetrieveLiveChatTanscriptByCus" : {
+            "label" : "Xquery/SalesforceProject/WS_CRM_LIVE_CHAT/transformations/createRequestRetrieveLiveChatTanscriptByCus",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/SalesforceProject/WS_CRM_LIVE_CHAT/transformations/createRequestRetrieveLiveChatTanscriptByExt" : {
+            "label" : "Xquery/SalesforceProject/WS_CRM_LIVE_CHAT/transformations/createRequestRetrieveLiveChatTanscriptByExt",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/SalesforceProject/WS_CRM_LIVE_CHAT/transformations/createResponseRetrieveLiveChatTanscriptByCus" : {
+            "label" : "Xquery/SalesforceProject/WS_CRM_LIVE_CHAT/transformations/createResponseRetrieveLiveChatTanscriptByCus",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "Xquery/SalesforceProject/WS_CRM_LIVE_CHAT/transformations/createResponseRetrieveLiveChatTanscriptByExt" : {
+            "label" : "Xquery/SalesforceProject/WS_CRM_LIVE_CHAT/transformations/createResponseRetrieveLiveChatTanscriptByExt",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/LiveChat/wsdl/WS_CRM_LIVE_CHAT" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/LiveChat/wsdl/WS_CRM_LIVE_CHAT",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/LiveChat/xsd/XSD_CRM_LIVE_CHAT" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/LiveChat/xsd/XSD_CRM_LIVE_CHAT",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF" : {
+            "label" : "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB" : {
+                "label" : "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB",
+                "properties" : {
+                  "nodeType" : "ForeignJNDIProvider"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF" : {
+                "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/LiveChat/wsdl/WS_CRM_LIVE_CHAT" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/SalesforceProject/LiveChat/wsdl/WS_CRM_LIVE_CHAT",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/LiveChat/xsd/XSD_CRM_LIVE_CHAT" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/LiveChat/xsd/XSD_CRM_LIVE_CHAT",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

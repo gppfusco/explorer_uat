@@ -1,0 +1,42 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions name="WS_OTT_PIN_HANDLER" targetNamespace="http://www.skytv.it/mdw/service/OTT_PIN_HANDLER"
+                  xmlns:tns="http://www.skytv.it/mdw/service/OTT_PIN_HANDLER" xmlns:inp1="http://www.skytv.it/mdw/data"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://www.skytv.it/mdw/data" schemaLocation="../xsd/XSD_OTT_PIN_HANDLER.xsd"/>
+      <xsd:import namespace="http://www.skytv.it/mdw/data"
+                  schemaLocation="../../../../EnterpriseObjects/CommonEntities/SoapHeaderSKY.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="requestFirstAccessPin_Message">
+    <wsdl:part name="part_requestFirstAccessPin" element="inp1:requestFirstAccessPin"/>
+  </wsdl:message>
+  <wsdl:message name="responseFirstAccessPin_Message">
+    <wsdl:part name="part_responseFirstAccessPin" element="inp1:responseFirstAccessPin"/>
+  </wsdl:message>
+  <wsdl:message name="header_Message">
+    <wsdl:part name="part_Header" element="inp1:Header"/>
+  </wsdl:message>
+  <wsdl:portType name="OTT_PIN_HANDLER_ptt">
+    <wsdl:operation name="execute_FirstAccessPin">
+      <wsdl:input message="tns:requestFirstAccessPin_Message"/>
+      <wsdl:output message="tns:responseFirstAccessPin_Message"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OTT_PIN_HANDLER_bind" type="tns:OTT_PIN_HANDLER_ptt">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="execute_FirstAccessPin">
+      <soap:operation style="document" soapAction="execute_FirstAccessPin"/>
+      <wsdl:input>
+        <soap:body use="literal" namespace="http://www.skytv.it/mdw/service/OTT_PIN_HANDLER"/>
+        <soap:header message="tns:header_Message" part="part_Header" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" namespace="http://www.skytv.it/mdw/service/OTT_PIN_HANDLER"/>
+        <soap:header message="tns:header_Message" part="part_Header" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>

@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbe2e",
+    "path" : "/services/scms/WS_SCMS_MULTIPAIRING_CAMBIAMI",
+    "name" : "SCMSproject_MultiPairing_proxy_PS_WS_SCMS_MULTIPAIRING",
+    "remoteName" : "ProxyService/SCMSproject/MultiPairing/proxy/PS_WS_SCMS_MULTIPAIRING",
+    "localPath" : "osb_uat\\repo\\SCMSproject\\MultiPairing\\PS_WS_SCMS_MULTIPAIRING",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbe2e/services/scms/WS_SCMS_MULTIPAIRING_CAMBIAMI?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/SCMSproject/MultiPairing/xsd/XSD_SCMS_MULTIPAIRING",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}
